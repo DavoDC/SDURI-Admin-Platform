@@ -1,0 +1,4 @@
+# Packages
+__pycache__
+app/__pycache__
+flask 
