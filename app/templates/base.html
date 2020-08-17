@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <title>{% block title %} {{ title }} {% endblock %} - SDURI:UWA</title>
+</head>
+
+<body>
+  <div style="text-align: center;">
+    <h2>Summer Down Under Research Internship</h2>
+  </div>
+
+  <div style="text-align: center;">
+
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Login</a>
+    <a href="{{ url_for('register') }}">Register</a>
+    {% else %}
+    
+    <!-- <a href="{{ url_for('index') }}">Home</a> -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+
+  </div>
+
+    
+
+
+  <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+  {% block content %}
+  {% endblock %}
+</body>
+
+</html>
