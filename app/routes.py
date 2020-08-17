@@ -15,19 +15,19 @@ def index():
 @app.route('/admin/<username>')
 @login_required
 def admin(username):
-  user = User.query.filter_by(username=username).first_or_404()
+  user = User.query.filter_by(name=username).first_or_404()
   return render_template('admin.html', user=user, title='Admin')
 
 @app.route('/supervisor/<username>')
 @login_required
 def supervisors(username):
-  user = User.query.filter_by(username=username).first_or_404()
+  user = User.query.filter_by(name=username).first_or_404()
   return render_template('supervisors.html', user=user, title='Supervisor')
 
 @app.route('/student/<username>')
 @login_required
 def students(username):
-  user = User.query.filter_by(username=username).first_or_404()
+  user = User.query.filter_by(name=username).first_or_404()
   return render_template('students.html', user=user, title='Student')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -47,12 +47,12 @@ def login():
     #   next_page = url_for('index')
     # return redirect(next_page)
     # return redirect(url_for('index.html')) # Use if next_page or next variable is not used
-    if user.user_role == "admin":
-      return redirect(url_for('admin', username=current_user.username))
-    elif user.user_role == "supervisor":
-      return redirect(url_for('supervisors', username=current_user.username))
+    if user.role == "Administrator":
+      return redirect(url_for('admin', username=current_user.name))
+    elif user.role == "Supervisor":
+      return redirect(url_for('supervisors', username=current_user.name))
     else:
-      return redirect(url_for('students', username=current_user.username))
+      return redirect(url_for('students', username=current_user.name))
   return render_template('login.html', title='Sign In', form=form)
 
 @app.route('/logout')
@@ -66,10 +66,10 @@ def register():
     return redirect(url_for('index'))
   form = RegistrationForm()
   if form.validate_on_submit():
-    user = User(username=form.username.data,  
-                user_fullname=form.user_fullname.data,
+    user = User(name=form.username.data,  
+                # user_fullname=form.user_fullname.data,
                 email=form.email.data)
-    user.set_password(form.password.data)
+    user.set_user_password(form.password.data)
     db.session.add(user)
     db.session.commit()
     flash('Congratulations, you are now a registered user!')
