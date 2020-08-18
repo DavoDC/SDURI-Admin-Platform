@@ -1,3 +1,4 @@
+from flask import redirect, url_for
 from app import app, db, login, admin
 from flask_login import current_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -52,6 +53,8 @@ class Student(db.Model):
   #
 
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+  userId = db.relationship('User', foreign_keys=[user_id])
+
 
 class Project(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -70,6 +73,8 @@ class Project(db.Model):
   place = db.Column(db.String(128)) 
 
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+  userId = db.relationship('User', foreign_keys=[user_id])
 
 class Preference(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
