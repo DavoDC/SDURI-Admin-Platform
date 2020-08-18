@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
+    <title> {{ title }} </title>
+</head>
+
+<body>
+    <form action="">
+        <h2 for="fname">First name:</h2><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <h2 for="lname">Last name:</h2><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+
+    <p>Not a member yet? <a href="{{ url_for('register') }}">Click here to join!</a></p>
+    <p><a href="{{ url_for('landing_page') }}">Go back to the home page.</a></p>
+</body>
+
+</html>

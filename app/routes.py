@@ -16,3 +16,15 @@ import json
 def landing_page():
     # return "Hello"
     return render_template("landing-page.html", title="Welcome")
+
+@app.route('/login')
+def login():
+    return render_template("login.html", title = "Login")
+
+@app.route('/register')
+def register():
+    return render_template("register.html", title = "Register")
+
+@app.route('/project_list')
+def project_list():
+    return render_template("project-list.html", title = "Project List")

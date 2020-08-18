@@ -11,7 +11,7 @@ app = Flask(__name__)
 # app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-# login = LoginManager(app)
+# login = LoginManager(app) # TODO: causes Missing user_loader or request_loader exception when uncommented
 # login.login_view = 'login'
 
 from app import routes, models

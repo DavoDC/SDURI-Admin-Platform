@@ -4,11 +4,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
     <title> {{ title }} </title>
 </head>
 
 <body>
-    <h1>Welcome to the SDURI platform!</h1>
+    <h1>Welcome to the SDURI platform!!</h1>
+
+    <div>
+        <h2>Login/Register now to join us! (theme-promoting text)</h2>
+        <br>
+        <h3>For existing users</h3>
+        <button class="landing-button" onclick="window.location = '{{ url_for('login') }}'">Login</button>
+    </div>
+
+    <div>
+        <h3>Not a member yet?</h3>
+        <button class="landing-button" onclick="window.location = '{{ url_for('register') }}'">Register</button>
+    </div>
+
+    <div>
+        <h3>Available project list</h3>
+        <button class="landing-button" onclick="window.location = '{{ url_for('project_list') }}'">Project List</button>
+    </div>
 </body>
 
 
