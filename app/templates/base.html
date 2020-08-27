@@ -1,0 +1,53 @@
+{% extends "bootstrap/base.html" %}
+<html>
+
+<head>
+
+  {% block title %}
+  
+    {{ title }} - SDURI:UWA
+  
+  {% endblock %} 
+</head>
+
+<body class="container">
+  
+{% block navbar %}
+  {{super()}}
+  <div style="text-align: center;">
+    <h2>Summer Down Under : Research Internship</h2>
+  </div>
+
+
+  <div class="nav nav-pills" style="text-align: center"> 
+    {% if current_user.is_anonymous %}
+    <h1><a href="{{ url_for('login') }}" class="nav-link" ></i>Login</a></h1>
+    <h1><a href="{{ url_for('register') }}">Register</a> </h1>
+    {% else %}
+    
+    <!-- <a href="{{ url_for('index') }}">Home</a> -->
+    <a href="{{ url_for('logout') }}"  >Logout</a>
+    <!-- <h1> current_user.id -> {{ current_user.id }}</h1> -->
+    {% endif %}
+
+  </div>
+
+{% endblock %}
+
+
+
+  <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+  {% block content %}
+  {% endblock %}
+</body>
+
+</html>
