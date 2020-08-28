@@ -31,21 +31,10 @@ def supervisors(username):
   user = User.query.filter_by(name=username).first_or_404()
   return render_template('supervisors.html', user=user, title='Supervisor')
 
-# Supervisor user questions test page
-@app.route('/supervisor-questions') 
-def supervisor_questions():
-   return render_template('supervisor/application-landing.html', start=1)
-
-# Supervisor user questions routing
-@app.route('/question<num>') 
-def question(num):
-   # Generate URL of question page
-   url = 'supervisor/questions/question'
-   url += str(num) + '.html'
-   
-   # Number of questions
-   numqs = 3
-   return render_template(url, num=int(num), numqs=numqs)
+# Supervisor application page
+@app.route('/supervisor-application') 
+def supervisor_appl():
+   return render_template('application/supervisor/landing.html')
 
 # Student user page
 @app.route('/student/<username>')
@@ -53,6 +42,23 @@ def question(num):
 def students(username):
   user = User.query.filter_by(name=username).first_or_404()
   return render_template('students.html', user=user, title='Student')
+
+# Student application page
+@app.route('/student-application') 
+def student_appl():
+   return render_template('application/student/landing.html')
+
+# Questions routing for student and supervisor application page series
+@app.route('/<user_type>-application/question<num>outof<max>') 
+def question(user_type, num, max):
+   # Generate URL of question page
+   url = 'application/' + user_type
+   url += '/question' + str(num) + '.html'
+
+   # Render template with question number variables
+   # - num = Question number
+   # - max = Maximum question number
+   return render_template(url, num=int(num), max=int(max))
 
 # Login page
 @app.route('/login', methods=['GET', 'POST'])
