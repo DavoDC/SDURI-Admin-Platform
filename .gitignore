@@ -1,4 +1,27 @@
+
+# IDE
+.DS_Store
+.vscode
+.idea
+
+# Virtual environment
+venv
+
 # Packages
 __pycache__
 app/__pycache__
+app/*pycache*
 flask 
+
+# Databae
+*.db
+dbName
+migrations
+test.py
+dataLoad.py
+*.sql
+app/__init__.pyc
+app.db-journal
+test.html
+dataLoad.py
+
