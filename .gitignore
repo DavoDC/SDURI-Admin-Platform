@@ -4,10 +4,12 @@
 
 #virtual environment
 venv
+venv/lib
 # Packages
 __pycache__
 app/__pycache__
 flask 
+
 
 *.db
 dbName

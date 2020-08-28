@@ -23,6 +23,7 @@
     {% if current_user.is_anonymous %}
     <h1><a href="{{ url_for('login') }}" class="nav-link" ></i>Login</a></h1>
     <h1><a href="{{ url_for('register') }}">Register</a> </h1>
+    <h1><a href="{{ url_for('project_list') }}">Project List</a> </h1>
     {% else %}
     
     <!-- <a href="{{ url_for('index') }}">Home</a> -->
