@@ -1,17 +1,22 @@
+
+# Import flask modules
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required, login_user, logout_user
 from werkzeug.urls import url_parse
 
+# Import custom modules
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from app.models import User
 
+# Main page
 @app.route('/') # methods=['GET', 'POST'])
 @app.route('/index') #, methods=['GET', 'POST'])
 # @login_required
 def index():  
   return render_template('index.html', title='Home')
 
+# Admin user page
 @app.route('/admin/<username>')
 @login_required
 def admin(username):
@@ -19,18 +24,37 @@ def admin(username):
   users = User.query.all()
   return render_template('admin.html', user=user, title='Admin', users=users)
 
+# Supervisor user page
 @app.route('/supervisor/<username>')
 @login_required
 def supervisors(username):
   user = User.query.filter_by(name=username).first_or_404()
   return render_template('supervisors.html', user=user, title='Supervisor')
 
+# Supervisor user questions test page
+@app.route('/supervisor-questions') 
+def supervisor_questions():
+   return render_template('supervisor/application-landing.html', start=1)
+
+# Supervisor user questions routing
+@app.route('/question<num>') 
+def question(num):
+   # Generate URL of question page
+   url = 'supervisor/questions/question'
+   url += str(num) + '.html'
+   
+   # Number of questions
+   numqs = 3
+   return render_template(url, num=int(num), numqs=numqs)
+
+# Student user page
 @app.route('/student/<username>')
 @login_required
 def students(username):
   user = User.query.filter_by(name=username).first_or_404()
   return render_template('students.html', user=user, title='Student')
 
+# Login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
   if current_user.is_authenticated:
@@ -56,11 +80,13 @@ def login():
       return redirect(url_for('students', username=current_user.name))
   return render_template('login.html', title='Sign In', form=form)
 
+# Logout page
 @app.route('/logout')
 def logout():
   logout_user()
   return redirect(url_for('index'))
 
+# Register page
 @app.route('/register', methods=['GET', 'POST'])
 def register():
   if current_user.is_authenticated:

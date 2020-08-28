@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Question {{num}}</h1>
+<p>Question {{num}}</p>
+
+<!-- If not at limit, show next -->
+{% if num != numqs %}
+    <form action="http://127.0.0.1:5000/question{{num + 1}}">
+        <button type="submit">Next</button>
+    </form>
+{% endif %}
+
+<!-- If not at first, show back -->
+{% if num != 1 %}
+    <form action="http://127.0.0.1:5000/question{{num - 1}}">
+        <button type="submit">Back</button>
+    </form>
+{% endif %}
+
+</body>
+</html>
