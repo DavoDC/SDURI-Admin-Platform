@@ -11,3 +11,15 @@ h2,h3,h4,h5,button{
     font-size: large;
     color: black;
 }
+
+table {
+    margin: 1%;
+}
+
+th {
+    font-size: large;
+}
+
+.table-hover tbody tr:hover{
+    background-color: rgba(173, 216, 230, 0.637);
+}
