@@ -3,6 +3,9 @@
 
 from flask import Flask
 
+# Logging
+import logging
+
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -12,6 +15,10 @@ from flask_admin import Admin
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
+
+# Configure logging
+logging.basicConfig(filename='testing.log', level=logging.DEBUG)
+
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
