@@ -13,11 +13,14 @@ from flask_bootstrap import Bootstrap
 app = Flask(__name__)
 
 # Configure logging
+# Get user name
+import getpass
+name = getpass.getuser()
 # Get number of log files
 import fnmatch, os
 num = len(fnmatch.filter(os.listdir('testing/logs'), '*.log'))
-# Use to generate name of log file
-new = 'testing/logs/testing' + str(num) + '.log'
+# Use above to generate name of log file
+new = 'testing/logs/test' + name + str(num) + '.log'
 # Log into log file
 import logging
 logging.basicConfig(filename=new, level=logging.INFO)
