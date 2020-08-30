@@ -1,10 +1,11 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_required, login_user, logout_user
 from werkzeug.urls import url_parse
-
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
 from app.models import User
+import os
+from flask import send_from_directory
 
 @app.route('/') # methods=['GET', 'POST'])
 @app.route('/index') #, methods=['GET', 'POST'])
@@ -60,6 +61,12 @@ def login():
 def logout():
   logout_user()
   return redirect(url_for('index'))
+
+#adds favicon support
+@app.route('/favicon.ico')
+def favicon():
+  return send_from_directory(os.path.join(app.root_path, 'static'),
+    'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

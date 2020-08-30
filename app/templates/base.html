@@ -1,8 +1,9 @@
 {% extends "bootstrap/base.html" %}
 <html>
+<!--Adds favicon to every page-->
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
 <head>
-<link rel="shortcut icon" href="favicon.ico">
   {% block title %}
   
     {{ title }} - SDURI:UWA
