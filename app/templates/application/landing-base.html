@@ -8,8 +8,10 @@
     <h1>{% block user_title %}{% endblock %} Application Page</h1>
 
     <!-- Body -->
-    <p>Welcome the application page for {% block user_name %}{% endblock %}s.</p>
-    <p>Please press "Start" and answer the questions that follow.</p>
+    <h4>Welcome the application page for {% block user_name %}{% endblock %}s.</h4>
+    <h4>Please press "Start" and answer the questions that follow.</h4>
+    {% block extra_body %}
+    {% endblock %}
 
     <!-- Start button -->
     <form action="{% block start_url %}{% endblock %}/question1outof{% block max %}{% endblock %}">
