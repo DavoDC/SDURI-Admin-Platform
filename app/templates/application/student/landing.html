@@ -1,0 +1,15 @@
+
+<!-- This page extends landing-base.html -->
+{% extends "application/landing-base.html" %}
+
+<!-- Set user type -->
+<!-- > Sentence case -->
+{% block user_title %}Student{% endblock %}
+<!-- > Lower case -->
+{% block user_name %}student{% endblock %}
+
+<!-- Set page function name inside url_for() -->
+{% block start_url %}{{ url_for('student_appl') }}{% endblock %}
+
+<!-- Total number of questions -->
+{% block max %}4{% endblock %}
