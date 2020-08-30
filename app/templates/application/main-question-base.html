@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {% extends "base.html" %}
 
 {% block content %}
@@ -35,39 +35,3 @@
 </body>
 
 {% endblock %}
-=======
-<!DOCTYPE html>
-<html>
-    <body>
-
-        <!-- Heading -->
-        <h1>Question {{num}}</h1>
-
-        <!-- Custom question -->
-        {% block question %}{% endblock %}
-
-        <!-- Navigation Buttons -->
-        <!-- If not at question limit, show 'Next' button -->
-        {% if num != max %}
-        <form action="{% block next_url %}{% endblock %}/question{{num + 1}}outof{{max}}">
-            <button type="submit">Next</button>
-        </form>
-        {% endif %}
-
-        <!-- If not at first question, show 'Back' button -->
-        {% if num != 1 %}
-        <form action="{% block back_url %}{% endblock %}/question{{num - 1}}outof{{max}}">
-            <button type="submit">Back</button>
-        </form>
-        {% endif %}
-
-        <!-- If reached question limit, show 'Submit' button -->
-        {% if num == max %}
-        <form action="{% block submit_url %}{% endblock %}">
-            <button type="submit">Submit</button>
-        </form>
-        {% endif %}
-
-    </body>
-</html>
->>>>>>> 646c76a166e0f5b2d8bc83418f44a1d4faa1c31e
