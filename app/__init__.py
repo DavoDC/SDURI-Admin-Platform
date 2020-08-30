@@ -1,23 +1,27 @@
 # init.py
 # essentially this makes the 'app' folder a package that can be imported
 
-from flask import Flask
 from config import Config
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_login import LoginManager
+from flask import Flask
 from flask_admin import Admin
 from flask_bootstrap import Bootstrap
+from flask_login import LoginManager
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 
 # Make app
 app = Flask(__name__)
 
 # Configure logging
+# Get user name
+import getpass
+name = getpass.getuser()
 # Get number of log files
-import fnmatch, os
+import fnmatch
+import os
 num = len(fnmatch.filter(os.listdir('testing/logs'), '*.log'))
-# Use to generate name of log file
-new = 'testing/logs/testing' + str(num) + '.log'
+# Use above to generate name of log file
+new = 'testing/logs/test' + name + str(num) + '.log'
 # Log into log file
 import logging
 logging.basicConfig(filename=new, level=logging.INFO)
