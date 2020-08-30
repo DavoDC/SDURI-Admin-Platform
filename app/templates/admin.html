@@ -3,20 +3,20 @@
 {% block content %}
 <div style="text-align: center; margin-top: 5%;">
 
-   <div >
-   <h1> Hi, {{ current_user.name }} !</h1>
+    <div >
+        <h1> Hi, {{ current_user.name }} !</h1>
 
 
-   </div>
+    </div>
 
-   <div>
-     {% for user in users %}
-     {{ user.name }}
-     <br>
-     {% endfor %}
-   </div>
+    <div>
+        {% for user in users %}
+        {{ user.name }}
+        <br>
+        {% endfor %}
+    </div>
 </div>
-  
+
 
 
 {% endblock %}
