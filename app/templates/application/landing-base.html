@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 {% extends "base.html" %}
 
@@ -18,3 +19,24 @@
 
 </body>
 {% endblock %}
+=======
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <!-- Title -->
+        <h1>{% block user_title %}{% endblock %} Application Page</h1>
+
+        <!-- Body -->
+        <p>Welcome the application page for {% block user_name %}{% endblock %}s.</p>
+        <p>Please press "Start" and answer the questions that follow.</p>
+
+        <!-- Start button -->
+        <form action="{% block start_url %}{% endblock %}/question1outof{% block max %}{% endblock %}">
+            <button type="submit">Start</button>
+        </form>
+
+    </body>
+</html>
+
+>>>>>>> 646c76a166e0f5b2d8bc83418f44a1d4faa1c31e

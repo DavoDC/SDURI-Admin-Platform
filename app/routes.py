@@ -112,5 +112,9 @@ def register():
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
+<<<<<<< HEAD
     return render_template('register.html', title='Register', form=form)
 
+=======
+return render_template('register.html', title='Register', form=form)
+>>>>>>> 646c76a166e0f5b2d8bc83418f44a1d4faa1c31e

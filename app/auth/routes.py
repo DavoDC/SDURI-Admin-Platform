@@ -6,13 +6,21 @@ from app.models import User
 from flask import flash
 from flask import redirect
 from flask import render_template
+<<<<<<< HEAD
 #from flask import request
+=======
+from flask import request
+>>>>>>> 646c76a166e0f5b2d8bc83418f44a1d4faa1c31e
 from flask import url_for
 from flask_login import current_user
 from flask_login import login_required
 from flask_login import login_user
 from flask_login import logout_user
+<<<<<<< HEAD
 #from werkzeug.urls import url_parse
+=======
+from werkzeug.urls import url_parse
+>>>>>>> 646c76a166e0f5b2d8bc83418f44a1d4faa1c31e
 
 
 # @bp.route('/')  # methods=['GET', 'POST'])
@@ -90,4 +98,8 @@ def register():
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
     return redirect(url_for('auth.login'))
+<<<<<<< HEAD
     return render_template('register.html', title='Register', form=form)
+=======
+return render_template('register.html', title='Register', form=form)
+>>>>>>> 646c76a166e0f5b2d8bc83418f44a1d4faa1c31e
