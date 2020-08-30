@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <body>
 
-<!-- Title -->
-<h1>{% block user_title %}{% endblock %} Application Page</h1>
+        <!-- Title -->
+        <h1>{% block user_title %}{% endblock %} Application Page</h1>
 
-<!-- Body -->
-<p>Welcome the application page for {% block user_name %}{% endblock %}s.</p>
-<p>Please press "Start" and answer the questions that follow.</p>
+        <!-- Body -->
+        <p>Welcome the application page for {% block user_name %}{% endblock %}s.</p>
+        <p>Please press "Start" and answer the questions that follow.</p>
 
-<!-- Start button -->
-<form action="{% block start_url %}{% endblock %}/question1outof{% block max %}{% endblock %}">
-    <button type="submit">Start</button>
-</form>
+        <!-- Start button -->
+        <form action="{% block start_url %}{% endblock %}/question1outof{% block max %}{% endblock %}">
+            <button type="submit">Start</button>
+        </form>
 
-</body>
+    </body>
 </html>
 
