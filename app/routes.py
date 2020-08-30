@@ -62,6 +62,10 @@ def logout():
   logout_user()
   return redirect(url_for('index'))
 
+app.route("/index")
+def landingpage():
+  return redirect(url_for('index'))
+
 #adds favicon support
 @app.route('/favicon.ico')
 def favicon():
