@@ -37,6 +37,7 @@ def supervisors(username):
     return render_template('supervisors.html', user=user, title='Supervisor')
 
 # Supervisor application page
+# TO BE RE-ROUTED BEHIND LOGIN
 @app.route('/supervisor-application')
 def supervisor_appl():
     return render_template('application/supervisor/landing.html')
@@ -49,6 +50,7 @@ def students(username):
     return render_template('students.html', user=user, title='Student')
 
 # Student application page
+# TO BE RE-ROUTED BEHIND LOGIN
 @app.route('/student-application')
 def student_appl():
     return render_template('application/student/landing.html')
