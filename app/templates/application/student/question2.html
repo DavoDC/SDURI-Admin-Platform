@@ -4,5 +4,33 @@
 
 <!-- Question HTML -->
 {% block question %}
-<p> Hey there I'm Q2 </p>
+<form>
+    <label for="name">a. Name (as it appears in your passport):</label>
+    <br>
+    <input type="text" id="name" name="name" value="">
+    <br>
+
+    <label for="surname">b. Surname (in English):</label>
+    <br>
+    <input type="text" id="surname" name="surname" value="">
+    <br>
+
+    <label for="firstname">c. First name (in English):</label>
+    <br>
+    <input type="text" id="firstname" name="firstname" value="">
+    <br>
+
+    <label for="prefname">d. Preferred name:</label>
+    <br>
+    <input type="text" id="prefname" name="prefname" value="">
+    <br>
+
+    <label for="charname">
+        e. Name in Chinese/Japanese/Korean/etc characters (optional):
+    </label>
+    <br>
+    <input type="text" id="charname" name="charname" value="">
+    <br>
+
+</form> 
 {% endblock %}
