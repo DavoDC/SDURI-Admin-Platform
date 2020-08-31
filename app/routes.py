@@ -1,9 +1,7 @@
 
-# Import flask modules
+# Import modules
 from app import app
-from app import db
 from app.forms import LoginForm
-from app.forms import RegistrationForm
 from app.models import User
 from flask import flash
 from flask import redirect
@@ -12,7 +10,7 @@ from flask import url_for
 from flask_login import current_user
 from flask_login import login_required
 from flask_login import login_user
-from flask_login import logout_user
+
 
 # Main page
 @app.route('/') # methods=['GET', 'POST'])
@@ -20,6 +18,12 @@ from flask_login import logout_user
 # @login_required
 def index():
     return render_template('index.html', title='Home')
+
+# Enable favicon support
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # Admin user page
 @app.route('/admin/<username>')
