@@ -10,12 +10,17 @@
     <!-- Custom question -->
     {% block question %}{% endblock %}
 
+    <!-- Page breaks -->
+    <hr>
+
+
     <!-- Navigation Buttons -->
     <!-- If not at question limit, show 'Next' button -->
     {% if num != max %}
     <form action="{% block next_url %}{% endblock %}/question{{num + 1}}outof{{max}}">
         <button type="submit">Next</button>
     </form>
+    <br>
     {% endif %}
 
     <!-- If not at first question, show 'Back' button -->
@@ -27,11 +32,16 @@
 
     <!-- If reached question limit, show 'Submit' button -->
     {% if num == max %}
+        <br>
     <form action="{% block submit_url %}{% endblock %}">
         <button type="submit">Submit</button>
     </form>
     {% endif %}
 
 </body>
+
+<br>
+<br>
+<br>
 
 {% endblock %}

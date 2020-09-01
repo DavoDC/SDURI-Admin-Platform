@@ -1,0 +1,24 @@
+
+<!-- This page extends student/question-base.html -->
+{% extends "application/student/question-base.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+<h4> University </h4>
+
+<label>University name (with abbreviation in brackets)</label>
+<label>e.g. University of Western Australia (UWA) </label>
+<br>
+<input type="text" id="uni" name="uni" value="" style="width:500px;">
+
+<br>
+<label>Major(s)</label>
+<br>
+<input type="text" id="majors" name="majors" value="">
+
+<br>
+<label>GPA (if applicable)</label>
+<br>
+<input type="text" id="gpa" name="gpa" value="">
+
+{% endblock %}

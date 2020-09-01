@@ -1,7 +1,9 @@
 
 # Import modules
 from app import app
+from app import db
 from app.forms import LoginForm
+from app.forms import RegistrationForm
 from app.models import User
 from flask import flash
 from flask import redirect
@@ -10,6 +12,7 @@ from flask import url_for
 from flask_login import current_user
 from flask_login import login_required
 from flask_login import login_user
+from flask_login import logout_user
 
 
 # Main page
@@ -41,8 +44,8 @@ def supervisors(username):
     return render_template('supervisors.html', user=user, title='Supervisor')
 
 # Supervisor application page
-# TO BE RE-ROUTED BEHIND LOGIN
 @app.route('/supervisor-application')
+#@login_required # Supervisor accounts cannot be made yet!
 def supervisor_appl():
     return render_template('application/supervisor/landing.html')
 
@@ -54,8 +57,8 @@ def students(username):
     return render_template('students.html', user=user, title='Student')
 
 # Student application page
-# TO BE RE-ROUTED BEHIND LOGIN
 @app.route('/student-application')
+@login_required
 def student_appl():
     return render_template('application/student/landing.html')
 

@@ -2,11 +2,17 @@
 
 {% block content %}
 <div style="text-align: center; margin-top: 5%;"> 
+
+    <!--Say hi to user-->
     <h1> Hi, {{ current_user.name }} !</h1>
 
+    <!--Apply button-->
+    <h2>
+        <a class="hover-button" href="{{ url_for('student_appl') }}"> 
+            Apply </a> 
+    </h2>
 
-
-
+    <!--Navigation-->
     <div style="text-align: center">
         <nav aria-label="Page navigation example">
             <ul class="pagination">

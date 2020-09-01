@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [01/Sep/2020 12:43:43] "[37mGET /register HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [01/Sep/2020 12:43:43] "[37mGET /static/favicon.ico HTTP/1.1[0m" 200 -
