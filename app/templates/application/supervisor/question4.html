@@ -1,0 +1,25 @@
+
+<!-- This page extends supervisor/question-base.html -->
+{% extends "application/supervisor/question-base.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+<h4> Project information </h4>
+
+<h4> How many research projects are you submitting? </h4>
+<label for="projectTitle"> Project Name: </label>
+<br>
+<input type="text" id="projectTitle" name="projectTitle" value="">
+<br>
+
+<label for="groupLab"> Your group/lab (Optional) include link separately. Eg. (ie. Optical+Biomedical Engineering Laboratory - http://obel.ee.uwa.edu.au/) </label>
+<br>
+<input type="text" id="groupLab" name="groupLab" value="">
+<br>
+
+<label for="groupDescrip"> Your project description (short and sharp preferred as all the information needs to fit in a standard template page) </label>
+<br>
+<input type="text" id="groupDescrip" name="groupDescrip" value="">
+<br>
+
+{% endblock %}
