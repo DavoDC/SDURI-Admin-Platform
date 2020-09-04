@@ -13,4 +13,12 @@
 <div>Project done on Crawley Campus: Yes</div>
 <div>Total number of projects offered by supervisor: 1</div>
 <div>Total number of places available with supervisor: 3</div>
+
+{% if logged %}
+    <button>Apply for this project</button>
+{% else %}
+    <button>Login to apply!</button>
+{% endif %}
+<br>
+<button><a href="{{url_for('project_list')}}">Back to project list</a></button>
 {% endblock %}

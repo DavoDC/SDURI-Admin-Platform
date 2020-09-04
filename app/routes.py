@@ -79,8 +79,15 @@ def register():
 
 @app.route('/project_list')
 def project_list():
+  #user = User.query.filter_by(name=username).first_or_404()
   return render_template('project-list.html', title='Project list')
 
+#@app.route('/single_project', defaults={'username': None})
 @app.route('/single_project')
 def single_project():
-  return render_template('single_project.html', title='Project specifics')
+  if current_user.is_authenticated:
+    return render_template('single_project.html', title='Project specifics', logged=True)
+  else:
+  #user = User.query.filter_by(name=username).first_or_404()
+    return render_template('single_project.html', title='Project specifics', logged=False)
+
