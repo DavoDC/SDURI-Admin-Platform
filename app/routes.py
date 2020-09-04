@@ -80,3 +80,7 @@ def register():
 @app.route('/project_list')
 def project_list():
   return render_template('project-list.html', title='Project list')
+
+@app.route('/single_project')
+def single_project():
+  return render_template('single_project.html', title='Project specifics')
