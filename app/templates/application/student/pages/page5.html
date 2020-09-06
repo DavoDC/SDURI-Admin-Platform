@@ -1,0 +1,66 @@
+
+<!-- This page extends student/question-base.html -->
+{% extends "application/student/question-base.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<h3> University </h3>
+
+<label><b>University name (with abbreviation in brackets)</b></label>
+<label>(e.g. University of Western Australia (UWA))</label>
+<br>
+<input type="text" id="uni" name="uni" value="">
+
+
+<br>
+<label><b>Major(s)</b></label>
+<br>
+<input type="text" id="majors" name="majors" value="">
+
+
+<br>
+<label><b>GPA (if applicable)</b></label>
+<br>
+<input type="text" id="gpa" name="gpa" value="">
+
+
+
+<br>
+<label><b>
+        How many years of university study would you have completed by 1 July 2020? 
+    </b></label>
+
+<br>
+<input type="radio" id="2" name="uni-years" value="2">
+<label for="2">2 Years</label>
+
+<br>
+<input type="radio" id="3" name="uni-years" value="3">
+<label for="3">3 Years</label>
+
+<br>
+<input type="radio" id="4" name="uni-years" value="4">
+<label for="4">4 Years</label>
+
+<br>
+<input type="radio" id="hon" name="uni-years" value="hon">
+<label for="hon">Honours</label>
+
+<br>
+<input type="radio" id="mast" name="uni-years" value="mast">
+<label for="mast">Masters</label>
+
+<br>
+<input type="radio" id="other-option" name="uni-years" value="other">
+<label for="other-option">Other</label>
+<input type="text" id="other-text" name="uni-years" value=""><br>
+
+<label><b>Awards received/Academic recognition </b></label>
+(i.e Scholarship, Dean's list, School of Gifted Young)
+<br>
+<textarea id="awards" name="awards" rows="3" cols="50"></textarea>
+
+
+
+{% endblock %}

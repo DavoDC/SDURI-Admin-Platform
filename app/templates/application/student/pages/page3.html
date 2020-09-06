@@ -4,6 +4,21 @@
 
 <!-- Question HTML -->
 {% block question %}
+
+<!-- Sub heading -->
+{% include "application/student/personal-details.html" %}
+
+
+<h4> Choose your Country of Birth: </h4>
+<!-- Country selection -->
+{% include "application/student/country-selection.html" %}
+
+
+<h4> Choose your Country of Citizenship: </h4>
+<!-- Country selection -->
+{% include "application/student/country-selection.html" %}
+
+
 <h4> Home Address: </h4>
 <table id="address">
     <tr>
@@ -42,4 +57,5 @@
     </tr>
 </table>
 </body>
+
 {% endblock %}

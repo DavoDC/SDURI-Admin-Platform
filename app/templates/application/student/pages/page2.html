@@ -4,6 +4,12 @@
 
 <!-- Question HTML -->
 {% block question %}
+
+<!-- Sub heading -->
+{% include "application/student/personal-details.html" %}
+
+
+<h4> Name: </h4>
 <form>
     <label for="name">a. Name (as it appears in your passport):</label>
     <br>
@@ -31,6 +37,7 @@
     <br>
     <input type="text" id="charname" name="charname" value="">
     <br>
-
 </form> 
+
+
 {% endblock %}

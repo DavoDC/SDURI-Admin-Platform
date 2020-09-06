@@ -5,7 +5,7 @@
 <body>
 
     <!-- Heading -->
-    <h1>Question {{num}}</h1>
+    <h1>Page {{num}}</h1>
 
     <!-- Custom question -->
     {% block question %}{% endblock %}
@@ -17,7 +17,7 @@
     <!-- Navigation Buttons -->
     <!-- If not at question limit, show 'Next' button -->
     {% if num != max %}
-    <form action="{% block next_url %}{% endblock %}/question{{num + 1}}outof{{max}}">
+    <form action="{% block next_url %}{% endblock %}/pg{{num + 1}}outof{{max}}">
         <button type="submit">Next</button>
     </form>
     <br>
@@ -25,16 +25,16 @@
 
     <!-- If not at first question, show 'Back' button -->
     {% if num != 1 %}
-    <form action="{% block back_url %}{% endblock %}/question{{num - 1}}outof{{max}}">
+    <form action="{% block back_url %}{% endblock %}/pg{{num - 1}}outof{{max}}">
         <button type="submit">Back</button>
     </form>
     {% endif %}
 
     <!-- If reached question limit, show 'Submit' button -->
     {% if num == max %}
-        <br>
+    <br>
     <form action="{% block submit_url %}{% endblock %}">
-        <button type="submit">Submit</button>
+        <button type="submit"><h4>Submit</h4></button>
     </form>
     {% endif %}
 

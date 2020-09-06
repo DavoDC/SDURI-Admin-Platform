@@ -1,0 +1,37 @@
+
+<!-- This page extends student/question-base.html -->
+{% extends "application/student/question-base.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<!-- Sub heading -->
+{% include "application/student/personal-details.html" %}
+
+<h4> Emergency Contact: </h4>
+
+<table id="emergency">
+    <tr>
+        <td class="label">Name</td>
+        <td class="slimField">
+            <input class="field" id="emg-name" />
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label">Relationship</td>
+        <td class="wideField" colspan="3">
+            <input class="field" id="city"  />
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label">Contact Number</td>
+        <td class="slimField">
+            <input class="field" id="state" />
+            <label> (include country code and area code)</label>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}

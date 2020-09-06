@@ -63,11 +63,12 @@ def student_appl():
     return render_template('application/student/landing.html')
 
 # Questions routing for student and supervisor application page series
-@app.route('/<user_type>-application/question<num>outof<max>')
+@app.route('/<user_type>-application/pg<num>outof<max>')
 def question(user_type, num, max):
     # Generate URL of question page
     url = 'application/' + user_type
-    url += '/question' + str(num) + '.html'
+    url += '/pages/page'
+    url += str(num) + '.html'
 
     # Render template with question number variables
     # - num = Question number
