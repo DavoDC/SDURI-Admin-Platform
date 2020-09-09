@@ -1,0 +1,55 @@
+
+<!-- This page extends supervisor/question-base.html -->
+{% extends "application/supervisor/question-base.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+<p> Hello I am question one </p>
+
+<div class = "qs-container">
+    <h3> Please select your faculty</h3>
+    <button type = "button"> Faculty of Arts, Business, Law and Education </button>
+    <br> <button type = "button"> Faculty of Science </button>
+    <br> <button type = "button"> Faculty of Engineering and Mathematical Sciences </button>
+    <br> <button type = "button"> Faculty of Health and Medical Sciences </button>
+</div>
+
+<div class = "qs-container">
+    <h3> If you selected "Faculty of Arts, Business, Law and Education" please select the specific discpline otherwise skip this question</h3>
+    <button type = "button"> Business School </button>
+    <br> <button type = "button"> Conservatorium of Music </button>
+    <br> <button type = "button"> Graduate School of Education </button>
+    <br> <button type = "button"> Law school </button>
+    <br> <button type = "button"> School of Design </button>
+    <br> <button type = "button"> School of Social Sciences </button>
+</div>
+
+<div class = "qs-container">
+    <h3> If you selected "Faculty of Science" please select the specific discpline otherwise skip this question</h3>
+    <button type = "button"> School of Biological Sciences </button>
+    <br> <button type = "button"> School of Earth Sciences </button>
+    <br> <button type = "button"> School of Human Sciences </button>
+    <br> <button type = "button"> School of Molecular Sciences</button>
+    <br> <button type = "button"> School of Psychological Science </button>
+    <br> <button type = "button"> UWA School of Agriculture and Environment </button>
+</div>
+
+<div class = "qs-container">
+    <h3> If you selected "Faculty of Engineering and Mathematical Sciences" please select the specific discpline otherwise skip this question</h3>
+    <button type = "button"> Engineering </button>
+    <br> <button type = "button"> Physics, Mathematics and Computing </button>
+    <br> <button type = "button"> Oceans Graduate School </button>
+</div>
+
+<div class = "qs-container">
+    <h3> If you selected "Faculty of Health and Medical Sciences" please select the specific discpline otherwise skip this question</h3>
+    <button type = "button"> School of Allied Health </button>
+    <br> <button type = "button"> School of Biomedical Science </button>
+    <br> <button type = "button"> Dental School </button>
+    <br> <button type = "button"> Medical School </button>
+    <br> <button type = "button"> School of Population and Global Health </button>
+</div>
+
+
+{% endblock %}
+

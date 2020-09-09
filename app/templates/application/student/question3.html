@@ -1,0 +1,20 @@
+
+<!-- This page extends student/question-base.html -->
+{% extends "application/student/question-base.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+<h4> Gender: </h4>
+
+<form>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+    <input type="text" id="other-gender" name="title" value=""><br>
+</form>
+{% endblock %}

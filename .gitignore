@@ -1,16 +1,22 @@
+
+# IDE
 .DS_Store
 .vscode
 .idea
 
-#virtual environment
+# Logging
+testing/config_name.txt
+
+# Virtual environment
 venv
-venv/lib
 # Packages
 __pycache__
 app/__pycache__
+app/*pycache*
+*.pyc
 flask 
 
-
+# Databae
 *.db
 dbName
 migrations
@@ -21,3 +27,5 @@ app/__init__.pyc
 app.db-journal
 test.html
 dataLoad.py
+
+

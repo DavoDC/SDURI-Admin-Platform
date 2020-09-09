@@ -1,0 +1,27 @@
+
+<!-- This page extends landing-base.html -->
+{% extends "application/landing-base.html" %}
+
+<!-- Set user type -->
+<!-- > Sentence case -->
+{% block user_title %}Student{% endblock %}
+<!-- > Lower case -->
+{% block user_name %}student{% endblock %}
+
+<!-- Extra body -->
+<!-- Add extra information for students -->
+{% block extra_body %}
+<p><b> Note: </b> Make sure you have your transcript and CV ready for submission.
+<p> You will not be able to complete this application without uploading 
+    them at the end of this application.</p>
+<p> Details can be found 
+    <a href="https://www.web.uwa.edu.au/global-engagement/internationalnetworks/"> 
+        here. </a>
+</p>
+{% endblock %}
+
+<!-- Set page function name inside url_for() -->
+{% block start_url %}{{ url_for('student_appl') }}{% endblock %}
+
+<!-- Total number of questions -->
+{% block max %}4{% endblock %}
