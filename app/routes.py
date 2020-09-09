@@ -70,6 +70,12 @@ def register():
     user = User(name=form.username.data,  
                 # user_fullname=form.user_fullname.data,
                 email=form.email.data)
+    
+    # If new user's email contains "@uwa.edu.au" 
+    # then set user role to "Supervisor"
+    if "@uwa.edu.au" in user.email:
+      user.set_user_role("Supervisor")
+      
     user.set_user_password(form.password.data)
     db.session.add(user)
     db.session.commit()
@@ -77,5 +83,4 @@ def register():
     return redirect(url_for('login'))
   return render_template('register.html', title='Register', form=form)
 
-  
 
