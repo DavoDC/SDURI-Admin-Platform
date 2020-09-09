@@ -1,0 +1,13 @@
+/* style.css */
+
+h1{
+    font-size: 48px;
+    text-align: center;
+    color: black;
+}
+
+h2,h3,h4,h5, button {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: large;
+    color: black;
+}

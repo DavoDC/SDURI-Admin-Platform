@@ -1,0 +1,78 @@
+{% extends "bootstrap/base.html" %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" -->
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  {% block title %}
+  
+    {{ title }} - SDURI:UWA
+  
+  {% endblock %} 
+</head>
+
+<body class="container">
+  
+{% block navbar %}
+
+  <!-- {{super()}} -->
+
+  <div style="text-align: center;">
+    <h2>Summer Down Under : Research Internship</h2> <br>
+    <h2><a href="{{url_for('index')}}">Home</a></h2>
+  </div>
+
+
+  <!-- <div class="nav nav-pills" style="text-align: center"> 
+    {% if current_user.is_anonymous %}
+    <h1><a href="{{ url_for('login') }}" class="nav-link" ></i>Login</a></h1>
+    <h1><a href="{{ url_for('register') }}">Register</a> </h1> -->
+    <!-- #{% elif current_user.is_authenticated %} -->
+    <!-- {% else %} -->
+    
+    <!-- <a href="{{ url_for('index') }}">Home</a> -->
+    <!-- <a href="{{ url_for('logout') }}"  >Logout</a> -->
+    <!-- <h1> current_user.id -> {{ current_user.id }}</h1> -->
+    <!-- {% endif %} -->
+
+  <!-- </div> -->
+
+{% endblock %}
+
+  <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+
+
+
+
+  {% block content %}
+  {% endblock %}
+</body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.6.0"></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
+
+</html>

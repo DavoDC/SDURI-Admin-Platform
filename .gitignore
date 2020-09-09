@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 
 # IDE
+=======
+>>>>>>> 3a7364f10b7bfe5681d9519c5a82899420e7ab36
 .DS_Store
 .vscode
 .idea
 
+<<<<<<< HEAD
 # Virtual environment
 venv
 
@@ -14,6 +18,15 @@ app/*pycache*
 flask 
 
 # Databae
+=======
+#virtual environment
+venv
+# Packages
+__pycache__
+app/__pycache__
+flask 
+
+>>>>>>> 3a7364f10b7bfe5681d9519c5a82899420e7ab36
 *.db
 dbName
 migrations
@@ -24,4 +37,7 @@ app/__init__.pyc
 app.db-journal
 test.html
 dataLoad.py
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3a7364f10b7bfe5681d9519c5a82899420e7ab36
