@@ -1,11 +1,12 @@
-from flask import render_template, flash, redirect, url_for, request
+from flask import render_template, flash, redirect, url_for, request, jsonify, json
 from flask_login import current_user, login_required, login_user, logout_user
 from werkzeug.urls import url_parse
 
+from json2html import *
 from app import app, db
 from app.forms import LoginForm, RegistrationForm
-from app.models import User
-
+from app.models import *
+from app import controllers
 @app.route('/') # methods=['GET', 'POST'])
 @app.route('/index') #, methods=['GET', 'POST'])
 # @login_required
@@ -25,11 +26,60 @@ def supervisors(username):
   user = User.query.filter_by(name=username).first_or_404()
   return render_template('supervisors.html', user=user, title='Supervisor')
 
-@app.route('/student/<username>')
+@app.route('/students/<username>/home', methods=['GET', 'POST'])
 @login_required
 def students(username):
-  user = User.query.filter_by(name=username).first_or_404()
-  return render_template('students.html', user=user, title='Student')
+  if request.method == "POST":
+    # For dynamic url, pass this "username=current_user.name" 
+    # argument to redirect(url_for()) function below
+    return redirect(url_for('questions', question_page_no=1, username=current_user.name))
+  return render_template('students.html', title='Student')
+
+@app.route('/students/<username>/q/<int:question_page_no>', methods=['GET', 'POST'])
+@login_required
+def questions(username, question_page_no):
+  # page number starts from 1
+  current_question_page_no = question_page_no
+
+  # constructing filename for next page
+  html_file = "q_p" + str(current_question_page_no) + ".html"
+
+  # cs_id = current student user_id
+  cs_id = User.query.filter_by(name=username).first().id or 404
+  current_student = Student.query.filter_by(user_id=cs_id).first()
+  if not Student.query.filter_by(user_id=cs_id).first():
+    # Inserting user_id into Student table
+    # and leaving other columns empty
+    db.session.add(Student(cs_id, "","",""))
+    db.session.commit()
+
+  if request.method == "POST":
+    # Using "request" module, which is imported from the flask at the top,
+    # this line gets all html form attributes: name and user input text
+    # e.g. <input name="sample_name">user_input_text in a box or anything
+    # The variable "data" stores name and user_input_text in dictionary format
+    data = request.form 
+
+    # The values of name attributes in html form, sample_name above in this case,
+    # must be same with the names of columns in the database.
+    for column_name, input_text in data.items():
+      # Inserting data into the remaining columns of Student table
+      setattr(current_student, column_name, input_text)
+    db.session.commit()
+    
+    # Total number of html files containing questions for students
+    # Change the integer 9 to the number of pages available
+    total_num_page = 9 
+    if current_question_page_no < total_num_page:
+      # In order to go to the next page we need to increase
+      # questions page number
+      current_question_page_no += 1
+    return redirect(url_for('questions', 
+                            question_page_no=current_question_page_no, 
+                            username=current_user.name
+                            )
+                    )
+  return render_template(html_file, title='Student')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -82,5 +132,6 @@ def register():
     flash('Congratulations, you are now a registered user!')
     return redirect(url_for('login'))
   return render_template('register.html', title='Register', form=form)
+
 
 

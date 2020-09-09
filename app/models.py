@@ -10,6 +10,7 @@ from flask_admin.contrib.sqla import ModelView
 
 
 class User(UserMixin, db.Model):
+  __tablename__ = 'user'
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   name = db.Column(db.String(64), index=True) # Preferred Name
   email = db.Column(db.String(128), index=True, unique=True)
@@ -54,6 +55,12 @@ class Student(db.Model):
 
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
   userId = db.relationship('User', foreign_keys=[user_id])
+
+  def __init__(self, user_id, title, name, surname):
+    self.user_id = user_id
+    self.title = title
+    self.name = name
+    self.surname = surname
 
 
 class Project(db.Model):
