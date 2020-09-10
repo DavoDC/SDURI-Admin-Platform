@@ -1,0 +1,37 @@
+
+<!-- Extend page template -->
+{% extends "student-appl/templates/page.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<!-- Sub heading -->
+{% include "student-appl/templates/personal-details.html" %}
+
+<h4> Emergency Contact: </h4>
+
+<table id="emergency">
+    <tr>
+        <td class="label">Name</td>
+        <td class="slimField">
+            <input class="field" name="emg-name" />
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label">Relationship</td>
+        <td class="wideField" colspan="3">
+            <input class="field" name="emg-rel"  />
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label">Contact Number</td>
+        <td class="slimField">
+            <input class="field" name="emg-ph" />
+            <label> (include country code and area code)</label>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}
