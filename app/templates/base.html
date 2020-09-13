@@ -28,7 +28,19 @@
 
   <div style="text-align: center;">
     <h2>Summer Down Under : Research Internship</h2> <br>
-    <h2><a href="{{url_for('index')}}">Home</a></h2>
+    {% if current_user.is_authenticated and current_user.role == "Admin" %}
+    <h1><a href="{{ url_for('admin', username=current_user.name) }}">Home</a></h1>
+    {% elif current_user.is_authenticated and current_user.role == "Supervisor" %}
+    <h1><a href="{{ url_for('supervisors', username=current_user.name) }}">Home</a></h1>
+    {% elif current_user.is_authenticated and current_user.role == ""%}
+    <h1><a href="{{ url_for('students', username=current_user.name) }}">Home</a></h1>
+    {% else %}
+    <h1><a href="{{url_for('index')}}">Home</a></h1>
+    {% endif %}
+    {% if current_user.is_authenticated %}
+    <h1><a href="{{ url_for('logout') }}">Logout</a></h1>
+    {% endif %}
+
   </div>
 
 

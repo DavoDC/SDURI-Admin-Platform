@@ -2,28 +2,20 @@
 
 {% block content %}
 <div style="text-align: center; margin-top: 5%;"> 
+
 <h1> Hi, {{ current_user.name }} !</h1>
+<h1> user_id = {{ current_user.id }} </h1>
 
+<h2>List of Projects</h2>
+<ol>
+  <li>.</li>
+  <li>..</li>
+  <li>...</li>
+</ol>
 
-
-
-  <div style="text-align: center">
-    <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <a class="page-link" href="#!" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#!">1</a></li>
-    <li class="page-item active">
-      <a class="page-link" href="#!">2 <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#!">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#!">Next</a>
-    </li>
-  </ul>
-</nav>
-  </div>
+<form method="post" >
+  <input type='submit' value="Apply">
+</form>
 
 </div>
 {% endblock %}
