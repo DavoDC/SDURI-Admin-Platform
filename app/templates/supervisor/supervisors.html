@@ -1,0 +1,35 @@
+
+<!--Extend user page template-->
+{% extends "user-page.html" %}
+
+<!--Add custom parts-->
+{% block custom %}
+
+
+<!--Enter faculty button-->
+<h4>
+    <a class="hover-button" href="{{ url_for('supervisor_faculty') }}"> 
+        Enter Faculty </a> 
+</h4>
+
+
+<!--Add project button-->
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}"> 
+        Add Project </a> 
+</h4>
+
+
+<!--Edit Your Projects-->
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}"> 
+        Edit Your Projects </a> 
+</h4>
+
+<!--Edit Your Projects-->
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}"> 
+        View Student Applications </a> 
+</h4>
+
+{% endblock %}-->

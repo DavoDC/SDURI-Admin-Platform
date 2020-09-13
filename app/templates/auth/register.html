@@ -3,13 +3,21 @@
 
 {% block content %}
 <div style="text-align: center; margin-top: 5%;">
-    
+
     <!--Title-->
-    <h4>Login</h4>
+    <h4>Register</h4>
 
     <!--Fields-->
-    <form action="" method="post" novalidate>
+    <form action="" method="post">
         {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
         <p>
             {{ form.email.label }}<br>
             {{ form.email(size=32) }}<br>
@@ -19,26 +27,19 @@
         </p>
         <p>
             {{ form.password.label }}<br>
-            {{ form.password(size=32) }} <br>
+            {{ form.password(size=32) }}<br>
             {% for error in form.password.errors %}
             <span style="color: red;">[{{ error }}]</span>
             {% endfor %}
-
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-        <ul style="list-style-type:none;">
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
         </p>
-
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <h3 class="signIn">{{ form.submit() }}</h3>
-
+        <p>
+            {{ form.password2.label }}<br>
+            {{ form.password2(size=32) }}<br>
+            {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
     </form>
 </div>
-
 {% endblock %}

@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+
+    <!-- Heading -->
+    <h1>Page {{num}}</h1>
+
+    <!-- Custom question -->
+    {% block question %}{% endblock %}
+
+    <!-- Page breaks -->
+    <hr>
+
+    <!-- Navigation Buttons -->
+    <!-- If not at question limit, show 'Next' button -->
+    {% if num != max %}
+    <form action="{{ url_for('student_details') }}/pg{{num + 1}}outof{{max}}">
+        <button type="submit">Next</button>
+    </form>
+    <br>
+    {% endif %}
+
+    <!-- If not at first question, show 'Back' button -->
+    {% if num != 1 %}
+    <form action="{{ url_for('student_details') }}/pg{{num - 1}}outof{{max}}">
+        <button type="submit">Back</button>
+    </form>
+    {% endif %}
+
+    <!-- If reached question limit, show 'Submit' button -->
+    {% if num == max %}
+    <br>
+    <form action="{{ url_for('index') }}">
+        <button type="submit"><h4>Submit</h4></button>
+    </form>
+    {% endif %}
+
+</body>
+
+<br>
+<br>
+<br>
+
+{% endblock %}

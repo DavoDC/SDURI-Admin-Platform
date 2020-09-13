@@ -1,0 +1,37 @@
+
+<!--Extend user page template-->
+{% extends "user-page.html" %}
+
+<!--Add custom parts-->
+{% block custom %}
+
+
+<!--Enter details button-->
+<h4>
+    <a class="hover-button" href="{{ url_for('student_details') }}"> 
+        Enter Details </a> 
+</h4>
+
+
+<!--Project 1 button-->
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}"> 
+        Select Project Preference 1 </a> 
+</h4>
+
+
+<!--Project 2 button-->
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}"> 
+        Select Project Preference 2 </a> 
+</h4>
+
+
+<!--View projects button-->
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}"> 
+        View Your Projects </a> 
+</h4>
+
+
+{% endblock %}-->
