@@ -51,15 +51,30 @@ def load_user(id):
 # Student class
 class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    title = db.Column(db.String(128)) # Drop down list
-    name = db.Column(db.String(64), index=True) # Name (as it appears in your passport):
-    surname = db.Column(db.String(64), index=True) # Surname (in English):
-    # more lines to be added
-    #
-    #
+    
+    # Title
+    title = db.Column(db.String(64)) 
+    
+    # Gender
+    gender = db.Column(db.String(64))
+    
+    # DOB
+    dob = db.Column(db.String(64))
+    
+    # English test file name
+    eng_file = db.Column(db.String(64))
+       
+#    name = db.Column(db.String(64), index=True) # Name (as it appears in your passport):
+#    surname = db.Column(db.String(64), index=True) # Surname (in English):
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     userId = db.relationship('User', foreign_keys=[user_id])
+    
+    def __init__(self, user_id, title, name, surname):
+        self.user_id = user_id
+        self.title = title
+        self.name = name
+        self.surname = surname
 
 
 # Project class

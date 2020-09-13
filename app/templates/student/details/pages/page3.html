@@ -6,8 +6,7 @@
 {% block question %}
 
 <!-- Sub heading -->
-{% include "student/details/templates/personal-details.html" %}
-
+<label class="personal-details">Personal Details</label>
 
 <h4> Choose your Country of Birth: </h4>
 {% with name="birth-cntry" %}
@@ -59,5 +58,7 @@
     </tr>
 </table>
 </body>
+
+<form>
 
 {% endblock %}
