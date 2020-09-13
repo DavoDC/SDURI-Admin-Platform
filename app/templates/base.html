@@ -9,7 +9,8 @@
     {% block head %}
 
     <!--Applies style.css to every page-->
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" 
+          href="{{ url_for('static', filename='css/style.css') }}">
 
     <!--Adds favicon to every page-->
     <link rel="shortcut icon" 
@@ -20,7 +21,7 @@
         <h1><a class="title-button" href="{{ url_for('index') }}">
                 Summer Down Under : Research Internship</a></h1>
     </div>
-    
+
     {% endblock %}
 
 </html>

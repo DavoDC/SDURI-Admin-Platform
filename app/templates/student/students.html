@@ -8,7 +8,9 @@
 
 <!--Enter details button-->
 <h4>
-    <a class="hover-button" href="{{ url_for('student_details') }}"> 
+    <a class="hover-button" 
+       href="{{ url_for('student_details', 
+       username = current_user.name) }}"> 
         Enter Details </a> 
 </h4>
 

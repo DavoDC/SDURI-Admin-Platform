@@ -16,7 +16,8 @@
     <!-- Navigation Buttons -->
     <!-- If not at question limit, show 'Next' button -->
     {% if num != max %}
-    <form action="{{ url_for('student_details') }}/pg{{num + 1}}outof{{max}}">
+    <form action="{{ url_for('student_details', 
+          username = current_user.name) }}/page{{num + 1}}">
         <button type="submit">Next</button>
     </form>
     <br>
@@ -24,7 +25,8 @@
 
     <!-- If not at first question, show 'Back' button -->
     {% if num != 1 %}
-    <form action="{{ url_for('student_details') }}/pg{{num - 1}}outof{{max}}">
+    <form action="{{ url_for('student_details', 
+          username = current_user.name) }}/page{{num - 1}}">
         <button type="submit">Back</button>
     </form>
     {% endif %}

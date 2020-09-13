@@ -37,7 +37,8 @@ with app.app_context():
         migrate.init_app(app, db)
 
 # Import routes and models
-from app import routes, models
+from app import routes
+from app import models
 
 # Start logging
 logging.start_logging()
