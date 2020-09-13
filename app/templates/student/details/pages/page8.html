@@ -1,0 +1,64 @@
+
+<!-- Extend page template -->
+{% extends "student/details/templates/page.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<h3> File Uploads </h3>
+
+<!--Q26. in Qualtrics (for when I check that I've included all Qs)-->
+<p>
+    <b>Submit your CV</b>   
+    <br>
+    Please name your file in this format, without any spacing:
+    'youruniversity_yourname_CV' (e.g. "UWA_PeterSmith_CV")
+</p>
+<form>
+    <input type="file" id="cv" name="cv-file">
+</form>
+
+
+<!--Q27. in Qualtrics (for when I check that I've included all Qs)-->
+<p>
+    <b>Submit your Transcript</b> 
+    <br>
+    Please name your file in this format, without any spacing:
+    'youruniversity_yourname_transcript' (e.g. "UWA_WangMeiMei_transcript")
+</p>
+<form>
+    <input type="file" id="transcript" name="transcript-file">
+</form>
+
+
+
+
+<!--Q29b. in Qualtrics (for when I check that I've included all Qs)-->
+<h3> Tuition </h3>
+
+<b> Select fee option: </b>
+<br>
+
+<!-- Early bird special should be disabled after certain date! -->
+<select name="fee-option" id="fee-option">
+    <option value="early-bird">
+        Early Bird Special: Tuition + Accommodation Bundle: AUD $4,000 
+        (Full Applications by 10 April 2020) (Now AUD $1,500)
+    </option>
+    <option value="tuition">
+        Option 1: Tuition Only: AUD $5,000 (Open Round Now AUD $2,500)
+    </option>
+    <option value="tuition+acc" disabled="disabled">
+        Option 2: Tuition + Accommodation Bundle: AUD $6,000 (Not Available)
+    </option>
+</select>
+
+<p> 
+    Please note: There are fee reductions due
+    to the program moving to an online mode
+</p>
+
+
+
+
+{% endblock %}

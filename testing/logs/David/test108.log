@@ -1,0 +1,20 @@
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:32:40] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:32:40] "[37mGET /student/John HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:32:42] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:32:42] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:32:43] "[37mGET /register HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:32:57] "[32mPOST /register HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:32:57] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:05] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:14] "[37mGET /student/test HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:16] "[37mGET /student-appl HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:18] "[37mGET /student-appl/pg1outof9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:37] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:37] "[37mGET /student/test HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:43] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Sep/2020 13:33:43] "[37mGET /student/test HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
