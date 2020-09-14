@@ -14,14 +14,23 @@
 
     <!--Adds favicon to every page-->
     <link rel="shortcut icon" 
-          href="{{ url_for('static', filename='favicon.ico') }}">
+          href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!--Logo-->
+    <img src="{{ url_for('static', filename='images/uwa_logo.png') }}" 
+         alt="UWA Logo" 
+         style="max-width:18%; position:absolute;" >
 
     <!--Title-->
     <div style="text-align: center;">
-        <h1><a class="title-button" href="{{ url_for('index') }}">
-                Summer Down Under : Research Internship</a></h1>
+        <h1>
+            <a class="title-button" href="{{ url_for('index') }}">
+                Summer Down Under : Research Internship</a>
+        </h1>
     </div>
 
     {% endblock %}
+
+
 
 </html>

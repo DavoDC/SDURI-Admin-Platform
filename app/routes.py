@@ -272,6 +272,31 @@ def save_file(file_field_name, cur_student):
             # Save file name in database
             setattr(cur_student, file_field_name, filename)
 
+# Project list (draft)
+@app.route('/project_list')
+def project_list():
+    return render_template('project/project-list.html', title='Project list')
+
+# Single project (draft)
+@app.route('/project_list/single_project')
+def single_project():
+    path = "project/single-project.html"
+    if current_user.is_authenticated:
+        return render_template(path, title='Project specifics', 
+                               logged=True)
+    else:
+        return render_template(path, title='Project specifics', 
+                               logged=False)
+                               
+# Student apply for project (draft)
+@app.route('/project_list/single_project/apply')
+def single_project_apply():
+    return render_template("student/apply-for-project.html");
+
+# Supervisor add project (draft)
+@app.route('/add-project')
+def add_project():
+    return render_template("supervisor/add-project.html");
 
 # Logout page
 @app.route('/logout')

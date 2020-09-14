@@ -124,3 +124,23 @@ input[type="file"] {
     font-size: 28px;
     color: black;
 }
+
+/*Table styling*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/*Table cell*/
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+/*Highlight row on hover*/
+.table-hover tbody tr:hover{
+    background-color: rgba(173, 216, 230, 0.637);
+}
+
+/*Shade even rows*/
+tr:nth-child(even) {background-color: #f2f2f2;}

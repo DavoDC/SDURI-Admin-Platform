@@ -1,17 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-        <script src="{{ url_for('static', filename='javascript/main.js') }}"></script>
-        <title> {{ title }} </title>
-    </head>
+{% block content %}
 
-    <body>
-        <h1>This is the project list page</h1>
-        <p><a href="{{ url_for('landing_page') }}">Go back to the home page.</a></p>
-    </body>
+<br>
 
-</html>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Project title</th>
+        <th>Main supervisor</th>
+        <th>Email</th>
+        <th>Keywords</th>
+    </tr>
+
+    <tr>
+        <td><a href = "{{ url_for('single_project') }}">Build a robot</a></td>
+        <td>Cheng</td>
+        <td>supervisor1@supervisor.com</td>
+        <td>Robot, electricity</td>
+    </tr>
+
+    <tr>
+        <td>Develop a website</td>
+        <td>Jerline</td>
+        <td>supervisor2@supervisor.com</td>
+        <td>Website, programming</td>
+    </tr>
+    <!-- for title, main_supervisor, email, keywords in -->
+
+    <!-- Next pull all the project from the database -->
+</table>
+
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}"> 
+        Go Back Home </a> 
+</h4>
+
+
+{% endblock %}
