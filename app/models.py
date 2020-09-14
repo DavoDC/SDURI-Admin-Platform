@@ -1,3 +1,4 @@
+import datetime
 from flask import redirect, url_for
 from app import app, db, login, admin
 from flask_login import current_user, login_required
@@ -15,7 +16,14 @@ class User(UserMixin, db.Model):
   name = db.Column(db.String(64), index=True) # Preferred Name
   email = db.Column(db.String(128), index=True, unique=True)
   password = db.Column(db.String(128))
+  confirmed = db.Column(db.Boolean, nullable=False, default=False)
   role = db.Column(db.String(10))
+
+  registered_on = db.Column(db.DateTime, nullable=False)
+  
+  confirmed_on = db.Column(db.DateTime, nullable=True)
+  password_reset_token = db.Column(db.String, nullable=True)
+
 
 
   def set_user_password(self, new_password):
@@ -36,8 +44,27 @@ class User(UserMixin, db.Model):
   def set_user_email(self, new_email):
     self.email = new_email
 
+  def set_user_confirmed(self, true_or_false):
+    self.confirmed = true_or_false
+    
   def __repr__(self):
         return '<User {}>'.format(self.name)
+
+  def __init__(self, 
+                name, email, password, confirmed,
+                registered_on, role="", 
+                confirmed_on=None,
+                password_reset_token=None):
+
+    self.name = name
+    self.email = email
+    self.password = generate_password_hash(password)
+    
+    self.registered_on=registered_on
+    self.role = role
+    self.confirmed = confirmed
+    self.confirmed_on = confirmed_on
+    self.password_reset_token = password_reset_token
 
 @login.user_loader
 def load_user(id):
@@ -56,7 +83,9 @@ class Student(db.Model):
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
   userId = db.relationship('User', foreign_keys=[user_id])
 
-  def __init__(self, user_id, title, name, surname):
+  def __init__(self, 
+                user_id, title, 
+                name, surname,):
     self.user_id = user_id
     self.title = title
     self.name = name

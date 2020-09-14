@@ -2,11 +2,18 @@ from flask import render_template, flash, redirect, url_for, request, jsonify, j
 from flask_login import current_user, login_required, login_user, logout_user
 from werkzeug.urls import url_parse
 
+from . import email
+from app.auth.token import generate_confirmation_token, confirm_token
+from datetime import date
+from functools import wraps
+from itsdangerous import URLSafeTimedSerializer
+from flask_mail import Message
 from json2html import *
-from app import app, db
+from app import app, db, mail
 from app.forms import LoginForm, RegistrationForm
 from app.models import *
 from app import controllers
+
 @app.route('/') # methods=['GET', 'POST'])
 @app.route('/index') #, methods=['GET', 'POST'])
 # @login_required
@@ -91,8 +98,14 @@ def login():
     if user is None or not user.check_password(form.password.data):
       flash('Invalid email or password')
       return redirect(url_for('login'))
+  
+    # may need to change use.confirmed to current_user.confirmed 
+    if user.confirmed == False:
+      flash('Your accounnt has not been activated...\nPlease check your email.', 'success')
+      # unconfirmed_name = unconfirmed username; unconfirmed_email = unconfirmed user email
+      return redirect(url_for('auth.unconfirmed', unconfirmed_name=user.name, unconfirmed_email=user.email))
     
-    login_user(user, remember=form.remember_me.data)
+    login_user(user, remember=form.remember_me.data)    
     # next_page = request.args.get('next')
     # if not next_page or url_parse(next_page).netloc != '':
     #   next_page = url_for('index')
@@ -111,6 +124,8 @@ def logout():
   logout_user()
   return redirect(url_for('index'))
 
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
   if current_user.is_authenticated:
@@ -119,19 +134,38 @@ def register():
   if form.validate_on_submit():
     user = User(name=form.username.data,  
                 # user_fullname=form.user_fullname.data,
-                email=form.email.data)
+                email=form.email.data,
+                confirmed=False,
+                password=form.password.data,
+                registered_on=date.today())
     
     # If new user's email contains "@uwa.edu.au" 
     # then set user role to "Supervisor"
     if "@uwa.edu.au" in user.email:
       user.set_user_role("Supervisor")
-      
-    user.set_user_password(form.password.data)
+    
+    # user.set_user_password(form.password.data)
     db.session.add(user)
     db.session.commit()
-    flash('Congratulations, you are now a registered user!')
-    return redirect(url_for('login'))
+    token = generate_confirmation_token(user.email)
+    confirm_url = url_for('auth.confirm_email', token=token, _external=True)
+    html = render_template('/auth/activate.html', confirm_url=confirm_url)
+    subject = "Please confirm your email"
+    email.send_email(user.email, subject, html)
+    
+    flash('A confirmation email has been sent to your email.', 'success')    
+    flash('Congratulations, you are now a registered user!', 'con_reg_user')
+    
+    return redirect(url_for('auth.unconfirmed'))
   return render_template('register.html', title='Register', form=form)
+
+
+
+
+
+
+
+
 
 
 
