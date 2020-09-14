@@ -1,15 +1,38 @@
+
 {% extends "base.html" %}
 
-
-
 {% block content %}
-<!-- 
-# <div>
-# <h1> Hi, {{ current_user.username }} !</h1>
-# </div>
--->
+
+<body class="container">
+
+    <!--Buttons-->
+    <div class="nav-pills" style="text-align: center"> 
+
+        <!--If anonymous user-->
+        {% if current_user.is_anonymous %}
+
+        <h2><a class="hover-button" href="{{ url_for('login') }}">
+                Login</a></h2>
+        <br>
+        <h2><a class="hover-button" href="{{ url_for('register') }}">
+                Register</a> </h2>
+
+        {% endif %}
+    </div>
 
 
+    <!--Messages-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+</body>
 
 
 {% endblock %}

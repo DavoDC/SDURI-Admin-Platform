@@ -1,9 +1,13 @@
+
 {% extends "base.html" %}
 
 {% block content %}
 <div style="text-align: center; margin-top: 5%;">
-    <!-- <h1>Sign In</h1> -->
 
+    <!--Title-->
+    <h4>Login</h4>
+
+    <!--Fields-->
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
@@ -32,11 +36,9 @@
         </p>
 
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p class="signIn">{{ form.submit() }}</p>
-        <br>
-        <p><a class="register" href="{{ url_for('register') }}">Click to Register!</a></p>
+        <h3 class="signIn">{{ form.submit() }}</h3>
+
     </form>
 </div>
-
 
 {% endblock %}

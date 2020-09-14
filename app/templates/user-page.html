@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="text-align: center; margin-top: 5%;"> 
+
+    <!--Say hi to user-->
+    <h1> Hi, {{ current_user.name }} !</h1>
+
+    <!-- View all projects button-->
+    <h4>
+        <a class="hover-button" href="{{ url_for('index') }}"> 
+            View All Projects </a> 
+    </h4>
+
+    <!--Custom parts-->
+    {% block custom %}{% endblock %}
+
+    <!--Logout link -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+</div>
+
+{% endblock %}
