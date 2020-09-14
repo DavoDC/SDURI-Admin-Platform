@@ -61,6 +61,12 @@ input[type=text] {
     box-sizing: border-box;
 }
 
+/*Date input*/
+input[type="date"] {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 18px;
+}
+
 /*File input*/
 input[type="file"] {
     font-size: 16px;

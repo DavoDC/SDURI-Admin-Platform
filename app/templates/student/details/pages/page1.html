@@ -8,31 +8,34 @@
 <!-- Sub heading -->
 <label class="personal-details">Personal Details</label>
 
+
 <!--Title-->
 <h4> Title: </h4>
-<input type="radio" id="mr" name="title" value="mr" required >
+<input type="radio" id="mr" name="title" value="Mr" required >
 <label for="mr">Mr</label>
 <br>
-<input type="radio" id="ms" name="title" value="ms" required>
+<input type="radio" id="ms" name="title" value="Ms" required>
 <label for="ms">Ms</label>
 <br>
-<label for="other-option">Other</label>
-<input type="text" id="other-title" name="title" 
-       value="Enter custom..." required>
-<br>
+{% with name="title" %}
+{% include "student/details/templates/custom-rad-but.html" %}
+{% endwith %}
+
+
 
 <!--Gender-->
 <h4> Gender: </h4>
-<input type="radio" id="male" name="gender" value="male" required>
+<input type="radio" id="male" name="gender" value="Male" required>
 <label for="male">Male</label>
 <br>
-<input type="radio" id="female" name="gender" value="female" required>
+<input type="radio" id="female" name="gender" value="Female" required>
 <label for="female">Female</label>
 <br>
-<label for="other">Other</label>
-<input type="text" id="other-gender" name="gender" 
-       value="Enter custom..." required>
-<br>
+{% with name="gender" %}
+{% include "student/details/templates/custom-rad-but.html" %}
+{% endwith %}
+
+
 
 <!--DOB-->
 <h4> Date of Birth: </h4>

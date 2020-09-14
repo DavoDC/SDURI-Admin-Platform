@@ -15,7 +15,7 @@
     'youruniversity_yourname_CV' (e.g. "UWA_PeterSmith_CV")
 </p>
 
-<input type="file" id="cv" name="cv-file" accept=".pdf">
+<input type="file" id="cv" name="cv_file" accept=".pdf" required>
 
 
 
@@ -26,7 +26,7 @@
     Please name your file in this format, without any spacing:
     'youruniversity_yourname_transcript' (e.g. "UWA_WangMeiMei_transcript")
 </p>
-<input type="file" id="transcript" name="transcript-file" accept=".pdf">
+<input type="file" id="transcr" name="transcr_file" accept=".pdf" required>
 
 
 
@@ -39,12 +39,12 @@
 <br>
 
 <!-- Early bird special should be disabled after certain date! -->
-<select name="fee-option" id="fee-option">
+<select id="fee-option" name="tuition_fee" required>
     <option value="early-bird">
         Early Bird Special: Tuition + Accommodation Bundle: AUD $4,000 
         (Full Applications by 10 April 2020) (Now AUD $1,500)
     </option>
-    <option value="tuition">
+    <option value="tuition-only">
         Option 1: Tuition Only: AUD $5,000 (Open Round Now AUD $2,500)
     </option>
     <option value="tuition+acc" disabled="disabled">

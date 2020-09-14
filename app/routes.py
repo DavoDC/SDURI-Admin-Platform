@@ -136,7 +136,7 @@ def send_to_user_page(role):
     else:
         msg = "Unknown role in function 'send_to_user_page'"
         msg += "\n<br>This means your account has no role set"
-        msg += "\n<br>Look at register code / Change email domain"
+        msg += "\n<br>Look at register() code / Change email domain"
         print(msg)
         return msg
 
@@ -155,27 +155,37 @@ def admin(username):
 @app.route('/supervisor/<username>')
 @login_required
 def supervisors(username):
+    
+    # If user role is not supervisor
+    if current_user.role != "Supervisor":
+        
+        # Send back to index
+        return redirect(url_for('index'))
+    
     user = User.query.filter_by(name=username).first_or_404()
     return render_template('supervisor/supervisors.html',
                            user=user, title='Supervisor')
 
 
 # Supervisor faculty choice page
-@app.route('/supervisor-faculty')
+@app.route('/supervisor/<username>/details')
 @login_required
-def supervisor_faculty():
-    return render_template('supervisor/faculty.html')
+def supervisor_faculty(username):
+
+    return render_template('supervisor/details.html')
 
 
 # Student user page
-@app.route('/students/<username>') #, methods=['GET', 'POST'])
+@app.route('/students/<username>') 
 @login_required
 def students(username):
-    # If in post mode
-    #if request.method == "POST":
-        # Redirect to question
-    #    return redirect(url_for('question', question_page_no=1,
-        #                   username=current_user.name))
+  
+    # If user role is not student
+    if current_user.role != "Student":
+        
+        # Send back to index
+        return redirect(url_for('index'))
+    
     user = User.query.filter_by(name=username).first_or_404()
     return render_template('student/students.html',
                            user=user, title='Student')
@@ -207,8 +217,8 @@ def question(username, page_no):
     # If there is no database row
     if not Student.query.filter_by(user_id=cs_id).first():
 
-        # Create row with user_id but other columns empty
-        db.session.add(Student(cs_id, "", "", ""))
+        # Initialize row and commit
+        db.session.add(Student(cs_id))
         db.session.commit()
 
     # If mode is post
@@ -227,9 +237,10 @@ def question(username, page_no):
             # Inserting data into the remaining columns of Student table
             setattr(cur_student, column_name, input_text)
             
-        # Save files if they exist
+        # Save files if needed
         save_file("eng_file", cur_student)
         save_file("cv_file", cur_student)
+        save_file("transcr_file", cur_student)
         
         # Commit to database
         db.session.commit()
@@ -238,10 +249,14 @@ def question(username, page_no):
     # with current and maximum page number
     return render_template(url, num=page_no, max=9)
 
-# Helper method: Save file if it exists, and add filename to database
-def save_file(file_field_name, cur_student):
 
-    # For every file in formdata
+# Helper method: 
+# - Save file to static if it exists
+# - Add filename to database
+def save_file(file_field_name, cur_student):
+    
+    # For every file in form data matching field
+    # (Note: This way is best, tries to get from wrong page otherwise)
     for uploaded_file in request.files.getlist(file_field_name):
 
         # Get secure filename
@@ -253,7 +268,7 @@ def save_file(file_field_name, cur_student):
             # Save file to path
             path = "app/static/user-files"
             uploaded_file.save(os.path.join(path, filename))
-            
+
             # Save file name in database
             setattr(cur_student, file_field_name, filename)
 

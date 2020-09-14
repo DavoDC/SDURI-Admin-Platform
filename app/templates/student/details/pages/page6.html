@@ -5,30 +5,33 @@
 <!-- Question HTML -->
 {% block question %}
 
-<h3> English Requirement </h3>
+<h3> English Requirements </h3>
 
 <label><b>
         Would you like to participate in the Optional English Language Program?
     </b></label>
 
 <br>
-<input type="radio" id="eng-prog" name="eng-prog" value="yes">
+<input type="radio" id="eng-prog" name="want_eng_prog" value="true" required>
 <label for="eng-prog">Yes</label>
-<select name="eng-progs" id="eng-progs">
-    <option value="1">Summer Down Under intensive IELTS Examination Preparation Program
+<select name="eng_prog_choice">
+    <option value="SDU IELTS">
+        Summer Down Under Intensive IELTS Examination Preparation Program
     </option>
-    <option value="2">10 or 20 Week Direct English Pathway
+    <option value="10/20wk Eng">10 or 20 Week Direct English Pathway
     </option>
-    <option value="3">5 Week English Language Programs
+    <option value="5wk Eng">5 Week English Language Programs
     </option>
 </select>
 
 <br>
-<input type="radio" id="no-eng-prog" name="eng-prog" value="no">
+<input type="radio" id="eng-prog" name="want_eng_prog" value="false" required>
 <label for="eng-prog">No</label><br>
 
 
 <br>
+
+
 
 <body>
 
@@ -38,11 +41,13 @@
             <label><b>Are you a native speaker?</b></label>
             <p>
                 Yes
-                <input type="radio" id="native" name="native" value="yes" class="div1" />
+                <input type="radio" id="native" name="native" 
+                       value="true" class="div1" required/>
             </p>
             <p>
                 No
-                <input type="radio" id="native" name="native" value="no" class="div2" />
+                <input type="radio" id="native" name="native" 
+                       value="false" class="div2" required/>
             </p>
         </div>
 
@@ -63,126 +68,120 @@
                 about english competency tests </p>
 
             <label><b>
-                    Please choose a test and enter your score:
+                    Please enter your test scores 
+                    (or N/A if you have not done that test)
                 </b></label>
+            <br> 
 
-            <!--Internal div -->
-            <div id="test-scores" class="in">
+            <label for="ielts">IELTS</label>
+            <input type="text" id="ielts" name="ielts_test_sc" value="N/A">
+            <br> 
 
-                <input type="radio" id="ielts" class="test" name="test-sc" value="ielts">
-                <label for="ielts">IELTS</label>
-                <input type="text" id="ielts" name="score" value="">
-                <br> 
+            <label for="toefl">TOEFL</label>
+            <input type="text" id="toefl" name="toefl_test_sc" value="N/A">
+            <br>
 
-                <input type="radio" id="toefl" name="test-sc" value="toefl">
-                <label for="toefl">TOEFL</label>
-                <input type="text" id="toefl" name="score" value="">
-                <br>
+            <label for="other">Other</label>
+            <input type="text" id="other" name="other_test_sc" value="N/A">
+            <br>
 
-                <input type="radio" id="other" name="test-sc" value="other">
-                <label for="other">Other</label>
-                <input type="text" id="other-test" name="test-sc" value="">
-                <br>
-
-
-                <br>
-                <label><b>
-                        Please upload your latest test results:
-                    </b></label>
-                <br>
-                Please name your file in the format 'youruniversity_yourname_english'
-                without any spacing. (e.g. 'UWA_WangMeiMei_IELTS')
-                <input type="file" id="eng_file" name="eng_file" accept=".pdf">
-                
-            </div>
+            <br>
+            <label><b>
+                    Please upload your latest test results:
+                </b></label>
+            <br>
+            Please name your file in the format 'youruniversity_yourname_english'
+            without any spacing. (e.g. 'UWA_WangMeiMei_IELTS')
+            <input type="file" id="eng_file" name="eng_file" accept=".pdf">
 
         </div>
     </div>
+</div>
 
-    <!-- CSS and Java script for hiding/showing questions-->
-    <style type="text/css" media="screen">
-        .hide{
-            display:none;
-        }
-    </style>
+<!-- CSS and Java script for hiding/showing questions-->
+<style type="text/css" media="screen">
+    .hide{
+        display:none;
+    }
+</style>
 
-    <script type="text/javascript" charset="utf-8">
-        (function () {
+<script type="text/javascript" charset="utf-8">
+    (function () {
 
-            // Initialize all elements with tab id
-            var tabs = document.getElementById('tabs');
+        // Initialize all elements with tab id
+        var tabs = document.getElementById('tabs');
 
-            // Initialize all elements with input tag
-            var inputs = tabs.getElementsByTagName('input');
+        // Initialize all elements with input tag
+        var inputs = tabs.getElementsByTagName('input');
 
-            // Set number of inputs to 2 (instead of inputs.length)
-            // Note: This only attaches the functions to first 
-            // two input tags instead of question input tags 
-            var inputNum = 2;
+        // Set number of inputs to 2 (instead of inputs.length)
+        // Note: This only attaches the functions to first 
+        // two input tags instead of question input tags 
+        var inputNum = 2;
 
-            // Add click events to input tags
-            // For all input tags
-            for (var i = 0; i < inputNum; i++) {
+        // Add click events to input tags
+        // For all input tags
+        for (var i = 0; i < inputNum; i++) {
 
-                // If input is valid
-                if (inputs[i] !== null)
-                {
-                    // Add function
-                    inputs[i].onclick = function () {
-                        hideTabs();
-                        showTab(this.className);
-                    };
-                }
+            // If input is valid
+            if (inputs[i] !== null)
+            {
+                // Add function
+                inputs[i].onclick = function () {
+                    hideTabs();
+                    showTab(this.className);
+                };
             }
+        }
 
-            // Hide tabs upon page load
-            hideTabs();
+        // Hide tabs upon page load
+        hideTabs();
 
 
-            /*
-             * Hide all tabs
-             */
-            function hideTabs() {
+        /*
+         * Hide all tabs
+         */
+        function hideTabs() {
 
-                // Get all divs
-                var tab = tabs.getElementsByTagName('div');
+            // Get all divs
+            var tab = tabs.getElementsByTagName('div');
 
-                // For all input tags
-                for (var i = 0; i <= inputNum; i++) {
+            // For all input tags
+            for (var i = 0; i <= inputNum; i++) {
 
-                    // Check tab is defined to prevent errors
-                    // Note: Only works with '!=' not '!=='
-                    if (tab[i] != null) {
+                // Check tab is defined to prevent errors
+                // Note: Only works with '!=' not '!=='
+                if (tab[i] != null) {
 
-                        // If class is tab
-                        if (tab[i].className === 'tab') {
+                    // If class is tab
+                    if (tab[i].className === 'tab') {
 
-                            // Add hide to classname
-                            tab[i].className = tab[i].className + ' hide';
-                        }
+                        // Add hide to classname
+                        tab[i].className = tab[i].className + ' hide';
                     }
                 }
             }
+        }
 
-            /*
-             * Show the clicked tab
-             */
-            function showTab(tab) {
+        /*
+         * Show the clicked tab
+         */
+        function showTab(tab) {
 
-                // Get tab element
-                var e = document.getElementById(tab);
+            // Get tab element
+            var e = document.getElementById(tab);
 
-                // If element is valid
-                if (e !== null) {
+            // If element is valid
+            if (e !== null) {
 
-                    // Set classname as tab
-                    e.className = 'tab';
-                }
+                // Set classname as tab
+                e.className = 'tab';
             }
+        }
 
 
-        })();
-    </script>
+    })();
+</script>
 </body>
 
 {% endblock %}
