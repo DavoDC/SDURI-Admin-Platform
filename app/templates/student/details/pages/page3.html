@@ -6,17 +6,16 @@
 {% block question %}
 
 <!-- Sub heading -->
-{% include "student/details/templates/personal-details.html" %}
-
+<label class="personal-details">Personal Details</label>
 
 <h4> Choose your Country of Birth: </h4>
-{% with name="birth-cntry" %}
+{% with name="birth_cntry" %}
 {% include "student/details/templates/country-selection.html" %}
 {% endwith %}
 
 
 <h4> Choose your Country of Citizenship: </h4>
-{% with name="citizen-cntry" %}
+{% with name="citizen_cntry" %}
 {% include "student/details/templates/country-selection.html" %}
 {% endwith %}
 
@@ -26,38 +25,40 @@
     <tr>
         <td class="label">Street &numero; and Address</td>
         <td class="slimField">
-            <input class="field" name="street_addr" />
+            <input class="field" name="street_addr" required/>
         </td>
     </tr>
 
     <tr>
         <td class="label">City</td>
         <td class="wideField" colspan="3">
-            <input class="field" name="city"  />
+            <input class="field" name="city_addr" required/>
         </td>
     </tr>
 
     <tr>
         <td class="label">State</td>
         <td class="slimField">
-            <input class="field" name="state" />
+            <input class="field" name="state_addr" required/>
         </td>
     </tr>
 
     <tr>
         <td class="label">Postcode</td>
         <td class="wideField">
-            <input class="field" name="postcode" />
+            <input class="field" name="postcode_addr" required/>
         </td>
     </tr>
 
     <tr>
         <td class="label">Country</td>
         <td class="wideField" colspan="3">
-            <input class="field" name="country" />
+            <input class="field" name="cntry_addr" required/>
         </td>
     </tr>
 </table>
 </body>
 
-{% endblock %}
+<form>
+
+    {% endblock %}

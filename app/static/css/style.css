@@ -1,5 +1,6 @@
 /* style.css */
 
+/*Headings*/
 h1 {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 48px;
@@ -37,6 +38,21 @@ button {
     color: black;
 }
 
+/*Drop down menus*/
+select {
+    padding: 8px 8px;   
+    font-size: 16px;
+}
+
+/*Text area*/
+textarea {
+    width: 50%;
+    padding: 8px 8px;   
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+/*Text fields*/
 input[type=text] {
     width: 30%;
     padding: 8px 8px;   
@@ -45,22 +61,18 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-select {
-    padding: 8px 8px;   
-    font-size: 16px;
-}
-
-textarea {
-    width: 50%;
-    padding: 8px 8px;   
-    margin: 8px 0;
+/*Date input*/
+input[type="date"] {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 18px;
 }
 
+/*File input*/
 input[type="file"] {
     font-size: 16px;
 }
 
+/*Title button*/
 .title-button{
     color: #2A4199 !important;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -72,6 +84,8 @@ input[type="file"] {
     padding: 20px;
     transition: all 0.8s ease 0s;
 }
+
+/*Change title button on hover*/
 .title-button:hover{
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     text-decoration: none;
@@ -81,6 +95,7 @@ input[type="file"] {
     transition: all 0.4s ease 0s;
 }
 
+/*Yellow hover buttons*/
 .hover-button{
     border-radius: 4px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -98,6 +113,34 @@ input[type="file"] {
     margin: 10px;
 }
 
-/*.hover-button:hover{
+/*Make hover buttons darker on hover*/
+.hover-button:hover{
     background: #b18d20 !important;
-}*/
+}
+
+/*Personal details subheading for student details*/
+.personal-details {
+    font-weight: bold;
+    font-size: 28px;
+    color: black;
+}
+
+/*Table styling*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/*Table cell*/
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+/*Highlight row on hover*/
+.table-hover tbody tr:hover{
+    background-color: rgba(173, 216, 230, 0.637);
+}
+
+/*Shade even rows*/
+tr:nth-child(even) {background-color: #f2f2f2;}

@@ -12,15 +12,25 @@ from flask_login import login_required
 from werkzeug.security import check_password_hash
 from werkzeug.security import generate_password_hash
 
-
+# User account class
 class User(UserMixin, db.Model):
+    
+    # ID
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(64), index=True) # Preferred Name
+    
+    # Username
+    name = db.Column(db.String(64), index=True)
+    
+    # Email
     email = db.Column(db.String(128), index=True, unique=True)
+    
+    # Password 
     password = db.Column(db.String(128))
-    role = db.Column(db.String(10))
+    
+    # Role (account type)
+    role = db.Column(db.String(32))
 
-
+    # Methods
     def set_user_password(self, new_password):
         self.password = generate_password_hash(new_password)
   
@@ -42,29 +52,175 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.name)
 
+
 # Load user
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
   
 
-# Student class
+# Student information class
 class Student(db.Model):
+    
+    # ID
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    title = db.Column(db.String(128)) # Drop down list
-    name = db.Column(db.String(64), index=True) # Name (as it appears in your passport):
-    surname = db.Column(db.String(64), index=True) # Surname (in English):
-    # more lines to be added
-    #
-    #
-
+    
+    # User ID
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     userId = db.relationship('User', foreign_keys=[user_id])
+    
+    # Fields from student details pages:
+    # (Variable names match HTML names)
+    
+    ### Page 1
+    # Title
+    title = db.Column(db.String(64)) 
+    
+    # Gender
+    gender = db.Column(db.String(64))
+    
+    # DOB
+    dob = db.Column(db.String(64))
+    
+    
+    ### Page 2
+    # Passport name
+    ppname = db.Column(db.String(128))
+    
+    # Surname (English) 
+    surname = db.Column(db.String(128))
+    
+    # Surname (English)
+    firstname = db.Column(db.String(128))
+    
+    # Preferred name
+    prefname = db.Column(db.String(128))
+    
+    # Name in characters
+    charname = db.Column(db.String(128))
+    
+    
+    ### Page 3
+    # Birth country
+    birth_cntry = db.Column(db.String(128))
+    
+    # Citizenship country
+    citizen_cntry = db.Column(db.String(128))
+    
+    # Street in address
+    street_addr = db.Column(db.String(128))
+    
+    # City in address 
+    city_addr = db.Column(db.String(128))
+    
+    # State in address 
+    state_addr = db.Column(db.String(128))
+    
+    # Postcode in address
+    postcode_addr = db.Column(db.String(128))
+    
+    # Country in address
+    cntry_addr = db.Column(db.String(128))
+    
+    
+    ### Page 4 
+    ## Emergency contact
+    
+    # Name
+    emg_name = db.Column(db.String(128))
+    
+    # Relationship
+    emg_rel = db.Column(db.String(128))
+    
+    # Phone number
+    emg_ph = db.Column(db.String(128))
+    
+    
+    ### Page 5
+    ## University Details
+    uni_name = db.Column(db.String(128))
+    uni_majors = db.Column(db.String(128))
+    uni_gpa = db.Column(db.String(32))
+    uni_years = db.Column(db.String(64))
+    uni_awards = db.Column(db.String(256))
+    
+    
+    ### Page 6
+    ## English Requirements
+    
+    # Do they want a english program?
+    want_eng_prog = db.Column(db.String(64))
+    
+    # If they want a program, which one?
+    eng_prog_choice = db.Column(db.String(128))
+    
+    # Are they are a native speaker?
+    native = db.Column(db.String(64))
+    
+    # Additional information required from non-native speakers
+    # Test scores
+    ielts_test_sc = db.Column(db.String(128))
+    toefl_test_sc = db.Column(db.String(128))
+    other_test_sc = db.Column(db.String(128))
+    
+    # English test file name
+    eng_file = db.Column(db.String(64))
+    
+    ### Page 7
+    ## Long Answer Questions
+    longQ1 = db.Column(db.String(1600))
+    longQ2 = db.Column(db.String(3100))
+    longQ3 = db.Column(db.String(3100))
+    longQ4 = db.Column(db.String(3100))
+    
+    ### Page 8
+    ## File Uploads
+    
+    # English test file name
+    cv_file = db.Column(db.String(64))
+    
+    # Transcript file name
+    transcr_file = db.Column(db.String(64))
+    
+    ## Tuition
+    tuition_fee = db.Column(db.String(128))
+    
+    # Initialize student entry
+    def __init__(self, user_id):
+        self.user_id = user_id
 
 
+# Supervisor information class
+class Supervisor(db.Model):
+   
+    # ID
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    
+    # User ID
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    userId = db.relationship('User', foreign_keys=[user_id])
+    
+    # Faculty
+    faculty = db.Column(db.String(128))
+    
+    # Faculty
+    discipline = db.Column(db.String(128))
+    
+    # Initialize supervisor entry
+    def __init__(self, user_id):
+        self.user_id = user_id
+        
 # Project class
 class Project(db.Model):
+    
+    # ID
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    
+    # User ID
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    userId = db.relationship('User', foreign_keys=[user_id])
+    
+    # Project fields
     main_supervisor = db.Column(db.String(128)) 
     co_supervisor = db.Column(db.String(128)) 
     faculty = db.Column(db.String(128)) 
@@ -79,32 +235,19 @@ class Project(db.Model):
     total = db.Column(db.Integer) 
     place = db.Column(db.String(128)) 
 
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
-    userId = db.relationship('User', foreign_keys=[user_id])
-
+   
 # Preference class
 class Preference(db.Model):
+    
+    # ID
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    
+    # Project ID
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
+    
+    # Student ID
     student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)
 
-
-# # Customized admin interface
-# class CustomView(ModelView):
-#     list_template = 'list.html'
-#     create_template = 'create.html'
-#     edit_template = 'edit.html'
-
-
-# class UserAdmin(CustomView):
-#     column_searchable_list = ('name',)
-#     column_filters = ('name', 'email')
-
-# # Add views
-# # admin.add_view(UserAdmin(User, db.session))
-# # admin.add_view(CustomView(Page, db.session))
-# admin = Admin(app, name='Home', template_mode='bootstrap3')
 
 # Modifying admin model view
 class MyAdminModelView(ModelView):
@@ -120,22 +263,28 @@ class MyAdminModelView(ModelView):
         else:  
             return redirect(url_for('index'))
         
-        # user + admin cannot see but others can if link is known(127.0.0.1:5000/admin/user)
+        # user + admin cannot see but others can if link is known
+        # (127.0.0.1:5000/admin/user)
         return not current_user.is_authenticated
     
     # Overwriting the pre-defined function
     def inaccessible_callback(self, name, ** kwargs):
         return redirect(url_for('login'))
-        
+
 
 # Add views to admin
 admin.add_view(MyAdminModelView(User, db.session))
 admin.add_view(MyAdminModelView(Student, db.session))
+admin.add_view(MyAdminModelView(Supervisor, db.session))
 admin.add_view(MyAdminModelView(Project, db.session))
 admin.add_view(MyAdminModelView(Preference, db.session))
 
+# # Add views
+# # admin.add_view(UserAdmin(User, db.session))
+# # admin.add_view(CustomView(Page, db.session))
+# admin = Admin(app, name='Home', template_mode='bootstrap3')
 
-# # admin.add_view(MyAdminModelView(QuizzMarks, db.session))
+# admin.add_view(MyAdminModelView(QuizzMarks, db.session))
 # admin.add_view(MyAdminModelView(Role, db.session))
 # admin.add_view(MyAdminModelView(Quiz, db.session))
 # admin.add_view(MyAdminModelView(quizQuestions, db.session))
@@ -144,3 +293,14 @@ admin.add_view(MyAdminModelView(Preference, db.session))
 # admin.add_view(MyAdminModelView(quizOptions, db.session))
 
 # admin.add_view(UserView(User, db.session, category="Team"))
+
+# # Customized admin interface
+# class CustomView(ModelView):
+#     list_template = 'list.html'
+#     create_template = 'create.html'
+#     edit_template = 'edit.html'
+
+
+# class UserAdmin(CustomView):
+#     column_searchable_list = ('name',)
+#     column_filters = ('name', 'email')

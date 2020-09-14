@@ -1,0 +1,20 @@
+
+
+<!--Radio button-->
+<input type="radio" id="{{ name }}_radio" name="{{ name }}" 
+       value="null-s" required>
+
+<!--Label-->
+<label for="{{ name }}_radio">Other</label>
+
+<!--Text field-->
+<input type="text" id="{{ name }}_field" name="{{ name }}" 
+       value="Enter custom..." required>
+
+<!--JavaScript-->
+<!--When text field value is changed, update radio button value-->
+<script>
+    {{ name }}_field.oninput = function () {
+    {{ name }}_radio.value = {{ name }}_field.value;
+    };
+</script>

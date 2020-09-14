@@ -6,37 +6,42 @@
 {% block question %}
 
 <!-- Sub heading -->
-{% include "student/details/templates/personal-details.html" %}
+<label class="personal-details">Personal Details</label>
 
+
+<!--Title-->
 <h4> Title: </h4>
-<input type="radio" id="mr" name="title" value="mr">
+<input type="radio" id="mr" name="title" value="Mr" required >
 <label for="mr">Mr</label>
 <br>
-<input type="radio" id="ms" name="title" value="ms">
+<input type="radio" id="ms" name="title" value="Ms" required>
 <label for="ms">Ms</label>
 <br>
-<input type="radio" id="other-option" name="title" value="other">
-<label for="other-option">Other</label>
-<input type="text" id="other-text" name="title" value=""><br>
+{% with name="title" %}
+{% include "student/details/templates/custom-rad-but.html" %}
+{% endwith %}
 
+
+
+<!--Gender-->
 <h4> Gender: </h4>
-<form>
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Male</label><br>
+<input type="radio" id="male" name="gender" value="Male" required>
+<label for="male">Male</label>
+<br>
+<input type="radio" id="female" name="gender" value="Female" required>
+<label for="female">Female</label>
+<br>
+{% with name="gender" %}
+{% include "student/details/templates/custom-rad-but.html" %}
+{% endwith %}
 
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Female</label><br>
 
-    <input type="radio" id="other" name="gender" value="other">
-    <label for="other">Other</label>
-    <input type="text" id="other-gender" name="title" value=""><br>
-</form>
 
+<!--DOB-->
 <h4> Date of Birth: </h4>
-<form>
-    <input type="date" id="dob" name="dob">
-    <label for="date">(dd/mm/yyyy)</label>
-</form>
+<input type="date" id="dob" name="dob" required>
+<label for="date">(dd/mm/yyyy)</label>
+
 
 {% endblock %}
 
