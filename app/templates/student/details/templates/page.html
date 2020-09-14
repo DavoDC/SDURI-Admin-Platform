@@ -7,39 +7,44 @@
     <!-- Heading -->
     <h1>Page {{num}}</h1>
 
-    <!-- Custom question -->
-    {% block question %}{% endblock %}
+    <!--Data form-->
+    <form method="post" enctype="multipart/form-data"> <!--Prevents/allows filename-->
 
-    <!-- Page breaks -->
-    <hr>
+        <!-- Custom question -->
+        {% block question %}{% endblock %}
 
-    <!-- Navigation Buttons -->
-    <!-- If not at question limit, show 'Next' button -->
-    {% if num != max %}
-    <form action="{{ url_for('student_details', 
-          username = current_user.name) }}/page{{num + 1}}">
-        <button type="submit">Next</button>
+        <!--Break-->
+        <hr>
+
+        <!-- Navigation Buttons -->
+        <!-- If not at question limit, show 'Next' button -->
+        {% if num != max %}
+        <button type="submit" 
+                formaction=
+                "{{ url_for('student_details', username = current_user.name) }}/page{{num + 1}}">
+            Next
+        </button>
+        <br>
+        <br>
+        {% endif %}
+
     </form>
-    <br>
-    {% endif %}
-
-    <!-- If not at first question, show 'Back' button -->
-    {% if num != 1 %}
-    <form action="{{ url_for('student_details', 
-          username = current_user.name) }}/page{{num - 1}}">
-        <button type="submit">Back</button>
-    </form>
-    {% endif %}
-
-    <!-- If reached question limit, show 'Submit' button -->
-    {% if num == max %}
-    <br>
-    <form action="{{ url_for('index') }}">
-        <button type="submit"><h4>Submit</h4></button>
-    </form>
-    {% endif %}
-
 </body>
+
+<!-- If not at first question, show 'Back' button -->
+{% if num != 1 %}
+<form action="{{ url_for('student_details', username = current_user.name) }}/page{{num - 1}}">
+    <button>Back</button>
+</form>
+{% endif %}
+
+<!-- If reached question limit, show 'Submit' button -->
+{% if num == max %}  
+<br>
+<form action="{{ url_for('index') }}">
+    <button>Submit</button>
+</form>
+{% endif %}
 
 <br>
 <br>

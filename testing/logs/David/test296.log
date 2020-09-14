@@ -1,0 +1,26 @@
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:14:11] "[37mGET /project_list/single_project HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:14:11] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:14:27] "[37mGET /project_list/single_project HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:14:29] "[37mGET /project_list/single_project/apply HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:14:29] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:14:35] "[37mGET /project_list/single_project/apply HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:14:35] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:15:25] "[37mGET /project_list/single_project HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:15:25] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:15:26] "[37mGET /project_list/single_project/apply HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:15:26] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:15:29] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:15:56] "[37mGET /project_list/single_project HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:15:56] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:03] "[37mGET /project_list/single_project HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:04] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:12] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:52] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:52] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:55] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:56] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:59] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:16:59] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
