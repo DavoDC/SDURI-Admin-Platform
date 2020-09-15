@@ -295,8 +295,51 @@ def single_project_apply():
 
 # Supervisor add project (draft)
 @app.route('/add-project')
-def add_project():
-    return render_template("supervisor/add-project.html");
+@login_required
+def add_project(username):
+    # Generate path of question page
+    url = "supervisor/add-project.html"
+
+    # Get current supervisor user_id
+    super_id = User.query.filter_by(name=username).first().id or 404
+
+    # Get current supervisor
+    cur_supervisor = Supervisor.query.filter_by(user_id=super_id).first()
+
+    # If there is no database row
+    if not Supervisor.query.filter_by(user_id=super_id).first():
+
+        # Initialize row and commit
+        db.session.add(Supervisor(super_id))
+        db.session.commit()
+
+    # If mode is post
+    if request.method == "POST":
+
+        # Using "request" module, which is imported from the flask at the top,
+        # this line gets all html form attributes: name and user input text
+        # e.g. <input name="sample_name">user_input_text in a box or anything
+        # The variable "data" stores name and user_input_text in dictionary format
+        data = request.form
+
+        # The values of name attributes in html form, sample_name above in this case,
+        # must be same with the names of columns in the database.
+        for column_name, input_text in data.items():
+            
+            # Inserting data into the remaining columns of Student table
+            setattr(cur_supervisor, column_name, input_text)
+            
+        # Save files if needed
+        save_file("eng_file", cur_supervisor)
+        save_file("cv_file", cur_supervisor)
+        save_file("transcr_file", cur_supervisor)
+        
+        # Commit to database
+        db.session.commit()
+
+    # Render question page,
+    # with current and maximum page number
+    return render_template(url, num=1, max=1)
 
 # Logout page
 @app.route('/logout')
