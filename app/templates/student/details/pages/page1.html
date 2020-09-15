@@ -8,33 +8,20 @@
 <!-- Sub heading -->
 <label class="personal-details">Personal Details</label>
 
-
 <!--Title-->
 <h4> Title: </h4>
-<input type="radio" id="mr" name="title" value="Mr" required >
-<label for="mr">Mr</label>
-<br>
-<input type="radio" id="ms" name="title" value="Ms" required>
-<label for="ms">Ms</label>
-<br>
-{% with name="title" %}
-{% include "student/details/templates/custom-rad-but.html" %}
-{% endwith %}
 
+{% with name="title", vals=["Mr", "Ms"] %}
+{% include "student/details/templates/rb-series.html" %}
+{% endwith %}
 
 
 <!--Gender-->
 <h4> Gender: </h4>
-<input type="radio" id="male" name="gender" value="Male" required>
-<label for="male">Male</label>
-<br>
-<input type="radio" id="female" name="gender" value="Female" required>
-<label for="female">Female</label>
-<br>
-{% with name="gender" %}
-{% include "student/details/templates/custom-rad-but.html" %}
-{% endwith %}
 
+{% with name="gender", vals=["Male", "Female"] %}
+{% include "student/details/templates/rb-series.html" %}
+{% endwith %}
 
 
 <!--DOB-->

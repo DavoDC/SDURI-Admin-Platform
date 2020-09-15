@@ -1,0 +1,78 @@
+
+<!--Add radio button-->
+<input type="radio" 
+       id="{{ value }}_radio" 
+       name="{{ name }}"
+       value="{{ value }}" 
+       required>
+
+
+<!--Add label if wanted -->
+{% if hasLabel %}
+<label for="{{ value }}_radio">{{ value }}</label>
+{% endif %}
+
+<!--If this radio button is customisable-->
+{% if custom %}
+
+<!--Add text field-->
+<input type="text" 
+       id="{{ value }}_field" 
+       name="{{ name }}"
+       value="Type here..." 
+       disabled="disabled" 
+       required>
+
+<!--Add function for enabling field-->
+<script>
+    // When radio button is selected
+    {{ value }}_radio.oninput = function () {
+
+    // > Enable text field
+    {{ value }}_field.disabled = false;
+    };
+    //
+</script>
+
+<!--Add function for updating radio value-->
+{% if addValue %}
+<script>
+    // When text field value is changed
+    {{ value }}_field.oninput = function () {
+
+    // > Set radio value to original value plus field value
+    {{ value }}_radio.value = "{{ value }}" + {{ value }}_field.value;
+    };
+    //
+</script>
+{% else %}
+<script>
+    // When text field value is changed
+    {{ value }}_field.oninput = function () {
+
+    // > Set field value to radio value
+    {{ value }}_radio.value = {{ value }}_field.value;
+    };
+    //
+</script>
+{% endif %}
+
+
+
+{% else %}
+
+<!--Else if this radio button is not customisable-->
+
+<!--Add JavaScript for disabling custom field when selected-->
+<script>
+    // When this radio button is selected
+    {{ value }}_radio.oninput = function () {
+
+    // - Disable custom field
+    other_{{ name }}_field.disabled = true;
+    };
+</script>
+
+{% endif %}
+
+

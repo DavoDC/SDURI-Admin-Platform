@@ -7,6 +7,9 @@
 # Logging
 testing/config_name.txt
 
+# User files
+app/static/user-files
+
 # Virtual environment
 venv
 

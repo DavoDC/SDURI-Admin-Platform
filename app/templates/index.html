@@ -8,18 +8,12 @@
     <!--Buttons-->
     <div class="nav-pills" style="text-align: center">
 
-        <!--If anonymous user-->
-        {% if current_user.is_anonymous %}
-
         <h2><a class="hover-button" href="{{ url_for('login') }}">
                 Login</a></h2>
         <br>
         <h2><a class="hover-button" href="{{ url_for('register') }}">
                 Register</a> </h2>
-
-        {% endif %}
     </div>
-
 
     <!--Messages-->
     {% with messages = get_flashed_messages() %}

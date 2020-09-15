@@ -1,0 +1,25 @@
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:31] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:32] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:35] "[37mGET /students/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:37] "[37mGET /students/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:37] "[37mGET /students/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:43] "[37mPOST /students/StudentTest/details/page2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:52] "[37mPOST /students/StudentTest/details/page3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:34:59] "[37mPOST /students/StudentTest/details/page4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:03] "[37mPOST /students/StudentTest/details/page5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:16] "[37mPOST /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:23] "[37mPOST /students/StudentTest/details/page7 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:31] "[37mPOST /students/StudentTest/details/page8 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:39] "[37mPOST /students/StudentTest/details/page9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:41] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:41] "[37mGET /students/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:48] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:49] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:35:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 16:36:56] "[37mGET /students/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

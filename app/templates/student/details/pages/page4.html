@@ -13,26 +13,30 @@
 
 <table id="emergency">
     <tr>
-        <td class="label">Name</td>
-        <td class="slimField">
-            <input class="field" name="emg_name" required/>
+        <td class="detLabel">Name</td>
+        <td class="detField">
+            <input class="detInput" name="emg_name" required/>
         </td>
     </tr>
 
     <tr>
-        <td class="label">Relationship</td>
-        <td class="wideField" colspan="3">
-            <input class="field" name="emg_rel" required/>
+        <td class="detLabel">Relationship</td>
+        <td class="detField">
+            <input class="detInput" name="emg_rel" required/>
         </td>
     </tr>
 
     <tr>
-        <td class="label">Contact Number</td>
-        <td class="slimField">
-            <input class="field" name="emg_ph" required/>
-            <label>(include country code and area code)</label>
+        <td class="detLabel">Contact Number</td>
+        <td class="detField">
+            <input class="detInput" name="emg_ph" required/>
         </td>
     </tr>
 </table>
+
+<small>
+    (<b>Note:</b> For contact number, include country code and area code)
+</small>
+
 
 {% endblock %}

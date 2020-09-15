@@ -2,33 +2,44 @@
 
 {% block content %}
 
+
+<style>
+
+</style>
+
+
 <br>
 
-<table class="table table-striped table-hover">
-    <tr>
-        <th>Project title</th>
-        <th>Main supervisor</th>
-        <th>Email</th>
-        <th>Keywords</th>
+
+<table class="project-table">
+    <tr class="project-row">
+        <th class="project-th">Project title</th>
+        <th class="project-th">Main supervisor</th>
+        <th class="project-th">Email</th>
+        <th class="project-th">Keywords</th>
     </tr>
 
-    <tr>
-        <td><a href = "{{ url_for('single_project') }}">Build a robot</a></td>
-        <td>Cheng</td>
-        <td>supervisor1@supervisor.com</td>
-        <td>Robot, electricity</td>
+    <tr class="project-row">
+        <td class="project-td">
+            <a href = "{{ url_for('single_project') }}">Build a robot</a>
+        </td>
+        <td class="project-td" >Cheng</td>
+        <td class="project-td">supervisor1@supervisor.com</td>
+        <td class="project-td">Robot, electricity</td>
     </tr>
 
-    <tr>
-        <td>Develop a website</td>
-        <td>Jerline</td>
-        <td>supervisor2@supervisor.com</td>
-        <td>Website, programming</td>
+    <tr class="project-row">
+        <td class="project-td">Develop a website</td>
+        <td class="project-td">Jerline</td>
+        <td class="project-td">supervisor2@supervisor.com</td>
+        <td class="project-td">Website, programming</td>
     </tr>
-    <!-- for title, main_supervisor, email, keywords in -->
-
-    <!-- Next pull all the project from the database -->
 </table>
+
+<!-- for title, main_supervisor, email, keywords in -->
+
+<!-- Next pull all the project from the database -->
+
 
 <h4>
     <a class="hover-button" href="{{ url_for('index') }}"> 
