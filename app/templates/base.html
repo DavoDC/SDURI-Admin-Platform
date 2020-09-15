@@ -28,15 +28,37 @@
 
   <div style="text-align: center;">
     <h2>Summer Down Under : Research Internship</h2> <br>
-    {% if current_user.is_authenticated and current_user.role == "Admin" %}
-    <h1><a href="{{ url_for('admin', username=current_user.name) }}">Home</a></h1>
-    {% elif current_user.is_authenticated and current_user.role == "Supervisor" %}
-    <h1><a href="{{ url_for('supervisors', username=current_user.name) }}">Home</a></h1>
-    {% elif current_user.is_authenticated and current_user.role == ""%}
-    <h1><a href="{{ url_for('students', username=current_user.name) }}">Home</a></h1>
-    {% else %}
+
+    <!-- A lengthy home button are used to confirm whether they are working as expected -->
+    <!-- Before an admin confirms form email confirmation link; showing unconfirmed page   -->
+     {% if not current_user.confirmed and not current_user.is_anonymous and current_user.role == "Administrator"%}
+    <h1><a href="#">Admin Home 1</a></h1>
+    <!-- After an admin confirms with the confirmation link; Home button is linked to home page of an admin -->
+    {% elif current_user.confirmed and current_user.is_authenticated and current_user.role == "Administrator"%}
+    <h1><a href="{{ url_for('admin', username=current_user.name) }}">Admin Home 2</a></h1>
+    
+    <!-- A lengthy home button are used to confirm whether they are working as expected -->
+    <!-- Before a supervisor confirms form email confirmation link; showing unconfirmed page   -->
+     {% elif not current_user.confirmed and not current_user.is_anonymous and current_user.role == "Supervisor"%}
+    <h1><a href="#">Supervisor Home 1</a></h1>
+    <!-- After a supervisor confirms with the confirmation link; Home button is linked to home page of a supervisor -->
+    {% elif current_user.confirmed and current_user.is_authenticated and current_user.role == "Supervisor"%}
+    <h1><a href="{{ url_for('supervisors', username=current_user.name) }}">Supervisor Home 2</a></h1>
+    
+    <!-- A lengthy home button are used to confirm whether they are working as expected -->
+    <!-- Before a student confirms form email confirmation link; showing unconfirmed page   -->
+     {% elif not current_user.confirmed and not current_user.is_anonymous and current_user.role == ""%}
+    <h1><a href="#">Student Home 1</a></h1>
+    <!-- After a student confirms with the confirmation link; Home button is linked to home page of a student -->
+    {% elif current_user.confirmed and current_user.is_authenticated and current_user.role == ""%}
+    <h1><a href="{{ url_for('students', username=current_user.name) }}">Student Home 2</a></h1>
+    
+    
+    <!-- Before log in -->
+    {% elif not current_user.is_authenticated %}
     <h1><a href="{{url_for('index')}}">Home</a></h1>
     {% endif %}
+    <!-- After log in -->
     {% if current_user.is_authenticated %}
     <h1><a href="{{ url_for('logout') }}">Logout</a></h1>
     {% endif %}

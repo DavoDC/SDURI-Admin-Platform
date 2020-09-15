@@ -2,6 +2,7 @@ from flask import render_template, flash, redirect, url_for, request, jsonify, j
 from flask_login import current_user, login_required, login_user, logout_user
 from werkzeug.urls import url_parse
 
+from app.decorators import * # check_confirmed
 from . import email
 from app.auth.token import generate_confirmation_token, confirm_token
 from datetime import date
@@ -35,6 +36,7 @@ def supervisors(username):
 
 @app.route('/students/<username>/home', methods=['GET', 'POST'])
 @login_required
+@check_confirmed
 def students(username):
   if request.method == "POST":
     # For dynamic url, pass this "username=current_user.name" 
@@ -99,13 +101,14 @@ def login():
       flash('Invalid email or password')
       return redirect(url_for('login'))
   
+    
+    
+    login_user(user, remember=form.remember_me.data)
     # may need to change use.confirmed to current_user.confirmed 
     if user.confirmed == False:
       flash('Your accounnt has not been activated...\nPlease check your email.', 'success')
       # unconfirmed_name = unconfirmed username; unconfirmed_email = unconfirmed user email
       return redirect(url_for('auth.unconfirmed', unconfirmed_name=user.name, unconfirmed_email=user.email))
-    
-    login_user(user, remember=form.remember_me.data)    
     # next_page = request.args.get('next')
     # if not next_page or url_parse(next_page).netloc != '':
     #   next_page = url_for('index')
@@ -122,6 +125,7 @@ def login():
 @app.route('/logout')
 def logout():
   logout_user()
+  flash('You were logged out.', 'success')
   return redirect(url_for('index'))
 
 
@@ -153,6 +157,7 @@ def register():
     subject = "Please confirm your email"
     email.send_email(user.email, subject, html)
     
+    login_user(user)
     flash('A confirmation email has been sent to your email.', 'success')    
     flash('Congratulations, you are now a registered user!', 'con_reg_user')
     
