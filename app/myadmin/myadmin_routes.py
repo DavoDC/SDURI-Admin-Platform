@@ -32,12 +32,13 @@ def update():
     print("new_data: ", new_data)
     new_data.name = request.form['name']
     new_data.email = request.form['email']
+    new_data.role = request.form['role']
     
     db.session.commit()
     flash_msg = new_data.name + "'s information is updated successfully"
   flash(flash_msg)
   # return render_template('home.html', user)
-  return redirect(url_for('myadmin.display_users'))
+  return redirect(url_for('myadmin.display_users',  page_num=1))
 
 @bp.route('/delete/<id>/', methods = ['GET', 'POST'])
 def delete(id):
@@ -46,7 +47,7 @@ def delete(id):
   db.session.commit()
   flash("User Deleted Successfully")
 
-  return redirect(url_for('myadmin.admin_home'))
+  return redirect(url_for('myadmin.display_users', page_num=1))
 
 @bp.route('/display/users/all/<int:page_num>', methods=['GET', 'POST'])
 def display_users(page_num):

@@ -20,9 +20,14 @@
           <input type="text" class="form-control" name="email" value="Email">
         </div>
 
-        <div class="form-group">
-          <label>Role:</label>
-              <input type="text" class="form-control" name="role" value="Role">
+        <div class="form-group"> 
+          <label for="role">Role:</label>
+          <!-- <input type="text" class="form-control" name="role" value="{{row.role}}"> -->
+          <select name="role" id="new_role">
+            <option value="">Student</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Administrator">Administrator</option>
+          </select> 
         </div>
 
         <div class="form-group">
@@ -32,7 +37,7 @@
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <p>Send password reset email</p>
+      
     </div>
   </div>
 </div>

@@ -17,9 +17,9 @@
 {% block content %}
 {{super()}}
 <br>
-<!-- <div class="container"> -->
+
 <div class="row">
-  <div class="col md-12">
+  <div class="col-md-12">
     <div class="jumbotron p-3">
       {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -36,7 +36,7 @@
       {% endwith %}
 
      
-      <p><a href="{{url_for('register')}}">Add new re user</a></p>
+      
       <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
               data-target="#modalAddUser">Add new user</a></p>
       <table class="table table-hover table-grey">
@@ -44,9 +44,9 @@
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Email</th>
-            <!-- <th>Password</th> -->
+            <th>Email</th>           
             <th>Confrimed</th>
+            <th>Role</th>
           </tr>
         </thead>
         <tbody>
@@ -55,9 +55,8 @@
               <td> {{ row.id}}</td>
               <td> {{ row.name}}</td>
               <td> {{ row.email}}</td>
-              <!-- <td> {{ row.password}}</td> -->
               <td> {{ row.confirmed}}</td>
-
+              <td> {{ row.role }}</td>
               <td>
 
                 <!-- Buttons to trigger modals -->
