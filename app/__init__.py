@@ -36,7 +36,8 @@ app.register_blueprint(auth_bp, url_prefix='/auth')
 from app.api import bp as api_bp
 app.register_blueprint(api_bp, url_prefix='/api')
 
-
+from app.myadmin import bp as myadmin_bp
+app.register_blueprint(myadmin_bp, url_prefix='/myadmin')
 
 with app.app_context():
     if db.engine.url.drivername == 'sqlite':

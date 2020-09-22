@@ -115,7 +115,7 @@ def login():
     # return redirect(next_page)
     # return redirect(url_for('index.html')) # Use if next_page or next variable is not used
     if user.role == "Administrator":
-      return redirect(url_for('admin', username=current_user.name))
+      return redirect(url_for('myadmin.admin_home', username=current_user.name))
     elif user.role == "Supervisor":
       return redirect(url_for('supervisors', username=current_user.name))
     else:

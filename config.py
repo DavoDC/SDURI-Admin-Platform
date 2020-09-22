@@ -13,6 +13,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     
+    
     # mail settings
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 465
