@@ -32,7 +32,7 @@
 </body>
 
 <!-- If not at first question, show 'Back' button -->
-{% if num != 1 %}
+{% if num != 1 and max != 1 %}
 <form action="{{ url_for('student_details', username = current_user.name) }}/page{{num - 1}}">
     <button>Back</button>
 </form>

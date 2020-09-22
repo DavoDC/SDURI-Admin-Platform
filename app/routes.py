@@ -294,7 +294,7 @@ def single_project_apply():
     return render_template("student/apply-for-project.html");
 
 # Supervisor add project (draft)
-@app.route('/add-project')
+@app.route('/add-project/<username>')
 @login_required
 def add_project(username):
     # Generate path of question page

@@ -17,7 +17,7 @@
 
 <!--Add project button-->
 <h4>
-    <a class="hover-button" href="{{ url_for('add_project') }}"> 
+    <a class="hover-button" href="{{ url_for('add_project', username = current_user.name) }}"> 
         Add Project </a> 
 </h4>
 
