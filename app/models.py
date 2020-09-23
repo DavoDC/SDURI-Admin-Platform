@@ -235,6 +235,9 @@ class Project(db.Model):
     total = db.Column(db.Integer) 
     place = db.Column(db.String(128)) 
 
+    def __init__(self, user_id):
+        self.user_id = user_id
+
    
 # Preference class
 class Preference(db.Model):
