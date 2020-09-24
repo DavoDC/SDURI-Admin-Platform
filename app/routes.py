@@ -315,6 +315,8 @@ def add_project(username):
         db.session.commit()
         print("initialised row")
 
+    cur_project = Project.query.filter_by(user_id=super_id).first()
+
     # If mode is post
     if request.method == "POST":
         print("i got here")
@@ -329,7 +331,7 @@ def add_project(username):
         for column_name, input_text in data.items():
             
             # Inserting data into the remaining columns of Student table
-            setattr(cur_supervisor, column_name, input_text)
+            setattr(cur_project, column_name, input_text)
             
         # Save files if needed
         # save_file("eng_file", cur_supervisor)
