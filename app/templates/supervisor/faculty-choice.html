@@ -1,0 +1,45 @@
+
+<!--Generate faculty id-->
+{% set fid %}{{ faculty.replace(",", "").replace(" ", "").strip() }}{% endset %}
+
+<!--Faculty-->
+<input 
+    type="radio" 
+    id="{{ fid }}_radio"
+    name="faculty"
+    value="{{ faculty }}" 
+    oninput="show{{ fid }}Schools()"
+    required >
+<label for="{{ fid }}_radio">
+    {{ faculty }}
+</label>
+
+<!--School radio buttons-->
+<div id="{{ fid }}_schools" style="display: none;">
+
+        <!--Add radio button for each school -->
+        {% for school in schools %}
+            <br>
+            <input 
+                type="radio" 
+                id="{{ school.replace(" " , "") }}_radio"
+                name="school"
+                value="{{ school }}" 
+                style="width: 80px;"
+            >
+            <label for="{{ school.replace(" " , "") }}_school">
+                {{ school }}
+            </label>
+        {% endfor %}
+</div>
+
+
+<!--Show schools of faculty-->
+<script type="text/javascript">
+    function show{{ fid }}Schools()
+    {
+        {{ fid }}_schools.style.display = "block";
+    }
+</script>  
+
+<br>    

@@ -19,11 +19,11 @@
 
     <!--Show for native speakers-->
     <div id="div1" class="tab">
-        <p> 
+        <p>
             Since you are native speaker,
             no information about english competency tests is required.
             <br>
-            You may proceed to the next question. 
+            You may proceed to the next question.
         </p>
     </div>
 
@@ -41,26 +41,22 @@
 
         <!--To prevent unfocusable error,-->
         <!--this will hold the null value-->
-        <input type="radio" name="test_sc" value="" 
+        <input type="radio" name="test_sc" value=""
                class="hide" checked="checked">
 
-        {% with name="test_sc", value="IELTS",
-        custom=true, hasLabel=true, addValue=true %}
-        {% include "student/details/templates/rb.html" %}
+        <!--Test score types-->
+        {% with type="IELTS" %}
+        {% include "student/details/templates/test-sc-but.html" %}
         {% endwith %}
-        <br>
+        
+        {% with type="TOEFL" %}
+        {% include "student/details/templates/test-sc-but.html" %}
+        {% endwith %}
+        
+        {% with type="Other" %}
+        {% include "student/details/templates/test-sc-but.html" %}
+        {% endwith %}
 
-        {% with name="test_sc", value="TOEFL",
-        custom=true, hasLabel=true, addValue=true %}
-        {% include "student/details/templates/rb.html" %}
-        {% endwith %}
-        <br>
-
-        {% with name="test_sc", value="Other",
-        custom=true, hasLabel=true, addValue=true %}
-        {% include "student/details/templates/rb.html" %}
-        {% endwith %}
-        <br>
 
         <br>
         <label><b>
@@ -76,15 +72,17 @@
 </div>
 
 
-<!-- CSS for hiding/showing questions-->
-<style type="text/css" media="screen">
+
+
+<!-- CSS for hiding/showing tabs based on question-->
+<style>
     .hide{
         display:none;
     }
 </style>
 
-<!-- JS for hiding/showing questions-->
-<script type="text/javascript" charset="utf-8">
+<!-- JS for hiding/showing tabs based on question-->
+<script>
 
     (function () {
 
