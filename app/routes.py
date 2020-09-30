@@ -344,10 +344,7 @@ def edit_project(username):
     # Get current supervisor's projects
     cur_user_projects = Project.query.filter_by(user_id=super_id).all()
 
-    num = len(cur_user_projects)
-
-
-    return render_template("supervisor/edit-project.html", num=num, projects = cur_user_projects)
+    return render_template("supervisor/edit-project.html", projects = cur_user_projects)
 
 # Logout page
 @app.route('/logout')
