@@ -40,12 +40,14 @@ button {
 
 /*Drop down menus*/
 select {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     padding: 8px 8px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /*Text area*/
 textarea {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     width: 50%;
     padding: 8px 8px;
     margin: 8px 0;
@@ -54,28 +56,24 @@ textarea {
 
 /*Text fields*/
 input[type=text] {
-    width: 30%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    width: 35%;
     padding: 8px 8px;
     margin: 8px 0;
-    font-size: 16px;
+    font-size: 18px;
     box-sizing: border-box;
 }
 
-/*Date input*/
-input[type="date"] {
+/*Various input types*/
+input[type="date"], input[type="file"], input[type="number"] {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 18px;
 }
 
-/*File input*/
-input[type="file"] {
-    font-size: 16px;
-}
-
 /*Title button*/
 .title-button{
-    color: #2A4199 !important;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #2A4199 !important;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold;
@@ -97,8 +95,8 @@ input[type="file"] {
 
 /*Yellow hover buttons*/
 .hover-button{
-    border-radius: 4px;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+    border-radius: 4px;
     text-decoration: none;
     background: #D9AC28 !important;
     border: none;
@@ -120,6 +118,7 @@ input[type="file"] {
 
 /*Personal details subheading for student details*/
 .personal-details {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-weight: bold;
     font-size: 28px;
     color: black;

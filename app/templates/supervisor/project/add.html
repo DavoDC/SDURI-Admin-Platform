@@ -1,0 +1,164 @@
+
+{% extends "templ/form-page.html" %}
+
+<!-- Heading -->
+{% block heading %}
+<h4>Add Project</h4>
+{% endblock %}
+
+<!--Questions-->
+{% block questions %}
+
+<p> 
+    <b>Main Supervisor's Title and Name</b> 
+    <br>
+    Please use 'Prof' or 'Dr'
+    <br>
+    (e.g. Prof John Smith)
+    <br>
+    <input type="text" name="main_supervisor" required>
+</p>
+
+
+<p> 
+    <b>Co-Supervisors</b>
+    <br>
+    If there are any co-supervisor(s), please list their name(s)
+    <br>
+    (e.g. Dr Mike Brown and Beth Doe PhD Candidate)
+    <br>
+    <input type="text" name="co_supervisor" required>
+</p>
+
+
+<p> 
+    <b>The Project's Title</b> 
+    <br>
+    <input type="text" name="title" required>
+</p>
+
+<p> 
+    <b>The Group or Lab</b> 
+    <i>(Optional)</i>
+    <br>
+    Please include link after a dash
+    <br>
+    (e.g. Optical + Biomedical Engineering Laboratory - http://obel.ee.uwa.edu.au/) 
+    <br>
+    <textarea name="proj_group" rows="1"></textarea>
+    <!--Not required-->
+</p>
+
+<p> 
+    <b>The Project Description</b>  
+    <br> 
+    Short and sharp is preferred as all the information needs to 
+    fit in a standard template page
+    <br>
+    <textarea name="proj_desc" rows="8" required></textarea>
+</p>
+
+<p> 
+    <b>What specific skills, knowledge or experience will 
+        the student need to complete the project?</b>
+    <br>
+    (i.e. Name specific programming skills like Java, 
+    or completion of a unit, 
+    <br>
+    such as statistical physics or introduction to Chemistry) 
+    <br>
+    <textarea name="skills" rows="5" required></textarea>
+</p>
+
+<p>
+    <b>Keywords</b>
+    <br>
+    Add no more than 5 keywords that best describe your project.
+    <br>
+    (e.g. Arts, Music, Instrument, Piano, Notes) 
+    <br>
+
+    <small>
+        This feature is to help students find projects as 
+        students from all faculties can see the projects. 
+        <br>
+        A student might be in the School of Music in 
+        their home university but a suitable project 
+        <br>
+        is offered from the Faculty of Engineering at UWA.
+    </small>
+    <br>
+
+    <input type="text" name="keywords" required>
+</p>
+
+<p>
+    <b>Contact Email</b>
+    <br>
+    This is <i>only</i> so students may ask 
+    questions regarding the project.
+    <br>
+    <i>
+        Please do not discuss acceptance into the program 
+        or agree to accept any student!!!
+    </i>
+    <br>
+    <input type="text" name="contact_email" required>
+</p>
+
+
+<p>
+    <b>Location</b>
+    <br>
+    Is this project done on Crawley campus? 
+    <br>
+    If no, please indicate where and 
+    how much time will be spent on and off campus. 
+    <br>
+    This is for accommodation arrangements. 
+    <br>
+    <textarea name="location" rows="2" required></textarea>
+</p>
+
+
+<p>
+    <b>University Specific</b>
+    <br>
+    If this project is specific to students from a specific university, 
+    please specify.
+    <br>
+    (e.g. WUN or MNU university). 
+    If left blank, the project will be open to all students.
+    <br>
+    <input type="text" name="specific_uni">
+    <!--Not required-->
+</p>
+
+<p>
+    <b>Program Length</b>
+    <br>
+    The standard length of the program is 8 weeks. 
+    <br>
+    If you need the student to stay beyond 8 weeks,
+    or give the option to do so, 
+    please specify a number of weeks. 
+    <br>
+    The maximum duration for a tourist VISA is 12 weeks. 
+    The student will still have to follow the program schedule. 
+    <br>
+    <input type="number" name="proj_weeks" 
+           placeholder="8" min="8" max="12" required>
+</p>
+
+
+<p>
+    <b>Maximum Number of Students</b>
+    <br>
+    What is the maximum number of students you will accept for this project? 
+    <br>
+    <input type="number" name="max_students" 
+           placeholder="1" min="1" max="50" required>
+</p>
+
+{% endblock %}
+

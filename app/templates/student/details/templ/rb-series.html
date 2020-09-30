@@ -1,0 +1,13 @@
+
+<!--Add normal radio button for each value-->
+{% for curval in vals %}
+{% with name=name, value=curval, hasLabel=true %}
+{% include "student/details/templ/rb.html" %}
+{% endwith %}   
+<br>
+{% endfor %}
+
+<!--Add custom field radio button -->
+{% with name=name, value="other_" + name, custom=true %}
+{% include "student/details/templ/rb.html" %}
+{% endwith %} 

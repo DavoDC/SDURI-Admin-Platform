@@ -8,20 +8,23 @@
     <!--Header for all pages-->
     {% block head %}
 
-    <!--Applies style.css to every page-->
-    <link rel="stylesheet" 
-          href="{{ url_for('static', filename='css/style.css') }}">
-
     <!--Adds favicon to every page-->
     <link rel="shortcut icon" 
           href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!--Add page/tab title-->
+    <title>{{ title }}</title>
+    
+    <!--Applies style.css to every page-->
+    <link rel="stylesheet" 
+          href="{{ url_for('static', filename='css/style.css') }}">
 
     <!--Logo-->
     <img src="{{ url_for('static', filename='images/uwa_logo.png') }}" 
          alt="UWA Logo" 
          style="max-width:18%; position:absolute;" >
 
-    <!--Title-->
+    <!--Global header-->
     <div style="text-align: center;">
         <h1>
             <a class="title-button" href="{{ url_for('index') }}">
@@ -29,8 +32,8 @@
         </h1>
     </div>
 
-    {% endblock %}
 
+    {% endblock %}
 
 
 </html>
