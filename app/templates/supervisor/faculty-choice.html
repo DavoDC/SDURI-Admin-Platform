@@ -2,6 +2,7 @@
 <!--Generate faculty id-->
 {% set fid %}{{ faculty.replace(",", "").replace(" ", "").strip() }}{% endset %}
 
+
 <!--Faculty-->
 <input 
     type="radio" 
@@ -13,6 +14,8 @@
 <label for="{{ fid }}_radio">
     {{ faculty }}
 </label>
+
+
 
 <!--School radio buttons-->
 <div id="{{ fid }}_schools" style="display: none;">
@@ -34,11 +37,31 @@
 </div>
 
 
+
 <!--Show schools of faculty-->
 <script type="text/javascript">
     function show{{ fid }}Schools()
     {
-        {{ fid }}_schools.style.display = "block";
+        // For all div elements
+        var divs = document.getElementsByTagName('div');
+        for(i = 1; i < divs.length; i++)
+        {
+            // Get div 
+            var curDiv = divs[i];
+            
+            // If div id is ours
+            if(curDiv.id === "{{ fid }}_schools")
+            {
+                // Show it
+                curDiv.style.display = "block";
+            }
+            else
+            {
+                // If it is not ours,
+                // hide it
+                curDiv.style.display = "none";
+            }
+        }
     }
 </script>  
 
