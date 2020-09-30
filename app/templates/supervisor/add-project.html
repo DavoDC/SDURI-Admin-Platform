@@ -6,7 +6,7 @@
 <form method="post" enctype="multipart/form-data">
 
     <p> 
-        <h4>Main Supervisor's title and name (Please use Prof or Dr) ie. Prof John Smith</h4>  <br>
+        Main Supervisor's title and name (Please use Prof or Dr) ie. Prof John Smith  <br>
         <textarea name="main_supervisor" rows="1" maxlength="50" required></textarea>
     </p>
 
@@ -78,11 +78,6 @@
         <button type="submit">Submit!!</button>
     </form>
 
-    <button type="submit" 
-    formaction=
-    "{{ url_for('add_project', username = current_user.name) }}">
-    Submit!!!
-    </button>
     
 </form>
 {% endblock %}

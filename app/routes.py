@@ -297,16 +297,12 @@ def single_project_apply():
 @app.route('/add-project/<username>', methods=['GET', 'POST'])
 @login_required
 def add_project(username):
-    # Generate path of question page
-    url = "supervisor/add-project.html"
 
     # Get current supervisor user_id
-    super_id = User.query.filter_by(name=username).first().id or 404
-    print(super_id)
+    super_id = User.query.filter_by(name=username).first().id or 404 
 
     # Get current supervisor
     cur_supervisor = Supervisor.query.filter_by(user_id=super_id).first()
-    print(cur_supervisor)
     # If there is no database row in Project List
     if not Project.query.filter_by(user_id=super_id).first():
 
@@ -319,7 +315,6 @@ def add_project(username):
 
     # If mode is post
     if request.method == "POST":
-        print("i got here")
         # Using "request" module, which is imported from the flask at the top,
         # this line gets all html form attributes: name and user input text
         # e.g. <input name="sample_name">user_input_text in a box or anything
@@ -332,19 +327,20 @@ def add_project(username):
             
             # Inserting data into the remaining columns of Student table
             setattr(cur_project, column_name, input_text)
-            
-        # Save files if needed
-        # save_file("eng_file", cur_supervisor)
-        # save_file("cv_file", cur_supervisor)
-        # save_file("transcr_file", cur_supervisor)
         
         # Commit to database
         db.session.commit()
-        print("I committed to the db")
 
-    # Render question page,
-    # with current and maximum page number
-    return render_template(url, num=1, max=1)
+    # Render page
+    return render_template("supervisor/add-project.html")
+
+@app.route('/edit-project/<username>', methods=['GET', 'POST'])
+@login_required
+def edit_project(username):
+
+    cur_user_projects = Project.query.filter_by(Project.user_id)
+
+    return render_template("supervisor/edit-project.html")
 
 # Logout page
 @app.route('/logout')

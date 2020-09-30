@@ -24,7 +24,7 @@
 
 <!--Edit Your Projects-->
 <h4>
-    <a class="hover-button" href="{{ url_for('project_list') }}"> 
+    <a class="hover-button" href="{{ url_for('edit_project', username = current_user.name) }}"> 
         Edit Your Projects </a> 
 </h4>
 
