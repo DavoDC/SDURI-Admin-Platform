@@ -2,7 +2,32 @@
 
 {% block content %}
 <!-- Pull all of my projects from the db -->
+{% if projects|length > 0 %}
+    {% for project in projects %}
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Project title</th>
+                <th>Main supervisor</th>
+                <th>Email</th>
+                <th>Keywords</th>
+            </tr>
+            <tr>
+                <td>{{project.title}}</td>
+                <td>{{project.main_supervisor}}</td>
+                <td>{{project.email}}</td>
+                <td>{{project.keywords}}</td>
+            </tr>
+            <!-- for title, main_supervisor, email, keywords in -->
+        
+            <!-- Next pull all the project from the database -->
+        </table>
 
+    {% endfor %}
+
+{% else %}
+<p>You don't have any projects</p>
+{% endif %}
 <!-- Select fields then edit -->
+
 
 {% endblock %}

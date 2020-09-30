@@ -338,9 +338,16 @@ def add_project(username):
 @login_required
 def edit_project(username):
 
-    cur_user_projects = Project.query.filter_by(Project.user_id)
+    # Get current supervisor user_id
+    super_id = User.query.filter_by(name=username).first().id or 404 
 
-    return render_template("supervisor/edit-project.html")
+    # Get current supervisor's projects
+    cur_user_projects = Project.query.filter_by(user_id=super_id).all()
+
+    num = len(cur_user_projects)
+
+
+    return render_template("supervisor/edit-project.html", num=num, projects = cur_user_projects)
 
 # Logout page
 @app.route('/logout')
