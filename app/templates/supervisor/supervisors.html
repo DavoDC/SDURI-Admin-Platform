@@ -17,14 +17,14 @@
 
 <!--Add project button-->
 <h4>
-    <a class="hover-button" href="{{ url_for('add_project') }}"> 
+    <a class="hover-button" href="{{ url_for('add_project', username = current_user.name) }}"> 
         Add Project </a> 
 </h4>
 
 
 <!--Edit Your Projects-->
 <h4>
-    <a class="hover-button" href="{{ url_for('project_list') }}"> 
+    <a class="hover-button" href="{{ url_for('edit_project', username = current_user.name) }}"> 
         Edit Your Projects </a> 
 </h4>
 

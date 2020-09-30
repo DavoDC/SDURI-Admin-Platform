@@ -1,0 +1,216 @@
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:26:49] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:26:58] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:26:58] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:26:59] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:00] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:00] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:01] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:03] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:03] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:04] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:06] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:06] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:07] "[37mGET /add-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:08] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:08] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:08] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:10] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:10] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:18] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:23] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:23] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:23] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:40] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:27:40] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:31] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[32mGET /admin HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/bootstrap/bootstrap3/swatch/default/bootstrap.min.css?v=3.3.5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/bootstrap/bootstrap3/css/bootstrap-theme.min.css?v=3.3.5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/admin/css/bootstrap3/admin.css?v=1.1.1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/admin/css/bootstrap3/submenu.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/admin/js/helpers.js?v=1.0.0 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/bootstrap/bootstrap3/js/bootstrap.min.js?v=3.3.5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/vendor/select2/select2.min.js?v=3.5.2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/vendor/moment.min.js?v=2.22.2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:48] "[37mGET /admin/static/vendor/jquery.min.js?v=3.3.1 HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routes.py", line 32, in favicon
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+NameError: name 'send_from_directory' is not defined
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:49] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:50] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/vendor/select2/select2.css?v=3.5.2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/vendor/bootstrap-daterangepicker/daterangepicker-bs3.css?v=1.3.22 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/vendor/select2/select2-bootstrap3.css?v=1.4.6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/admin/js/form.js?v=1.0.1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/admin/js/filters.js?v=1.0.0 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/admin/js/actions.js?v=1.0.0 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/vendor/bootstrap-daterangepicker/daterangepicker.js?v=1.3.22 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[37mGET /admin/static/bootstrap/bootstrap3/swatch/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routes.py", line 32, in favicon
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+NameError: name 'send_from_directory' is not defined
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:51] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:54] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:54] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routes.py", line 32, in favicon
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+NameError: name 'send_from_directory' is not defined
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:57] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:57] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:28:58] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:07] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:07] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:08] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:09] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:09] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:18] "[37mGET /add-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:30] "[37mPOST /add-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:33] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routes.py", line 32, in favicon
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+NameError: name 'send_from_directory' is not defined
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:35] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:35] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:36] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:37] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:37] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:41] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:41] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routes.py", line 32, in favicon
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+NameError: name 'send_from_directory' is not defined
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:51] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routes.py", line 32, in favicon
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+NameError: name 'send_from_directory' is not defined
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:29:51] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:27] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:30] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:30] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:31] "[37mGET /add-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:44] "[37mPOST /add-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:47] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routes.py", line 32, in favicon
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+NameError: name 'send_from_directory' is not defined
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:48] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:50] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:50] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:51] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:55] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:55] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:31:58] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:32:13] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:32:13] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:33:49] "[37mGET /add-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:33:54] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:33:54] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:33:59] "[37mGET /edit-project/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:34:00] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:34:00] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:35:18] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:35:19] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 10:35:20] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
