@@ -149,19 +149,19 @@ class Student(db.Model):
     ## English Requirements
     
     # Do they want a english program?
-    want_eng_prog = db.Column(db.String(64))
+    eng_prog = db.Column(db.String(64))
     
     # If they want a program, which one?
     eng_prog_choice = db.Column(db.String(128))
     
+    
     # Are they are a native speaker?
-    native = db.Column(db.String(64))
+    native_sp = db.Column(db.String(64))
+    
     
     # Additional information required from non-native speakers
-    # Test scores
-    ielts_test_sc = db.Column(db.String(128))
-    toefl_test_sc = db.Column(db.String(128))
-    other_test_sc = db.Column(db.String(128))
+    # Test name and score
+    test_sc = db.Column(db.String(128))
     
     # English test file name
     eng_file = db.Column(db.String(64))

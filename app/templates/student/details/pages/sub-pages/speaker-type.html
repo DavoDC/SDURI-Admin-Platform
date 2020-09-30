@@ -1,0 +1,164 @@
+
+<div id="tabs">
+
+    <!--Ask whether native or non-native-->
+    <div id="nav" class="question">
+        <label><b>Are you a native speaker?</b></label>
+        <p>
+            Yes
+            <input type="radio" id="native" name="native_sp"
+                   value="yes" class="div1" required/>
+        </p>
+        <p>
+            No
+            <input type="radio" id="native" name="native_sp"
+                   value="no" class="div2" required/>
+        </p>
+    </div>
+
+
+    <!--Show for native speakers-->
+    <div id="div1" class="tab">
+        <p>
+            Since you are native speaker,
+            no information about english competency tests is required.
+            <br>
+            You may proceed to the next question.
+        </p>
+    </div>
+
+
+    <!--Show for non native speakers-->
+    <div id="div2" class="tab">
+
+        <p> Please enter some additional information
+            about english competency tests </p>
+
+        <label><b>
+                Please select one test and enter your score for it
+            </b></label>
+        <br>
+
+        <!--To prevent unfocusable error,-->
+        <!--this will hold the null value-->
+        <input type="radio" name="test_sc" value=""
+               class="hide" checked="checked">
+
+        <!--Test score types-->
+        {% with type="IELTS" %}
+        {% include "student/details/templates/test-sc-but.html" %}
+        {% endwith %}
+        
+        {% with type="TOEFL" %}
+        {% include "student/details/templates/test-sc-but.html" %}
+        {% endwith %}
+        
+        {% with type="Other" %}
+        {% include "student/details/templates/test-sc-but.html" %}
+        {% endwith %}
+
+
+        <br>
+        <label><b>
+                Please upload your latest test results:
+            </b></label>
+        <br>
+        Please name your file in the format 'youruniversity_yourname_english'
+        without any spacing. (e.g. 'UWA_WangMeiMei_IELTS')
+        <input type="file" id="eng_file" name="eng_file" accept=".pdf">
+
+    </div>
+
+</div>
+
+
+
+
+<!-- CSS for hiding/showing tabs based on question-->
+<style>
+    .hide{
+        display:none;
+    }
+</style>
+
+<!-- JS for hiding/showing tabs based on question-->
+<script>
+
+    (function () {
+
+        // Initialize all elements with tab id
+        var tabs = document.getElementById('tabs');
+
+        // Initialize all elements with input tag
+        var inputs = tabs.getElementsByTagName('input');
+
+        // Set number of inputs to 2 (instead of inputs.length)
+        // Note: This only attaches the functions to first
+        // two input tags instead of question input tags
+        var inputNum = 2;
+
+        // Add click events to input tags
+        // For all input tags
+        for (var i = 0; i < inputNum; i++) {
+
+            // If input is valid
+            if (inputs[i] !== null)
+            {
+                // Add function
+                inputs[i].onclick = function () {
+                    hideTabs();
+                    showTab(this.className);
+                };
+            }
+        }
+
+        // Hide tabs upon page load
+        hideTabs();
+
+
+        /*
+         * Hide all tabs
+         */
+        function hideTabs() {
+
+            // Get all divs
+            var tab = tabs.getElementsByTagName('div');
+
+            // For all input tags
+            for (var i = 0; i <= inputNum; i++) {
+
+                // Check tab is defined to prevent errors
+                // Note: Only works with '!=' not '!=='
+                if (tab[i] != null) {
+
+                    // If class is tab
+                    if (tab[i].className === 'tab') {
+
+                        // Add hide to classname
+                        tab[i].className = tab[i].className + ' hide';
+                    }
+                }
+            }
+        }
+
+        /*
+         * Show the clicked tab
+         */
+        function showTab(tab) {
+
+            // Get tab element
+            var e = document.getElementById(tab);
+
+            // If element is valid
+            if (e !== null) {
+
+                // Set classname as tab
+                e.className = 'tab';
+            }
+        }
+    })();
+</script>
+
+
+
+

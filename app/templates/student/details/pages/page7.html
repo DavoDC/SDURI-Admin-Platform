@@ -7,45 +7,35 @@
 
 <h3> Long Answer Questions </h3>
 
-<!--Q25. in Qualtrics (for when I check that I've included all Qs)-->
-<p> 
-    <b>Q1.</b> 
-    Outline any previous research or laboratory experience that you have. 
-    <br>
-    Please name that research group and the leader of that research group 
-    at your home university. (max 100 words)
-    <br>
-    <textarea name="longQ1" rows="5" maxlength="1500" required></textarea>
-</p>
+
+{% with qnum=1, wordlim=100,
+lines=["Outline any previous research or laboratory experience that you have.",
+"Please name that research group and the leader of that research group
+at your home university."] %}
+{% include "student/details/templates/long-answer.html" %}
+{% endwith %}
 
 
-<!--Q24. in Qualtrics (for when I check that I've included all Qs)-->
-<p> 
-    <b>Q2.</b> 
-    Explain why your previous experience makes you suited to this project? 
-    <br>
-    In particular, address any prerequisites that have been 
-    outlined by the supervisor. (max 200 words)
-    <br>
-    <textarea name="longQ2" rows="10" maxlength="3000" required></textarea>
-</p>
-
-<!--Q28. in Qualtrics (for when I check that I've included all Qs)-->
-<p> 
-    <b>Q3.</b> 
-    Why are you interested in this program? (max 200 words)
-    <br>
-    <textarea name="longQ3" rows="10" maxlength="3000" required></textarea>
-</p>
+{% with qnum=2, wordlim=200,
+lines=[
+"Explain why your previous experience makes you suited to this project?",
+"In particular, address any prerequisites that
+have been outlined by the supervisor."] %}
+{% include "student/details/templates/long-answer.html" %}
+{% endwith %}
 
 
-<!--Q29. in Qualtrics (for when I check that I've included all Qs)-->
-<p> 
-    <b>Q4.</b> 
-    What are your future career plans? (max 200 words)
-    <br>
-    <textarea name="longQ4" rows="10" maxlength="3000" required></textarea>
-</p>
+{% with qnum=3, wordlim=200,
+lines=[ "Why are you interested in this program?"] %}
+{% include "student/details/templates/long-answer.html" %}
+{% endwith %}
+
+
+{% with qnum=4, wordlim=200,
+lines=[ "What are your future career plans?"] %}
+{% include "student/details/templates/long-answer.html" %}
+{% endwith %}
+
 
 
 {% endblock %}

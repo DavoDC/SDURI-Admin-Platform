@@ -1,0 +1,61 @@
+
+
+<!--Question-->
+<p>
+    <b>
+        Would you like to participate in 
+        the Optional English Language Program?
+    </b>
+    <br>
+    If you do, please choose which one. 
+</p>
+
+<!--Yes I want program-->
+<input type="radio" id="yes_prog" name="eng_prog" value="yes" required>
+<label for="eng-prog">Yes</label>
+
+<!--Program choices-->
+<select id="programs" name="eng_prog_choice">
+    <option value="">None</option>
+
+    <option value="SDU-Intensive-IELTS-ExamPP">
+        Summer Down Under Intensive IELTS Examination Preparation Program
+    </option>
+
+    <option value="10/20wkDirEP">10 or 20 Week Direct English Pathway
+    </option>
+
+    <option value="5wkELP">5 Week English Language Programs
+    </option>
+</select>
+<br>
+
+<!--No I don't want program-->
+<input type="radio" id="no_prog" name="eng_prog" value="no" required>
+<label for="eng-prog">No</label>
+
+
+<!-- JS for changing dropdown according to radio buttons-->
+<script>
+
+    // When radio button is selected
+    yes_prog.oninput = function () {
+
+        // > Enable dropdown
+        programs.disabled = false;
+
+        // > Require dropdown
+        programs.required = true;
+    };
+
+    // When radio button is selected
+    no_prog.oninput = function () {
+
+        // > Disable dropdown
+        programs.disabled = true;
+
+        // > Do not require dropdown
+        programs.required = false;
+    };
+
+</script>

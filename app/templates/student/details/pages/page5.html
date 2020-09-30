@@ -32,31 +32,11 @@
     </b></label>
 
 <br>
-<input type="radio" id="2" name="uni_years" value="2yrs" required/>
-<label for="2">2 Years</label>
 
-<br>
-<input type="radio" id="3" name="uni_years" value="3yrs" required/>
-<label for="3">3 Years</label>
-
-<br>
-<input type="radio" id="4" name="uni_years" value="4yrs" required/>
-<label for="4">4 Years</label>
-
-<br>
-<input type="radio" id="hon" name="uni_years" value="honours" required/>
-<label for="hon">Honours</label>
-
-<br>
-<input type="radio" id="mast" name="uni_years" value="masters" required/>
-<label for="mast">Masters</label>
-
-<br>
-{% with name="uni_years" %}
-{% include "student/details/templates/custom-rad-but.html" %}
+{% with name="uni_years", 
+vals=["2 Years", "3 Years", "4 Years", "Honours", "Masters"] %}
+{% include "student/details/templates/rb-series.html" %}
 {% endwith %}
-
-
 
 <br>
 <label><b>Awards received/Academic recognition </b></label>
@@ -64,7 +44,6 @@
 <br>
 <textarea id="awards" name="uni_awards" rows="3" cols="50" required>
 </textarea>
-
 
 
 {% endblock %}

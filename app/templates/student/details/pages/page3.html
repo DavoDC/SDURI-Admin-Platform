@@ -8,57 +8,56 @@
 <!-- Sub heading -->
 <label class="personal-details">Personal Details</label>
 
+
 <h4> Choose your Country of Birth: </h4>
 {% with name="birth_cntry" %}
-{% include "student/details/templates/country-selection.html" %}
+{% include "student/details/templates/country-sel.html" %}
 {% endwith %}
 
 
 <h4> Choose your Country of Citizenship: </h4>
 {% with name="citizen_cntry" %}
-{% include "student/details/templates/country-selection.html" %}
+{% include "student/details/templates/country-sel.html" %}
 {% endwith %}
 
 
 <h4> Home Address: </h4>
-<table id="address">
+<table id="address" style="text-align: left;">
     <tr>
-        <td class="label">Street &numero; and Address</td>
-        <td class="slimField">
-            <input class="field" name="street_addr" required/>
+        <td class="detLabel">Street &numero; and Address</td>
+        <td class="detField">
+            <input class="detInput" name="street_addr" required/>
         </td>
     </tr>
 
     <tr>
-        <td class="label">City</td>
-        <td class="wideField" colspan="3">
-            <input class="field" name="city_addr" required/>
+        <td class="detLabel">City</td>
+        <td class="detField">
+            <input class="detInput" name="city_addr" required/>
         </td>
     </tr>
 
     <tr>
-        <td class="label">State</td>
-        <td class="slimField">
-            <input class="field" name="state_addr" required/>
+        <td class="detLabel">State</td>
+        <td class="detField">
+            <input class="detInput" name="state_addr" required/>
         </td>
     </tr>
 
     <tr>
-        <td class="label">Postcode</td>
-        <td class="wideField">
-            <input class="field" name="postcode_addr" required/>
+        <td class="detLabel">Postcode</td>
+        <td class="detField">
+            <input class="detInput" name="postcode_addr" required/>
         </td>
     </tr>
 
     <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3">
-            <input class="field" name="cntry_addr" required/>
+        <td class="detLabel">Country</td>
+        <td class="detField">
+            <input class="detInput" name="cntry_addr" required/>
         </td>
     </tr>
 </table>
-</body>
 
-<form>
 
-    {% endblock %}
+{% endblock %}

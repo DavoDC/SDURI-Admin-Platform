@@ -25,17 +25,9 @@ from werkzeug.utils import secure_filename
 #from flask import jsonify
 #from werkzeug.urls import url_parse
 
-
-# Enable favicon support
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
-
-
 # Main page
-@app.route('/') # methods=['GET', 'POST'])
-@app.route('/index') #, methods=['GET', 'POST'])
+@app.route('/')
+@app.route('/index')
 def index():
     # If user is logged in
     if current_user.is_authenticated:
@@ -101,6 +93,7 @@ def register():
         # Set password
         user.set_user_password(form.password.data)
 
+        # SIMPLE ROLE SETTING TO BE REPLACED BY MANG
         # Set role according to new user's email
         # If email contains "@uwa.edu.au"
         if "@uwa.edu.au" in user.email:
@@ -110,6 +103,15 @@ def register():
             # Else If email contains "@student.uwa.edu.au"
             # Set user role to "Student"
             user.set_user_role("Student")
+        elif "@admin.com" in user.email:
+            # Else If email contains "@admin"
+            # Set user role to "Administrator"
+            user.set_user_role("Administrator")
+        else:
+            # Else for all other emails
+            # Give Student role by default
+            user.set_user_role("Student")
+            
 
         # Add user to database
         db.session.add(user)

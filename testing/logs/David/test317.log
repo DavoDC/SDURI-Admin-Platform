@@ -1,0 +1,28 @@
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:36] "[37mPOST /students/StudentTest/details/page7 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:36] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:39] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:41] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:48] "[37mPOST /students/StudentTest/details/page7 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:50] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:53:58] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:00] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:07] "[37mPOST /students/StudentTest/details/page7 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:10] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:10] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:17] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:33] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:33] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:38] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:39] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:50] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:51] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:53] "[37mPOST /students/StudentTest/details/page7 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:55] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:54:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:55:00] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading

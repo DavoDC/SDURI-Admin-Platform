@@ -5,8 +5,14 @@
 <!--Add custom parts-->
 {% block custom %}
 
+<!-- Admin interface button (Temporary) -->
+<h4>
+    <a class="hover-button" 
+       href="http://127.0.0.1:5000/admin/">
+        Admin Interface </a> 
+</h4>
+
 <!-- Test-->
-<br>
 <p> Printout of all user names: </p>
 <div>
     {% for user in users %}
