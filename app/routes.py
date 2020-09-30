@@ -296,9 +296,57 @@ def single_project_apply():
     return render_template("student/apply-for-project.html");
 
 # Supervisor add project (draft)
-@app.route('/add-project')
-def add_project():
-    return render_template("supervisor/add-project.html");
+@app.route('/add-project/<username>', methods=['GET', 'POST'])
+@login_required
+def add_project(username):
+
+    # Get current supervisor user_id
+    super_id = User.query.filter_by(name=username).first().id or 404 
+
+    # Get current supervisor
+    cur_supervisor = Supervisor.query.filter_by(user_id=super_id).first()
+    # If there is no database row in Project List
+    if not Project.query.filter_by(user_id=super_id).first():
+
+        # Initialize row and commit
+        db.session.add(Project(super_id))
+        db.session.commit()
+        print("initialised row")
+
+    cur_project = Project.query.filter_by(user_id=super_id).first()
+
+    # If mode is post
+    if request.method == "POST":
+        # Using "request" module, which is imported from the flask at the top,
+        # this line gets all html form attributes: name and user input text
+        # e.g. <input name="sample_name">user_input_text in a box or anything
+        # The variable "data" stores name and user_input_text in dictionary format
+        data = request.form
+
+        # The values of name attributes in html form, sample_name above in this case,
+        # must be same with the names of columns in the database.
+        for column_name, input_text in data.items():
+            
+            # Inserting data into the remaining columns of Student table
+            setattr(cur_project, column_name, input_text)
+        
+        # Commit to database
+        db.session.commit()
+
+    # Render page
+    return render_template("supervisor/add-project.html")
+
+@app.route('/edit-project/<username>', methods=['GET', 'POST'])
+@login_required
+def edit_project(username):
+
+    # Get current supervisor user_id
+    super_id = User.query.filter_by(name=username).first().id or 404 
+
+    # Get current supervisor's projects
+    cur_user_projects = Project.query.filter_by(user_id=super_id).all()
+
+    return render_template("supervisor/edit-project.html", projects = cur_user_projects)
 
 # Logout page
 @app.route('/logout')
