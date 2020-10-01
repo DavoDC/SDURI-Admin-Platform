@@ -24,11 +24,19 @@ class User(UserMixin, db.Model):
     # Email
     email = db.Column(db.String(128), index=True, unique=True)
     
+    # Confirmed
+    confirmed = db.Column(db.Boolean, nullable=False, default=False)
+    
     # Password 
     password = db.Column(db.String(128))
     
     # Role (account type)
     role = db.Column(db.String(32))
+    
+    registered_on = db.Column(db.DateTime, nullable=False)
+    
+    confirmed_on = db.Column(db.DateTime, nullable=True)
+    password_reset_token = db.Column(db.String, nullable=True)
 
     # Methods
     def set_user_password(self, new_password):
