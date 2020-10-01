@@ -47,5 +47,5 @@ from app import routes
 from app import models
 
 # Start logging
-# logging.start_logging()
+logging.start_logging()
 
