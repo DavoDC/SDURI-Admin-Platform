@@ -30,6 +30,9 @@ admin = Admin(app, name='Admin', template_mode='bootstrap3')
 from app.auth import bp as auth_bp
 app.register_blueprint(auth_bp, url_prefix='/auth')
 
+from app.myadmin import bp as myadmin_bp
+app.register_blueprint(myadmin_bp, url_prefix='/myadmin')
+
 with app.app_context():
     if db.engine.url.drivername == 'sqlite':
         migrate.init_app(app, db, render_as_batch=True)
