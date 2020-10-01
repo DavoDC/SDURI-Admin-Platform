@@ -5,17 +5,20 @@
 <!-- Specific CSS goes HERE  -->
 {% block stylesheets %}
 {{super()}}
+
 {% endblock stylesheets %}
 
-{% block header_scripts %}
-{{ super()}}
-{% endblock %}
+<!-- Font Awesome JS -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+  integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+  integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
 {% block content %}
 {{super()}}
 <br>
 
-<div class="container" style="justify-content: center;">
+<div class="row">
   <div class="col-md-12">
     <div class="jumbotron p-3">
       {% with messages = get_flashed_messages() %}
@@ -33,115 +36,60 @@
       {% endwith %}
 
      
-      <div class="row">
-        <div class="col">
-        <p class="btn btn-link btn-xs"><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
-                data-target="#modalAddUser"><i class="fa fa-user-plus"></i></a></p>
-        </div>
-    
-        <!--Dropdown primary-->
-        <div class="col dropdown">
-
-          <!--Trigger-->
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
-
-          <!--Menu-->
-          <div class="dropdown-menu dropdown-primary">
-            <a class="dropdown-item" href="{{url_for('myadmin.display_users', page_num=1,input_ppage=3)}}">3 Users per page</a>
-            <a class="dropdown-item" href="{{url_for('myadmin.display_users', page_num=1,input_ppage=10)}}">10 Users per page</a>
-            <a class="dropdown-item" href="{{url_for('myadmin.display_users', page_num=1,input_ppage=20)}}">20 Users per page</a>
-            <a class="dropdown-item" href="{{url_for('myadmin.display_users', page_num=1,input_ppage=99999999)}}">All Users</a>
-          </div>
-        </div>
-        <div class="col">
-            <input type="text" id="search" placeholder="Type to search">
-          
-        </div>
-      </div>
-        
       
-      
-        <!-- <table class="table table-hover table-grey" > -->
-        <!-- <table id="dtHorizontalVerticalExample" class="table table-striped table-bordered table-sm " cellspacing="0"
-        width="100%"> -->
-      <div class="row" style="width: 100%">
-        <form method="POST" style="width: 100%; padding: 10px"> 
-          <table id="users_table" cellspacing="0" width="100%" data-toggle="table" data-flat="true" class="table table-hover table-grey">
-          <!-- <table id="users_table"  class="table" 
-                cellspacing="0" width="100%" style="width:100%"> -->
-            <thead>
-              <tr>
-                <th><input type="checkbox" id="checkall" /></th>
-                <th data-sortable="true">Id</th>
-                <th data-sortable="true">Name</th>
-                <th data-sortable="true">Email</th>           
-                <th data-sortable="true">Confrimed</th>
-                <th data-sortable="true">Role</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for row in users.items %}
-                <tr>
-                  <td><input type="checkbox" name="mycheckbox" value="{{ row.id}}" class="checkthis" /></td>
-                  <td> {{ row.id}}</td>
-                  <td> {{ row.name}}</td>
-                  <td> {{ row.email}}</td>
-                  <td> {{ row.confirmed}}</td>
-                  <td> {{ row.role }}</td>
-                  <td>
+      <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
+              data-target="#modalAddUser">Add new user</a></p>
+      <table class="table table-hover table-grey">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>           
+            <th>Confrimed</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in users.items %}
+            <tr>
+              <td> {{ row.id}}</td>
+              <td> {{ row.name}}</td>
+              <td> {{ row.email}}</td>
+              <td> {{ row.confirmed}}</td>
+              <td> {{ row.role }}</td>
+              <td>
 
-                    <!-- Buttons to trigger modals -->
-                  
-                    <a  href="/myadmin/update/{{ row.id }}" class="btn btn-primary btn-xs" data-toggle="modal"
-                      data-target="#modaledit{{row.id}}"><i class="fa fa-edit"></i></a>
-                  
-                  </td>
-                  <td>
-                    
-                    <a href="{{ url_for('myadmin.delete', id=row.id) }}  " class="btn btn-danger btn-xs"
-                      onclick="return confirm('Are You Sure To Delete ?')"><i class="fa fa-trash"></i></a>
-                  </td>
-                </tr>
+                <!-- Buttons to trigger modals -->
+                <a href="/myadmin/update/{{ row.id }}" class="btn btn-warning btn-xs" data-toggle="modal"
+                  data-target="#modaledit{{row.id}}">Edit</a>
+                <a href="{{ url_for('myadmin.delete', id=row.id) }}  " class="btn btn-danger btn-xs"
+                  onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
+              </td>
+            </tr>
 
 
-                <!-- Modal Edit User-->
-                <div id="modaledit{{row.id}}" class="modal fade" role="dialog">
-                  {% include './modaledit_user.html' %}
-                </div> <!-- end: modaledit user -->
+            <!-- Modal Edit User-->
+            <div id="modaledit{{row.id}}" class="modal fade" role="dialog">
+              {% include './modaledit_user.html' %}
+            </div> <!-- end: modaledit user -->
 
-                <!-- Modal Edit User-->
-                <div id="modalAddUser" class="modal fade" role="dialog">
-                  {% include './modalAddUser.html' %}
-                </div> <!-- end: modaledit user -->
+            <!-- Modal Edit User-->
+            <div id="modalAddUser" class="modal fade" role="dialog">
+              {% include './modalAddUser.html' %}
+            </div> <!-- end: modaledit user -->
 
-              {% endfor %}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td></td>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <!-- <th>Password</th> -->
-                <th>Confrimed</th>
-                <th>Role</th>
-              </tr>
-            </tfoot>
-          </table>
-          <input type="submit" name="Delete_All_Selected" formaction="{{url_for('myadmin.delete_selected') }}" value="Delete All Selected" class="btn btn-primary">
-          <input type="submit" name="email_selected" formaction="{{url_for('myadmin.multiple_emails') }}" value="Email Selected User(s)" class="btn btn-primary">
-        
-        
-        
-          <br/>
-          {% if msg %}
-          <div class="alert alert-danger" role="alert">{{ msg }}</div>
-          {% endif %}
-        </form> 
-      </div>
+          {% endfor %}
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <!-- <th>Password</th> -->
+            <th>Confrimed</th>
+          </tr>
+        </tfoot>
+      </table>
     </div>
 
     <ul class="pagination">
@@ -181,71 +129,4 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 {{super()}}
-<script>
-  $(document).ready(function () {
-  $('#dtHorizontalVerticalExample').DataTable({
-  "scrollX": true,
-  "scrollY": 200,
-  });
-  $('.dataTables_length').addClass('bs-select');
-
-
-
-
-  // delete button
-  $("#users_table #checkall").click(function () {
-        if ($("#users_table #checkall").is(':checked')) {
-            $("#users_table input[type=checkbox]").each(function () {
-                $(this).prop("checked", true);
-            });
- 
-        } else {
-            $("#users_table input[type=checkbox]").each(function () {
-                $(this).prop("checked", false);
-            });
-        }
-    });
-     
-    $("[data-toggle=tooltip]").tooltip();
-  });
-
-  
-</script>
-<script type="text/javascript"> 
-  function handleSelect(elm){ 
-    window.location = url_for('display_per_page', ppage=elm.value);
-  } 
-</script> 
-
-// Table searching
-
-<!-- <script>
-  $('#users_table').DataTable({
-
-    "language":{
-            "decimal": ",",
-            "thousands": ".",
-            // "lengthMenu": "Display _MENU_",
-            "lengthMenu": "", // "_MENU_",
-            "zeroRecords": "Nothing found - sorry",
-            "info": "_PAGE_ of _PAGES_",
-            "infoEmpty": "No records available",
-            "infoFiltered": "(filtered from _MAX_ total records)"
-          },
-  }); 
-  var $rows = $('#users_table tr');
-  $('#search').keyup(function() {
-    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase().split(' ');
-
-    $rows.hide().filter(function() {
-      var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-      var matchesSearch = true;
-      $(val).each(function(index, value) {
-        matchesSearch = (!matchesSearch) ? false : ~text.indexOf(value);
-      });
-      return matchesSearch;
-    }).show();
-  });
-</script> -->
-
 {% endblock javascripts %}

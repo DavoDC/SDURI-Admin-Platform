@@ -7,67 +7,41 @@
 
     <!-- Specific Page CSS goes HERE -->
     {% block stylesheets %}
-    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.jqueryui.min.css" rel="stylesheet">
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/admin-assets/admin_css.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.semanticui.min.css" rel="stylesheet">
-
-    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.foundation.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
-    
-    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/tabulator-tables@4.8.1/dist/css/tabulator.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/datatables.mark.js/2.0.0/datatables.mark.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css" rel="stylesheet">
-    <link href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css" rel="stylesheet">
-
     {% endblock stylesheets %}
 
-    {% block header_scripts %}
-      <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    {% endblock header_scripts %}
-
-    
     <title>{% block title %}{% endblock %} </title>
-    </head>
+  </head>
   <body style="margin: auto; padding: 50px;">
     <header>
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
 
           <div class="navbar-header">
-         
-          <a class="navbar-brand" href="{{url_for('myadmin.admin_home')}}"><i class="fa fa-home fa-fw"></i> Admin</a>
-          <a class="navbar-brand" href="{{url_for('myadmin.display_users', page_num=1)}}"><i class="fa fa-users fa-fw"></i> All Users</a>
-          <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Students</a>
-          <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
-          <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Preferences</a>
-          <!-- </div>end .navbar-header -->
+            <a class="navbar-brand" href="{{url_for('myadmin.admin_home')}}"><i class="fa fa-home fa-fw"></i> Admin</a>
+            <a class="navbar-brand" href="{{url_for('myadmin.display_users', page_num=1)}}"><i class="fa fa-users fa-fw"></i> All Users</a>
+            <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Students</a>
+            <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
+            <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Preferences</a>
+            <!-- </div>end .navbar-header -->
 
-        
-          <!-- <div class="pull-right" style="float: right; rigth-margin:0"> -->
-            <div>
-            <ul class="dropdown btn">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-circle fa-fw" style='color:green'></i>{{ current_user.name }}<span class="caret"></span></a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li class="btn"><span class="text-muted small">{{ current_user.name}}</span></li>
-                <!-- <li classs="btn"><span class="text-muted small">{{current_user.email}}</span></li> -->
-                <li><a class="btn btn-default btn-sm" href="#"><i class="fa fa-wrench fa-fw"></i>Profile</a></li>
-                <li><a class="btn btn-default btn-sm" href="{{url_for('auth.logout')}}"><i class="fa fa-sign-out fa-fw"></i>Sign Out</a></li>
+          
+            <div class="pull-right" style="float: right; rigth-margin:0">
+      
+              <ul class="dropdown btn">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-fw" style='color:green'></i>{{ current_user.name }}<span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="btn"><span class="text-muted small">{{ current_user.name}}</span></li>
+                  <!-- <li classs="btn"><span class="text-muted small">{{current_user.email}}</span></li> -->
+                  <li><a class="btn btn-default btn-sm" href="#"><i class="fa fa-wrench fa-fw"></i>Profile</a></li>
+                  <li><a class="btn btn-default btn-sm" href="{{url_for('logout')}}"><i class="fa fa-sign-out fa-fw"></i>Sign Out</a></li>
+                </ul>
               </ul>
-            </ul>
 
-          </div>
+            </div>
 
           </div><!-- end .navbar-header -->
           
@@ -89,30 +63,36 @@
       </footer>
     </div>
 
-    {% block javascripts %}
+      
 
+    <!-- Specific Page JS goes HERE -->
+    {% block javascripts %}
+    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.semanticui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-
-     <!-- Table sorting -->
-    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/tabulator<-tables@4.8.1/dist/js/tabulator.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/plug-ins/1.10.13/features/mark.js/datatables.mark.js"></script>
-    <script src= "https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
-
+    
+      <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    
+    <script>
+      $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+      });
+    </script>
+    <script>
+      if ($('.group_call_to_action_aside').is(':empty')) { 
+        $('.group_call_to_action_aside').remove();
+        } 
+    </script>
     {% endblock javascripts %}
 
-
- </body>
+  </body>
 
 </html>
