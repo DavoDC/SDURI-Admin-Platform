@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- Specific Page CSS goes HERE -->
+    {% block stylesheets %}
+
+    {% endblock stylesheets %}
+
+    {% block header_scripts %}
+      <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    {% endblock header_scripts %}
+
+    
+    <title>{% block title %}{% endblock %} </title>
+    </head>
+  <body style="margin: auto; padding: 50px;">
+    <header>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+
+          <div class="navbar-header">
+         
+         
+          <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Students</a>
+          <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
+          <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Preferences</a>
+          <!-- </div>end .navbar-header -->
+
+        
+          <!-- <div class="pull-right" style="float: right; rigth-margin:0"> -->
+            <div>
+            <ul class="dropdown btn">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user-circle fa-fw" style='color:green'></i>{{ current_user.name }}<span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li class="btn"><span class="text-muted small">{{ current_user.name}}</span></li>
+                <!-- <li classs="btn"><span class="text-muted small">{{current_user.email}}</span></li> -->
+                <li><a class="btn btn-default btn-sm" href="#"><i class="fa fa-wrench fa-fw"></i>Profile</a></li>
+                <li><a class="btn btn-default btn-sm" href="{{url_for('auth.logout')}}"><i class="fa fa-sign-out fa-fw"></i>Sign Out</a></li>
+              </ul>
+            </ul>
+
+          </div>
+
+          </div><!-- end .navbar-header -->
+          
+
+        </div>
+      </nav><!-- end .navbar -->
+    </header>
+
+   
+        
+        
+    <!-- Page Content -->
+    <div class="content" > 
+      {% block content %}
+        <h3> Hi, {{current_user.name}}</h3>
+      {% endblock content %}  
+      <footer>
+        {% include 'includes/footer.html' %}
+      </footer>
+    </div>
+
+    {% block javascripts %}
+
+    {% endblock javascripts %}
+
+
+ </body>
+
+</html>
