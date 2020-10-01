@@ -281,29 +281,3 @@ admin.add_view(MyAdminModelView(Student, db.session))
 admin.add_view(MyAdminModelView(Supervisor, db.session))
 admin.add_view(MyAdminModelView(Project, db.session))
 admin.add_view(MyAdminModelView(Preference, db.session))
-
-# # Add views
-# # admin.add_view(UserAdmin(User, db.session))
-# # admin.add_view(CustomView(Page, db.session))
-# admin = Admin(app, name='Home', template_mode='bootstrap3')
-
-# admin.add_view(MyAdminModelView(QuizzMarks, db.session))
-# admin.add_view(MyAdminModelView(Role, db.session))
-# admin.add_view(MyAdminModelView(Quiz, db.session))
-# admin.add_view(MyAdminModelView(quizQuestions, db.session))
-# admin.add_view(MyAdminModelView(quizAnswers, db.session))
-# admin.add_view(MyAdminModelView(quizAttempt, db.session))
-# admin.add_view(MyAdminModelView(quizOptions, db.session))
-
-# admin.add_view(UserView(User, db.session, category="Team"))
-
-# # Customized admin interface
-# class CustomView(ModelView):
-#     list_template = 'list.html'
-#     create_template = 'create.html'
-#     edit_template = 'edit.html'
-
-
-# class UserAdmin(CustomView):
-#     column_searchable_list = ('name',)
-#     column_filters = ('name', 'email')
