@@ -18,12 +18,6 @@ def admin_home():
   usersFromDB = User.query.all()
   return render_template('home.html', title="Administrator", users=usersFromDB)
 
-<<<<<<< HEAD
-@bp.route('/delete/<id>/', methods = ['GET', 'POST'])
-def delete(id):
-  pass
-@bp.route('/display/users/page/<int:page_num>', methods=['GET', 'POST']) # , defaults={'input_ppage': 5})
-=======
 @bp.route('/update', methods = ['GET', 'POST'])
 def update():
   # request.form = ImmutableMultiDict([('id', '2'), ('name', 'supervisor111'), ('email', 'super1@supers.com')])
@@ -56,7 +50,6 @@ def delete(id):
   return redirect(url_for('myadmin.display_users', page_num=1))
 
 @bp.route('/display/users/all/<int:page_num>', methods=['GET', 'POST'])
->>>>>>> 05326f12293217d7ed3eeb17a0933f208d088dd2
 def display_users(page_num):
   usersFromDB = User.query.paginate(per_page=2, page=page_num, error_out=True)
   # usersFromDB = user_serializer.dump(userFromDB.items)
