@@ -56,6 +56,9 @@ class User(UserMixin, db.Model):
 
     def set_user_email(self, new_email):
         self.email = new_email
+    
+    def set_user_confirmed(self, true_or_false):
+        self.confirmed = true_or_false
 
     def __repr__(self):
         return '<User {}>'.format(self.name)
