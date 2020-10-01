@@ -22,6 +22,9 @@ def admin_home():
   usersFromDB = User.query.all()
   return render_template('home.html', title="Administrator", users=usersFromDB)
 
+@bp.route('/delete/<id>/', methods = ['GET', 'POST'])
+def delete(id):
+  pass
 @bp.route('/display/users/page/<int:page_num>', methods=['GET', 'POST']) # , defaults={'input_ppage': 5})
 def display_users(page_num):
   print("page_num: ", page_num)
@@ -38,3 +41,36 @@ def display_users(page_num):
   # usersFromDB = user_serializer.dump(userFromDB.items)
 
   return render_template('users.html', title="Administrator", users=usersFromDB)
+
+@bp.route('/delete_selected', methods=['GET', 'POST'])
+def delete_selected():
+  pass
+
+@bp.route('/add/user', methods=['GET', 'POST'])
+def add_user():
+  data = request.form
+  flash_msg = ""
+  form = RegistrationForm()
+  if request.method == 'POST':
+    print("data: ", data)
+    user = User(name=data['name'],
+                email=data['email'],
+                confirmed=False,
+                password='password', # Must send password reset email
+                registered_on=date.today(),
+                role=data['role'])
+    db.session.add(user)
+    db.session.commit()
+    token = generate_confirmation_token(user.email)
+    confirm_url = url_for('auth.confirm_email', token=token, _external=True)
+    html = render_template('/auth/activate.html', confirm_url=confirm_url)
+    subject = "Please confirm your email and reset your password"
+    email.send_email(user.email, subject, html)
+    flash_msg = "Email has been sent to the new user"
+  flash(flash_msg)
+  return redirect(url_for('myadmin.display_users', page_num=1))
+
+@bp.route('/multiple_emails', methods=['GET', 'POST'])
+def multiple_emails():
+  pass
+  
