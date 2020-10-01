@@ -21,3 +21,20 @@ def admin_home():
   # templates/myadmin/index.html
   usersFromDB = User.query.all()
   return render_template('home.html', title="Administrator", users=usersFromDB)
+
+@bp.route('/display/users/page/<int:page_num>', methods=['GET', 'POST']) # , defaults={'input_ppage': 5})
+def display_users(page_num):
+  print("page_num: ", page_num)
+  input_ppage=3 # default value
+  print("request.args: ", request.args)
+  print("len(request.args): ", len(request.args))
+  # Typecast from string to int
+  input_ppage = input_ppage
+  if request.method == "GET" and len(request.args) != 0 and request.args != None:
+    input_ppage = int(request.args.get('input_ppage'))
+    print("request.args.get(input_ppage): ", request.args.get('input_ppage'))
+  print("inpu_ppage, page_num: ", input_ppage, page_num)
+  usersFromDB = User.query.paginate(per_page=input_ppage, page=page_num, error_out=True)
+  # usersFromDB = user_serializer.dump(userFromDB.items)
+
+  return render_template('users.html', title="Administrator", users=usersFromDB)
