@@ -1,0 +1,49 @@
+
+<!-- Extend page template -->
+{% extends "student/details/templates/page.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<h3> University </h3>
+
+<label><b>University name (with abbreviation in brackets)</b></label>
+<label>(e.g. University of Western Australia (UWA))</label>
+<br>
+<input type="text" id="uni" name="uni_name" value="" required/>
+
+
+<br>
+<label><b>Major(s)</b></label>
+<br>
+<input type="text" id="majors" name="uni_majors" value="" required/>
+
+
+<br>
+<label><b>GPA (if applicable)</b></label>
+<br>
+<input type="text" id="gpa" name="uni_gpa" value="" required/>
+
+
+
+<br>
+<label><b>
+        How many years of university study would you have completed by 1 July 2020? 
+    </b></label>
+
+<br>
+
+{% with name="uni_years", 
+vals=["2 Years", "3 Years", "4 Years", "Honours", "Masters"] %}
+{% include "student/details/templates/rb-series.html" %}
+{% endwith %}
+
+<br>
+<label><b>Awards received/Academic recognition </b></label>
+(i.e Scholarship, Dean's list, School of Gifted Young)
+<br>
+<textarea id="awards" name="uni_awards" rows="3" cols="50" required>
+</textarea>
+
+
+{% endblock %}

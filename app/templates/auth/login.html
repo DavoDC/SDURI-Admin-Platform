@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 5%;">
+
+    <!--Title-->
+    <h4>Login</h4>
+
+    <!--Fields-->
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}<br>
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }} <br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+        <ul style="list-style-type:none;">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        </p>
+
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <h3 class="signIn">{{ form.submit() }}</h3>
+
+    </form>
+</div>
+
+{% endblock %}

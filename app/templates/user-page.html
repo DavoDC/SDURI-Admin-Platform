@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="text-align: center; margin-top: 5%;"> 
+
+    <!--Welcome user-->
+    <h2>Welcome {{ current_user.name }}</h2>
+
+    <!--Custom parts-->
+    {% block custom %}{% endblock %}
+	
+	<!-- View all projects button-->
+	<br> 
+    <h4>
+        <a class="hover-button" href="{{ url_for('project_list') }}"> 
+            View All Projects </a> 
+    </h4>
+
+    <!--Logout link -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+</div>
+
+{% endblock %}

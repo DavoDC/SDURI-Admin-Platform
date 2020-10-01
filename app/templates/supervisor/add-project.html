@@ -1,0 +1,84 @@
+
+<!-- Extend page template -->
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+
+    <p> 
+        Main Supervisor's title and name (Please use Prof or Dr) ie. Prof John Smith  <br>
+        <textarea name="main_supervisor" rows="1" maxlength="50" required></textarea>
+    </p>
+
+
+    <p> If there are any co-supervisor(s) please list their name (ie. Dr Mike Brown and Beth Doe PhD Candidate)<br>
+        <textarea name="co_supervisor" rows="6" maxlength="50" required></textarea>
+    </p>
+
+
+    <p> Your project title <br>
+        <textarea name="title" rows="1" maxlength="50" required></textarea>
+    </p>
+
+    <p> Your group/lab (optional) include your link separately (ie. Optical+Biomedical Engineering Laboratory - http://obel.ee.uwa.edu.au/) <br>
+        <textarea name="school" rows="3" maxlength="50" required></textarea>
+    </p>
+
+    <p> Your project description (short and sharp preferred as all the information needs to fit in a standard template page) <br>
+        <textarea name="description" rows="20" maxlength="70" required></textarea>
+    </p>
+
+    <p> 
+        What specific skills, knowledge or experience will the student need to complete the project? (i.e. Name specific programming skills like JAVA,
+        or completion of a unit, such as statistical physics or introduction to Chemistry) <br>
+        <textarea name="skills" rows="8" maxlength="50" required></textarea>
+
+    </p>
+
+    <p>
+        No more than 5 keywords that best describe your project (ie. Arts, Music, Instrument, Piano, Notes) This feature is to help students find projects as all 
+        faculties are invited, maybe a student might be in School of Music in 
+        their home university but a suitable project is offered from the Faculty of Engineering at UWA for example <br>
+        <textarea name="keywords" rows="1" maxlength="50" required></textarea>
+    </p>
+
+    <p>
+        Contact email (if students have any questions regarding the project ONLY. PLEASE DO NOT DISCUSS 
+        ACCEPTANCE INTO THE PROGRAM OR AGREE TO ACCEPT ANY STUDENT) <br>
+        <textarea name="email" rows="1" maxlength="50" required></textarea>
+    </p>
+
+
+    <p>
+        Is this project done on Crawley campus? (If no, please indicate where and how much time will be spent on and off campus). 
+        This is for accommodation arrangements. <br>
+        <textarea name="campus" rows="1" maxlength="80" required></textarea>
+    </p>
+
+
+    <p>
+        If this project is specific to students from a specific university, WUN or MNU university, please specify. If 
+        left blank, the project will be open to all students <br>
+        <textarea name="place" rows="5" maxlength="50"></textarea>
+    </p>
+
+    <p>
+        Standard length of program is 8 weeks. If you need the student to stay beyond 8 weeks or give the option to do so, please specify number of weeks. Maximum for a tourist VISA is 12 weeks. 
+        Student will still have to follow the program schedule. <br>
+        <textarea name="length" rows="3" maxlength="50" required></textarea>
+    </p>
+
+
+    <p>
+        How many students (max) will you accept for this project? <br>
+        <textarea name="total" rows="1" maxlength="10" required></textarea>
+    </p>
+
+    <form action="{{ url_for('add_project', username = current_user.name) }}">
+        <button type="submit">Submit!!</button>
+    </form>
+
+    
+</form>
+{% endblock %}
+

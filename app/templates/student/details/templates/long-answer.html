@@ -1,0 +1,83 @@
+
+<p>
+    <!--Question heading-->
+    <b> Q{{ qnum }}. </b>
+    <br>
+
+    <!--Add question lines-->
+    {% for line in lines %}
+    {{ line }}
+    <br>
+    {% endfor %}
+
+    <!--Word count-->
+    <small>
+        <span id="q{{ qnum }}wclabel">
+            <label> Word Count: </label>
+            <label id="q{{ qnum }}wc">0</label>/{{ wordlim }}
+        </span>
+    </small>
+    <br>
+
+    <!--Text area-->
+    <textarea id="longQ{{ qnum }}ta" name="longQ{{ qnum }}"
+              rows="8"
+              oninput="processQ{{ qnum }}Input(this)"
+              required></textarea>
+</p>
+
+
+
+<!--JS for word count-->
+<script>
+
+    /**
+     * Process text area input
+     *
+     * @param {type} txtarea
+     * @return {.txtarea.value@call;split.length|.list@call;filter.length}
+     */
+    function processQ{{ qnum }}Input(textarea) {
+
+    // Get word count
+    var count = getWordCount(textarea);
+    // Update label
+    q{{ qnum }}wc.innerHTML = count;
+    // If word count is more than limit
+    if (count > {{ wordlim }})
+    {
+    // Correct word count
+    q{{ qnum }}wc.innerHTML = {{ wordlim }};
+    // Prevent user from entering more
+    var text = textarea.value;
+    text = text.substring(0, text.length - 1);
+    textarea.value = text;
+    }
+    }
+
+    /**
+     * Get word count of given text area
+     */
+    function getWordCount(textarea)
+    {
+    // Split by space
+    var list = textarea.value.split(' ');
+    // Remove words that are just empty strings
+    list = list.filter(function (el) {
+    return el !== null && el.trim() !== '';
+    });
+    // Return word count
+    return list.length;
+    }
+</script>
+
+<!--Disable paste-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#longQ{{ qnum }}ta').bind('paste',function(e) {
+    e.preventDefault();
+    alert('Paste is disabled');
+  });
+});
+</script>

@@ -1,0 +1,34 @@
+
+<!-- Extend page template -->
+{% extends "student/details/templates/page.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<!-- Sub heading -->
+<label class="personal-details">Personal Details</label>
+
+<!--Title-->
+<h4> Title: </h4>
+
+{% with name="title", vals=["Mr", "Ms"] %}
+{% include "student/details/templates/rb-series.html" %}
+{% endwith %}
+
+
+<!--Gender-->
+<h4> Gender: </h4>
+
+{% with name="gender", vals=["Male", "Female"] %}
+{% include "student/details/templates/rb-series.html" %}
+{% endwith %}
+
+
+<!--DOB-->
+<h4> Date of Birth: </h4>
+<input type="date" id="dob" name="dob" required>
+<label for="date">(dd/mm/yyyy)</label>
+
+
+{% endblock %}
+

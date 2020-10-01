@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<body class="container">
+
+    <!--Buttons-->
+    <div class="nav-pills" style="text-align: center">
+
+        <h2><a class="hover-button" href="{{ url_for('login') }}">
+                Login</a></h2>
+        <br>
+        <h2><a class="hover-button" href="{{ url_for('register') }}">
+                Register</a> </h2>
+    </div>
+
+    <!--Messages-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+</body>
+
+
+{% endblock %}
+

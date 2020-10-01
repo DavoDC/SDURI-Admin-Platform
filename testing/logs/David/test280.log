@@ -1,0 +1,9 @@
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 10:42:56] "[33mGET /student/StudentTest HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 10:42:56] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 10:42:58] "[33mGET /student/StudentTest HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 10:42:58] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 10:43:02] "[37mGET /students/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

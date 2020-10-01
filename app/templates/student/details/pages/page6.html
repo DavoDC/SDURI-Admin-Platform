@@ -1,0 +1,22 @@
+
+<!-- Extend page template -->
+{% extends "student/details/templates/page.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<!--Heading-->
+<h3> English Language Skills </h3>
+
+<!--English Program Questions-->
+{% include "student/details/pages/sub-pages/english-prog.html" %}
+
+<!--Space-->
+<br>
+<br>
+
+<!--Speaker Type Questions-->
+{% include "student/details/pages/sub-pages/speaker-type.html" %}
+
+
+{% endblock %}

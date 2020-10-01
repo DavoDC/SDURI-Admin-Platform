@@ -1,0 +1,63 @@
+
+<!--Extend user page template-->
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<h4>Please select your faculty, and then your specific discipline</h4>
+
+
+{% with faculty="Faculty of Science",
+schools=[
+"School of Biological Sciences", 
+"School of Earth Sciences",
+"School of Human Sciences",
+"School of Molecular Sciences",
+"School of Psychological Science",
+"UWA School of Agriculture and Environment"
+] %}
+{% include "supervisor/faculty-choice.html" %}
+{% endwith %} 
+
+
+{% with faculty="Faculty of Engineering and Mathematical Sciences",
+schools=[
+"Engineering", 
+"Physics, Mathematics and Computing",
+"Oceans Graduate School"
+] %}
+{% include "supervisor/faculty-choice.html" %}
+{% endwith %} 
+
+
+{% with faculty="Faculty of Arts, Business, Law and Education",
+schools=[
+"Business School ", 
+"Conservatorium of Music",
+"Graduate School of Education ",
+"Law School",
+"School of Design",
+"School of Social Sciences"
+] %}
+{% include "supervisor/faculty-choice.html" %}
+{% endwith %} 
+
+
+{% with faculty="Faculty of Health and Medical Sciences ",
+schools=[
+"School of Allied Health", 
+"School of Biomedical Science",
+"Dental School",
+"Medical School",
+"School of Population and Global Health"
+] %}
+{% include "supervisor/faculty-choice.html" %}
+{% endwith %} 
+
+
+<br>
+<br>
+<br>
+
+{% endblock %}

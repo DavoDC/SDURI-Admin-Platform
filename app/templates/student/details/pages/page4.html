@@ -1,0 +1,42 @@
+
+<!-- Extend page template -->
+{% extends "student/details/templates/page.html" %}
+
+<!-- Question HTML -->
+{% block question %}
+
+<!-- Sub heading -->
+<label class="personal-details">Personal Details</label>
+
+
+<h4> Emergency Contact: </h4>
+
+<table id="emergency">
+    <tr>
+        <td class="detLabel">Name</td>
+        <td class="detField">
+            <input class="detInput" name="emg_name" required/>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="detLabel">Relationship</td>
+        <td class="detField">
+            <input class="detInput" name="emg_rel" required/>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="detLabel">Contact Number</td>
+        <td class="detField">
+            <input class="detInput" name="emg_ph" required/>
+        </td>
+    </tr>
+</table>
+
+<small>
+    (<b>Note:</b> For contact number, include country code and area code)
+</small>
+
+
+{% endblock %}
