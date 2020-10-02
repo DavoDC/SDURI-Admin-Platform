@@ -45,6 +45,8 @@ with app.app_context():
 # Import routes and models
 from app import routes
 from app import models
+from app.auth import auth_models
+from app.myadmin import myadmin_models
 
 # Start logging
 logging.start_logging()
