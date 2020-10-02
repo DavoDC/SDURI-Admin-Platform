@@ -3,7 +3,6 @@ from flask_login import current_user, login_required, login_user, logout_user
 from werkzeug.urls import url_parse
 
 from datetime import date
-import datetime
 from app import db, email
 from app.myadmin import bp
 
@@ -12,14 +11,13 @@ from app.auth.auth_forms import * # PasswordReset, ChangePasswordForm
 from app.forms import LoginForm, RegistrationForm
 from app.models import *
 from app.myadmin.myadmin_models import *
+import datetime
 
 @bp.route('/home') #, methods=['GET', 'POST'])
 @bp.route('/')
 def admin_home():
   # templates/myadmin/index.html
   usersFromDB = User.query.all()
-  # tasks_unresolved = AdminTask.query.all()
-  # print("tasks_unresolved: ", tasks_unresolved)
   tasks_unresolved = AdminTask.query.filter_by(resolved=False)
   tasks_resolved = AdminTask.query.filter_by(resolved=True)
   return render_template('home.html', title="Administrator",

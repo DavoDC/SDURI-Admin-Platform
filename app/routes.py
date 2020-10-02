@@ -44,7 +44,7 @@ def login():
     # If user is logged in
     if current_user.is_authenticated:
         return redirect(url_for('index'))
-    print("hellool how are you")
+    
     # Otherwise log in
     # If login form submitted
     form = LoginForm()

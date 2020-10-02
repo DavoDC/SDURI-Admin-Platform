@@ -58,9 +58,9 @@ def reset_password(token):
         return redirect(url_for('students', username=current_user.name))
     
 
-      else:
+      # else:
         flash('Password change was unsuccessful.', 'danger')
-        # return redirect(url_for('auth.profile'))
+      #   # return redirect(url_for('auth.profile'))
         return redirect(url_for('students', username=current_user.name))
         
     else:
