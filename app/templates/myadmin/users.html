@@ -39,7 +39,7 @@
       
       <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
               data-target="#modalAddUser">Add new user</a></p>
-      <table class="table table-hover table-grey">
+      <table id="user_table" class="table display table-bordered table-hover table-grey">
         <thead>
           <tr>
             <th>Id</th>
@@ -52,7 +52,7 @@
         <tbody>
           {% for row in users.items %}
             <tr>
-              <td> {{ row.id}}</td>
+              <td sortable=True> {{ row.id}}</td>
               <td> {{ row.name}}</td>
               <td> {{ row.email}}</td>
               <td> {{ row.confirmed}}</td>
@@ -130,4 +130,16 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 {{super()}}
+
+<script>
+  $(document).ready(function() {
+    $('#user_table').DataTable({
+      pagingType: "full_numbers"
+    }); 
+
+    
+  });
+</script>
+
+
 {% endblock javascripts %}
