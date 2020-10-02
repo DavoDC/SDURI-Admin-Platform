@@ -10,13 +10,20 @@ from app.auth.token import * # generate_confirmation_token, confirm_token
 from app.auth.auth_forms import * # PasswordReset, ChangePasswordForm
 from app.forms import LoginForm, RegistrationForm
 from app.models import *
+from app.myadmin.myadmin_models import *
+import datetime
+
 
 @bp.route('/home') #, methods=['GET', 'POST'])
 @bp.route('/')
 def admin_home():
   # templates/myadmin/index.html
   usersFromDB = User.query.all()
-  return render_template('home.html', title="Administrator", users=usersFromDB)
+  tasks_unresolved = AdminTask.query.filter_by(resolved=False)
+  tasks_resolved = AdminTask.query.filter_by(resolved=True)
+  return render_template('home.html', title="Administrator",
+                          users=usersFromDB, unresolved_tasks=tasks_unresolved,
+                          resolved_tasks=tasks_resolved)
 
 @bp.route('/update', methods = ['GET', 'POST'])
 def update():
@@ -78,3 +85,14 @@ def add_user():
     flash_msg = "Email has been sent to the new user"
   flash(flash_msg)
   return redirect(url_for('myadmin.display_users', page_num=1))
+
+@bp.route('/resolving/task/<task_id>/', methods = ['GET', 'POST'])
+def mark_as_resolved(task_id):
+  resolve_task = AdminTask.query.get(task_id)
+  resolve_task.set_task_as_resolved(True)
+  resolve_task.set_task_resolved_on(datetime.datetime.now())
+  db.session.add(resolve_task)
+  db.session.commit()
+  flash("Resolving task successfully")
+
+  return redirect(url_for('myadmin.admin_home'))
