@@ -33,7 +33,7 @@ class ChangePasswordForm(FlaskForm):
       ]
   )
   
-  class InitialRegistrationForm(FlaskForm):
+class InitialRegistrationForm(FlaskForm):
   email = StringField('Email', 
                       validators=[DataRequired(message="Email can't be blank"), Email()])
   # role = StringField('Account Type', 
@@ -46,7 +46,7 @@ class ChangePasswordForm(FlaskForm):
       raise ValidationError('Please use a different email address.')
   
 
-  class InitialPasswordNameForm(FlaskForm):
+class InitialPasswordNameForm(FlaskForm):
   # Name is also needed, otherwise cannot go to user home page
   # after clicking the login button on login page because
   # username is required as shown in this function [def students(username):]
