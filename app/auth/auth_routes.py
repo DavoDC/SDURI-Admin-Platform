@@ -7,9 +7,11 @@ from app import db, email
 from app.auth import bp
 
 from app.auth.token import * # generate_confirmation_token, confirm_token 
-from app.auth.auth_forms import * # PasswordReset, ChangePasswordForm
+from app.auth.auth_forms import * # PasswordReset, ChangePasswordForm, InitialPasswordNameForm
 from app.forms import LoginForm, RegistrationForm
 from app.models import *
+from app.routes import *
+from app.myadmin.myadmin_models import *
 
 
 @bp.route('/password/forgot', methods=['GET', 'POST'])
@@ -51,14 +53,16 @@ def reset_password(token):
 
         login_user(user)
 
-        flash('Password successfully changed.', 'success')
+        print("flash('Password successfully changed.', 'success')")
         # return redirect(url_for('user.profile'))
         return redirect(url_for('students', username=current_user.name))
+    
 
-      # else:
+      else:
         flash('Password change was unsuccessful.', 'danger')
-      #   # return redirect(url_for('auth.profile'))
+        # return redirect(url_for('auth.profile'))
         return redirect(url_for('students', username=current_user.name))
+        
     else:
       flash('You can now change your password.', 'success')
       return render_template('auth/reset_password.html', form=form)
@@ -107,3 +111,68 @@ def resend_confirmation():
   email.send_email(current_user.email, subject, html)
   flash('A new confirmation email has been sent.', 'success')
   return redirect(url_for('auth.unconfirmed'))
+
+@bp.route('/initial-pwd-setting/<token>', methods=['GET', 'POST'])
+def initial_pwd_setting(token):
+  """Confirm email and set password for the first time"""
+  roles = ["Student", "Supervisor"]
+  form = InitialPasswordNameForm()
+  # Get email from the token
+  email_fr_token = confirm_token(token)
+  print("email_fr_token: ", email_fr_token)
+  # user = User.query.filter_by(email=current_user.email).first_or_404()
+  user = User.query.filter_by(email=email_fr_token).first_or_404()
+  # if user.email == email_fr_token:
+
+  flash_msg = "" # flash message
+  flash_msg_cat = "" # flash message category
+  # If a supervisor uses email that does not contain 
+  # "@uwa.edu.au" confirmation is required from administrator
+  confirmed_required = False
+  if form.validate_on_submit():
+    if user: # Double checking user object from above
+      # By default, user.role is "Student" except for
+      # users' email that contains "@uwa.edu.au"
+      # This condition checks if someone wants to be 
+      # a supervisor but not using an email that
+      # does not contain "@uwa.edu.au"
+      if user.role != form.role.data and \
+        form.role.data == "Supervisor":
+        # Request confirmation from administrator
+        confirmed_required = True
+        flash_msg = 'Action required: Administrator confirmation'
+        flash_msg_cat = 'warning'
+        # Change this code below
+        # Send notification to admin email or 
+        # task list on home page
+        # pass
+        
+        t_description = "Check users who are waiting for your confirmation"
+        t_action = "Confirm user's role"
+        task = AdminTask( description=t_description,
+                          action=t_action,
+                          userEmail=email_fr_token)
+        db.session.add(task)
+        db.session.commit()
+
+      else:
+        user.confirmed = True
+        user.confirmed_on = datetime.datetime.now()
+        flash_msg = 'Password setting successfully completed.'
+        flash_msg_cat = 'success'
+
+    user.set_user_name(form.name.data)
+    user.set_user_password(form.password.data)
+    user.password_reset_token = None
+    db.session.commit()
+      
+
+      
+    flash(flash_msg, flash_msg_cat)
+    print(flash_msg)
+    return render_template('index.html')
+  
+  # Need to get password and name, otherwise cannot go to user home page
+  # after clicking the login button on login page because
+  # username is required as shown in this function [def students(username):]
+  return render_template('/auth/initial_pwd_name.html', form=form, roles=roles)

@@ -37,7 +37,6 @@ def index():
     # Otherwise render normal
     return render_template('index.html', title='Home')
 
-
 # Login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -45,7 +44,7 @@ def login():
     # If user is logged in
     if current_user.is_authenticated:
         return redirect(url_for('index'))
-
+    print("hellool how are you")
     # Otherwise log in
     # If login form submitted
     form = LoginForm()

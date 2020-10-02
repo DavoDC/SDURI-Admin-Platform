@@ -11,7 +11,7 @@
         <h2><a class="hover-button" href="{{ url_for('login') }}">
                 Login</a></h2>
         <br>
-        <h2><a class="hover-button" href="{{ url_for('register') }}">
+        <h2><a class="hover-button" href="{{ url_for('auth.initial_registration') }}">
                 Register</a> </h2>
     </div>
 
@@ -20,7 +20,12 @@
     {% if messages %}
     <ul>
         {% for message in messages %}
-        <li>{{ message }}</li>
+        <div class="alert alert-{{ category }} alert-primary alert-dismissible fade show" role="alert"></div>
+        <span>{{ message }}</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
         {% endfor %}
     </ul>
     {% endif %}

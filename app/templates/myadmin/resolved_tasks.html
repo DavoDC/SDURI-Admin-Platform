@@ -1,0 +1,39 @@
+<div>
+  <h4>Resolved Tasks</h4>
+  <table class="table table-hover table-grey">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Resolved</th>
+        <th>Resolved On</th>
+        <th>Description</th>
+        <th>Action</th>
+        <th>Related to</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- unresolved_tasks is a list -->
+      {% for row in resolved_tasks %}
+        <tr>
+          <td> {{ row.id }} </td>
+          <td> {{ row.resolved }} </td>
+          <td> {{ row.resolved_on }} </td>
+          <td> {{ row.description}}</td>
+          <td> {{ row.action}}</td>
+          <td> {{ row.relatedUserEmail}}</td>
+          </tr>
+
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th>Id</th>
+        <th>Resolved</th>
+        <th>Resolved On</th>
+        <th>Description</th>
+        <th>Action</th>
+        <th>Related to</th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
