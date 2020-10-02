@@ -42,7 +42,7 @@ def update():
     new_data.role = request.form['role']
     
     db.session.commit()
-    flash_msg = new_data.name + "'s information is updated successfully"
+    flash_msg = new_data.email + "'s information is updated successfully"
   flash(flash_msg)
   # return render_template('home.html', user)
   return redirect(url_for('myadmin.display_users',  page_num=1))
