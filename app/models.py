@@ -216,12 +216,6 @@ class Student(db.Model):
     def __init__(self, user_id):
         self.user_id = user_id
 
-    def __init__(self, user_id, title, 
-                  name, surname,):
-      self.user_id = user_id
-      self.title = title
-      self.name = name
-      self.surname = surname
 
 
 # Supervisor information class
