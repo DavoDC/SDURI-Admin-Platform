@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="text-align: center; margin-top: 5%;"> 
+
+    <!--Welcome user-->
+    <h2>Welcome {{ current_user.name }}</h2>
+
+    <!--Buttons-->
+    {% block buttons %}{% endblock %}
+
+    <!--Logout link -->
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+</div>
+
+{% endblock %}

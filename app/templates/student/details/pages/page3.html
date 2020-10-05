@@ -1,9 +1,8 @@
 
 <!-- Extend page template -->
-{% extends "student/details/templates/page.html" %}
+{% extends "student/details/templ/page.html" %}
 
-<!-- Question HTML -->
-{% block question %}
+{% block questions %}
 
 <!-- Sub heading -->
 <label class="personal-details">Personal Details</label>
@@ -11,13 +10,13 @@
 
 <h4> Choose your Country of Birth: </h4>
 {% with name="birth_cntry" %}
-{% include "student/details/templates/country-sel.html" %}
+{% include "student/details/templ/country-sel.html" %}
 {% endwith %}
 
 
 <h4> Choose your Country of Citizenship: </h4>
 {% with name="citizen_cntry" %}
-{% include "student/details/templates/country-sel.html" %}
+{% include "student/details/templ/country-sel.html" %}
 {% endwith %}
 
 

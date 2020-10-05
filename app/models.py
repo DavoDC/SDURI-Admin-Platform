@@ -227,15 +227,16 @@ class Supervisor(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     userId = db.relationship('User', foreign_keys=[user_id])
     
-    # Faculty
+    # Supervisor details
+    ## Faculty
     faculty = db.Column(db.String(128))
-    
-    # Faculty
-    discipline = db.Column(db.String(128))
+    ## School
+    school = db.Column(db.String(128))
     
     # Initialize supervisor entry
     def __init__(self, user_id):
         self.user_id = user_id
+        
         
 # Project class
 class Project(db.Model):
@@ -243,24 +244,35 @@ class Project(db.Model):
     # ID
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     
-    # User ID
+    # Supervisor ID
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    userId = db.relationship('User', foreign_keys=[user_id])
-    
+    supervisor_id = db.relationship('User', foreign_keys=[user_id])
+
     # Project fields
-    main_supervisor = db.Column(db.String(128)) 
-    co_supervisor = db.Column(db.String(128)) 
-    faculty = db.Column(db.String(128)) 
-    school = db.Column(db.String(128)) 
     title = db.Column(db.String(128)) 
-    description = db.Column(db.String(128)) 
+     
+    main_supervisor = db.Column(db.String(128)) 
+    
+    co_supervisor = db.Column(db.String(128))
+
+    proj_group = db.Column(db.String(128)) 
+    
+    proj_desc = db.Column(db.String(128)) 
+    
     skills = db.Column(db.String(128)) 
+    
     keywords = db.Column(db.String(128)) 
-    email = db.Column(db.String(128), index=True, unique=True)
-    campus = db.Column(db.String(128)) 
-    length = db.Column(db.Integer) 
-    total = db.Column(db.Integer) 
-    place = db.Column(db.String(128)) 
+    
+    contact_email = db.Column(db.String(128), index=True, unique=True)
+    
+    location = db.Column(db.String(128)) 
+    
+    specific_uni = db.Column(db.String(128)) 
+    
+    proj_weeks = db.Column(db.Integer) 
+    
+    max_students = db.Column(db.Integer) 
+
 
     def __init__(self, user_id):
         self.user_id = user_id

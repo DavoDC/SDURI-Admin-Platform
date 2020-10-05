@@ -2,6 +2,7 @@
 # Import modules
 from app import app
 from app import db
+from app import utils
 from app.forms import LoginForm
 from app.forms import RegistrationForm
 from app.models import *
@@ -16,14 +17,6 @@ from flask_login import login_required
 from flask_login import login_user
 from flask_login import logout_user
 from json2html import *
-import os
-from werkzeug.utils import secure_filename
-
-# Unused imports:
-#from app import controllers
-#from flask import json
-#from flask import jsonify
-#from werkzeug.urls import url_parse
 
 # Main page
 @app.route('/')
@@ -32,7 +25,7 @@ def index():
     # If user is logged in
     if current_user.is_authenticated:
         # Send to their user page
-        return send_to_user_page(current_user.role);
+        return utils.send_to_user_page(current_user.role);
 
     # Otherwise render normal
     return render_template('index.html', title='Home')
@@ -67,10 +60,10 @@ def login():
         login_user(user, remember=form.remember_me.data)
 
         # Send to correct page
-        return send_to_user_page(user.role);
+        return utils.send_to_user_page(user.role);
 
     # Render login page
-    return render_template('auth/login.html', title='Sign In', form=form)
+    return render_template('auth/login.html', title='Login', form=form)
 
 
 # Register page
@@ -111,7 +104,7 @@ def register():
             # Else for all other emails
             # Give Student role by default
             user.set_user_role("Student")
-            
+
 
         # Add user to database
         db.session.add(user)
@@ -127,24 +120,6 @@ def register():
     return render_template('auth/register.html', title='Register', form=form)
 
 
-# Helper method: Redirect to user page based on role
-def send_to_user_page(role):
-    if role == "Administrator":
-        return redirect(url_for('myadmin.admin_home', username=current_user.name))
-        
-    elif role == "Supervisor":
-        return redirect(url_for('supervisors', username=current_user.name))
-        
-    elif role == "Student":
-        return redirect(url_for('students', username=current_user.name))
-    else:
-        msg = "Unknown role in function 'send_to_user_page'"
-        msg += "\n<br>This means your account has no role set"
-        msg += "\n<br>Look at register() code / Change email domain"
-        print(msg)
-        return msg
-
-
 # Admin user page
 @app.route('/admin/<username>')
 @login_required
@@ -155,201 +130,176 @@ def admin(username):
                            user=user, title='Admin', users=users)
 
 
-# Supervisor user page
-@app.route('/supervisor/<username>')
-@login_required
-def supervisors(username):
-    
-    # If user role is not supervisor
-    if current_user.role != "Supervisor":
-        
-        # Send back to index
-        return redirect(url_for('index'))
-    
-    user = User.query.filter_by(name=username).first_or_404()
-    return render_template('supervisor/supervisors.html',
-                           user=user, title='Supervisor')
-
-
-# Supervisor faculty choice page
-@app.route('/supervisor/<username>/details')
-@login_required
-def supervisor_faculty(username):
-
-    return render_template('supervisor/details.html')
-
-
-# Student user page
-@app.route('/students/<username>') 
+# Student user landing page
+@app.route('/student/<username>/landing')
 @login_required
 def students(username):
-  
-    # If user role is not student
-    if current_user.role != "Student":
-        
-        # Send back to index
-        return redirect(url_for('index'))
-    
-    user = User.query.filter_by(name=username).first_or_404()
-    return render_template('student/students.html',
-                           user=user, title='Student')
+    return utils.landing_page("Student")
 
 
 # Student details page
-@app.route('/students/<username>/details')
+@app.route('/student/<username>/details/landing')
 @login_required
 def student_details(username):
-    return render_template('student/details/landing.html');
+    rend_temp = render_template('student/details/landing.html', 
+                                title="Student Details Landing");
+    return utils.student_page(rend_temp)
 
 
 # Questions routing for student details question series
-@app.route('/students/<username>/details/page<int:page_no>',
+@app.route('/student/<username>/details/landing/page<int:page_no>',
            methods=['GET', 'POST'])
 @login_required
 def question(username, page_no):
 
+    # Save form data and overwrite
+    utils.save_form(username, Student, True)
+    
+    # Save files if needed
+    flist = ["transcr_file", "eng_file", "cv_file"]
+    utils.save_student_files(username, flist)
+
     # Generate path of question page
-    url = 'student/details/pages/page'
-    url += str(page_no) + '.html'
+    path = 'student/details/pages/page'
+    path += str(page_no) + '.html'
 
-    # Get current student user_id
-    cs_id = User.query.filter_by(name=username).first().id or 404
-
-    # Get current student
-    cur_student = Student.query.filter_by(user_id=cs_id).first()
-
-    # If there is no database row
-    if not Student.query.filter_by(user_id=cs_id).first():
-
-        # Initialize row and commit
-        db.session.add(Student(cs_id))
-        db.session.commit()
-
-    # If mode is post
-    if request.method == "POST":
-
-        # Using "request" module, which is imported from the flask at the top,
-        # this line gets all html form attributes: name and user input text
-        # e.g. <input name="sample_name">user_input_text in a box or anything
-        # The variable "data" stores name and user_input_text in dictionary format
-        data = request.form
-
-        # The values of name attributes in html form, sample_name above in this case,
-        # must be same with the names of columns in the database.
-        for column_name, input_text in data.items():
-            
-            # Inserting data into the remaining columns of Student table
-            setattr(cur_student, column_name, input_text)
-            
-        # Save files if needed
-        save_file("eng_file", cur_student)
-        save_file("cv_file", cur_student)
-        save_file("transcr_file", cur_student)
-        
-        # Commit to database
-        db.session.commit()
+    # Base URL
+    baseURL = url_for('student_details', username=current_user.name)
 
     # Render question page,
     # with current and maximum page number
-    return render_template(url, num=page_no, max=9)
-
-
-# Helper method: 
-# - Save file to static if it exists
-# - Add filename to database
-def save_file(file_field_name, cur_student):
+    rend_temp = render_template(path, num=page_no, max=9, 
+                                baseURL=baseURL,
+                                title="Student Details")
     
-    # For every file in form data matching field
-    # (Note: This way is best, tries to get from wrong page otherwise)
-    for uploaded_file in request.files.getlist(file_field_name):
+    # Render as student page
+    return utils.student_page(rend_temp)
 
-        # Get secure filename
-        filename = secure_filename(uploaded_file.filename)
 
-        # If filename is not empty
-        if filename != '':
+# Student view all projects
+@app.route('/student/<username>/project/list')
+@login_required
+def project_list(username):
 
-            # Save file to path
-            path = "app/static/user-files"
-            uploaded_file.save(os.path.join(path, filename))
+    # Get all projects
+    projects = Project.query.all()
 
-            # Save file name in database
-            setattr(cur_student, file_field_name, filename)
+    # Get rendered template
+    rend_temp = render_template('student/project/list.html', 
+                                title="Project List",
+                                projects=projects);
 
-# Project list (draft)
-@app.route('/project_list')
-def project_list():
-    return render_template('project/project-list.html', title='Project list')
+    # Return as student page
+    return utils.student_page(rend_temp)
 
-# Single project (draft)
-@app.route('/project_list/single_project')
-def single_project():
-    path = "project/single-project.html"
-    if current_user.is_authenticated:
-        return render_template(path, title='Project specifics', 
-                               logged=True)
-    else:
-        return render_template(path, title='Project specifics', 
-                               logged=False)
-                               
-# Student apply for project (draft)
-@app.route('/project_list/single_project/apply')
-def single_project_apply():
-    return render_template("student/apply-for-project.html");
 
-# Supervisor add project (draft)
-@app.route('/add-project/<username>', methods=['GET', 'POST'])
+# Student single project
+@app.route('/student/<username>/project/single/<int:pid>')
+@login_required
+def project_single(username, pid):
+
+    # Get project
+    project = Project.query.filter_by(id=pid).first() or 404
+    
+    # Get rendered template
+    rend_temp = render_template('student/project/single.html', 
+                                title=str(project.title),
+                                project=project);
+
+    # Return as student page
+    return utils.student_page(rend_temp)
+
+
+
+
+
+
+
+# Supervisor user landing page
+@app.route('/supervisor/<username>/landing')
+@login_required
+def supervisors(username):
+    return utils.landing_page("Supervisor")
+
+
+# Supervisor details (faculty selection page)
+@app.route('/supervisor/<username>/details/landing', methods=['GET', 'POST'])
+@login_required
+def supervisor_details(username):
+
+    # Save form data and overwrite
+    utils.save_form(username, Supervisor, True)
+    
+    # If data was saved, go back to index
+    if request.method == "POST":
+        return redirect(url_for('index'))
+    
+    # Render as one and only page
+    path = 'supervisor/details/faculty-sel.html'
+    baseURL = url_for('supervisor_details', username=current_user.name)
+    rend_temp = render_template(path, num=1, max=1, 
+                                baseURL=baseURL,
+                                title="Supervisor Details")
+    
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
+
+
+# Supervisor add project
+@app.route('/supervisor/<username>/project/add', methods=['GET', 'POST'])
 @login_required
 def add_project(username):
 
-    # Get current supervisor user_id
-    super_id = User.query.filter_by(name=username).first().id or 404 
-
-    # Get current supervisor
-    cur_supervisor = Supervisor.query.filter_by(user_id=super_id).first()
-    # If there is no database row in Project List
-    if not Project.query.filter_by(user_id=super_id).first():
-
-        # Initialize row and commit
-        db.session.add(Project(super_id))
-        db.session.commit()
-        print("initialised row")
-
-    cur_project = Project.query.filter_by(user_id=super_id).first()
-
-    # If mode is post
+    # Save form data but do not overwrite
+    utils.save_form(username, Project, False)
+    
+    # If data was saved, go back to index
     if request.method == "POST":
-        # Using "request" module, which is imported from the flask at the top,
-        # this line gets all html form attributes: name and user input text
-        # e.g. <input name="sample_name">user_input_text in a box or anything
-        # The variable "data" stores name and user_input_text in dictionary format
-        data = request.form
+        return redirect(url_for('index'))
 
-        # The values of name attributes in html form, sample_name above in this case,
-        # must be same with the names of columns in the database.
-        for column_name, input_text in data.items():
-            
-            # Inserting data into the remaining columns of Student table
-            setattr(cur_project, column_name, input_text)
-        
-        # Commit to database
-        db.session.commit()
+    # Render as one and only page
+    path = 'supervisor/project/add.html'
+    baseURL = url_for('add_project', username=current_user.name)
+    rend_temp = render_template(path, num=1, max=1, 
+                                baseURL=baseURL,
+                                title="Add Project")
+    
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
 
-    # Render page
-    return render_template("supervisor/add-project.html")
 
-@app.route('/edit-project/<username>', methods=['GET', 'POST'])
+# Supervisor manage projects
+@app.route('/supervisor/<username>/project/manage', methods=['GET', 'POST'])
 @login_required
-def edit_project(username):
+def manage_project(username):
 
     # Get current supervisor user_id
-    super_id = User.query.filter_by(name=username).first().id or 404 
+    super_id = User.query.filter_by(name=username).first().id or 404
 
     # Get current supervisor's projects
     cur_user_projects = Project.query.filter_by(user_id=super_id).all()
 
-    return render_template("supervisor/edit-project.html", projects = cur_user_projects)
+    return render_template("supervisor/project/edit.html",
+                           title="Manage Your Projects",
+                           projects=cur_user_projects)
 
+
+# Supervisor edit project (TEMPORARY)
+@app.route('/supervisor/<username>/project/manage/edit', methods=['GET', 'POST'])
+@login_required
+def edit_project(username):
+
+
+    # Get current supervisor user_id
+    super_id = User.query.filter_by(name=username).first().id or 404
+
+    # Get current supervisor's projects
+    cur_user_projects = Project.query.filter_by(user_id=super_id).all()
+
+    return render_template("supervisor/project/edit.html",
+                           title="Edit Project",
+                           projects=cur_user_projects)                     
+                               
 # Logout page
 @app.route('/logout')
 @login_required

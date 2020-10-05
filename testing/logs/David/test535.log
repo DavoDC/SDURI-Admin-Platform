@@ -1,0 +1,1 @@
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:34:54] "[37mGET /students/StudentTest/details/page1 HTTP/1.1[0m" 200 -

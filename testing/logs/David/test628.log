@@ -1,0 +1,49 @@
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:05] "[32mPOST /supervisor/SupervisorTest/project/add HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:05] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:05] "[37mGET /supervisor/SupervisorTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:07] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:12] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:12] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:14] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:14] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:15] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:15] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:17] "[37mGET /supervisor/SupervisorTest/project/add HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:18] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:33:20] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:34:36] "[33mGET /supervisor/SupervisorTest HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:34:40] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:34:40] "[37mGET /supervisor/SupervisorTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:34:42] "[37mGET /supervisor/SupervisorTest/project/edit HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:34:45] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:34:47] "[37mGET /supervisor/SupervisorTest/project/edit HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:01] "[37mGET /supervisor/SupervisorTest/project/edit HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:02] "[37mGET /supervisor/SupervisorTest/project/add HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:05] "[37mGET /supervisor/SupervisorTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:08] "[32mPOST /supervisor/SupervisorTest/details/landing HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:08] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:08] "[37mGET /supervisor/SupervisorTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:10] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:12] "[37mGET /supervisor/SupervisorTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:13] "[37mGET /supervisor/SupervisorTest/project/add HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:35:32] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:31] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:32] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:35] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:37] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:39] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:40] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:36:44] "[37mGET /student/StudentTest/details/page6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:37:47] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:37:47] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:37:51] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:37:51] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:37:52] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:37:57] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:37:57] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

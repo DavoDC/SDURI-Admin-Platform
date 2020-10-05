@@ -1,0 +1,42 @@
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:23] "[33mPOST /students/StudentTest/details/page2 HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:33] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:33] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:35] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:37] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:39] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:41] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:43] "[37mGET /project_list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:46] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:47] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:36:54] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:00] "[33mGET /student HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:04] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:04] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:06] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:06] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:06] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:09] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:10] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:11] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:37:17] "[37mPOST /student/StudentTest/details/page2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:39:15] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:39:21] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:39:28] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:39:28] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:39:29] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:39:29] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:39:30] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:11] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:11] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:12] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:13] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:13] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:14] "[37mGET /student/StudentTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:15] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:26] "[37mGET /student/StudentTest/details/page2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:40:31] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

@@ -1,9 +1,8 @@
 
 <!-- Extend page template -->
-{% extends "student/details/templates/page.html" %}
+{% extends "student/details/templ/page.html" %}
 
-<!-- Question HTML -->
-{% block question %}
+{% block questions %}
 
 <h3> University </h3>
 
@@ -35,7 +34,7 @@
 
 {% with name="uni_years", 
 vals=["2 Years", "3 Years", "4 Years", "Honours", "Masters"] %}
-{% include "student/details/templates/rb-series.html" %}
+{% include "student/details/templ/rb-series.html" %}
 {% endwith %}
 
 <br>
