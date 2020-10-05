@@ -11,7 +11,3 @@ class Roles(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   roleType = db.Column(db.String)
   rolelNum = db.Column(db.Integer)
-<<<<<<< HEAD
-  
-=======
->>>>>>> 23eb4ff3ffa694f4f762cd4b6d07e34dbe83893b

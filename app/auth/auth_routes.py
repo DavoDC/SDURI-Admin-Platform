@@ -8,10 +8,7 @@ from app.auth import bp
 
 from app.auth.token import * # generate_confirmation_token, confirm_token 
 from app.auth.auth_forms import * # PasswordReset, ChangePasswordForm, InitialPasswordNameForm
-<<<<<<< HEAD
-=======
 from app.forms import LoginForm, RegistrationForm
->>>>>>> 23eb4ff3ffa694f4f762cd4b6d07e34dbe83893b
 from app.forms import LoginForm, RegistrationForm
 from app.models import *
 from app.routes import *

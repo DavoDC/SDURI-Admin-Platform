@@ -158,7 +158,3 @@ def initial_registration():
   
   return render_template('/auth/initial_registration.html', form=initialForm, roles=roles)
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 23eb4ff3ffa694f4f762cd4b6d07e34dbe83893b
