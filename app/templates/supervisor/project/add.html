@@ -10,6 +10,13 @@
 {% block questions %}
 
 <p> 
+    <b>The Project's Title</b> 
+    <br>
+    <input type="text" name="title" required>
+</p>
+
+
+<p> 
     <b>Main Supervisor's Title and Name</b> 
     <br>
     Please use 'Prof' or 'Dr'
@@ -30,12 +37,6 @@
     <input type="text" name="co_supervisor" required>
 </p>
 
-
-<p> 
-    <b>The Project's Title</b> 
-    <br>
-    <input type="text" name="title" required>
-</p>
 
 <p> 
     <b>The Group or Lab</b> 
@@ -110,10 +111,11 @@
 <p>
     <b>Location</b>
     <br>
-    Is this project done on Crawley campus? 
+    If this project is done on Crawley campus,
+    please write "UWA Crawley".
     <br>
-    If no, please indicate where and 
-    how much time will be spent on and off campus. 
+    If it is done elsewhere, please indicate 
+    where and how much time will be spent on and off campus. 
     <br>
     This is for accommodation arrangements. 
     <br>
@@ -128,10 +130,11 @@
     please specify.
     <br>
     (e.g. WUN or MNU university). 
-    If left blank, the project will be open to all students.
     <br>
-    <input type="text" name="specific_uni">
-    <!--Not required-->
+    Otherwise, write "No, Open to All" to 
+    indicate the project will be open to all students.
+    <br>
+    <input type="text" name="specific_uni" required>
 </p>
 
 <p>

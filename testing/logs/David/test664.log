@@ -1,0 +1,659 @@
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 18:59:11] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 18:59:11] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 18:59:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 18:59:11] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 18:59:12] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 18:59:20] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:35] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:35] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:37] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:37] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:37] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:37] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:44] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:44] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:45] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:46] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:46] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:46] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:54] "[37mGET /register HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:00:58] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:01:01] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:01:01] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:50:01] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:50:01] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:50:39] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:50:39] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:50:45] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:50:45] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:51:00] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 19:51:00] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:00:11] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:00:11] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:00:19] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:00:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:02:13] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:02:13] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:02:17] "[33mGET /url/details HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:02:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:02:18] "[33mGET /url/project HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:01] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:01] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:13] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:13] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:30] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:30] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:38] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:38] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:44] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:44] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:53] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:04:54] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:06:02] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:06:02] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:06:15] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:06:15] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:06:52] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:06:52] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:07] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:08] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:08] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:09] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:43] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:47] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:47] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:49] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:49] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:49] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:49] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:50] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:07:50] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:00] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:01] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:01] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:01] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:06] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:06] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:15] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:15] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:38] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:38] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:42] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:48] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:48] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:58] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:08:58] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:09:52] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:09:52] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:14] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:14] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:42] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:42] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:42] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:42] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:50] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:51] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:52] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:56] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:56] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:56] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:10:56] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:08] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:08] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:09] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:09] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:09] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:09] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:48] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:11:48] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:12:09] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:12:09] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:12:16] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:12:16] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:12:24] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:12:24] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:20] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:21] "[33mGET /url/details HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:23] "[33mGET /url/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:29] "[33mGET /url/details HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:40] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:14:40] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:15:02] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:15:02] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:15:34] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:15:34] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:15:48] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:15:48] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:04] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:04] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:04] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:05] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:06] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:24] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:24] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:24] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:24] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:41] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:41] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:41] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:41] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:42] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:42] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:42] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:42] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:46] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:46] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:46] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:46] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:17:55] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:20] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:20] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:20] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:37] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:37] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:39] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:39] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:40] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:40] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:40] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:40] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:50] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:18:50] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:19] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:19] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:20] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:20] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:20] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:24] "[33mGET /url/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:48] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:19:49] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:04] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:04] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:15] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:26] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:26] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:26] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:26] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:26] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:26] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:26] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:44] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:20:44] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:21:07] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:21:08] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:21:08] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D; HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:21:12] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D; HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:25] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:25] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:25] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:25] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:51] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:51] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:51] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:23:52] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:06] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:06] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:15] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:15] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:16] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:16] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:33] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:33] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:33] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:33] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:35] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:44] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:24:55] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:07] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:09] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:11] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:33] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:48] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:48] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:25:53] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:16] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:16] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:27] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:27] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:27] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:27] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:27] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:27] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:27] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:35] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:35] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:37] "[33mGET /student/StudentTest/%7B%7B%20url_for('student_details',%20username%20=%20current_user.name)%20%7D%7D HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:56] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:26:57] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:27:53] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:27:53] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:28:09] "[33mGET /student/StudentTest/%7B%7B HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:28:20] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:28:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:21] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:21] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:21] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:21] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:21] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:21] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:22] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:56] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:56] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:56] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:56] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:56] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:29:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:30:04] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:30:04] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:30:08] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:31:01] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:31:01] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:31:06] "[33mGET /student/StudentTest/button[1] HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:32:01] "[33mGET /student/StudentTest/button[1] HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:32:12] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:32:12] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:32:13] "[33mGET /student/StudentTest/button[1] HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:32:25] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:32:25] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:22] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:23] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:25] "[33mGET /student/StudentTest/'student_details', HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:53] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:54] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:54] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:33:54] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:11] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:11] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:11] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:11] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:12] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:12] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:12] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:47] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:47] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:47] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:47] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:53] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:34:53] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:14] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:14] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:14] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:14] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:14] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:14] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:14] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:25] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:25] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:25] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:25] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:25] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:25] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:25] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:37] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:37] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:37] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:37] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:37] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:37] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:37] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:48] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:35:48] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:03] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:03] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:03] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:03] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:03] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:04] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:04] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:30] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:30] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:30] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:30] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:30] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:30] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:30] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:49] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:49] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:49] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:49] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:49] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:49] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:49] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:57] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:36:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:01] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:01] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:01] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:01] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:01] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:01] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:01] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:42] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:42] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:42] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:42] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:42] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:42] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:42] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:53] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:37:54] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:38:10] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:38:10] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:38:13] "[33mGET /student/StudentTest/%7B%7B HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:38:43] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:38:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:42:42] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:42:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:42:45] "[33mGET /student/StudentTest/%7B%7B HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:42:54] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:42:54] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:42:56] "[33mGET /student/StudentTest/%7B%7B HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:43:20] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:43:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:43:22] "[33mGET /student/StudentTest/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:43:34] "[33mGET /student/StudentTest/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:43:46] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:43:46] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:43:59] "[33mGET /student/StudentTest/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:13] "[33mGET /student/StudentTest/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:21] "[33mGET /student/StudentTest/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:27] "[33mGET /student/StudentTest/test HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:29] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:29] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:45] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:45] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:44:47] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:45:02] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:45:02] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:45:03] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:45:35] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:45:38] "[37mGET /student/StudentTest/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:45:41] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:45:41] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:00] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:01] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:04] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:04] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:04] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:04] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:06] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:34] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:34] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:46:36] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:06] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:06] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:07] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:07] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:07] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:07] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:08] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:37] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:38] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:39] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:39] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:39] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:39] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:47] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:47] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:47] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:47] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:47:49] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:03] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:03] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:21] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:21] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:50] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:50] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:50] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:50] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:55] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:49:55] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:03] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:03] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:05] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:05] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:14] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:14] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:16] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:16] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:16] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:16] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:24] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:24] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:24] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:24] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:32] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:32] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:33] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:33] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:33] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:50:33] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:51:33] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:51:34] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:51:35] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:51:35] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:51:35] "[37mGET /static/images/uwa_logo.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:51:35] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:52:20] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:52:24] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:09] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:09] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:31] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:32] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:34] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:52] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:52] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:53] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:53:56] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:54:59] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:54:59] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:02] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:29] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:29] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:57] "[35m[1mGET /student/StudentTest/landing HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:55:57] "[37mGET /student/StudentTest/landing?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:19] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:38] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:38] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:38] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:42] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:57] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:57] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:58] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:56:59] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:00] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:18] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:19] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:19] "[33mGET /student/StudentTest/href=details/landing HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:28] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:29] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:29] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:32] "[33mGET /student/StudentTest/href=project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:51] "[37mGET /student/StudentTest/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:51] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:52] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:57:53] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:58:05] "[37mGET /student/StudentTest/details/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 20:58:07] "[33mGET /student/StudentTest/project_list HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader

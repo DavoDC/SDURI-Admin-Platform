@@ -180,10 +180,37 @@ def question(username, page_no):
     return utils.student_page(rend_temp)
 
 
-# Student apply for project (TEMPORARY)
-#@app.route('/project_list/single_project/apply')
-#def single_project_apply():
-    #return render_template("student/apply-for-project.html");
+# Student view all projects
+@app.route('/student/<username>/project/list')
+@login_required
+def project_list(username):
+
+    # Get all projects
+    projects = Project.query.all()
+
+    # Get rendered template
+    rend_temp = render_template('student/project/list.html', 
+                                title="Project List",
+                                projects=projects);
+
+    # Return as student page
+    return utils.student_page(rend_temp)
+
+# Student single project
+@app.route('/student/<username>/project/single/<int:pid>')
+@login_required
+def project_single(username, pid):
+
+    # Get project
+    project = Project.query.filter_by(id=pid).first() or 404
+    
+    # Get rendered template
+    rend_temp = render_template('student/project/single.html', 
+                                title=str(project.title),
+                                project=project);
+
+    # Return as student page
+    return utils.student_page(rend_temp)
 
 
 
@@ -243,11 +270,27 @@ def add_project(username):
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
+# Supervisor manage projects
+@app.route('/supervisor/<username>/project/manage', methods=['GET', 'POST'])
+@login_required
+def manage_project(username):
 
-# Supervisor edit project
-@app.route('/supervisor/<username>/project/edit', methods=['GET', 'POST'])
+    # Get current supervisor user_id
+    super_id = User.query.filter_by(name=username).first().id or 404
+
+    # Get current supervisor's projects
+    cur_user_projects = Project.query.filter_by(user_id=super_id).all()
+
+    return render_template("supervisor/project/edit.html",
+                           title="Manage Your Projects",
+                           projects=cur_user_projects)
+
+
+# Supervisor edit project (TEMPORARY)
+@app.route('/supervisor/<username>/project/manage/edit', methods=['GET', 'POST'])
 @login_required
 def edit_project(username):
+
 
     # Get current supervisor user_id
     super_id = User.query.filter_by(name=username).first().id or 404
@@ -257,30 +300,7 @@ def edit_project(username):
 
     return render_template("supervisor/project/edit.html",
                            title="Edit Project",
-                           projects=cur_user_projects)
-
-
-
-
-# Project list (TEMPORARY)
-@app.route('/project_list')
-def project_list():
-    return render_template('project/project-list.html', 
-                           title='Project List')
-
-
-# Single project (TEMPORARY)
-@app.route('/project_list/single_project')
-def single_project():
-    path = "project/single-project.html"
-    if current_user.is_authenticated:
-        return render_template(path, title='Project Specifics',
-                               logged=True)
-    else:
-        return render_template(path, title='Project specifics',
-                               logged=False)
-                    
-                               
+                           projects=cur_user_projects)                     
                                
 # Logout page
 @app.route('/logout')

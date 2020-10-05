@@ -222,12 +222,12 @@ class Project(db.Model):
     supervisor_id = db.relationship('User', foreign_keys=[user_id])
 
     # Project fields
+    title = db.Column(db.String(128)) 
+     
     main_supervisor = db.Column(db.String(128)) 
     
     co_supervisor = db.Column(db.String(128))
-    
-    title = db.Column(db.String(128)) 
-    
+
     proj_group = db.Column(db.String(128)) 
     
     proj_desc = db.Column(db.String(128)) 

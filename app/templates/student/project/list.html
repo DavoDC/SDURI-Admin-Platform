@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- If there are projects -->
+{% if projects|length > 0 %}
+
+<!--Instructions-->
+<h4>
+    Select a project to view more information or apply
+</h4>
+
+<!--Add table-->
+<table class="project-table">
+
+    <!--Add heading-->
+    <tr class="project-row">
+        <th class="project-th">
+            Project Title
+        </th>
+        <th class="project-th">
+            Keywords
+        </th>
+        <th class="project-th">
+            Location
+        </th>
+        <th class="project-th">
+            Uni Specific
+        </th>
+    </tr>
+
+    <!--Add projects as rows-->
+    {% for project in projects %}
+    <tr class="project-row">
+        <td class="project-td">
+            {{ project.title }}
+        </td>
+        <td class="project-td">
+            {{ project.keywords }}
+        </td>
+        <td class="project-td">
+            {{ project.location }}
+        </td>
+        <td class="project-td">
+            {{ project.specific_uni }}
+        </td>
+        <td class="project-td">
+            <a class="hover-button" 
+               href="{{ url_for('project_single', 
+               pid=project.id, 
+               username = current_user.name) }}">
+                Select
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% else %}
+
+<!--Else if there are no projects-->
+<br>
+<p>There are no projects available </p>
+<br>
+{% endif %}
+
+
+<!--Message-->
+<br>
+<small><b> Note: </b> Please note that some of the usual projects are not 
+    available as the program has now moved to an online mode. 
+</small> 
+
+<!--Back to index-->
+<br>
+<h4>
+    <a class="hover-button" href="{{ url_for('index') }}">
+        Go Back Home
+    </a>
+</h4>
+
+
+{% endblock %}
