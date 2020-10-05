@@ -181,6 +181,7 @@ def supervisor_faculty(username):
 # Student user page
 @app.route('/students/<username>') 
 @login_required
+# @check_confirmed
 def students(username):
   
     # If user role is not student
