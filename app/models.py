@@ -24,11 +24,19 @@ class User(UserMixin, db.Model):
     # Email
     email = db.Column(db.String(128), index=True, unique=True)
     
+    # Confirmed
+    confirmed = db.Column(db.Boolean, nullable=False, default=False)
+    
     # Password 
     password = db.Column(db.String(128))
     
     # Role (account type)
     role = db.Column(db.String(32))
+    
+    registered_on = db.Column(db.DateTime, nullable=False)
+    
+    confirmed_on = db.Column(db.DateTime, nullable=True)
+    password_reset_token = db.Column(db.String, nullable=True)
 
     # Methods
     def set_user_password(self, new_password):
@@ -48,9 +56,28 @@ class User(UserMixin, db.Model):
 
     def set_user_email(self, new_email):
         self.email = new_email
+    
+    def set_user_confirmed(self, true_or_false):
+        self.confirmed = true_or_false
 
     def __repr__(self):
         return '<User {}>'.format(self.name)
+    
+    def __init__(self, 
+                name, email, password, confirmed,
+                registered_on, role="", 
+                confirmed_on=None,
+                password_reset_token=None):
+
+        self.name = name
+        self.email = email
+        self.password = generate_password_hash(password)
+
+        self.registered_on=registered_on
+        self.role = role
+        self.confirmed = confirmed
+        self.confirmed_on = confirmed_on
+        self.password_reset_token = password_reset_token 
 
 
 # Load user
@@ -293,29 +320,3 @@ admin.add_view(MyAdminModelView(Student, db.session))
 admin.add_view(MyAdminModelView(Supervisor, db.session))
 admin.add_view(MyAdminModelView(Project, db.session))
 admin.add_view(MyAdminModelView(Preference, db.session))
-
-# # Add views
-# # admin.add_view(UserAdmin(User, db.session))
-# # admin.add_view(CustomView(Page, db.session))
-# admin = Admin(app, name='Home', template_mode='bootstrap3')
-
-# admin.add_view(MyAdminModelView(QuizzMarks, db.session))
-# admin.add_view(MyAdminModelView(Role, db.session))
-# admin.add_view(MyAdminModelView(Quiz, db.session))
-# admin.add_view(MyAdminModelView(quizQuestions, db.session))
-# admin.add_view(MyAdminModelView(quizAnswers, db.session))
-# admin.add_view(MyAdminModelView(quizAttempt, db.session))
-# admin.add_view(MyAdminModelView(quizOptions, db.session))
-
-# admin.add_view(UserView(User, db.session, category="Team"))
-
-# # Customized admin interface
-# class CustomView(ModelView):
-#     list_template = 'list.html'
-#     create_template = 'create.html'
-#     edit_template = 'edit.html'
-
-
-# class UserAdmin(CustomView):
-#     column_searchable_list = ('name',)
-#     column_filters = ('name', 'email')

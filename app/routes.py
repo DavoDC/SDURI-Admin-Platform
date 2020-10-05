@@ -120,8 +120,6 @@ def register():
     return render_template('auth/register.html', title='Register', form=form)
 
 
-
-
 # Admin user page
 @app.route('/admin/<username>')
 @login_required
@@ -130,8 +128,6 @@ def admin(username):
     users = User.query.all()
     return render_template('admin/admin.html',
                            user=user, title='Admin', users=users)
-
-
 
 
 # Student user landing page
@@ -151,7 +147,7 @@ def student_details(username):
 
 
 # Questions routing for student details question series
-@app.route('/student/<username>/details/page<int:page_no>',
+@app.route('/student/<username>/details/landing/page<int:page_no>',
            methods=['GET', 'POST'])
 @login_required
 def question(username, page_no):
@@ -195,6 +191,7 @@ def project_list(username):
 
     # Return as student page
     return utils.student_page(rend_temp)
+
 
 # Student single project
 @app.route('/student/<username>/project/single/<int:pid>')
@@ -269,6 +266,7 @@ def add_project(username):
     
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
+
 
 # Supervisor manage projects
 @app.route('/supervisor/<username>/project/manage', methods=['GET', 'POST'])

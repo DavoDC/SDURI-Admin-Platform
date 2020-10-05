@@ -9,6 +9,7 @@ from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from flask_mail import Mail
 
 # Make app
 app = Flask(__name__)
@@ -23,12 +24,17 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = 'login'
 
+mail = Mail(app)
+
 # Initialize admin
 Bootstrap(app)
 admin = Admin(app, name='Admin', template_mode='bootstrap3')
 
 from app.auth import bp as auth_bp
 app.register_blueprint(auth_bp, url_prefix='/auth')
+
+from app.myadmin import bp as myadmin_bp
+app.register_blueprint(myadmin_bp, url_prefix='/myadmin')
 
 with app.app_context():
     if db.engine.url.drivername == 'sqlite':
@@ -39,6 +45,8 @@ with app.app_context():
 # Import routes and models
 from app import routes
 from app import models
+from app.auth import auth_models
+from app.myadmin import myadmin_models
 
 # Start logging
 logging.start_logging()

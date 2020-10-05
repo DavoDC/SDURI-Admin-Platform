@@ -1,6 +1,7 @@
 from app import db
 from app.models import User
 import os
+from datetime import date
 #import subprocess
 
 # Variables intialization
@@ -19,18 +20,20 @@ commands = [a, b, c]
 for command in commands:
     os.system(command)
 
-# The following myusers dictionary format is: "email":["name", "password", "role"]
-myusers = {"student1@students.com":["student1", "st", ""], 
-    "super1@supers.com":["supervisor1", "s", "Supervisor"], 
-    "admin1@admins.com":["admin1", "a", "Administrator"]}
+# The following myusers dictionary format is: 
+# "email":["name", "password", "confirmed", "registered_on", "role"]
+myusers = {"student1@students.com":["student1", "st", True, date.today(), "Student"], 
+    "super1@supers.com":["supervisor1", "s", True, date.today(), "Supervisor"], 
+    "admin1@admins.com":["admin1", "a", True, date.today(), "Administrator"]}
 
 # Inserting users in to database from myusers (above)
 for email, details in myusers.items():
-    u = User()
-    u.set_user_email(email)
-    u.set_user_name(details[0])
-    u.set_user_password(details[1])
-    u.set_user_role(details[2])
+    u = User(name=details[0],
+             email=email,
+             password=details[1],
+             confirmed=details[2],
+             registered_on=details[3],
+             role=details[4])
     db.session.add(u)
     db.session.commit()
 
