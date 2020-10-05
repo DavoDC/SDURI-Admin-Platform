@@ -32,7 +32,11 @@ class ChangePasswordForm(FlaskForm):
           EqualTo('password', message='Passwords must match.')
       ]
   )
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 23eb4ff3ffa694f4f762cd4b6d07e34dbe83893b
 class InitialRegistrationForm(FlaskForm):
   email = StringField('Email', 
                       validators=[DataRequired(message="Email can't be blank"), Email()])
@@ -44,7 +48,11 @@ class InitialRegistrationForm(FlaskForm):
     user = User.query.filter_by(email=email.data).first()
     if user is not None:
       raise ValidationError('Please use a different email address.')
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 23eb4ff3ffa694f4f762cd4b6d07e34dbe83893b
 
 class InitialPasswordNameForm(FlaskForm):
   # Name is also needed, otherwise cannot go to user home page
@@ -64,5 +72,8 @@ class InitialPasswordNameForm(FlaskForm):
           EqualTo('password', message='Passwords must match.')
       ]
   )
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> 23eb4ff3ffa694f4f762cd4b6d07e34dbe83893b

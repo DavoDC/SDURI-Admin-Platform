@@ -1,0 +1,8 @@
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 22:17:47] "[37mGET /student/StudentTest/project/single/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 22:17:51] "[37mGET /student/StudentTest/project/single/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 22:17:53] "[37mGET /student/StudentTest/project/single/6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 22:17:55] "[37mGET /student/StudentTest/project/single/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

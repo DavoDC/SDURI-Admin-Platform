@@ -1,9 +1,8 @@
 
 <!-- Extend page template -->
-{% extends "student/details/templates/page.html" %}
+{% extends "student/details/templ/page.html" %}
 
-<!-- Question HTML -->
-{% block question %}
+{% block questions %}
 
 <h3> Long Answer Questions </h3>
 
@@ -12,7 +11,7 @@
 lines=["Outline any previous research or laboratory experience that you have.",
 "Please name that research group and the leader of that research group
 at your home university."] %}
-{% include "student/details/templates/long-answer.html" %}
+{% include "student/details/templ/long-answer.html" %}
 {% endwith %}
 
 
@@ -21,19 +20,19 @@ lines=[
 "Explain why your previous experience makes you suited to this project?",
 "In particular, address any prerequisites that
 have been outlined by the supervisor."] %}
-{% include "student/details/templates/long-answer.html" %}
+{% include "student/details/templ/long-answer.html" %}
 {% endwith %}
 
 
 {% with qnum=3, wordlim=200,
 lines=[ "Why are you interested in this program?"] %}
-{% include "student/details/templates/long-answer.html" %}
+{% include "student/details/templ/long-answer.html" %}
 {% endwith %}
 
 
 {% with qnum=4, wordlim=200,
 lines=[ "What are your future career plans?"] %}
-{% include "student/details/templates/long-answer.html" %}
+{% include "student/details/templ/long-answer.html" %}
 {% endwith %}
 
 

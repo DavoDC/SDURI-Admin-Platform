@@ -1,0 +1,1 @@
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:26:59] "[33mGET /supervisor/SupervisorTest/add-project HTTP/1.1[0m" 404 -

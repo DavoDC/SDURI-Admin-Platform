@@ -1,0 +1,11 @@
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:07] "[35m[1mPOST /supervisor/SupervisorTest/project/add HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:07] "[37mGET /supervisor/SupervisorTest/project/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:07] "[37mGET /supervisor/SupervisorTest/project/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:07] "[37mGET /supervisor/SupervisorTest/project/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:07] "[37mGET /supervisor/SupervisorTest/project/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:07] "[37mGET /supervisor/SupervisorTest/project/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:07] "[37mGET /supervisor/SupervisorTest/project/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading

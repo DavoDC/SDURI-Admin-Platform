@@ -95,5 +95,3 @@ def mark_as_resolved(task_id):
   flash("Resolving task successfully")
 
   return redirect(url_for('myadmin.admin_home'))
-  
-

@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h4>
+    Project Title: {{ project.title }}
+</h4>
+
+<table>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Main Supervisor: </b>
+        </td>
+        <td class="project-td">
+            {{ project.main_supervisor }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Co-Supervisor(s): </b>
+        </td>
+        <td class="project-td">
+            {{ project.co_supervisor }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Group: </b>
+        </td>
+        <td class="project-td">
+            {{ project.proj_group }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Description: </b>
+        </td>
+        <td class="project-td">
+            {{ project.proj_desc }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Skills: </b>
+        </td>
+        <td class="project-td">
+            {{ project.skills }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Keywords: </b>
+        </td>
+        <td class="project-td">
+            {{ project.keywords }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Contact Email: </b>
+        </td>
+        <td class="project-td">
+            {{ project.contact_email}}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Location: </b>
+        </td>
+        <td class="project-td">
+            {{ project.location }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> University Specific: </b>
+        </td>
+        <td class="project-td">
+            {{ project.specific_uni }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Duration (Weeks): </b>
+        </td>
+        <td class="project-td">
+            {{ project.proj_weeks }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Maximum Student Places: </b>
+        </td>
+        <td class="project-td">
+            {{ project.max_students }}
+        </td>
+    </tr>
+</table>
+
+<!--Apply -->
+<h4>
+    <a class="hover-button" href="">
+        Apply
+    </a>
+</h4>
+
+<!--Back to project list -->
+<h4>
+    <a class="hover-button" href="">
+        Back to Project List
+    </a>
+</h4>
+
+<br>
+<br>
+<br>    
+{% endblock %}

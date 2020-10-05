@@ -1,0 +1,16 @@
+
+
+
+<table class="action-button-table">
+
+    {% for button in buttons %}
+    <tr>
+        <td>
+            <a {{ "href=" + button[1] }}> 
+               <button class="hover-button" type="action">
+                {{ button[0] }}
+                </button>
+            </a> 
+            {% endfor %}
+</table>
+

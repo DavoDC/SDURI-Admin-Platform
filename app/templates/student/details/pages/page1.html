@@ -1,9 +1,8 @@
 
 <!-- Extend page template -->
-{% extends "student/details/templates/page.html" %}
+{% extends "student/details/templ/page.html" %}
 
-<!-- Question HTML -->
-{% block question %}
+{% block questions %}
 
 <!-- Sub heading -->
 <label class="personal-details">Personal Details</label>
@@ -12,7 +11,7 @@
 <h4> Title: </h4>
 
 {% with name="title", vals=["Mr", "Ms"] %}
-{% include "student/details/templates/rb-series.html" %}
+{% include "student/details/templ/rb-series.html" %}
 {% endwith %}
 
 
@@ -20,7 +19,7 @@
 <h4> Gender: </h4>
 
 {% with name="gender", vals=["Male", "Female"] %}
-{% include "student/details/templates/rb-series.html" %}
+{% include "student/details/templ/rb-series.html" %}
 {% endwith %}
 
 
