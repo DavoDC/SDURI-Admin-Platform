@@ -195,10 +195,10 @@ class Student(db.Model):
     
     ### Page 7
     ## Long Answer Questions
-    longQ1 = db.Column(db.String(1600))
-    longQ2 = db.Column(db.String(3100))
-    longQ3 = db.Column(db.String(3100))
-    longQ4 = db.Column(db.String(3100))
+    longQ1 = db.Column(db.String(5000))
+    longQ2 = db.Column(db.String(10000))
+    longQ3 = db.Column(db.String(10000))
+    longQ4 = db.Column(db.String(10000))
     
     ### Page 8
     ## File Uploads
@@ -211,6 +211,16 @@ class Student(db.Model):
     
     ## Tuition
     tuition_fee = db.Column(db.String(128))
+    
+    
+    ## Projects
+    # First project ID and duration
+    proj_pref_1 = db.Column(db.Integer) 
+    proj_pref_1_dur = db.Column(db.String(32)) 
+    
+    # Second project ID and duration
+    proj_pref_2 = db.Column(db.Integer) 
+    proj_pref_2_dur = db.Column(db.String(32)) 
     
     # Initialize student entry
     def __init__(self, user_id):

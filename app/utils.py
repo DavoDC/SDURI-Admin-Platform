@@ -147,3 +147,12 @@ def save_file(file_field_name, student):
 
             # Commit to database
             db.session.commit()
+
+# Get student with given username
+def get_student_from_username(username):
+    # Get user id
+    uid = User.query.filter_by(name=username).first().id or 404
+    # Get student from username
+    student = Student.query.filter_by(user_id=uid).first() or 404
+    # Return student
+    return student

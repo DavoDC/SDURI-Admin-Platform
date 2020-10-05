@@ -183,7 +183,12 @@ def project_list(username):
 
     # Get all projects
     projects = Project.query.all()
-
+    
+    # Remove empty rows
+    for p in projects:
+        if(p.title == None):
+            projects.remove(p)
+    
     # Get rendered template
     rend_temp = render_template('student/project/list.html', 
                                 title="Project List",
@@ -201,10 +206,73 @@ def project_single(username, pid):
     # Get project
     project = Project.query.filter_by(id=pid).first() or 404
     
+    # Check if applied for projects
+    applied = False
+    # - Get student
+    student = utils.get_student_from_username(username)
+    # - If second slot in
+    if(student.proj_pref_2 != None):
+        applied = True
+    
     # Get rendered template
     rend_temp = render_template('student/project/single.html', 
                                 title=str(project.title),
-                                project=project);
+                                project=project,
+                                applied=applied
+                                );
+
+    # Return as student page
+    return utils.student_page(rend_temp)
+
+# Student apply for project
+@app.route('/student/<username>/project/single/<int:pid>/apply',
+           methods=['GET', 'POST'])
+@login_required
+def project_apply(username, pid):
+
+    # Save form data and overwrite
+    utils.save_form(username, Student, True)
+    
+    # If data was saved, go back to project list
+    if request.method == "POST":
+        return redirect(url_for('project_list', username=username))
+
+    # Get project
+    project = Project.query.filter_by(id=pid).first() or 404
+    
+    # Get path to HTML
+    path = 'student/project/apply.html'
+    
+    # Get base URL
+    baseURL = url_for('project_apply', username=current_user.name, 
+                      pid=pid)
+            
+    # Get title
+    title = "Apply for '" + project.title + "'"
+    
+    # Get project count
+    proj_count = 0
+    # - Get student from username
+    student = utils.get_student_from_username(username)
+    # - Get first project slot
+    proj_pref_1 = student.proj_pref_1
+    # - If there is no first project
+    if(proj_pref_1 == None):
+        # -- Fill in first project
+        proj_count = 1
+    else:
+        # -- Else if there is first project,
+        # -- fill in second slot
+        proj_count = 2
+
+    # Render as one and only page                  
+    rend_temp = render_template(path, num=1, max=1, 
+                                baseURL=baseURL,
+                                title=title,
+                                project=project,
+                                proj_count=proj_count,
+                                first_proj=proj_pref_1
+                                )
 
     # Return as student page
     return utils.student_page(rend_temp)

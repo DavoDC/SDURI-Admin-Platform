@@ -1,33 +1,64 @@
+{% extends "templ/form-page.html" %}
 
+<!-- Heading -->
+{% block heading %}
+<h3> Apply for '{{ project.title }}' </h3>
+{% endblock %}
 
-<p> You can select up to 2 different projects
-    from the same or different supervisor(s). </p>
-<p> Enter the names of the projects you want below,
-    along with how long you are planning to do the project for.</p>
-<p> If you wish to do beyond the standard 8 weeks,
-    please ensure that you have contacted the supervisor beforehand. </p>
+<!--Questions-->
+{% block questions %}
 
-
-<p>
-    <b> Project Choice 1: </b>
-    <small> (First preference) </small>
-
+<!--Preference-->
+<h4> Is this project your first or second preference? </h4>
+<p> 
+    You can select up to 2 different projects
+    from the same or different supervisor(s).
     <br>
-    <input type="text" id="proj1" name="proj1" value="">
-    <select name="proj1time" id="proj1time">
-        <option value="8wks">8 weeks (standard)</option>
-        <option value="8to12wks">8 - 12 weeks</option>
-    </select>
+    You are more likely to get your first preference,
+    but getting your preferences is not guaranteed.
 </p>
+<select name="proj_pref_{{ proj_count }}" id="pref" required>
 
-<p>
-    <b> Project Choice 2: </b>
-    <small> (Second preference) </small>
+    <!--If we are filling in slot 1-->
+    {% if proj_count == 1 %}
 
-    <br>
-    <input type="text" id="proj2" name="proj2" value="">
-    <select name="proj2time" id="pro2   1time">
-        <option value="8wks">8 weeks (standard)</option>
-        <option value="8to12wks">8 - 12 weeks</option>
-    </select>
+    <!--Add normal options-->
+    <option value="">None</option>
+    <option value="1st">First Preference</option>
+    <option value="2nd">Second Preference</option>
+    {% else %}
+
+    <!--Else if project 1 has been selected,-->
+    <!--disable the preference option already selected-->
+    {% if first_proj == "1st" %}
+    <option value="1st" disabled>First Preference (Already In)</option>
+    <option value="2nd">Second Preference</option>
+    {% else %}
+    <option value="1st">First Preference</option>
+    <option value="2nd" disabled>Second Preference (Already In)</option>
+    {% endif %}
+
+    {% endif %}
+
+
+</select>
+
+<!--PREF DECIDED ON SECOND BY ELIMINATION-->
+
+<!--Duration-->
+<h4> How long you are planning to do the project for? </h4>
+<p> 
+    If you wish to do beyond the standard 8 weeks, 
+    please ensure that you have contacted the supervisor beforehand. 
 </p>
+<select name="proj_pref_{{ proj_count }}_dur" id="dur" required>
+    <option value="">None</option>
+    <option value="8wks">8 Weeks (Standard)</option>
+    <option value="8to12wks">8 - 12 Weeks</option>
+</select>
+
+<br>
+<br>
+
+
+{% endblock %}

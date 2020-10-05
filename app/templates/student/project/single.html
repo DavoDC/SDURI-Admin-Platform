@@ -110,15 +110,27 @@
 </table>
 
 <!--Apply -->
+{% if not applied %}
 <h4>
-    <a class="hover-button" href="">
+    <a class="hover-button" 
+       href="{{ url_for('project_apply', 
+       pid=project.id, 
+       username = current_user.name) }}">
         Apply
     </a>
+</a>
 </h4>
+{% else %}
+
+<p> You have already applied and entered your two project preferences </p>>
+
+{% endif %}
 
 <!--Back to project list -->
 <h4>
-    <a class="hover-button" href="">
+    <a class="hover-button" 
+       href="{{ url_for('project_list'
+       , username = current_user.name) }}">
         Back to Project List
     </a>
 </h4>
