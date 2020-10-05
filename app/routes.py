@@ -30,7 +30,6 @@ def index():
     # Otherwise render normal
     return render_template('index.html', title='Home')
 
-
 # Login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -38,7 +37,7 @@ def login():
     # If user is logged in
     if current_user.is_authenticated:
         return redirect(url_for('index'))
-
+    
     # Otherwise log in
     # If login form submitted
     form = LoginForm()
@@ -133,6 +132,7 @@ def admin(username):
 # Student user landing page
 @app.route('/student/<username>/landing')
 @login_required
+# @check_confirmed
 def students(username):
     return utils.landing_page("Student")
 

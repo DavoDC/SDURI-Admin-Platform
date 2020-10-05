@@ -54,14 +54,16 @@ def reset_password(token):
 
         login_user(user)
 
-        flash('Password successfully changed.', 'success')
+        print("flash('Password successfully changed.', 'success')")
         # return redirect(url_for('user.profile'))
         return redirect(url_for('students', username=current_user.name))
+    
 
       # else:
         flash('Password change was unsuccessful.', 'danger')
       #   # return redirect(url_for('auth.profile'))
         return redirect(url_for('students', username=current_user.name))
+        
     else:
       flash('You can now change your password.', 'success')
       return render_template('auth/reset_password.html', form=form)
