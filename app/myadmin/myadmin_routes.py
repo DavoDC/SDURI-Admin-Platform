@@ -61,6 +61,20 @@ def display_users(page_num):
   # usersFromDB = user_serializer.dump(userFromDB.items)
   return render_template('users.html', title="Administrator", users=usersFromDB)
 
+@bp.route('/display/students/all/<int:page_num>', methods=['GET', 'POST'])
+def display_students(page_num):
+  col_names = Student.__table__.columns
+  colNames = [i.name.capitalize() for i in col_names] # Capitalize columns' name
+  attributes = [i.name for i in col_names] # Columns' name
+  studentsFromDB = Student.query.paginate(per_page=2, page=page_num, error_out=True)
+  
+  # usersFromDB = user_serializer.dump(userFromDB.items)
+  return render_template('t_students.html', 
+                          title="Administrator", 
+                          students=studentsFromDB,
+                          colNames=colNames,
+                          attributes=attributes)
+
 @bp.route('/add/user', methods=['GET', 'POST'])
 def add_user():
   data = request.form 

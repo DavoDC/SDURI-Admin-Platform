@@ -7,12 +7,23 @@
 
     <!-- Specific Page CSS goes HERE -->
     {% block stylesheets %}
+    <!-- The following three will be ok -->
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/static/admin-assets/admin_css.css">
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap.min.css">
+    <!-- The above three will be ok -->
+
+    <!-- Testing with the followings -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"> 
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/colreorder/1.5.2/css/colReorder.dataTables.min.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet"> -->
+    <!-- <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
+    <!-- Testing with the above -->
+
     
     {% endblock stylesheets %}
 
@@ -26,8 +37,9 @@
           <div class="navbar-header">
             <a class="navbar-brand" href="{{url_for('myadmin.admin_home')}}"><i class="fa fa-home fa-fw"></i> Admin</a>
             <a class="navbar-brand" href="{{url_for('myadmin.display_users', page_num=1)}}"><i class="fa fa-users fa-fw"></i> All Users</a>
-            <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Students</a>
+            <a class="navbar-brand" href="{{url_for('myadmin.display_students', page_num=1)}}"><i class="fa fa-info-circle fa-fw"></i> Students</a>
             <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
+            <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Projects</a>
             <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Preferences</a>
             <!-- </div>end .navbar-header -->
 
@@ -59,7 +71,7 @@
     <!-- Page Content -->
     <div class="content" > 
       {% block content %}
-        <h3> Hi, {{current_user.name}}</h3>
+        <!-- <h3> Hi, {{current_user.name}}</h3> -->
       {% endblock content %}  
       <footer>
         {% include 'includes/footer.html' %}
@@ -70,6 +82,8 @@
 
     <!-- Specific Page JS goes HERE -->
     {% block javascripts %}
+
+    <!-- The following six will be ok -->
     
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     
@@ -78,11 +92,31 @@
     <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     
-      <!-- Font Awesome JS -->
+    <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
+    <!-- The above six will be ok -->
+
+    <!-- Testing with the following -->
+
+
+
+    
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+    <!-- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap4.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> -->
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.5.2/js/dataTables.colReorder.min.js"></script>
+    <!-- Testing with the above -->
     
     <script>
       $(document).ready(function () {
