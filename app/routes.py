@@ -120,14 +120,7 @@ def register():
     return render_template('auth/register.html', title='Register', form=form)
 
 
-# Admin user page
-@app.route('/admin/<username>')
-@login_required
-def admin(username):
-    user = User.query.filter_by(name=username).first_or_404()
-    users = User.query.all()
-    return render_template('admin/admin.html',
-                           user=user, title='Admin', users=users)
+
 
 
 # Student user landing page
@@ -138,23 +131,23 @@ def students(username):
 
 
 # Student details page
-@app.route('/student/<username>/details/landing')
+@app.route('/student/<username>/details')
 @login_required
 def student_details(username):
-    rend_temp = render_template('student/details/landing.html', 
+    rend_temp = render_template('student/details/landing.html',
                                 title="Student Details Landing");
     return utils.student_page(rend_temp)
 
 
-# Questions routing for student details question series
-@app.route('/student/<username>/details/landing/page<int:page_no>',
+# Student details page series
+@app.route('/student/<username>/details/page<int:page_no>',
            methods=['GET', 'POST'])
 @login_required
-def question(username, page_no):
+def student_page(username, page_no):
 
     # Save form data and overwrite
     utils.save_form(username, Student, True)
-    
+
     # Save files if needed
     flist = ["transcr_file", "eng_file", "cv_file"]
     utils.save_student_files(username, flist)
@@ -168,30 +161,25 @@ def question(username, page_no):
 
     # Render question page,
     # with current and maximum page number
-    rend_temp = render_template(path, num=page_no, max=9, 
+    rend_temp = render_template(path, num=page_no, max=9,
                                 baseURL=baseURL,
                                 title="Student Details")
-    
+
     # Render as student page
     return utils.student_page(rend_temp)
 
 
-# Student view all projects
-@app.route('/student/<username>/project/list')
+# Student explore projects (view or apply)
+@app.route('/student/<username>/project/explore')
 @login_required
-def project_list(username):
+def student_explore(username):
 
-    # Get all projects
-    projects = Project.query.all()
-    
-    # Remove empty rows
-    for p in projects:
-        if(p.title == None):
-            projects.remove(p)
-    
+    # Get all projects, ignoring empty/bad rows
+    projects = Project.query.filter(Project.title != None).all()
+
     # Get rendered template
-    rend_temp = render_template('student/project/list.html', 
-                                title="Project List",
+    rend_temp = render_template('student/project/explore.html',
+                                title="Explore Projects",
                                 projects=projects);
 
     # Return as student page
@@ -201,81 +189,149 @@ def project_list(username):
 # Student single project
 @app.route('/student/<username>/project/single/<int:pid>')
 @login_required
-def project_single(username, pid):
+def student_single(username, pid):
 
     # Get project
     project = Project.query.filter_by(id=pid).first() or 404
-    
-    # Check if applied for projects
-    applied = False
-    # - Get student
+
+    # Get student
     student = utils.get_student_from_username(username)
-    # - If second slot in
-    if(student.proj_pref_2 != None):
-        applied = True
+
+    # Get list of projects applied for (as PIDs)
+    pids = utils.get_projects_applied_for(student)
+    
+    # Can student apply 
+    # (Controls if apply button is shown)
+    can_apply = False
+    
+    # If applied for zero or one projects
+    numpids = len(pids)
+    if numpids == 0 or numpids == 1:
+        # The student can (still) apply
+        can_apply = True
+    
+    # Check if this project has been applied for
+    applied_for_this = False
+    if pid in pids:
+        # If already in applied pids, 
+        # set to true and cannot apply to this project (again)
+        applied_for_this = True
+        can_apply = False
     
     # Get rendered template
-    rend_temp = render_template('student/project/single.html', 
+    rend_temp = render_template('student/project/single.html',
                                 title=str(project.title),
                                 project=project,
-                                applied=applied
+                                can_apply=can_apply,
+                                applied_for_this=applied_for_this
                                 );
 
     # Return as student page
     return utils.student_page(rend_temp)
 
+
 # Student apply for project
 @app.route('/student/<username>/project/single/<int:pid>/apply',
            methods=['GET', 'POST'])
 @login_required
-def project_apply(username, pid):
+def student_apply(username, pid):
 
     # Save form data and overwrite
     utils.save_form(username, Student, True)
-    
-    # If data was saved, go back to project list
+
+    # If data was submitted/saved, go back to project list
     if request.method == "POST":
         return redirect(url_for('project_list', username=username))
+
+    # Get path to HTML
+    path = 'student/project/apply.html'
+
+    # Get base URL
+    baseURL = url_for('project_apply', username=current_user.name,
+                      pid=pid)
 
     # Get project
     project = Project.query.filter_by(id=pid).first() or 404
     
-    # Get path to HTML
-    path = 'student/project/apply.html'
-    
-    # Get base URL
-    baseURL = url_for('project_apply', username=current_user.name, 
-                      pid=pid)
-            
     # Get title
     title = "Apply for '" + project.title + "'"
-    
-    # Get project count
-    proj_count = 0
-    # - Get student from username
-    student = utils.get_student_from_username(username)
-    # - Get first project slot
-    proj_pref_1 = student.proj_pref_1
-    # - If there is no first project
-    if(proj_pref_1 == None):
-        # -- Fill in first project
-        proj_count = 1
-    else:
-        # -- Else if there is first project,
-        # -- fill in second slot
-        proj_count = 2
 
-    # Render as one and only page                  
-    rend_temp = render_template(path, num=1, max=1, 
+    # Slot to save project into
+    # (will be 0 if both not free, but this is never used,
+    # as apply button is disabled if all slots are filled)
+    proj_slot = 0 
+    
+    # Check slots
+    student = utils.get_student_from_username(username)
+    one_free = student.proj1_id == None
+    two_free = student.proj2_id  == None
+
+    # If first slot is free
+    if one_free:
+        # Use first slot regardless of second.
+        # Applies for (free)(free) and (free)(not_free)
+        proj_slot = 1
+    elif not one_free and two_free:
+        # Else if one is not free but second is
+        # i.e. (not_free)(free),
+        # use second slot
+        proj_slot = 2
+    
+    # Get preference string
+    pref1 = student.proj1_pref
+    pref2 = student.proj2_pref
+    prefstr = ""
+    if(pref1 != None):
+        prefstr += pref1
+    if(pref2 != None):
+        prefstr += pref2
+
+    # Render as one and only page
+    rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
                                 title=title,
                                 project=project,
-                                proj_count=proj_count,
-                                first_proj=proj_pref_1
+                                proj_slot=proj_slot,
+                                prefstr=prefstr
                                 )
 
     # Return as student page
     return utils.student_page(rend_temp)
+
+
+# Student manage project applications
+@app.route('/student/<username>/project/manage')
+@login_required
+def student_manage(username):
+
+    # Get student
+    student = utils.get_student_from_username(username)
+
+    # Get list of projects applied for (as PIDs)
+    pids = utils.get_projects_applied_for(student)
+
+    # Get projects but only include those applied for
+    projects = Project.query.filter(Project.id.in_(pids)).all()
+
+    # Get project 1 details
+    proj1 = None
+    if(student.proj1_id != None):
+        proj1 = [student.proj1_id, student.proj1_pref, student.proj1_dur]
+    
+    # Get project 2 details
+    proj2 = None
+    if(student.proj2_id != None):
+        proj2 = [student.proj2_id, student.proj2_pref, student.proj2_dur]
+
+    # Get rendered template
+    rend_temp = render_template('student/project/manage.html',
+                                title="Manage Projects",
+                                projects=projects,
+                                proj1=proj1, proj2=proj2);
+
+    # Return as student page
+    return utils.student_page(rend_temp)
+
 
 
 
@@ -291,24 +347,24 @@ def supervisors(username):
 
 
 # Supervisor details (faculty selection page)
-@app.route('/supervisor/<username>/details/landing', methods=['GET', 'POST'])
+@app.route('/supervisor/<username>/details', methods=['GET', 'POST'])
 @login_required
 def supervisor_details(username):
 
     # Save form data and overwrite
     utils.save_form(username, Supervisor, True)
-    
+
     # If data was saved, go back to index
     if request.method == "POST":
         return redirect(url_for('index'))
-    
+
     # Render as one and only page
     path = 'supervisor/details/faculty-sel.html'
     baseURL = url_for('supervisor_details', username=current_user.name)
-    rend_temp = render_template(path, num=1, max=1, 
+    rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
                                 title="Supervisor Details")
-    
+
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
@@ -316,11 +372,11 @@ def supervisor_details(username):
 # Supervisor add project
 @app.route('/supervisor/<username>/project/add', methods=['GET', 'POST'])
 @login_required
-def add_project(username):
+def supervisor_add(username):
 
     # Save form data but do not overwrite
     utils.save_form(username, Project, False)
-    
+
     # If data was saved, go back to index
     if request.method == "POST":
         return redirect(url_for('index'))
@@ -328,10 +384,10 @@ def add_project(username):
     # Render as one and only page
     path = 'supervisor/project/add.html'
     baseURL = url_for('add_project', username=current_user.name)
-    rend_temp = render_template(path, num=1, max=1, 
+    rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
                                 title="Add Project")
-    
+
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
@@ -339,7 +395,7 @@ def add_project(username):
 # Supervisor manage projects
 @app.route('/supervisor/<username>/project/manage', methods=['GET', 'POST'])
 @login_required
-def manage_project(username):
+def supervisor_manage(username):
 
     # Get current supervisor user_id
     super_id = User.query.filter_by(name=username).first().id or 404
@@ -355,7 +411,7 @@ def manage_project(username):
 # Supervisor edit project (TEMPORARY)
 @app.route('/supervisor/<username>/project/manage/edit', methods=['GET', 'POST'])
 @login_required
-def edit_project(username):
+def supervisor_edit(username):
 
 
     # Get current supervisor user_id
@@ -366,8 +422,8 @@ def edit_project(username):
 
     return render_template("supervisor/project/edit.html",
                            title="Edit Project",
-                           projects=cur_user_projects)                     
-                               
+                           projects=cur_user_projects)
+
 # Logout page
 @app.route('/logout')
 @login_required

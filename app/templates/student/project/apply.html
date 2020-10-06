@@ -8,57 +8,107 @@
 <!--Questions-->
 {% block questions %}
 
+<!--Get HTML name prefix-->
+{% set namep %}proj{{ proj_slot }}_{% endset %}
+
+
+<!--Project ID-->
+<!--Set invisibly and automatically-->
+<input
+    name="{{ namep }}id"
+    value="{{ project.id }}"
+    type="hidden"
+    >
+
+
+
 <!--Preference-->
 <h4> Is this project your first or second preference? </h4>
-<p> 
+<p>
     You can select up to 2 different projects
     from the same or different supervisor(s).
     <br>
     You are more likely to get your first preference,
     but getting your preferences is not guaranteed.
 </p>
-<select name="proj_pref_{{ proj_count }}" id="pref" required>
-
-    <!--If we are filling in slot 1-->
-    {% if proj_count == 1 %}
-
-    <!--Add normal options-->
-    <option value="">None</option>
-    <option value="1st">First Preference</option>
-    <option value="2nd">Second Preference</option>
-    {% else %}
-
-    <!--Else if project 1 has been selected,-->
-    <!--disable the preference option already selected-->
-    {% if first_proj == "1st" %}
-    <option value="1st" disabled>First Preference (Already In)</option>
-    <option value="2nd">Second Preference</option>
-    {% else %}
-    <option value="1st">First Preference</option>
-    <option value="2nd" disabled>Second Preference (Already In)</option>
-    {% endif %}
-
-    {% endif %}
-
-
+<select name="{{ namep }}pref" id="prefsel" required>
+    <option value="">
+        None
+    </option>
+    <option value="1st" id="1stpref">
+        First Preference
+    </option>
+    <option value="2nd" id="2ndpref">
+        Second Preference
+    </option>
 </select>
 
-<!--PREF DECIDED ON SECOND BY ELIMINATION-->
+
+<!--Adjust preference availability-->
+<script>
+
+    // Get prefstr
+    var prefstr = "{{ prefstr }}";
+
+    // When page loads
+    window.onload = function () {
+
+	// Disable prefs if needed
+	disablePrefSelIfNeeded("1st");
+	disablePrefSelIfNeeded("2nd");
+    };
+
+    /**
+     * If prefence has been selected, disable in preference selector
+     * @param {type} pref
+     * @return {undefined}
+     */
+    function disablePrefSelIfNeeded(pref) {
+
+	// If we have preference
+	if (prefstr.includes(pref))
+	{
+	    // Get option
+	    var opt = document.getElementById(pref + "pref")
+
+	    // Disable option
+	    opt.disabled = true;
+
+	    // Change text
+	    opt.innerHTML = opt.innerHTML + " (Already Selected)";
+
+	    // Remove None option
+	    var prefsel = document.getElementById("prefsel");
+	    prefsel.remove(0);
+	}
+    }
+
+</script>
+
+
+
+
+
 
 <!--Duration-->
 <h4> How long you are planning to do the project for? </h4>
-<p> 
-    If you wish to do beyond the standard 8 weeks, 
-    please ensure that you have contacted the supervisor beforehand. 
+<p>
+    If you wish to do beyond the standard 8 weeks,
+    please ensure that you have contacted the supervisor beforehand.
 </p>
-<select name="proj_pref_{{ proj_count }}_dur" id="dur" required>
-    <option value="">None</option>
-    <option value="8wks">8 Weeks (Standard)</option>
-    <option value="8to12wks">8 - 12 Weeks</option>
+<select name="{{ namep }}dur" id="dur" required>
+    <option value="">
+        None
+    </option>
+    <option value="8wks">
+        8 Weeks (Standard)
+    </option>
+    <option value="8to12wks">
+        8 - 12 Weeks
+    </option>
 </select>
 
 <br>
 <br>
-
 
 {% endblock %}

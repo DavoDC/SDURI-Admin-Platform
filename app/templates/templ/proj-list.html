@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!--Heading-->
+<h4>
+    {% block heading %}{% endblock %}
+</h4>
+
+
+
+<!-- If there are projects -->
+{% if projects|length > 0 %}
+
+<!--Table-->
+<table class="project-table">
+
+    <!--Add table headings-->
+    <tr class="project-row">
+        {% for table_heading in table_headings %}
+
+        <th class="project-th">
+            {{ table_heading }}
+        </th>
+        {% endfor %}
+    </tr>
+
+    <!--Add table rows-->
+    {% block table_rows %}{% endblock %}
+
+</table>
+
+
+<!--Add under table block-->
+{% block under_table %}{% endblock %}
+
+
+
+{% else %}
+
+
+<!--Else if there are no projects,-->
+<!--add no projects block-->
+{% block no_projects %}{% endblock %}
+
+
+
+{% endif %}
+
+
+<!--Back button-->
+<br>
+<h4>
+    <a class="hover-button" href={{ backlink }}>
+        Back 
+    </a>
+</h4>
+
+
+{% endblock %}

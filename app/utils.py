@@ -148,11 +148,54 @@ def save_file(file_field_name, student):
             # Commit to database
             db.session.commit()
 
+
+        
 # Get student with given username
 def get_student_from_username(username):
+    
     # Get user id
     uid = User.query.filter_by(name=username).first().id or 404
+    
     # Get student from username
     student = Student.query.filter_by(user_id=uid).first() or 404
+    
+    # Check result
+    if uid == 404 or student == 404:
+        msg = "Message: Couldn't find user in"
+        msg += " get_student_from_username()."
+        msg += "Student needs to enter details first to create row."
+        return render_template(msg)
+    
     # Return student
     return student
+
+
+# Get list of projects applied for (as PIDs)
+def get_projects_applied_for(student):
+    
+    # Define empty list
+    pids = []
+    
+    # Get first pid
+    first = student.proj1_id
+    
+    # If first pid is valid
+    if first != None:
+        
+        # Add to list
+        pids.append(first)
+    
+    # Get second pid
+    second = student.proj2_id
+    
+    # If second pid is valid
+    if second != None:
+        
+        # Add to list
+        pids.append(second)
+        
+    # Return list
+    return pids
+    
+    
+    

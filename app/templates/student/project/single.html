@@ -109,22 +109,45 @@
     </tr>
 </table>
 
-<!--Apply -->
-{% if not applied %}
+
+<!--If cannot apply -->
+{% if not can_apply %}
+
+<!--Upon load, disable apply button by changing CSS class-->
+<script>
+    window.onload = function () {
+	button = document.getElementById('apply_button');
+	button.className = "hover-button-disabled";
+    };
+</script>
+
+<!--Give message-->
+<p>     
+    <!--If applied for this project-->
+    {% if applied_for_this %}
+    You have already applied for this project
+    {% else %}
+    <!--Else if not applied to this project, -->
+    <!--but cannot apply, they must have applied for others-->
+    You have already applied for two other projects
+    {% endif %}
+</p>
+
+{% endif %}
+
+
+<!--Show apply button-->
 <h4>
     <a class="hover-button" 
        href="{{ url_for('project_apply', 
        pid=project.id, 
-       username = current_user.name) }}">
-        Apply
+       username = current_user.name) }}"
+       id="apply_button"
+       >
+        Apply        
     </a>
-</a>
 </h4>
-{% else %}
 
-<p> You have already applied and entered your two project preferences </p>>
-
-{% endif %}
 
 <!--Back to project list -->
 <h4>

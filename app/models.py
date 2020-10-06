@@ -214,13 +214,15 @@ class Student(db.Model):
     
     
     ## Projects
-    # First project ID and duration
-    proj_pref_1 = db.Column(db.Integer) 
-    proj_pref_1_dur = db.Column(db.String(32)) 
+    # First slot
+    proj1_id = db.Column(db.Integer)
+    proj1_pref = db.Column(db.String(32))
+    proj1_dur = db.Column(db.String(32)) 
     
-    # Second project ID and duration
-    proj_pref_2 = db.Column(db.Integer) 
-    proj_pref_2_dur = db.Column(db.String(32)) 
+    # Second slot
+    proj2_id = db.Column(db.Integer)
+    proj2_pref = db.Column(db.String(32))
+    proj2_dur = db.Column(db.String(32)) 
     
     # Initialize student entry
     def __init__(self, user_id):
