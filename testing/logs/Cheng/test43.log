@@ -199,3 +199,45 @@ INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:22:06] "[37mGET /static/admin-asset
 INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:22:11] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:22:12] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:22:13] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:26:15] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:26:19] "[32mPOST /admin/user/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:26:19] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:26:21] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:26:23] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:26:24] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /auth/initial-registration [POST]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\auth\routes.py", line 151, in initial_registration
+    mail.send(msg)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 156, in configure_host
+    host = smtplib.SMTP_SSL(self.mail.server, self.mail.port)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 1034, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 253, in __init__
+    (code, msg) = self.connect(host, port)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 1040, in _get_socket
+    new_socket = socket.create_connection((host, port), timeout,
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\socket.py", line 808, in create_connection
+    raise err
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 01:27:32] "[35m[1mPOST /auth/initial-registration HTTP/1.1[0m" 500 -
