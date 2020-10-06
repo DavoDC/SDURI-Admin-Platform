@@ -20,7 +20,7 @@ class Config(object):
     MAIL_USE_SSL = True
 
     # gmail authentication
-    MAIL_USERNAME = "sduri.pro@gmail.com" # s.environ['APP_MAIL_USERNAME']
+    MAIL_USERNAME = "sduri.pro@gmail.com" # os.environ['APP_MAIL_USERNAME']
     MAIL_PASSWORD = "cits32**" # os.environ['APP_MAIL_PASSWORD']
 
     # mail accounts

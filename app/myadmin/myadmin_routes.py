@@ -13,7 +13,6 @@ from app.models import *
 from app.myadmin.myadmin_models import *
 import datetime
 
-
 @bp.route('/home') #, methods=['GET', 'POST'])
 @bp.route('/')
 def admin_home():
@@ -52,7 +51,7 @@ def delete(id):
   del_user = User.query.get(id)
   db.session.delete(del_user)
   db.session.commit()
-  flash("User Deleted Successfully")
+  flash("Successfully deleted a user '" + del_user.email + "'")
 
   return redirect(url_for('myadmin.display_users', page_num=1))
 

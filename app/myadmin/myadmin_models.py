@@ -14,7 +14,8 @@ class AdminTask(db.Model):
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   description = db.Column(db.String)
   action = db.Column(db.String)
-  relatedUserEmail = db.Column(db.String(120), unique=True)
+  # Email cannot be unique because same user may have one or more problems
+  relatedUserEmail = db.Column(db.String(120)) 
   resolved = db.Column(db.Boolean, default=False, nullable=False)
   resolved_on = db.Column(db.DateTime) # , nullable=False)
 

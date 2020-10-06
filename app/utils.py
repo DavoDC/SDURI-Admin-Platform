@@ -16,7 +16,7 @@ from werkzeug.utils import secure_filename
 # Redirect to user page based on role
 def send_to_user_page(role):
     if role == "Administrator":
-        return redirect(url_for('admin', username=current_user.name))
+        return redirect(url_for('myadmin.admin_home', username=current_user.name))
     elif role == "Supervisor":
         return redirect(url_for('supervisors', username=current_user.name))
     elif role == "Student":
