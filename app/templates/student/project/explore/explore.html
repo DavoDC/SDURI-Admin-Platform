@@ -10,6 +10,7 @@ Select a project to view more information and/or apply
 {% set table_headings = 
 [
 "Project Title", 
+"Skills",
 "Keywords", 
 "Location", 
 "Uni Specific",
@@ -23,8 +24,13 @@ Select a project to view more information and/or apply
 <!--Add projects as rows-->
 {% for project in projects %}
 <tr class="project-row">
+
+    <!--Key project fields-->
     <td class="project-td">
         {{ project.title }}
+    </td>
+    <td class="project-td">
+        {{ project.skills }}
     </td>
     <td class="project-td">
         {{ project.keywords }}
@@ -35,9 +41,11 @@ Select a project to view more information and/or apply
     <td class="project-td">
         {{ project.specific_uni }}
     </td>
-    <td class="project-td">
+
+    <!--Select button-->
+    <td class="project-td" style="text-align: center;">
         <a class="hover-button" 
-           href="{{ url_for('student_single', 
+           href="{{ url_for('student_select', 
            pid=project.id, 
            username = current_user.name) }}">
             Select
@@ -56,6 +64,7 @@ Select a project to view more information and/or apply
 </small> 
 {% endblock %}
 
+
 <!--No projects message-->
 {% block no_projects %}
 <br>
@@ -63,6 +72,7 @@ Select a project to view more information and/or apply
 <p>Supervisors have not created any projects yet.</p>
 <br>
 {% endblock %}
+
 
 <!--Set link for back button-->
 {% set backlink %}{{ url_for('index') }}{% endset %}

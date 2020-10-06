@@ -2,7 +2,6 @@
 # Import modules
 from app import db
 from app.models import *
-from app.models import User
 from flask import redirect
 from flask import render_template
 from flask import request
@@ -197,5 +196,43 @@ def get_projects_applied_for(student):
     # Return list
     return pids
     
+
+# Get project 1 details triplet
+def get_proj1_details(student):
+
+    # Get id
+    pid = student.proj1_id
     
+    # Check if valid
+    if(pid == None):
+        return None
+
+    # Get preference
+    pref = student.proj1_pref
+        
+    # Get duration
+    dur = student.proj1_dur
+    
+    # Return triplet
+    return [pid, pref, dur]
+
+
+# Get project 2 details triplet
+def get_proj2_details(student):
+
+    # Get id
+    pid = student.proj2_id
+    
+    # Check if valid
+    if(pid == None):
+        return None
+
+    # Get preference
+    pref = student.proj2_pref
+        
+    # Get duration
+    dur = student.proj2_dur
+    
+    # Return triplet
+    return [pid, pref, dur]
     

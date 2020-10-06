@@ -1,14 +1,14 @@
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  width: 100%;
-  padding: 1px 16px;
-  height: 1000px;
+    width: 100%;
+    padding: 1px 16px;
+    height: 1000px;
 
 }
 
 
 .navbar-header{
-  width:100%;
+    width:100%;
 }
 
 @media (max-width: 1200px) {
@@ -17,13 +17,13 @@ div.content {
     }
 }
 .pull-right{
-  float:right;
+    float:right;
 }
 
 /* .............................................................
 Pagination in tables
 ..................................................................
- */
+*/
 .page-item.disabled .page-link {
     color: #6c757d;
     pointer-events: none;
@@ -36,11 +36,11 @@ Pagination in tables
 Sorting and searching in tables
 .....................................*/
 .dtHorizontalVerticalExampleWrapper {
-max-width: 600px;
-margin: 0 auto;
+    max-width: 600px;
+    margin: 0 auto;
 }
 #dtHorizontalVerticalExample th, td {
-white-space: nowrap;
+    white-space: nowrap;
 }
 
 
@@ -54,12 +54,12 @@ table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
-bottom: .5em;
+    bottom: .5em;
 }
 
 div.dataTables_wrapper {
-        width: 800px;
-        margin: 0 auto;
+    width: 800px;
+    margin: 0 auto;
 }
 
 div.dataTables_length {

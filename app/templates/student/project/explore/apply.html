@@ -1,3 +1,4 @@
+
 {% extends "templ/form-page.html" %}
 
 <!-- Heading -->
@@ -17,8 +18,7 @@
 <input
     name="{{ namep }}id"
     value="{{ project.id }}"
-    type="hidden"
-    >
+    type="hidden">
 
 
 
@@ -35,10 +35,10 @@
     <option value="">
         None
     </option>
-    <option value="1st" id="1stpref">
+    <option value="First" id="First">
         First Preference
     </option>
-    <option value="2nd" id="2ndpref">
+    <option value="Second" id="Second">
         Second Preference
     </option>
 </select>
@@ -53,9 +53,9 @@
     // When page loads
     window.onload = function () {
 
-	// Disable prefs if needed
-	disablePrefSelIfNeeded("1st");
-	disablePrefSelIfNeeded("2nd");
+        // Disable prefs if needed
+        disablePrefSelIfNeeded("First");
+        disablePrefSelIfNeeded("Second");
     };
 
     /**
@@ -65,22 +65,22 @@
      */
     function disablePrefSelIfNeeded(pref) {
 
-	// If we have preference
-	if (prefstr.includes(pref))
-	{
-	    // Get option
-	    var opt = document.getElementById(pref + "pref")
+        // If we have preference
+        if (prefstr.includes(pref))
+        {
+            // Get option
+            var opt = document.getElementById(pref)
 
-	    // Disable option
-	    opt.disabled = true;
+            // Disable option
+            opt.disabled = true;
 
-	    // Change text
-	    opt.innerHTML = opt.innerHTML + " (Already Selected)";
+            // Change text
+            opt.innerHTML = opt.innerHTML + " (Already Selected)";
 
-	    // Remove None option
-	    var prefsel = document.getElementById("prefsel");
-	    prefsel.remove(0);
-	}
+            // Remove None option
+            var prefsel = document.getElementById("prefsel");
+            prefsel.remove(0);
+        }
     }
 
 </script>
@@ -100,10 +100,10 @@
     <option value="">
         None
     </option>
-    <option value="8wks">
+    <option value="8 Weeks">
         8 Weeks (Standard)
     </option>
-    <option value="8to12wks">
+    <option value="8 to 12 Weeks">
         8 - 12 Weeks
     </option>
 </select>

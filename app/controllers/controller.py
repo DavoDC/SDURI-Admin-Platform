@@ -1,6 +1,10 @@
 # Controller.py
-from app import app, db
-from app.models import User, Student, Project, Preference
+from app import app
+from app import db
+from app.models import Preference
+from app.models import Project
+from app.models import Student
+from app.models import User
 
 class Controller():
 

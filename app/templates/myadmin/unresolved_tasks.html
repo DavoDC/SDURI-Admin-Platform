@@ -1,37 +1,37 @@
 <div>
-  <h4>Unresolved Tasks</h4>
-  <table class="table table-hover table-grey">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Resolved</th>
-        <th>Description</th>
-        <th>Action</th>
-        <td>Related to</td>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- unresolved_tasks is a list -->
-      {% for row in unresolved_tasks %}
-        <tr>
-          <td> {{ row.id }} </td>
-          <td><a  href="{{ url_for('myadmin.mark_as_resolved', task_id=row.id )}}" 
-                  class="btn btn-danger btn-xs" onclick="return confirm('Is this task completed?')">Resolve</a></td>
-          <td> {{ row.description}}</td>
-          <td> {{ row.action}}</td>
-          <td> {{ row.relatedUserEmail}}</td>
-          </tr>
+    <h4>Unresolved Tasks</h4>
+    <table class="table table-hover table-grey">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Resolved</th>
+                <th>Description</th>
+                <th>Action</th>
+                <td>Related to</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- unresolved_tasks is a list -->
+            {% for row in unresolved_tasks %}
+            <tr>
+                <td> {{ row.id }} </td>
+                <td><a  href="{{ url_for('myadmin.mark_as_resolved', task_id=row.id )}}" 
+                        class="btn btn-danger btn-xs" onclick="return confirm('Is this task completed?')">Resolve</a></td>
+                <td> {{ row.description}}</td>
+                <td> {{ row.action}}</td>
+                <td> {{ row.relatedUserEmail}}</td>
+            </tr>
 
-      {% endfor %}
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>Id</th>
-        <th>Resolved</th>
-        <th>Description</th>
-        <th>Action</th>
-        <th>Related to</th>
-      </tr>
-    </tfoot>
-  </table>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Resolved</th>
+                <th>Description</th>
+                <th>Action</th>
+                <th>Related to</th>
+            </tr>
+        </tfoot>
+    </table>
 </div>

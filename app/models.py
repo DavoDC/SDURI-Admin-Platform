@@ -64,16 +64,16 @@ class User(UserMixin, db.Model):
         return '<User {}>'.format(self.name)
     
     def __init__(self, 
-                name, email, password, confirmed,
-                registered_on, role="", 
-                confirmed_on=None,
-                password_reset_token=None):
+                 name, email, password, confirmed,
+                 registered_on, role="", 
+                 confirmed_on=None,
+                 password_reset_token=None):
 
         self.name = name
         self.email = email
         self.password = generate_password_hash(password)
 
-        self.registered_on=registered_on
+        self.registered_on = registered_on
         self.role = role
         self.confirmed = confirmed
         self.confirmed_on = confirmed_on

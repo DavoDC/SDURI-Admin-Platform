@@ -1,0 +1,8 @@
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 23:58:27] "[33mGET /student/Dave/landing HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 23:58:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 23:58:30] "[33mGET /student/Dave/landing HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 23:58:36] "[33mGET /student/Dave/landing HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

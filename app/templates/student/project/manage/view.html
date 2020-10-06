@@ -1,0 +1,7 @@
+
+{% extends "student/project/templ/single.html" %}
+
+<!--Set link for back button-->
+{% set backlink %}
+{{ url_for('student_manage', username=current_user.name)}}
+{% endset %}

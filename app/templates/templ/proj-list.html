@@ -44,17 +44,14 @@
 {% block no_projects %}{% endblock %}
 
 
-
 {% endif %}
 
 
-<!--Back button-->
+<!--Customisable back button-->
 <br>
-<h4>
-    <a class="hover-button" href={{ backlink }}>
-        Back 
-    </a>
-</h4>
+{% with backlink=backlink %}
+{% include "templ/back-button.html" %}
+{% endwith %} 
 
 
 {% endblock %}
