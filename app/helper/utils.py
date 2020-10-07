@@ -15,7 +15,7 @@ from werkzeug.utils import secure_filename
 # Redirect to user page based on role
 def send_to_user_page(role):
     if role == "Administrator":
-        return redirect(url_for('admin', username=current_user.name))
+        return redirect(url_for('myadmin.admin_home', username=current_user.name))
     elif role == "Supervisor":
         return redirect(url_for('supervisors', username=current_user.name))
     elif role == "Student":
@@ -28,19 +28,17 @@ def send_to_user_page(role):
         return msg
 
 
-# Render user page so that only users with correct role can see it
-def user_page(role, rend_temp_path):
-
-    # If current user role doesn't match input role
-    if current_user.role != role:
-
-        # Send back to index
-        return redirect(url_for('index'))
-
-    # Else if role is correct,
-    # render HTML with path, user, role
-    return rend_temp_path
-
+# Render user landing page
+def landing_page(role):
+    
+    # Infer path to HTML
+    path = role.lower() + "/landing.html"
+    
+    # Render as role
+    rend_temp = render_template(path, title=role)
+ 
+    # Return as role page
+    return user_page(role, rend_temp)
 
 # Render student pages
 def student_page(rend_temp_path):
@@ -51,16 +49,24 @@ def student_page(rend_temp_path):
 def supervisor_page(rend_temp_path):
     return user_page("Supervisor", rend_temp_path)
 
+# Render user page so that only users with correct role can see it
+def user_page(role, rend_temp):
 
-# Render user landing page
-def landing_page(role):
-    path = role.lower() + "/landing.html"
-    return render_template(path, title=role)
+    # If current user role doesn't match input role
+    if current_user.role != role:
+
+        # Send back to index
+        return redirect(url_for('index'))
+
+    # Else if role is correct,
+    # render template
+    return rend_temp
 
 
-# Save form data into given DB
-def save_form(username, custDB, overwrite):
 
+# Add empty row to database
+def add_empty_row(username, custDB):
+    
     # Get user type id
     ut_id = User.query.filter_by(name=username).first().id or 404
 
@@ -70,6 +76,15 @@ def save_form(username, custDB, overwrite):
         # Initialize row and commit
         db.session.add(custDB(ut_id))
         db.session.commit()
+    
+    # Return ut_id
+    return ut_id
+
+# Save form data into given DB
+def save_form(username, custDB, overwrite):
+
+    # Initialize row if needed and get user type id
+    ut_id = add_empty_row(username, custDB)
 
     # If mode is post
     if request.method == "POST":
@@ -155,15 +170,24 @@ def get_student_from_username(username):
     # Get user id
     uid = User.query.filter_by(name=username).first().id or 404
     
+    # If user id was not found
+    if uid == 404:
+        msg = "Message: "
+        msg += "Student needs to enter details first! "
+        msg += "(Couldn't find user row in get_student_from_username())"
+        return render_template(msg)
+    
     # Get student from username
     student = Student.query.filter_by(user_id=uid).first() or 404
     
-    # Check result
-    if uid == 404 or student == 404:
-        msg = "Message: Couldn't find user in"
-        msg += " get_student_from_username()."
-        msg += "Student needs to enter details first to create row."
-        return render_template(msg)
+    # If student doesn't exist
+    if student == 404:
+        
+        # Add empty row
+        add_empty_row(username, Student)
+            
+        # Retrieve again
+        return get_student_from_username(username)
     
     # Return student
     return student

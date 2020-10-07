@@ -2,7 +2,7 @@
 # Import modules
 from app import app
 from app import db
-from app import utils
+from app.helper import utils
 from app.forms import LoginForm
 from app.forms import RegistrationForm
 from app.models import *

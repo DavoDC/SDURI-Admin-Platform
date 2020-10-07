@@ -1,7 +1,7 @@
 
 # Import modules
 from app import app
-from app import utils
+from app.helper import utils
 from app.models import *
 from flask import redirect
 from flask import render_template

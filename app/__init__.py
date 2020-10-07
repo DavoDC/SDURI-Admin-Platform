@@ -1,7 +1,7 @@
 # init.py
 # essentially this makes the 'app' folder a package that can be imported
 
-from app import logging
+from app.helper import logging
 from config import Config
 from flask import Flask
 from flask_admin import Admin

@@ -1,7 +1,7 @@
 
 # Import modules
 from app import app
-from app import utils
+from app.helper import utils
 from app.models import *
 from app.routing import *
 from flask import render_template
@@ -82,7 +82,7 @@ def student_select(username, pid):
 
     # Get project
     project = Project.query.filter_by(id=pid).first() or 404
-
+    
     # Get student
     student = utils.get_student_from_username(username)
 
