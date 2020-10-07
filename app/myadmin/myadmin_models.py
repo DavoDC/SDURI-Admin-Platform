@@ -16,17 +16,17 @@ from werkzeug.security import generate_password_hash
 class AdminTask(db.Model):
     __tablename__ = 'admin_task'
 
-  id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-  description = db.Column(db.String)
-  action = db.Column(db.String)
-  # Email cannot be unique because same user may have one or more problems
-  relatedUserEmail = db.Column(db.String(120)) 
-  resolved = db.Column(db.Boolean, default=False, nullable=False)
-  resolved_on = db.Column(db.DateTime) # , nullable=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    description = db.Column(db.String)
+    action = db.Column(db.String)
+    # Email cannot be unique because same user may have one or more problems
+    relatedUserEmail = db.Column(db.String(120)) 
+    resolved = db.Column(db.Boolean, default=False, nullable=False)
+    resolved_on = db.Column(db.DateTime) # , nullable=False)
 
     def set_task_as_resolved(self, task_status):
         self.resolved = task_status
-  
+
     def set_task_resolved_on(self, task_resolved_date):
         self.resolved_on = task_resolved_date
 
