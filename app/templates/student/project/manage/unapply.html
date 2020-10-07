@@ -1,0 +1,55 @@
+
+{% extends "templ/form-page.html" %}
+
+<!-- Heading -->
+{% block heading %}
+<br>
+<h4>
+    Are you sure you want to unapply from '{{ project.title }}' ?
+</h4>
+{% endblock %}
+
+<!--Get HTML name prefix-->
+{% set namep %}proj{{ proj_slot }}_{% endset %}
+
+<!--Hidden fields-->
+{% block questions %}
+
+<input 
+    name="{{ namep }}id"
+    type="hidden">
+
+<input 
+    name="{{ namep }}pref"
+    type="hidden">
+    
+<input 
+    name="{{ namep }}dur"
+    type="hidden">
+
+{% endblock %}
+
+
+
+
+
+{% block under_submit %}
+
+<!--Upon load, change Submit to Yes-->
+<script>
+    window.onload = function () {
+        button = document.getElementById('submit_form_button');
+        button.innerHTML = "Yes";
+    };
+</script>
+
+
+<!--Add No button-->
+<h4>
+    <a class="hover-button" 
+       id="back-button"
+       href={{ url_for('student_manage', username=current_user.name) }}>
+        No
+    </a>
+</h4>
+{% endblock %}

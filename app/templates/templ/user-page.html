@@ -7,8 +7,19 @@
     <!--Welcome user-->
     <h2>Welcome {{ current_user.name }}</h2>
 
-    <!--Buttons-->
-    {% block buttons %}{% endblock %}
+    <!--Add action buttons-->
+    <table class="action-button-table">
+
+        {% for button in buttons %}
+        <tr>
+            <td>
+                <a {{ "href=" + button[1] }}> 
+                   <button class="hover-button" type="action">
+                    {{ button[0] }}
+                    </button>
+                </a> 
+                {% endfor %}
+    </table>
 
     <!--Logout link -->
     <a href="{{ url_for('logout') }}">Logout</a>

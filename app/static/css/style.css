@@ -106,7 +106,7 @@ button[type="action"] {
 }
 
 /*Yellow hover buttons*/
-.hover-button{
+.hover-button, input[type="submit"] {
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -115,6 +115,30 @@ button[type="action"] {
     text-align: center;
     border-radius: 4px;
     background: #D9AC28 !important;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/*Grey disabled hover button*/
+.hover-button-disabled {
+
+    /*Different*/
+    pointer-events: none;
+    cursor: default;
+    background: #908c82 !important;
+
+    /*Same*/
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    border-radius: 4px;
+
     text-decoration: none;
     padding: 10px;
     transition: all 0.4s;
@@ -167,9 +191,15 @@ button[type="action"] {
 /*Shade even rows*/
 .project-row:nth-child(even) {background-color: #f2f2f2;}
 
-/*Table cell*/
-.project-th, .project-td {
-    text-align: left;
+/*Project table heading*/
+.project-th {
+    text-align: center;
     padding: 8px;
+}
+
+/*Project row*/
+.project-td {
+    text-align: left;
+    padding: 12px;
 }
 

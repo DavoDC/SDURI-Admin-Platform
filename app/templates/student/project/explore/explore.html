@@ -1,0 +1,78 @@
+
+{% extends "templ/proj-list.html" %}
+
+<!--Heading-->
+{% block heading %}
+Select a project to view more information and/or apply
+{% endblock %}
+
+<!--Table headings-->
+{% set table_headings = 
+[
+"Project Title", 
+"Skills",
+"Keywords", 
+"Location", 
+"Uni Specific",
+"Select Project"
+] 
+%}
+
+<!--Table rows-->
+{% block table_rows %}
+
+<!--Add projects as rows-->
+{% for project in projects %}
+<tr class="project-row">
+
+    <!--Key project fields-->
+    <td class="project-td">
+        {{ project.title }}
+    </td>
+    <td class="project-td">
+        {{ project.skills }}
+    </td>
+    <td class="project-td">
+        {{ project.keywords }}
+    </td>
+    <td class="project-td">
+        {{ project.location }}
+    </td>
+    <td class="project-td">
+        {{ project.specific_uni }}
+    </td>
+
+    <!--Select button-->
+    <td class="project-td" style="text-align: center;">
+        <a class="hover-button" 
+           href="{{ url_for('student_select', 
+           pid=project.id, 
+           username = current_user.name) }}">
+            Select
+        </a>
+    </td>
+</tr>
+{% endfor %}
+
+{% endblock %}
+
+<!--Under table-->
+{% block under_table %}
+<br>
+<small><b> Note: </b> Please note that some of the usual projects are not 
+    available as the program has now moved to an online mode. 
+</small> 
+{% endblock %}
+
+
+<!--No projects message-->
+{% block no_projects %}
+<br>
+<p>There are no projects available.</p>
+<p>Supervisors have not created any projects yet.</p>
+<br>
+{% endblock %}
+
+
+<!--Set link for back button-->
+{% set backlink %}{{ url_for('index') }}{% endset %}

@@ -1,20 +1,12 @@
 
-<!--Extend user page template-->
-{% extends "templ/user-page.html" %}
 
-<!--Add custom parts-->
-{% block buttons %}
-
-
-<!--Add action buttons-->
+<!--Add user page with buttons-->
 {% with buttons=
-[
-("Enter Details", "details/landing"  ), 
-("Add Project ", "project/add"),
+[ 
+("Enter Details", "details"), 
+("Add Project", "project/add"),
 ("Manage Your Projects", "project/manage"),
-] %}
-{% include "templ/action-buttons.html" %}
+]
+%}
+{% include "templ/user-page.html" %}
 {% endwith %}
-
-
-{% endblock %}-->

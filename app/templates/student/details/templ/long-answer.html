@@ -41,17 +41,17 @@
 
     // Get word count
     var count = getWordCount(textarea);
-    // Update label
-    q{{ qnum }}wc.innerHTML = count;
-    // If word count is more than limit
-    if (count > {{ wordlim }})
+            // Update label
+            q{{ qnum }}wc.innerHTML = count;
+            // If word count is more than limit
+            if (count > {{ wordlim }})
     {
     // Correct word count
     q{{ qnum }}wc.innerHTML = {{ wordlim }};
-    // Prevent user from entering more
-    var text = textarea.value;
-    text = text.substring(0, text.length - 1);
-    textarea.value = text;
+            // Prevent user from entering more
+            var text = textarea.value;
+            text = text.substring(0, text.length - 1);
+            textarea.value = text;
     }
     }
 
@@ -60,24 +60,24 @@
      */
     function getWordCount(textarea)
     {
-    // Split by space
-    var list = textarea.value.split(' ');
-    // Remove words that are just empty strings
-    list = list.filter(function (el) {
-    return el !== null && el.trim() !== '';
-    });
-    // Return word count
-    return list.length;
+        // Split by space
+        var list = textarea.value.split(' ');
+        // Remove words that are just empty strings
+        list = list.filter(function (el) {
+            return el !== null && el.trim() !== '';
+        });
+        // Return word count
+        return list.length;
     }
 </script>
 
 <!--Disable paste-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-  $('#longQ{{ qnum }}ta').bind('paste',function(e) {
-    e.preventDefault();
-    alert('Paste is disabled');
-  });
-});
+    $(document).ready(function () {
+        $('#longQ{{ qnum }}ta').bind('paste', function (e) {
+            e.preventDefault();
+            alert('Paste is disabled');
+        });
+    });
 </script>

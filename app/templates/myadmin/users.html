@@ -10,114 +10,114 @@
 
 <!-- Font Awesome JS -->
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-  integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-  integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
 {% block content %}
 {{super()}}
 <br>
 
 <div class="row">
-  <div class="col-md-12">
-    <div class="jumbotron p-3">
-      {% with messages = get_flashed_messages() %}
-      {% if messages %}
-      {% for message in messages %}
+    <div class="col-md-12">
+        <div class="jumbotron p-3">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
 
-      <div class="alert alert-success alert-dismissable" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="close">
-          <span aria-hidden="true">x</span>
-        </button>
-        {{message}}
-      </div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
-
-     
-      
-      <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
-              data-target="#modalAddUser">Add new user</a></p>
-      <table id="user_table" class="table display table-bordered table-hover table-grey">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>           
-            <th>Confirmed</th>
-            <th>Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for row in users.items %}
-            <tr>
-              <td sortable=True> {{ row.id}}</td>
-              <td> {{ row.name}}</td>
-              <td> {{ row.email}}</td>
-              <td> {{ row.confirmed}}</td>
-              <td> {{ row.role }}</td>
-              <td>
-
-                <!-- Buttons to trigger modals -->
-                <a href="/myadmin/update/{{ row.id }}" class="btn btn-warning btn-xs" data-toggle="modal"
-                  data-target="#modaledit{{row.id}}">Edit</a>
-                <a href="{{ url_for('myadmin.delete', id=row.id) }}  " class="btn btn-danger btn-xs"
-                  onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
-              </td>
-            </tr>
+            <div class="alert alert-success alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">x</span>
+                </button>
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
 
 
-            <!-- Modal Edit User-->
-            <div id="modaledit{{row.id}}" class="modal fade" role="dialog">
-              {% include './modaledit_user.html' %}
-            </div> <!-- end: modaledit user -->
 
-            <!-- Modal Edit User-->
-            <div id="modalAddUser" class="modal fade" role="dialog">
-              {% include './modalAddUser.html' %}
-            </div> <!-- end: modaledit user -->
+            <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
+                  data-target="#modalAddUser">Add new user</a></p>
+            <table id="user_table" class="table display table-bordered table-hover table-grey">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>           
+                        <th>Confirmed</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in users.items %}
+                    <tr>
+                        <td sortable=True> {{ row.id}}</td>
+                        <td> {{ row.name}}</td>
+                        <td> {{ row.email}}</td>
+                        <td> {{ row.confirmed}}</td>
+                        <td> {{ row.role }}</td>
+                        <td>
 
-          {% endfor %}
-        </tbody>
-        <tfoot>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <!-- <th>Password</th> -->
-            <th>Confirmed</th>
-            <th>Role</th>
-          </tr>
-        </tfoot>
-      </table>
+                            <!-- Buttons to trigger modals -->
+                            <a href="/myadmin/update/{{ row.id }}" class="btn btn-warning btn-xs" data-toggle="modal"
+                               data-target="#modaledit{{row.id}}">Edit</a>
+                            <a href="{{ url_for('myadmin.delete', id=row.id) }}  " class="btn btn-danger btn-xs"
+                               onclick="return confirm('Are You Sure To Delete ?')">Delete</a>
+                        </td>
+                    </tr>
+
+
+                    <!-- Modal Edit User-->
+                <div id="modaledit{{row.id}}" class="modal fade" role="dialog">
+                    {% include './modaledit_user.html' %}
+                </div> <!-- end: modaledit user -->
+
+                <!-- Modal Edit User-->
+                <div id="modalAddUser" class="modal fade" role="dialog">
+                    {% include './modalAddUser.html' %}
+                </div> <!-- end: modaledit user -->
+
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <!-- <th>Password</th> -->
+                        <th>Confirmed</th>
+                        <th>Role</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <ul class="pagination">
+            {% if users.has_prev %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_users', page_num=users.prev_num) }}">Previous</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">Previous</span>
+                {% endif %}
+            </li>
+
+            {% for page in users.iter_pages(left_edge=1, right_edge=1) %}
+            {% if page %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_users', page_num=page) }}">{{ page }}</a></li>
+            {% else %}
+            <li class="page-item disabled" id="example_ellipsis"><a href="#" class="page-link">…</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if users.has_next %}
+            <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_users', page_num=users.next_num) }}">Next</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">Next</span>
+                {% endif %}
+        </ul>
     </div>
-
-    <ul class="pagination">
-      {% if users.has_prev %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_users', page_num=users.prev_num) }}">Previous</a>
-      </li>
-      {% else %}
-      <li class="page-item disabled"><span class="page-link">Previous</span>
-        {% endif %}
-      </li>
-    
-      {% for page in users.iter_pages(left_edge=1, right_edge=1) %}
-      {% if page %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_users', page_num=page) }}">{{ page }}</a></li>
-      {% else %}
-      <li class="page-item disabled" id="example_ellipsis"><a href="#" class="page-link">…</a></li>
-      {% endif %}
-      {% endfor %}
-    
-      {% if users.has_next %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_users', page_num=users.next_num) }}">Next</a>
-      </li>
-      {% else %}
-      <li class="page-item disabled"><span class="page-link">Next</span>
-        {% endif %}
-    </ul>
-  </div>
 </div>
 <!-- </div> -->
 
@@ -132,13 +132,13 @@
 {{super()}}
 
 <script>
-  $(document).ready(function() {
-    $('#user_table').DataTable({
-      pagingType: "full_numbers"
-    }); 
+    $(document).ready(function () {
+        $('#user_table').DataTable({
+            pagingType: "full_numbers"
+        });
 
-    
-  });
+
+    });
 </script>
 
 

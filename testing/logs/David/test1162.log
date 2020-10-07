@@ -1,0 +1,40 @@
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:08] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:08] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:10] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:11] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:21] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:22] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:25] "[37mGET /admin/student/edit/?id=1&url=%2Fadmin%2Fstudent%2F HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:25] "[36mGET /admin/static/vendor/select2/select2x2.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:28] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:30] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:32] "[37mGET /admin/user/edit/?id=1&url=%2Fadmin%2Fuser%2F HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:36] "[32mPOST /admin/user/edit/?id=1&url=%2Fadmin%2Fuser%2F HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:36] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:38] "[37mGET /supervisor/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:40] "[35m[1mGET /supervisor/Dave/project/add HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:40] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:40] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:40] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:40] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:40] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:44] "[37mGET /supervisor/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:50] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:53] "[35m[1mGET /supervisor/Dave/project/add HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:53] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:53] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:53] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:53] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:09:53] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:10:16] "[35m[1mGET /supervisor/Dave/project/add HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:10:16] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:10:16] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:10:16] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:10:16] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:10:16] "[37mGET /supervisor/Dave/project/add?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
