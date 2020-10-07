@@ -1,0 +1,205 @@
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:35:43] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:35:50] "[37mPOST /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:35:54] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:35:56] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:36:00] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:36:04] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:36:04] "[37mGET /static/admin-assets/admin_css.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:36:07] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:36:10] "[32mGET /myadmin/delete/1/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:36:10] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /auth/initial-registration [POST]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\auth\routes.py", line 151, in initial_registration
+    mail.send(msg)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 734, in login
+    raise last_exception
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbu\n5.7.14 T7Md3-Gq7FIN1guFsGpCHj7V47o_JfslVcCXTpqOL36cgK_8ILUKW28TeTd26GCnGfGRh\n5.7.14 PPHk0HkMt8HLMG3PE3KZXfk0fD2klosU43_ztDsDUapSWITJu3F8nM1Jt0BnnzzA>\n5.7.14 Please log in via your web browser and then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 cf7sm1002491pjb.52 - gsmtp')
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:36:16] "[35m[1mPOST /auth/initial-registration HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:43:12] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:43:13] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:43:16] "[37mPOST /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:43:19] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:43:22] "[32mGET /myadmin/delete/1/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:43:22] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /auth/initial-registration [POST]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\auth\routes.py", line 151, in initial_registration
+    mail.send(msg)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 734, in login
+    raise last_exception
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbv\n5.7.14 aqjXt6nXryt9YOCzdCOa5MjNAq_Q_GKPb76SO4J3HAo_ZRrkzYsfPBUSjJ2xXT3b4QO2X\n5.7.14 v-RTA-TdcxKnkX_WkW31-J9zhf5is3lpjnr653ZZZYrqv3AZxroomI0f3sbN78Hj>\n5.7.14 Please log in via your web browser and then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 fv13sm1087056pjb.50 - gsmtp')
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:43:26] "[35m[1mPOST /auth/initial-registration HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:45:25] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:45:26] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:47:47] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:47:57] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:00] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:01] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:02] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:04] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:05] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:05] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:06] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:06] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:06] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:07] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:07] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:08] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:08] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:08] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:09] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:09] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:09] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:10] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:10] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:11] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:11] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:12] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:12] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:20] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:21] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:21] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:22] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:23] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:23] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:23] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:24] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:24] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:25] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:25] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:26] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:26] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:27] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:27] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:27] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:28] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:28] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:29] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:30] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:38] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:50] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:53] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:55] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:57] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:48:58] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:00] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:12] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:13] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:14] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:15] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:52] "[32mGET /myadmin/delete/1/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:52] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:56] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:49:57] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /auth/initial-registration [POST]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\auth\routes.py", line 151, in initial_registration
+    mail.send(msg)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 734, in login
+    raise last_exception
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbv\n5.7.14 Pms-LGKN1wDHEOH3viFYWTtx-hKGKjKb2dyZnPFn5Pli_yhnrWO_fRoWNAwthyyrmzFKB\n5.7.14 wvK6hNEPwaPVgrvFKJ-TTloTwXeG7x7muJCTaX_gBIJbyolM6qt75atfN7NEohHP>\n5.7.14 Please log in via your web browser and then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 v3sm1105194pjk.23 - gsmtp')
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:50:02] "[35m[1mPOST /auth/initial-registration HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:53:45] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:53:50] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:53:57] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:53:59] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:54:00] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:54:00] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+ERROR:app:Exception on /auth/initial-registration [POST]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\auth\routes.py", line 151, in initial_registration
+    mail.send(msg)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_mail.py", line 165, in configure_host
+    host.login(self.mail.username, self.mail.password)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 734, in login
+    raise last_exception
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 723, in login
+    (code, resp) = self.auth(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\smtplib.py", line 646, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbs\n5.7.14 9OGszyOljvAe9l06c-OHgV6yAFXF4mJMyozLQWF3tLUE5BhO8WRpIz1Cho19aeu74vAQI\n5.7.14 akuwWitm1BUITFJYYnavjcJtxGOeBaT17He6CELbDdV14RBF13H7rElWPiOg7kFs>\n5.7.14 Please log in via your web browser and then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 i25sm1258239pgi.9 - gsmtp')
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 11:54:07] "[35m[1mPOST /auth/initial-registration HTTP/1.1[0m" 500 -
