@@ -75,7 +75,7 @@ def supervisor_manage(username):
     # Get current supervisor's projects
     cur_user_projects = Project.query.filter_by(user_id=super_id).all()
 
-    return render_template("supervisor/project/edit.html",
+    return render_template("supervisor/project/manage/manage.html",
                            title="Manage Your Projects",
                            projects=cur_user_projects)
 
