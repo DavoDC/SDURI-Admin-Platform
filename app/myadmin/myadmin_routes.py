@@ -7,12 +7,6 @@ from app.models import *
 from app.myadmin import bp
 from app.myadmin.myadmin_models import *
 import datetime
-from datetime import date
-from flask import flash
-from flask import redirect
-from flask import render_template
-from flask import request
-from flask import url_for
 
 @bp.route('/home') #, methods=['GET', 'POST'])
 @bp.route('/')
@@ -49,10 +43,10 @@ def update():
 
 @bp.route('/delete/<id>/', methods=['GET', 'POST'])
 def delete(id):
-    del_user = User.query.get(id)
-    db.session.delete(del_user)
-    db.session.commit()
-    flash("User Deleted Successfully")
+  del_user = User.query.get(id)
+  db.session.delete(del_user)
+  db.session.commit()
+  flash("Successfully deleted a user '" + del_user.email + "'")
 
     return redirect(url_for('myadmin.display_users', page_num=1))
 

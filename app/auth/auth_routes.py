@@ -41,32 +41,31 @@ def forgot_password():
 
 @bp.route('/password/forgot/new/<token>', methods=['GET', 'POST'])
 def reset_password(token):
-    form = ChangePasswordForm(request.form)
-    email = confirm_token(token)
-    user = User.query.filter_by(email=email).first_or_404()
+  form = ChangePasswordForm(request.form)
+  email = confirm_token(token)
+  user = User.query.filter_by(email=email).first_or_404()
 
-    if user.password_reset_token is not None:
-        # form = ChangePasswordForm(request.form)
-        if form.validate_on_submit():
-            user = User.query.filter_by(email=email).first()
-            if user:
-                user.password = generate_password_hash(form.password.data)
-                user.password_reset_token = None
-                db.session.commit()
+  if user.password_reset_token is not None:
+    # form = ChangePasswordForm(request.form)
+    if form.validate_on_submit():
+      user = User.query.filter_by(email=email).first()
+      if user:
+        user.password = generate_password_hash(form.password.data)
+        user.password_reset_token = None
+        db.session.commit()
 
-                login_user(user)
+        login_user(user)
 
-                flash('Password successfully changed.', 'success')
-                # return redirect(url_for('user.profile'))
-                return redirect(url_for('students', username=current_user.name))
+        print("flash('Password successfully changed.', 'success')")
+        # return redirect(url_for('user.profile'))
+        return redirect(url_for('students', username=current_user.name))
+    
 
-            # else:
-                flash('Password change was unsuccessful.', 'danger')
-            #   # return redirect(url_for('auth.profile'))
-                return redirect(url_for('students', username=current_user.name))
-        else:
-            flash('You can now change your password.', 'success')
-            return render_template('auth/reset_password.html', form=form)
+      # else:
+        flash('Password change was unsuccessful.', 'danger')
+      #   # return redirect(url_for('auth.profile'))
+        return redirect(url_for('students', username=current_user.name))
+        
     else:
         flash('Can not reset the password, try again.', 'danger')
 

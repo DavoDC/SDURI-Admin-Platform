@@ -229,6 +229,7 @@ class Student(db.Model):
         self.user_id = user_id
 
 
+
 # Supervisor information class
 class Supervisor(db.Model):
    

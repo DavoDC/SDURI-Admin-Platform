@@ -30,6 +30,7 @@ mail = Mail(app)
 Bootstrap(app)
 admin = Admin(app, name='Admin', template_mode='bootstrap3')
 
+# Currently it is used only for url_for('auth.forgot_password')
 from app.auth import bp as auth_bp
 app.register_blueprint(auth_bp, url_prefix='/auth')
 
