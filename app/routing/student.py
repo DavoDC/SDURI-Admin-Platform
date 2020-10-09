@@ -216,24 +216,6 @@ def student_manage(username):
     return utils.student_page(rend_temp)
 
 
-# Student view project
-@app.route('/student/<username>/project/manage/view/<int:pid>')
-@login_required
-def student_view(username, pid):
-
-    # Get project
-    project = Project.query.filter_by(id=pid).first() or 404
-
-    # Get rendered template
-    rend_temp = render_template('student/project/manage/view.html',
-                                title=str(project.title),
-                                project=project,
-                                );
-
-    # Return as student page
-    return utils.student_page(rend_temp)
-
-
 # Student unapply for project
 @app.route('/student/<username>/project/manage/unapply/<int:pid>',
            methods=['GET', 'POST'])

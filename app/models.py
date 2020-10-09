@@ -276,7 +276,7 @@ class Project(db.Model):
     
     keywords = db.Column(db.String(128)) 
     
-    contact_email = db.Column(db.String(128), index=True, unique=True)
+    contact_email = db.Column(db.String(128))
     
     location = db.Column(db.String(128)) 
     
