@@ -172,10 +172,7 @@ def get_student_from_username(username):
     
     # If user id was not found
     if uid == 404:
-        msg = "Message: "
-        msg += "Student needs to enter details first! "
-        msg += "(Couldn't find user row in get_student_from_username())"
-        return render_template(msg)
+        raise ValueError('No UID found in get_student_from_username')
     
     # Get student from username
     student = Student.query.filter_by(user_id=uid).first() or 404

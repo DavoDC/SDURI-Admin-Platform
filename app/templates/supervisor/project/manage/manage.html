@@ -10,6 +10,8 @@ Manage Your Projects
 {% set table_headings = 
 [
 "Project Title", 
+"Keywords",
+"View",
 "Edit",
 "View Applications"
 ] 
@@ -27,24 +29,33 @@ Manage Your Projects
         {{ project.title }}
     </td>
 
-    <!--Some key fields-->
+    <!--Keywords-->
+    <td class="project-td">
+        {{ project.keywords }}
+    </td>
 
     <!--View button -->
+    {% include "templ/view-button.html" %}
+
+    <!--Edit button-->
     <td class="project-td" style="text-align: center;">
         <a class="hover-button" 
-           href="{{ url_for('student_view', 
-           pid=project.id, 
-           username = current_user.name) }}">
+           href="{{ url_for('supervisor_edit_project', 
+           username = current_user.name,
+           pid=project.id
+           ) }}">
             Edit
         </a>
     </td>
 
-    <!--Unapply button-->
+    <!--Applications button-->
     <td class="project-td" style="text-align: center;">
         <a class="hover-button" 
-           href="{{ url_for('student_unapply', 
-           pid=project.id, 
-           username = current_user.name) }}">
+           href="{{ url_for('supervisor_view_appl', 
+           username = current_user.name,
+           pid=project.id
+           ) 
+           }}">
             View Applications
         </a>
     </td>
@@ -67,13 +78,9 @@ Manage Your Projects
 {% block no_projects %}
 <br>
 <p>
-    You have not applied for any projects yet
+    You have not added/created any projects yet.
     <br>
     <br>
-    To apply for projects, go 
-    <a href={{ url_for('student_explore', 
-       username=current_user.name) }}>
-        here</a>.
 </p>
 <br>
 {% endblock %}

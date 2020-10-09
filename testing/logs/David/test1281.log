@@ -1,0 +1,167 @@
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:37:55] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:37:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:37:55] "[36mGET /static/images/uwa_logo.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:02] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:03] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:05] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:08] "[37mGET /student/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:10] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:10] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:11] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:12] "[37mGET /student/Dave/project/select/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:14] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:15] "[37mGET /student/Dave/project/select/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:17] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:17] "[37mGET /student/Dave/project/select/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:19] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:19] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:19] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:21] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:22] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:22] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:22] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:24] "[37mGET /student/Dave/project/manage/unapply/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:26] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:27] "[37mGET /student/Dave/project/manage/view/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:28] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:30] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:30] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:32] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:32] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:34] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:35] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:38:36] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:34] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:34] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:35] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:39] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:39] "[37mGET /static/admin-assets/admin_css.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:39:42] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:40:54] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:40:59] "[32mPOST /myadmin/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:40:59] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:02] "[32mPOST /myadmin/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:02] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:07] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:16] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/bootstrap/bootstrap3/swatch/default/bootstrap.min.css?v=3.3.5 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/admin/css/bootstrap3/submenu.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/bootstrap/bootstrap3/css/bootstrap-theme.min.css?v=3.3.5 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/admin/css/bootstrap3/admin.css?v=1.1.1 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/vendor/select2/select2.css?v=3.5.2 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/vendor/select2/select2-bootstrap3.css?v=1.4.6 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/vendor/bootstrap-daterangepicker/daterangepicker-bs3.css?v=1.3.22 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/admin/js/helpers.js?v=1.0.0 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/vendor/moment.min.js?v=2.22.2 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/vendor/select2/select2.min.js?v=3.5.2 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/bootstrap/bootstrap3/js/bootstrap.min.js?v=3.3.5 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/vendor/jquery.min.js?v=3.3.1 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/vendor/bootstrap-daterangepicker/daterangepicker.js?v=1.3.22 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/admin/js/form.js?v=1.0.1 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/admin/js/filters.js?v=1.0.0 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/admin/js/actions.js?v=1.0.0 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:20] "[36mGET /admin/static/bootstrap/bootstrap3/swatch/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:51] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:41:52] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader

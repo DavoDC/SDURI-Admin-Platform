@@ -3,5 +3,5 @@
 
 <!--Set link for back button-->
 {% set backlink %}
-{{ url_for('student_manage', username=current_user.name)}}
+{{ url_for(role + '_manage', username=current_user.name)}}
 {% endset %}

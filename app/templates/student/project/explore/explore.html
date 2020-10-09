@@ -46,8 +46,9 @@ Select a project to view more information and/or apply
     <td class="project-td" style="text-align: center;">
         <a class="hover-button" 
            href="{{ url_for('student_select', 
+           username = current_user.name,
            pid=project.id, 
-           username = current_user.name) }}">
+           ) }}">
             Select
         </a>
     </td>

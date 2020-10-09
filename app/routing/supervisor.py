@@ -73,27 +73,51 @@ def supervisor_manage(username):
     super_id = User.query.filter_by(name=username).first().id or 404
 
     # Get current supervisor's projects
-    cur_user_projects = Project.query.filter_by(user_id=super_id).all()
+    cur_user_projects = Project.query.filter_by(user_id=super_id).filter(Project.title != None).all()
+    
+    # Render
+    rend_temp = render_template("supervisor/project/manage/manage.html",
+                                title="Manage Your Projects",
+                                projects=cur_user_projects)
 
-    return render_template("supervisor/project/manage/manage.html",
-                           title="Manage Your Projects",
-                           projects=cur_user_projects)
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
 
 
-# Supervisor edit project (TEMPORARY)
-@app.route('/supervisor/<username>/project/manage/edit', methods=['GET', 'POST'])
+# Supervisor edit project
+@app.route('/supervisor/<username>/project/manage/edit/<int:pid>', 
+           methods=['GET', 'POST'])
 @login_required
-def supervisor_edit(username):
+def supervisor_edit_project(username, pid):
+
+    # Get project
+    project = Project.query.filter_by(id=pid).first() or 404
+    
+    # Render
+    rend_temp = render_template("supervisor/project/manage/edit.html",
+                                title="Edit Project",
+                                project=project)
+
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
 
 
-    # Get current supervisor user_id
-    super_id = User.query.filter_by(name=username).first().id or 404
+# Supervisor manage applications
+@app.route('/supervisor/<username>/project/manage/view/appl/<int:pid>')
+@login_required
+def supervisor_view_appl(username, pid):
+    
+    # PSEUDOCODE
+    #    For every PID of the supervisors projects
+    #- For every student
+    #-- if PID is in get_pids_appliedfor(student) (a helper function of mine)
+    #---- Add to row
+    
+    # Render
+    rend_temp = render_template("supervisor/project/manage/view-appl.html",
+                                title="View Applications")
 
-    # Get current supervisor's projects
-    cur_user_projects = Project.query.filter_by(user_id=super_id).all()
-
-    return render_template("supervisor/project/edit.html",
-                           title="Edit Project",
-                           projects=cur_user_projects)
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
 
 

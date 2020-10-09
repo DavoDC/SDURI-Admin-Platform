@@ -9,8 +9,8 @@
 <!--Upon load, disable apply button by changing CSS class-->
 <script>
     window.onload = function () {
-        button = document.getElementById('apply_button');
-        button.className = "hover-button-disabled";
+	button = document.getElementById('apply_button');
+	button.className = "hover-button-disabled";
     };
 </script>
 
@@ -34,8 +34,9 @@
 <h4>
     <a class="hover-button" 
        href="{{ url_for('student_apply', 
-       pid=project.id, 
-       username = current_user.name) }}"
+       username = current_user.name,
+       pid=project.id
+       ) }}"
        id="apply_button">
         Apply        
     </a>

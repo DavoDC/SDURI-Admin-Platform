@@ -43,6 +43,7 @@ def update():
     # return render_template('home.html', user)
     return redirect(url_for('myadmin.display_users', page_num=1))
 
+
 @bp.route('/delete/<id>/', methods=['GET', 'POST'])
 def delete(id):
     del_user = User.query.get(id)
@@ -51,11 +52,13 @@ def delete(id):
     flash("Successfully deleted a user '" + del_user.email + "'")
     return redirect(url_for('myadmin.display_users', page_num=1))
 
+
 @bp.route('/display/users/all/<int:page_num>', methods=['GET', 'POST'])
 def display_users(page_num):
     usersFromDB = User.query.paginate(per_page=2, page=page_num, error_out=True)
     # usersFromDB = user_serializer.dump(userFromDB.items)
     return render_template('users.html', title="Administrator", users=usersFromDB)
+
 
 @bp.route('/add/user', methods=['GET', 'POST'])
 def add_user():

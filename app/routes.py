@@ -2,9 +2,8 @@
 # Import modules
 from app import app
 from app import db
-from app.helper import utils
 from app.forms import LoginForm
-from app.forms import RegistrationForm
+from app.helper import utils
 from app.models import *
 from app.routing import student
 from app.routing import supervisor
@@ -18,6 +17,7 @@ from flask_login import login_user
 from flask_login import logout_user
 from json2html import *
 
+
 # Main page
 @app.route('/')
 @app.route('/index')
@@ -29,6 +29,7 @@ def index():
 
     # Otherwise render normal
     return render_template('index.html', title='Home')
+
 
 # Login page
 @app.route('/login', methods=['GET', 'POST'])
@@ -65,58 +66,23 @@ def login():
     return render_template('auth/login.html', title='Login', form=form)
 
 
-# Register page
-@app.route('/register', methods=['GET', 'POST'])
-def register():
+# Students and supervisors: View project
+@app.route('/<role>/<username>/project/manage/view/<int:pid>')
+@login_required
+def view_project(role, username, pid):
 
-    # If user is logged in, send back to home page
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
+    # Get project
+    project = Project.query.filter_by(id=pid).first() or 404
 
-    # Otherwise register
-    # If registration form submitted
-    form = RegistrationForm()
-    if form.validate_on_submit():
+    # Get rendered template
+    rend_temp = render_template('templ/view-project.html',
+                                title=str(project.title),
+                                project=project,
+                                role=role
+                                );
 
-        # Create user object
-        user = User(name=form.username.data,
-                    email=form.email.data)
-
-        # Set password
-        user.set_user_password(form.password.data)
-
-        # SIMPLE ROLE SETTING TO BE REPLACED BY MANG
-        # Set role according to new user's email
-        # If email contains "@uwa.edu.au"
-        if "@uwa.edu.au" in user.email:
-            # Set user role to "Supervisor"
-            user.set_user_role("Supervisor")
-        elif "@student.uwa.edu.au" in user.email:
-            # Else If email contains "@student.uwa.edu.au"
-            # Set user role to "Student"
-            user.set_user_role("Student")
-        elif "@admin.com" in user.email:
-            # Else If email contains "@admin"
-            # Set user role to "Administrator"
-            user.set_user_role("Administrator")
-        else:
-            # Else for all other emails
-            # Give Student role by default
-            user.set_user_role("Student")
-
-
-        # Add user to database
-        db.session.add(user)
-        db.session.commit()
-
-        # Notify
-        flash('Congratulations, you are now a registered user!')
-
-        # Send to login page
-        return redirect(url_for('login'))
-
-    # Show register page
-    return render_template('auth/register.html', title='Register', form=form)
+    # Return page
+    return rend_temp
 
 
 # Logout page
