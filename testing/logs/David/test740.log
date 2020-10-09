@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 00:07:42] "[37mGET /student/David/project/list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 00:07:42] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -

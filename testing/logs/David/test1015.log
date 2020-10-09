@@ -1,0 +1,20 @@
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:23] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:29] "[32mPOST /student/Dave/project/single/2/apply HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:29] "[37mGET /student/Dave/project/list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:30] "[37mGET /student/Dave/project/single/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:34] "[37mGET /student/Dave/project/single/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:36] "[37mGET /student/Dave/project/single/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:39] "[37mGET /student/Dave/project/single/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:42] "[37mGET /student/Dave/project/single/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:44] "[37mGET /student/Dave/project/single/5/apply HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:49] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:57] "[32mPOST /student/Dave/project/single/5/apply HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:57] "[37mGET /student/Dave/project/list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:49:59] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:50:03] "[37mGET /student/Dave/project/single/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:50:05] "[37mGET /student/Dave/project/single/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 13:50:08] "[37mGET /student/Dave/project/single/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

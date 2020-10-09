@@ -1,0 +1,7 @@
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:22:21] "[33mGET /student/Dave/landing HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:22:25] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:22:26] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading

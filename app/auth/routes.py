@@ -1,27 +1,26 @@
 
 #from flask import request
 from app import db
+from app import email
+from app import mail
 from app.auth import bp
+from app.auth.auth_forms import *
+from app.auth.auth_forms import InitialRegistrationForm
+from app.auth.token import *
 from app.forms import LoginForm
 from app.forms import RegistrationForm
+from app.models import *
 from app.models import User
+from datetime import date
+from flask import flash
+from flask import redirect
+from flask import render_template
 from flask import url_for
 from flask_login import current_user
 from flask_login import login_required
 from flask_login import login_user
 from flask_login import logout_user
-from app.auth.auth_forms import InitialRegistrationForm
-from flask import render_template, flash, redirect
-
-from datetime import date
-from app import email, mail
 from flask_mail import Message
-
-
-from app.auth.token import * # generate_confirmation_token, confirm_token 
-from app.auth.auth_forms import * # PasswordReset, ChangePasswordForm
-from app.forms import LoginForm, RegistrationForm
-from app.models import *
 
 # @bp.route('/')  # methods=['GET', 'POST'])
 # @bp.route('/index')  # , methods=['GET', 'POST'])
@@ -102,59 +101,59 @@ def register():
 
 @bp.route('/initial-registration', methods=['GET', 'POST'])
 def initial_registration():
-  initialForm = InitialRegistrationForm()
-  roles = ["Student", "Supervisor"]
-  if initialForm.validate_on_submit():
+    initialForm = InitialRegistrationForm()
+    roles = ["Student", "Supervisor"]
+    if initialForm.validate_on_submit():
     
-    newUser= User(name="",
-             email=initialForm.email.data,
-             password="",
-             confirmed=False,
-             registered_on=date.today(),
-            #  role=initialForm.role.data)
-             role="")
+        newUser = User(name="",
+                       email=initialForm.email.data,
+                       password="",
+                       confirmed=False,
+                       registered_on=date.today(),
+                       #  role=initialForm.role.data)
+                       role="")
     
     
-    # If email contains "@uwa.edu.au"
-    if "@uwa.edu.au" in newUser.email:
-      # Set user role to "Supervisor"
-      newUser.set_user_role("Supervisor")
-    elif "@student.uwa.edu.au" in newUser.email:
-      # Else If email contains "@student.uwa.edu.au"
-      # Set user role to "Student"
-      newUser.set_user_role("Student")
-    elif "@admin.com" in newUser.email:
-      # Else If email contains "@admin"
-      # Set user role to "Administrator"
-      newUser.set_user_role("Administrator")
-    else:
-      # Else for all other emails
-      # Give Student role by default
-      newUser.set_user_role("Student")
+        # If email contains "@uwa.edu.au"
+        if "@uwa.edu.au" in newUser.email:
+            # Set user role to "Supervisor"
+            newUser.set_user_role("Supervisor")
+        elif "@student.uwa.edu.au" in newUser.email:
+            # Else If email contains "@student.uwa.edu.au"
+            # Set user role to "Student"
+            newUser.set_user_role("Student")
+        elif "@admin.com" in newUser.email:
+            # Else If email contains "@admin"
+            # Set user role to "Administrator"
+            newUser.set_user_role("Administrator")
+        else:
+            # Else for all other emails
+            # Give Student role by default
+            newUser.set_user_role("Student")
 
-    token = generate_confirmation_token(newUser.email)
+        token = generate_confirmation_token(newUser.email)
     
-    newUser.password_reset_token = token
+        newUser.password_reset_token = token
 
 
-    db.session.add(newUser)
-    db.session.commit()
+        db.session.add(newUser)
+        db.session.commit()
 
-    _url = url_for('auth.initial_pwd_setting', token=token, _external=True)
-    html = render_template('auth/initial_ac_confirmation_msg.html',
-                          confirmation_url= _url)
-    subject = "Initial Account Confirmation"
-    msg= Message(subject,
-              recipients=[newUser.email],
-              sender="no-reply@gmail.com")
-    msg.html= html
-    mail.send(msg)
-    # email.send_email(newUser.email, subject, "hello")
-    flash("Please click the confirmation link sent to the email given below to continue registration processes.", "warning")
-    # return redirect(url_for('auth.initial_registration', form=initialForm, roles=roles )) 
-    # return redirect(url_for('auth.initial_registration')) 
-    # url_for in above cases do not show back the provided email so render_template is used as below
-    render_template('/auth/initial_registration.html', form=initialForm, roles=roles)
+        _url = url_for('auth.initial_pwd_setting', token=token, _external=True)
+        html = render_template('auth/initial_ac_confirmation_msg.html',
+                               confirmation_url=_url)
+        subject = "Initial Account Confirmation"
+        msg = Message(subject,
+                      recipients=[newUser.email],
+                      sender="no-reply@gmail.com")
+        msg.html = html
+        mail.send(msg)
+        # email.send_email(newUser.email, subject, "hello")
+        flash("Please click the confirmation link sent to the email given below to continue registration processes.", "warning")
+        # return redirect(url_for('auth.initial_registration', form=initialForm, roles=roles )) 
+        # return redirect(url_for('auth.initial_registration')) 
+        # url_for in above cases do not show back the provided email so render_template is used as below
+        render_template('/auth/initial_registration.html', form=initialForm, roles=roles)
   
-  return render_template('/auth/initial_registration.html', form=initialForm, roles=roles)
+    return render_template('/auth/initial_registration.html', form=initialForm, roles=roles)
 

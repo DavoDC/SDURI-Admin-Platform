@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 09:24:03] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 09:24:03] "[37mGET /myadmin/?username=Dave HTTP/1.1[0m" 200 -

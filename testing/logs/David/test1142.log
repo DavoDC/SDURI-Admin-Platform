@@ -1,0 +1,29 @@
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:33] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:33] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:35] "[37mGET /student/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:36] "[37mGET /student/Dave/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:42] "[37mPOST /student/Dave/details/page2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:46] "[37mGET /student/Dave/details/page9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:48] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:48] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:52] "[37mGET /student/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:53] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:53] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:54] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:56] "[37mGET /student/Dave/project/select/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:03:59] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:00] "[37mGET /student/Dave/project/select/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:01] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:02] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:02] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:03] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:04] "[37mGET /student/Dave/project/manage/view/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:06] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:06] "[37mGET /student/Dave/project/manage/remove/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:10] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:11] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Oct/2020 00:04:11] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
