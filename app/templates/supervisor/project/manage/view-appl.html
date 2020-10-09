@@ -1,4 +1,7 @@
 
+{% extends "base.html" %}
+
+{% block content %}
 <br>
 View Student Applications
 
@@ -24,3 +27,27 @@ Store accept/deny in student database?
    - proj2_accepted = T or F
 <br>
 Only let supervisor add students equal to limit
+
+<table class="project-table">
+
+   <!--Add table headings-->
+   <tr class="project-row">
+
+       <th class="project-th">
+           Student Name
+       </th>
+       <th class="project-th">
+         Examine
+      </th>
+      <th class="project-th">
+         Accept
+      </th>
+      <th class="project-th">
+         Deny
+     </th>
+   </tr>
+
+
+</table>
+
+{% endblock %}
