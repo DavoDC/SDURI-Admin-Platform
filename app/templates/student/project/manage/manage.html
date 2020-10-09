@@ -56,21 +56,15 @@ Your Project Applications
     {% endif %}
 
     <!--View button -->
-    <td class="project-td" style="text-align: center;">
-        <a class="hover-button" 
-           href="{{ url_for('student_view', 
-           pid=project.id, 
-           username = current_user.name) }}">
-            View
-        </a>
-    </td>
+    {% include "templ/view-button.html" %}
 
     <!--Unapply button-->
     <td class="project-td" style="text-align: center;">
         <a class="hover-button" 
            href="{{ url_for('student_unapply', 
-           pid=project.id, 
-           username = current_user.name) }}">
+           username = current_user.name,
+           pid=project.id
+           ) }}">
             Unapply
         </a>
     </td>

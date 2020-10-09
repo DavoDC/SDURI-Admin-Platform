@@ -1,0 +1,19 @@
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:24] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:36] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:38] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:41] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:42] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:45] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:47] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:48] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:42:48] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:43:24] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:43:31] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:43:33] "[32mGET /myadmin HTTP/1.1[0m" 308 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:43:33] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:44:50] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

@@ -1,33 +1,124 @@
+
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Pull all of my projects from the db -->
-<!-- If there's any projects -->
-{% if projects|length > 0 %}
 
-<table class="table table-striped table-hover">
-    <tr>
-        <th>Project title</th>
-        <th>Main supervisor</th>
-        <th>Email</th>
-        <th>Keywords</th>
+<h4>
+    Project Title: {{ project.title }}
+</h4>
+
+<table>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Main Supervisor: </b>
+        </td>
+        <td class="project-td">
+            {{ project.main_supervisor }}
+        </td>
     </tr>
 
-    <!-- Pulling data -->
-    {% for project in projects %}
-    <tr>
-        <td>{{project.title}}</td>
-        <td>{{project.main_supervisor}}</td>
-        <td>{{project.email}}</td>
-        <td>{{project.keywords}}</td>
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Co-Supervisor(s): </b>
+        </td>
+        <td class="project-td">
+            {{ project.co_supervisor }}
+        </td>
     </tr>
-    {% endfor %}
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Group: </b>
+        </td>
+        <td class="project-td">
+            {{ project.proj_group }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Description: </b>
+        </td>
+        <td class="project-td">
+            {{ project.proj_desc }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Skills: </b>
+        </td>
+        <td class="project-td">
+            {{ project.skills }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Keywords: </b>
+        </td>
+        <td class="project-td">
+            {{ project.keywords }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Contact Email: </b>
+        </td>
+        <td class="project-td">
+            {{ project.contact_email}}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Location: </b>
+        </td>
+        <td class="project-td">
+            {{ project.location }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> University Specific: </b>
+        </td>
+        <td class="project-td">
+            {{ project.specific_uni }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Duration (Weeks): </b>
+        </td>
+        <td class="project-td">
+            {{ project.proj_weeks }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Maximum Student Places: </b>
+        </td>
+        <td class="project-td">
+            {{ project.max_students }}
+        </td>
+    </tr>
 </table>
 
-{% else %}
-<p>You don't have any projects</p>
-{% endif %}
-<!-- Select fields then edit -->
+<!--Custom part-->
+{% block custom %}{% endblock %}
 
+<!--Back button 
+{% with backlink=backlink %}
+{% include "templ/back-button.html" %}
+{% endwith %} -->
+
+<br>
+<br>
+<br> 
 
 {% endblock %}

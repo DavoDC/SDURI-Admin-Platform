@@ -1,0 +1,12 @@
+
+
+<td class="project-td" style="text-align: center;">
+    <a class="hover-button" 
+       href="{{ url_for('view_project', 
+       role = current_user.role.lower(),
+       username = current_user.name,
+       pid=project.id
+       ) }}">
+        View
+    </a>
+</td>
