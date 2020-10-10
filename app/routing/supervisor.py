@@ -112,10 +112,18 @@ def supervisor_view_appl(username, pid):
     #- For every student
     #-- if PID is in get_pids_appliedfor(student) (a helper function of mine)
     #---- Add to row
-    
+    appl_students = []
+
+    students = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
+
+    # for every student that has selected at least one project
+    for student in students:
+        projects = utils.get_projects_applied_for(student)
+        if pid in projects:
+            appl_students.append(student)
     # Render
     rend_temp = render_template("supervisor/project/manage/view-appl.html",
-                                title="View Applications")
+                                title="View Applications", students=appl_students)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)

@@ -47,6 +47,40 @@ Only let supervisor add students equal to limit
      </th>
    </tr>
 
+   {% for student in students %}
+   <tr class="project-row">
+      <td class="project-td">
+         {{ student.name }}
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Examine
+         </a>
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Accept
+         </a>
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Deny
+         </a>
+      </td>
+   </tr>
+   {% endfor %}
 
 </table>
 
