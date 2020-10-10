@@ -1,13 +1,89 @@
 
 {% extends "base.html" %}
 
+
 {% block content %}
+<br>
+View Student Applications
 
-<h4> Applications </h4>
+<br><br>
+<b>IDEAS</b>:
+<br>
+If we do my way:
+Student Name | Examine | Accept | Deny
+<br>
+<br>
+better way:
+<br>
+Myadmin kind of table
+<br>
+Somehow integrate from Mang's stuff, or redirect ??
+<br>
+Add Accept and Deny actions
+<br>
+Store accept/deny in student database?
+<br>
+   - proj1_accepted = T or F
+<br>
+   - proj2_accepted = T or F
+<br>
+Only let supervisor add students equal to limit
 
-{% for key, value in appl %}
-<p>Key: {{key}}</p>
-<p>Value: {{value}}</p>
-{% endfor %}
+<table class="project-table">
+
+   <!--Add table headings-->
+   <tr class="project-row">
+
+       <th class="project-th">
+           Student Name
+       </th>
+       <th class="project-th">
+         Examine
+      </th>
+      <th class="project-th">
+         Accept
+      </th>
+      <th class="project-th">
+         Deny
+     </th>
+   </tr>
+
+   {% for student in students %}
+   <tr class="project-row">
+      <td class="project-td">
+         {{ student.name }}
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Examine
+         </a>
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Accept
+         </a>
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Deny
+         </a>
+      </td>
+   </tr>
+   {% endfor %}
+
+</table>
+
 
 {% endblock %}
