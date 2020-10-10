@@ -181,6 +181,11 @@ def supervisor_view_appl(username, pid):
     attributes.remove('user_id')
     
 
+    # for every student that has selected at least one project
+    for student in students:
+        projects = utils.get_projects_applied_for(student)
+        if pid in projects:
+            appl_students.append(student)
     # Render
     rend_temp = render_template("supervisor/project/manage/view-appl.html",
                                 title="View Applications",
