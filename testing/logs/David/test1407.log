@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:58:00] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:58:00] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -

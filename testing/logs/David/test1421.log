@@ -1,0 +1,12 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:02] "[37mGET /supervisor/Dave/project/manage/edit/11 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:18] "[32mPOST /supervisor/Dave/project/add HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:18] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:18] "[37mGET /supervisor/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:20] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:23] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:40] "[37mGET /supervisor/Dave/project/manage/edit/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:56] "[32mPOST /supervisor/Dave/project/add HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:56] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:21:56] "[37mGET /supervisor/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:22:18] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:22:19] "[37mGET /supervisor/Dave/project/manage/edit/2 HTTP/1.1[0m" 200 -

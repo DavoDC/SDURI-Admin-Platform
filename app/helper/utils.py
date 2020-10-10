@@ -28,22 +28,9 @@ def send_to_user_page(role):
         return msg
 
 
-# Render user landing page
-def landing_page(role):
-    
-    # Infer path to HTML
-    path = role.lower() + "/landing.html"
-    
-    # Render as role
-    rend_temp = render_template(path, title=role)
- 
-    # Return as role page
-    return user_page(role, rend_temp)
-
 # Render student pages
 def student_page(rend_temp_path):
     return user_page("Student", rend_temp_path)
-
 
 # Render supervisor pages
 def supervisor_page(rend_temp_path):
@@ -63,28 +50,72 @@ def user_page(role, rend_temp):
     return rend_temp
 
 
+# Return true if student details are good
+def are_stud_det_good(username):
+    
+    # Get student and make new row if needed
+    student = get_user_from_username(username, Student, True)
+    
+    # check first few first, then do full check
+    
+    # TODO
+    return True
+
+
+
+# Get user ID from username
+def get_uid_from_name(username):
+    
+    # Get user id
+    uid = User.query.filter_by(name=username).first().id or 404
+    
+    # If user id was not found
+    if uid == 404:
+        # Notify
+        raise ValueError('User ID not found (utils.py)')
+    
+    # Otherwise return
+    return uid
+
+
+# Get project from id
+def get_project_from_id(pid):
+    
+    # Get project
+    project = Project.query.filter_by(id=pid).first() or 404
+    
+    # If project was not found
+    if project == 404:
+        # Notify
+        raise ValueError('Project not found (utils.py)')
+    
+    # Otherwise return
+    return project
+    
+
 
 # Add empty row to database
 def add_empty_row(username, custDB):
     
-    # Get user type id
-    ut_id = User.query.filter_by(name=username).first().id or 404
-
+    # Get UID
+    uid = get_uid_from_name(username)
+    
     # If there is no database row
-    if not custDB.query.filter_by(user_id=ut_id).first():
+    if not custDB.query.filter_by(user_id=uid).first():
 
         # Initialize row and commit
-        db.session.add(custDB(ut_id))
+        db.session.add(custDB(uid))
         db.session.commit()
-    
-    # Return ut_id
-    return ut_id
+
+
 
 # Save form data into given DB
 def save_form(username, custDB, overwrite):
 
-    # Initialize row if needed and get user type id
-    ut_id = add_empty_row(username, custDB)
+    # If we are not overwriting
+    if not overwrite:
+        # We are adding a new row
+        add_empty_row(username, custDB)
 
     # If mode is post
     if request.method == "POST":
@@ -95,14 +126,17 @@ def save_form(username, custDB, overwrite):
         # Get row
         row = None
         
+        # Get user ID
+        uid = get_uid_from_name(username)
+        
         # If overwrite is on
         if overwrite:
             # Get existing row
-            row = custDB.query.filter_by(user_id=ut_id).first()
+            row = custDB.query.filter_by(user_id=uid).first()
         else:
             # Else if overwrite is off,
             # make a new row
-            row = custDB(ut_id)
+            row = custDB(uid)
 
         # For each name-data pair
         for name_attr, input_data in data.items():
@@ -128,8 +162,7 @@ def save_student_files(username, file_fields):
     if request.method == "POST":
 
         # Get student
-        ut_id = User.query.filter_by(name=username).first().id or 404
-        student = Student.query.filter_by(user_id=ut_id).first()
+        student = get_student_from_username(username)
 
         # For all files
         for ff_name in file_fields:
@@ -163,35 +196,8 @@ def save_file(file_field_name, student):
             db.session.commit()
 
 
-        
-# Get student with given username
-def get_student_from_username(username):
-    
-    # Get user id
-    uid = User.query.filter_by(name=username).first().id or 404
-    
-    # If user id was not found
-    if uid == 404:
-        raise ValueError('No UID found in get_student_from_username')
-    
-    # Get student from username
-    student = Student.query.filter_by(user_id=uid).first() or 404
-    
-    # If student doesn't exist
-    if student == 404:
-        
-        # Add empty row
-        add_empty_row(username, Student)
-            
-        # Retrieve again
-        return get_student_from_username(username)
-    
-    # Return student
-    return student
-
-
 # Get list of projects applied for (as PIDs)
-def get_projects_applied_for(student):
+def get_pids_applied_for(student):
     
     # Define empty list
     pids = []
@@ -216,8 +222,37 @@ def get_projects_applied_for(student):
         
     # Return list
     return pids
-    
 
+        
+# Get user row with given username from given user database
+# - do_init: If true, create row if not found
+def get_user_from_username(username, userDB, do_init):
+    
+    # Get UID
+    uid = get_uid_from_name(username)
+    
+    # Get user from username
+    user = userDB.query.filter_by(user_id=uid).first() or 404
+    
+    # If student doesn't exist
+    if user == 404:
+        
+        # If init is on
+        if do_init:
+        
+            # Add empty row
+            add_empty_row(username, userDB)
+
+            # Retrieve again (but no init will be needed)
+            return get_user_from_username(username, userDB, False)
+        else:
+            # Else notify
+            raise ValueError('User not found (utils.py)')
+    
+    # Return user
+    return user
+
+    
 # Get project 1 details triplet
 def get_proj1_details(student):
 
@@ -257,3 +292,32 @@ def get_proj2_details(student):
     # Return triplet
     return [pid, pref, dur]
     
+    
+# Convert row to dictionary
+def get_row_as_dict(row):
+    
+    # Get project values dictionary
+    row_dict = row.__dict__
+    
+    # Remove unneeded pair
+    row_dict.pop('_sa_instance_state')
+    
+    # For each key in row
+    for key in row_dict:
+        
+        # If None, make empty string
+        if row_dict[key] is None:
+            row_dict[key] = ""
+          
+    # Return
+    return row_dict
+
+
+# Get supervisor's projects from username
+def get_supervisors_projects(username):
+    
+    # Get ID
+    sid = get_uid_from_name(username)
+    
+    # Return their projects that are initialized
+    return Project.query.filter_by(user_id=sid).filter(Project.title != None).all()

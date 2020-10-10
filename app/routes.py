@@ -66,6 +66,7 @@ def login():
     return render_template('auth/login.html', title='Login', form=form)
 
 
+
 # Students and supervisors: View project
 @app.route('/<role>/<username>/project/manage/view/<int:pid>')
 @login_required
@@ -83,6 +84,7 @@ def view_project(role, username, pid):
 
     # Return page
     return rend_temp
+
 
 
 # Logout page
