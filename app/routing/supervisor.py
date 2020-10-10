@@ -15,7 +15,20 @@ from json2html import *
 @app.route('/supervisor/<username>/landing')
 @login_required
 def supervisors(username):
-    return utils.landing_page("Supervisor")
+    
+    # Get supervisor
+    sv = utils.get_user_from_username(username, Supervisor, True)
+    
+    # Check if details are good
+    good_det = sv.faculty != None and sv.school != None
+    
+    # Render template
+    rend_temp = render_template("supervisor/landing.html", 
+                                title="Supervisor Landing",
+                                good_det=good_det)
+ 
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
 
 
 # Supervisor details (faculty selection page)
@@ -30,12 +43,17 @@ def supervisor_details(username):
     if request.method == "POST":
         return redirect(url_for('index'))
 
+    # Get supervisor as dictionary
+    supervisor = utils.get_user_from_username(username, Supervisor, True)
+    super_dict = utils.get_row_as_dict(supervisor)
+
     # Render as one and only page
     path = 'supervisor/details/faculty-sel.html'
     baseURL = url_for('supervisor_details', username=current_user.name)
     rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
-                                title="Supervisor Details")
+                                title="Supervisor Details",
+                                super_dict=super_dict)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
@@ -55,7 +73,7 @@ def supervisor_add(username):
 
     # Render as one and only page
     path = 'supervisor/project/add.html'
-    baseURL = url_for('supervisor_add', username=current_user.name)
+    baseURL = url_for('supervisor_add', username=username)
     rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
                                 title="Add Project")
@@ -69,43 +87,75 @@ def supervisor_add(username):
 @login_required
 def supervisor_manage(username):
 
-    # Get current supervisor user_id
-    super_id = User.query.filter_by(name=username).first().id or 404
-
-    # Get current supervisor's projects
-    cur_user_projects = Project.query.filter_by(user_id=super_id).filter(Project.title != None).all()
-    
+    # Get supervisors projects
+    projects = utils.get_supervisors_projects(username)
+        
     # Render
     rend_temp = render_template("supervisor/project/manage/manage.html",
                                 title="Manage Your Projects",
-                                projects=cur_user_projects)
+                                projects=projects)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
 
 # Supervisor edit project
-@app.route('/supervisor/<username>/project/manage/edit/<int:pid>', 
+@app.route('/supervisor/<username>/project/manage/edit/<int:pid>',
            methods=['GET', 'POST'])
 @login_required
 def supervisor_edit_project(username, pid):
 
-    # Get project
-    project = Project.query.filter_by(id=pid).first() or 404
+    # If mode is post
+    if request.method == "POST":
+
+        # Get dictionary of data linked to 'name' attributes
+        data = request.form
+        
+        # Get user ID
+        uid = utils.get_uid_from_name(username)
+        
+        # Get existing row for supervisor's specific project!
+        row = Project.query.filter_by(user_id=uid).filter(Project.id == pid).first()
+
+        # For each name-data pair
+        for name_attr, input_data in data.items():
+
+            # Update database row,
+            # matching name attribute to the column name
+            setattr(row, name_attr, input_data)
+
+        # Commit to database
+        db.session.commit()
+        
+        # Return to manage projects
+        return redirect(url_for('supervisor_manage', username=username))
     
-    # Render
-    rend_temp = render_template("supervisor/project/manage/edit.html",
+    # Get project as dictionary
+    project = utils.get_project_from_id(pid)
+    proj_dict = utils.get_row_as_dict(project)
+
+    # Render as one and only page
+    path = "supervisor/project/manage/edit.html"
+    baseURL = url_for('supervisor_edit_project', 
+                      username=username, pid=pid)
+    rend_temp = render_template(path, num=1, max=1,
+                                baseURL=baseURL,
                                 title="Edit Project",
-                                project=project)
+                                proj_dict=proj_dict)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
+
+
 
 
 # Supervisor manage applications
 @app.route('/supervisor/<username>/project/manage/view/appl/<int:pid>')
 @login_required
 def supervisor_view_appl(username, pid):
+
+    # Get supervisors projects
+    projects = utils.get_supervisors_projects(username)
     
     # PSEUDOCODE
     #    For every PID of the supervisors projects

@@ -4,6 +4,12 @@
 <!-- Heading -->
 {% block heading %}
 <h4>Please select your faculty, and then your specific school</h4>
+
+<!--Load details into fields for editing-->
+{% with dict=super_dict %}
+{% include "templ/load-fields.html" %}
+{% endwith %}
+
 {% endblock %}
 
 <!--Questions-->

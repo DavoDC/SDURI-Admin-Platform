@@ -10,12 +10,21 @@ from flask_login import login_required
 from json2html import *
 
 
-## Student user landing page
+# Student user landing page
 @app.route('/student/<username>/landing')
 @login_required
 def students(username):
-    return utils.landing_page("Student")
 
+    # Check if student details are good
+    good_det = utils.are_stud_det_good(username)
+    
+    # Render template
+    rend_temp = render_template("student/landing.html", 
+                                title="Student Landing",
+                                good_det=good_det)
+ 
+    # Render as supervisor page
+    return utils.student_page(rend_temp)
 
 # Student details page
 @app.route('/student/<username>/details')
@@ -80,14 +89,11 @@ def student_explore(username):
 @login_required
 def student_select(username, pid):
 
-    # Get project
-    project = Project.query.filter_by(id=pid).first() or 404
+    # Get student AND do init if needed!
+    student = utils.get_user_from_username(username, Student, True)
     
-    # Get student
-    student = utils.get_student_from_username(username)
-
-    # Get list of projects applied for (as PIDs)
-    pids = utils.get_projects_applied_for(student)
+    # Get list of project IDs applied for
+    pids = utils.get_pids_applied_for(student)
 
     # Can student apply
     # (Controls if apply button is shown)
@@ -107,6 +113,9 @@ def student_select(username, pid):
         applied_for_this = True
         can_apply = False
 
+    # Get project
+    project = utils.get_project_from_id(pid)
+    
     # Get rendered template
     rend_temp = render_template('student/project/explore/select.html',
                                 title=str(project.title),
@@ -137,7 +146,7 @@ def student_apply(username, pid):
     path = 'student/project/explore/apply.html'
 
     # Get project
-    project = Project.query.filter_by(id=pid).first() or 404
+    project = utils.get_project_from_id(pid)
 
     # Get title
     title = "Apply for '" + project.title + "'"
@@ -148,7 +157,7 @@ def student_apply(username, pid):
     proj_slot = 0
 
     # Check slots
-    student = utils.get_student_from_username(username)
+    student = utils.get_user_from_username(username, Student, False)
     one_free = student.proj1_id == None
     two_free = student.proj2_id  == None
 
@@ -190,11 +199,11 @@ def student_apply(username, pid):
 @login_required
 def student_manage(username):
 
-    # Get student
-    student = utils.get_student_from_username(username)
-
-    # Get list of projects applied for (as PIDs)
-    pids = utils.get_projects_applied_for(student)
+    # Get student (for pids and project details) AND do init!
+    student = utils.get_user_from_username(username, Student, True)
+    
+    # Get list of project IDs applied for
+    pids = utils.get_pids_applied_for(student)
 
     # Get projects but only include those applied for
     projects = Project.query.filter(Project.id.in_(pids)).all()
@@ -223,7 +232,7 @@ def student_manage(username):
 def student_unapply(username, pid):
 
     # Get user type id
-    ut_id = User.query.filter_by(name=username).first().id or 404
+    uid = utils.get_uid_from_name(username)
 
     # If data was submitted/saved
     if request.method == "POST":
@@ -232,7 +241,7 @@ def student_unapply(username, pid):
         data = request.form
 
         # Get existing row
-        row = Student.query.filter_by(user_id=ut_id).first()
+        row = Student.query.filter_by(user_id=uid).first()
             
         # For each name-data pair
         for name_attr, input_data in data.items():
@@ -247,13 +256,13 @@ def student_unapply(username, pid):
         return redirect(url_for('student_manage', username=username))
     
     # Get project
-    project = Project.query.filter_by(id=pid).first() or 404
+    project = utils.get_project_from_id(pid)
     
     # Get title
     title = "Unapply for '" + str(project.title) + "'"
     
     # Get student
-    student = utils.get_student_from_username(username)
+    student = utils.get_user_from_username(username, Student, False)
     
     # Get slot to remove
     proj_slot = None
