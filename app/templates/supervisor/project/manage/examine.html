@@ -1,0 +1,45 @@
+
+{% extends "templ/form-page.html" %}
+
+<!-- Heading -->
+{% block heading %}
+<h4>
+    Student Name:  student.ppname
+</h4>
+{% endblock %}
+
+
+
+
+<!--Questions-->
+{% block questions %}
+
+<!--Student information-->
+<table>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Main Supervisor: </b>
+        </td>
+        <td class="project-td">
+            project.main_supervisor 
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Co-Supervisor(s): </b>
+        </td>
+        <td class="project-td">
+            project.co_supervisor 
+        </td>
+    </tr>
+
+</table>
+
+
+<!--Accept or Deny drop down-->
+
+<!--name HTML attribute would be proj1_accepted or proj2_accepted-->
+
+<!--Submit button automatically at bottom-->

@@ -36,6 +36,7 @@ def student_page(rend_temp_path):
 def supervisor_page(rend_temp_path):
     return user_page("Supervisor", rend_temp_path)
 
+
 # Render user page so that only users with correct role can see it
 def user_page(role, rend_temp):
 
@@ -52,13 +53,40 @@ def user_page(role, rend_temp):
 
 # Return true if student details are good
 def are_stud_det_good(username):
-    
-    # Get student and make new row if needed
+        
+    # Get student row and make new row if needed
     student = get_user_from_username(username, Student, True)
     
-    # check first few first, then do full check
+    # If first is null
+    if student.title == None:
+        
+        # Return false quickly
+        return False
     
-    # TODO
+    # List of columns that can be empty
+    empty_allowed = ['eng_prog_choice', 'test_sc', 
+    'eng_file', 'charname']
+    
+    # Get student row as dictionary, keep Nones
+    studict = get_row_as_dict(student, False)
+
+    
+    # For each column name in row
+    for name in studict:
+        
+        # If a project column
+        if 'proj' in name:
+            # Skip
+            continue
+        
+        # Get value
+        value = studict[name]
+                
+        # If empty but empty is not allowed
+        if value == None and not name in empty_allowed:
+            return False
+
+    # Otherwise return true
     return True
 
 
@@ -162,7 +190,7 @@ def save_student_files(username, file_fields):
     if request.method == "POST":
 
         # Get student
-        student = get_student_from_username(username)
+        student = get_user_from_username(username, Student, False)
 
         # For all files
         for ff_name in file_fields:
@@ -294,7 +322,10 @@ def get_proj2_details(student):
     
     
 # Convert row to dictionary
-def get_row_as_dict(row):
+# - Set replace nones 
+# -- to True if using in HTMl/JS!!
+# -- to False if using within Python
+def get_row_as_dict(row, replace_nones):
     
     # Get project values dictionary
     row_dict = row.__dict__
@@ -302,12 +333,15 @@ def get_row_as_dict(row):
     # Remove unneeded pair
     row_dict.pop('_sa_instance_state')
     
-    # For each key in row
-    for key in row_dict:
+    # If replace nones wanted
+    if replace_nones:
         
-        # If None, make empty string
-        if row_dict[key] is None:
-            row_dict[key] = ""
+        # For each key in row
+        for key in row_dict:
+
+            # If None, make empty string
+            if row_dict[key] is None:
+                row_dict[key] = ""
           
     # Return
     return row_dict

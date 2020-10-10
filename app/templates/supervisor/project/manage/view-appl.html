@@ -1,89 +1,162 @@
 
-{% extends "base.html" %}
+{% extends "supervisor/project/templ/myadmin-base.html" %}
+
+
+
+<!-- Specific CSS goes HERE  -->
+{% block stylesheets %}
+{{super()}}
+<style>
+    table.dataTable{border-collapse:collapse !important;}
+</style>
+
+<style>
+    div.dataTables_wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+
+    .dt-buttons{
+        padding-top:10px;
+        padding-bottom:10px;
+        flex-wrap: wrap;
+    }
+
+</style>
+
+{% endblock stylesheets %}
+
+<!-- Font Awesome JS -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
 
 {% block content %}
-<br>
-View Student Applications
-
-<br><br>
-<b>IDEAS</b>:
-<br>
-If we do my way:
-Student Name | Examine | Accept | Deny
-<br>
-<br>
-better way:
-<br>
-Myadmin kind of table
-<br>
-Somehow integrate from Mang's stuff, or redirect ??
-<br>
-Add Accept and Deny actions
-<br>
-Store accept/deny in student database?
-<br>
-   - proj1_accepted = T or F
-<br>
-   - proj2_accepted = T or F
-<br>
-Only let supervisor add students equal to limit
-
-<table class="project-table">
-
-   <!--Add table headings-->
-   <tr class="project-row">
-
-       <th class="project-th">
-           Student Name
-       </th>
-       <th class="project-th">
-         Examine
-      </th>
-      <th class="project-th">
-         Accept
-      </th>
-      <th class="project-th">
-         Deny
-     </th>
-   </tr>
-
-   {% for student in students %}
-   <tr class="project-row">
-      <td class="project-td">
-         {{ student.name }}
-      </td>
-      <td class="project-td" style="text-align: center;">
-         <a class="hover-button" 
-            href="{{ url_for('supervisor_edit_project', 
-            username = current_user.name,
-            pid=student.id
-            ) }}">
-            Examine
-         </a>
-      </td>
-      <td class="project-td" style="text-align: center;">
-         <a class="hover-button" 
-            href="{{ url_for('supervisor_edit_project', 
-            username = current_user.name,
-            pid=student.id
-            ) }}">
-            Accept
-         </a>
-      </td>
-      <td class="project-td" style="text-align: center;">
-         <a class="hover-button" 
-            href="{{ url_for('supervisor_edit_project', 
-            username = current_user.name,
-            pid=student.id
-            ) }}">
-            Deny
-         </a>
-      </td>
-   </tr>
-   {% endfor %}
-
-</table>
+{{super()}}
 
 
-{% endblock %}
+
+
+
+
+
+
+
+
+<div class="dataTables_wrapper container-fluid align-items-start">
+    <table id="students_table" style="width:100%;" class="cell-border table table-sm display table-bordered table-hover table-grey">
+        <thead>
+            <tr>
+                <th class="no-sort" style="background-color:#D9AC28;">
+                    Examine
+                </th>
+
+                {% for col in colNames %}
+                <th>{{ col }} </th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+
+        <tbody>
+
+            {% for row in students %}
+            <tr>
+
+                <!--Add link to examine page-->
+                <td> Examine </td>
+
+                {% for a in attributes %}
+
+                <td>{{ row|attr(a) }} </td>
+
+
+                {% endfor %}
+            </tr>
+
+
+
+            {% endfor %}
+        </tbody>
+
+
+
+
+
+        <tfoot>
+
+            <tr>    
+
+                <th class="no-sort" style="background-color:#D9AC28;">
+                    Examine
+                </th>
+
+                {% for col in colNames %}
+                <th>{{ col }} </th>
+                {% endfor %}
+
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div>
+
+</div>
+
+
+
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{{super()}}
+<script>
+    $(document).ready(function () {
+        var table = $('#students_table').DataTable({
+            "processing": true,
+            "scrollX": true,
+            "scrollY": 250,
+            "scrollCollapse": true,
+            "paging": true,
+            "fixedColumns": {
+                leftColumns: 1
+            },
+            "lengthMenu": false,
+            "colReorder": {
+                realtime: true
+            },
+            "columnDefs": [
+                {targets: 'no-sort', orderable: false},
+                {targets: 'no-sort', orderable: false},
+                {
+                    targets: 1,
+                    className: 'noVis'
+                },
+            ],
+            "dom": '<"top"Bif>rt<"bottom"f>',
+
+            "buttons": [
+                {
+                    extend: 'colvis',
+                    columns: ':not(.noVis)',
+                }
+            ]
+
+        });
+        table.columns.adjust().draw();
+        table.columns([1, 2]).select();
+
+
+    });
+</script>
+
+
+{% endblock javascripts %}

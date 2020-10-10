@@ -13,11 +13,17 @@
 {% set namep %}proj{{ proj_slot }}_{% endset %}
 
 
-<!--Project ID-->
 <!--Set invisibly and automatically-->
+<!--Project ID-->
 <input
     name="{{ namep }}id"
     value="{{ project.id }}"
+    type="hidden">
+
+<!--Acceptance-->
+<input
+    name="{{ namep }}accepted"
+    value="Pending"
     type="hidden">
 
 

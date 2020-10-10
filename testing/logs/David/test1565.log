@@ -1,0 +1,28 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:33:55] "[33mGET /student/Dave HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:00] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:02] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:02] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:07] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:09] "[32mPOST /admin/student/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:09] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:10] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:12] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:12] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:14] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:17] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:18] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:18] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:20] "[32mPOST /admin/student/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:20] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:22] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:24] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:24] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:25] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:26] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:26] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:27] "[37mGET /student/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 19:34:28] "[37mGET /student/Dave/details/page1 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading

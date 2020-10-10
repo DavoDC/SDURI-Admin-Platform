@@ -1,0 +1,5 @@
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:47:30] "[37mPOST /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HkOg.x-jVEJeMJpqLsLq2MeXJRAx5onU HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading

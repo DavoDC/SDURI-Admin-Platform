@@ -1,0 +1,26 @@
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:07] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HgYQ.020EG4_Oilw_MwEFCtGUuDWQC1U HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:07] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:20] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:30] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:31] "[37mGET /auth/password/forgot HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:39] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:52] "[32mPOST /auth/password/forgot HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:37:52] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:04] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HjUA.NyE6BhZ7muGT4VnHtljxHsioHs8 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:28] "[37mPOST /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HjUA.NyE6BhZ7muGT4VnHtljxHsioHs8 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:39] "[32mPOST /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HjUA.NyE6BhZ7muGT4VnHtljxHsioHs8 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:39] "[37mGET /student/22477478%40student.uwa.edu.au/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:45] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:45] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:48] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:52] "[37mGET /student/22477478%40student.uwa.edu.au/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:54] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:55] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:38:58] "[37mGET /auth/password/forgot HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:39:06] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading

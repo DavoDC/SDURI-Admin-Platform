@@ -1,0 +1,25 @@
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:21:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:21:35] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:21:42] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:21:48] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:21:55] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:22:00] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:22:13] "[37mPOST /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:23:03] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:23:04] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:23:05] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:23:08] "[37mGET /auth/password/forgot HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:25:11] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:25:21] "[32mPOST /auth/password/forgot HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:25:21] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:25:59] "[32mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HgYQ.020EG4_Oilw_MwEFCtGUuDWQC1U HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:25:59] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:26:01] "[32mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HgYQ.020EG4_Oilw_MwEFCtGUuDWQC1U HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:26:01] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:26:04] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:26:10] "[32mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HgYQ.020EG4_Oilw_MwEFCtGUuDWQC1U HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:26:10] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
