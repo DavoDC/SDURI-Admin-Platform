@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:35:19] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HgYQ.020EG4_Oilw_MwEFCtGUuDWQC1U HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:35:19] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -

@@ -43,17 +43,13 @@ def supervisor_details(username):
     if request.method == "POST":
         return redirect(url_for('index'))
 
-    # Get supervisor as dictionary
-    supervisor = utils.get_user_from_username(username, Supervisor, True)
-    super_dict = utils.get_row_as_dict(supervisor)
-
     # Render as one and only page
     path = 'supervisor/details/faculty-sel.html'
     baseURL = url_for('supervisor_details', username=current_user.name)
     rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
-                                title="Supervisor Details",
-                                super_dict=super_dict)
+                                title="Supervisor Details"
+                                )
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
@@ -132,7 +128,7 @@ def supervisor_edit_project(username, pid):
     
     # Get project as dictionary
     project = utils.get_project_from_id(pid)
-    proj_dict = utils.get_row_as_dict(project)
+    proj_dict = utils.get_row_as_dict(project, True)
 
     # Render as one and only page
     path = "supervisor/project/manage/edit.html"
@@ -157,31 +153,40 @@ def supervisor_view_appl(username, pid):
     # Get supervisors projects
     projects = utils.get_supervisors_projects(username)
     
+    # Studients applied
+    students = []
+    
     # Get students that have applied for at least one project
-    students = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
-    
-    # Applications
-    appl = []
-    
-    # For each supervisor project
-    for proj in projects:
-        
-        # Get supervisor project ID
-        spid = proj.id
-        
-        # For each student that has applied for a project
-        for stud in students:
+    studentsTemp = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
+
+    # For every student that has selected at least one project
+    for student in studentsTemp:
+        # For all project ids
+        projects = utils.get_pids_applied_for(student)
+        if pid in projects:
+            students.append(student)
             
-            # If student applied to their project
-            if spid in utils.get_pids_applied_for(stud):
-                
-                # Add application
-                appl.append((stud, proj))
+    # Get columns
+    col_names = Student.__table__.columns 
+    colNames = [i.name.capitalize() for i in col_names]
+    attributes = [i.name for i in col_names] 
+    
+    # make list of cols to remove, do forloop
+    # Remove irrelevant project slot
+    # Remove emergency details
+    # Remove columns
+    colNames.remove('Id')
+    attributes.remove('id')
+    colNames.remove('User_id')
+    attributes.remove('user_id')
+    
 
     # Render
     rend_temp = render_template("supervisor/project/manage/view-appl.html",
                                 title="View Applications",
-                                appl=appl)
+                                students=students,
+                                colNames=colNames,
+                                attributes=attributes)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
