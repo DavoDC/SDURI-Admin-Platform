@@ -1,0 +1,14 @@
+
+{% extends "supervisor/project/templ/proj-fields.html" %}
+
+<!-- Heading -->
+{% block heading %}
+<h4>Edit Project</h4>
+
+<!--Load project into fields for editing-->
+{% with dict=proj_dict %}
+{% include "templ/load-fields.html" %}
+{% endwith %}
+
+{% endblock %}
+

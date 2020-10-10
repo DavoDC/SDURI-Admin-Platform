@@ -1,0 +1,66 @@
+
+<!--JavaScript for loading  data into fields-->
+<script>
+
+    // Get project data
+    // To get better formatting, set this as string
+    var dict = {{ dict | safe }};
+    // When page loads
+    window.onload = function () {
+
+        // Load
+        loadDataIntoFields();
+    }
+
+    /**
+     * Retrieves database mapping into HTML fields
+     */
+    function loadDataIntoFields()
+    {
+        // For each key in dictionary
+        for (var key in dict) {
+
+            // Get name and value
+            var name = "" + key;
+            var value = "" + dict[key];
+            
+            // If value is null
+            if (value === "")
+            {
+                // Skip
+                continue;
+            }
+
+            // Get element (assuming id == name)
+            var elem = document.getElementById(name);
+            
+            // If element is not null
+            if (elem !== null) {
+
+                // Set placeholder
+                elem.setAttribute("placeholder", value);
+                
+                // Get tag
+                var tag = elem.tagName.toLowerCase();
+                
+                // Set value according to tag
+                switch (tag) {
+                    case "input":
+                        // If input (text, number, date), set value
+                        elem.setAttribute("value", value);
+                        break;
+                    case "textarea":
+                        // If text area, set inner HTML
+                        elem.innerHTML = value;
+                    case "default":
+                        // Notify if couldn't act
+                        var str = "New case = ";
+                        str += "Name: " + name;
+                        str += " , Type: " + tag;
+                        console.log(str);
+                }
+            }
+        }
+    }
+
+</script>

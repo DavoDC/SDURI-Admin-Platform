@@ -1,0 +1,23 @@
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:51:51] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:51:51] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:51:52] "[37mGET /student/Dave/project/manage/view/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:51:54] "[37mGET /student/Dave/project/manage/remove/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:51:56] "[37mGET /student/Dave/project/manage/remove/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:42] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:43] "[37mGET /student/Dave/project/manage/view/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:45] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:47] "[37mGET /student/Dave/project/manage/view/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:50] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:51] "[37mGET /student/Dave/project/manage/view/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:53] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:52:59] "[37mGET /student/Dave/project/manage/view/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:53:01] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:53:03] "[37mGET /student/Dave/project/manage/view/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:53:05] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:53:10] "[37mGET /student/Dave/project/manage/remove/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 21:53:12] "[37mGET /student/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

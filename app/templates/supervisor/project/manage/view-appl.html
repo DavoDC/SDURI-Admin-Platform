@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+<br>
+View Student Applications
+
+
+
+<table class="project-table">
+
+   <!--Add table headings-->
+   <tr class="project-row">
+
+       <th class="project-th">
+           Student Name
+       </th>
+       <th class="project-th">
+         Examine
+      </th>
+      <th class="project-th">
+         Accept
+      </th>
+      <th class="project-th">
+         Deny
+     </th>
+   </tr>
+
+   {% for student in students %}
+   <tr class="project-row">
+      <td class="project-td">
+         {{ student.name }}
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Examine
+         </a>
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Accept
+         </a>
+      </td>
+      <td class="project-td" style="text-align: center;">
+         <a class="hover-button" 
+            href="{{ url_for('supervisor_edit_project', 
+            username = current_user.name,
+            pid=student.id
+            ) }}">
+            Deny
+         </a>
+      </td>
+   </tr>
+   {% endfor %}
+
+</table>
+
+
+{% endblock %}

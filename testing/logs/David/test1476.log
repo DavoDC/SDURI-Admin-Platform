@@ -1,0 +1,21 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:05] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:11] "[37mGET /supervisor/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:14] "[37mGET /admin/supervisor/edit/?id=1&url=%2Fadmin%2Fsupervisor%2F HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:14] "[36mGET /admin/static/vendor/select2/select2x2.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:16] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:18] "[32mPOST /admin/supervisor/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:18] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:19] "[37mGET /supervisor/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:31:21] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:16:10] "[37mGET /supervisor/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:16:12] "[37mGET /supervisor/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:16:58] "[37mGET /supervisor/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:16:58] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:18:27] "[37mGET /supervisor/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:18:27] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:20:07] "[37mGET /supervisor/Dave/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 14:20:07] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\helper\\utils.py', reloading

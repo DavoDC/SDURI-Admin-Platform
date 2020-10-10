@@ -1,0 +1,21 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:43] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:44] "GET /supervisor/supervisor1/landing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:46] "GET /logout HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:46] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:49] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:56] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:56] "GET /supervisor/supervisor1/landing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:59] "GET /supervisor/supervisor1/details HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:59:05] "GET /supervisor/supervisor1/project/manage HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:59:23] "GET /supervisor/supervisor1/project/manage/view/appl/2 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:59:23] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:59:23] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:59:23] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:59:24] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:59:24] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:00:24] "GET /supervisor/supervisor1/project/manage/view/appl/2 HTTP/1.1" 500 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:00:25] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:00:25] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:00:25] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/routing/supervisor.py', reloading
+INFO:werkzeug: * Restarting with stat

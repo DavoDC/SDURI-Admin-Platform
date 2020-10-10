@@ -9,7 +9,7 @@ hasLabel=true, addValue=true %}
 <!--Disable all other custom fields-->
 <script>
     // When this radio button is selected
-    {{ type }}_radio.oninput = function () {
+    document.getElementById("{{ type }}_radio").oninput = function () {
 
         // For all input elements
         var inputs = document.getElementsByTagName('input');

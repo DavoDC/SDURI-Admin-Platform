@@ -18,19 +18,25 @@
 
         <!-- If not at question limit, show 'Next' button -->
         {% if num != max %}
-        <button type="submit" formaction="{{ baseURL }}/page{{num + 1}}">
+        <button type="submit" class="hover-button"
+                formaction="{{ baseURL }}/page{{num + 1}}">
             Next
         </button>
         <br>
-        <br>
         {% endif %}
-        
+
 
         <!-- If one and only page -->
         {% if num == 1 and max == 1 %}
-        <button type="submit" formaction="{{ baseURL }}">
+        <button type="submit" id="submit_form_button"
+                class="hover-button"
+                formaction="{{ baseURL }}">
             Submit
         </button>
+
+        <!-- Under submit -->
+        {% block under_submit %}{% endblock %}
+
         <br>
         <br>
         {% endif %}
@@ -43,19 +49,17 @@
 show 'Back' button -->
 {% if num != 1 and max != 1 %}
 <form action="{{ baseURL }}/page{{num - 1}}">
-    <button>Back</button>
+    <button class="hover-button">Back</button>
 </form>
 {% endif %}
 
 
 <!-- If reached page limit, show 'Submit' button -->
 {% if num == max and max != 1 %}  
-<br>
 <form action="{{ url_for('index') }}">
-    <button>Submit</button>
+    <button class="hover-button">Submit</button>
 </form>
 {% endif %}
-
 
 <br>
 <br>

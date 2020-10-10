@@ -2,17 +2,50 @@
 
 {% block content %}
 
-<div style="text-align: center; margin-top: 5%;"> 
+<div style="text-align: center; margin-top: 5%;">
 
     <!--Welcome user-->
     <h2>Welcome {{ current_user.name }}</h2>
+   
+    <!--If details not good-->
+    {% if not good_det or "details" in desc %}
+        <p>Please enter your details first. </p>
+        <!--<br>-->
+    {% endif %}
 
-    <!--Buttons-->
-    {% block buttons %}{% endblock %}
+    <!--Add action buttons-->
+    <table class="action-button-table">
 
+        {% for button in buttons %}
+
+            <!--Default: Disabled and No Link-->
+            {% set class = "hover-button-disabled" %}
+            
+            <!--Get button description-->
+            {% set desc = button[0].replace(" ", "_").lower() %}
+            
+            <!--If details are good or If we are on details button-->
+            {% if good_det or "details" in desc %}
+                <!--Always make normal-->
+                {% set class = "hover-button" %}
+                {% set link = "href=" + button[1] %}
+            {% endif %}
+            
+            <!--Button-->
+            <tr>
+            <td>
+            <a {{ link }} >
+               <button class={{ class }} type="action">
+                {{ button[0] }}
+               </button>
+            </a>
+        {% endfor %}
+        
+    </table>
+    
     <!--Logout link -->
     <a href="{{ url_for('logout') }}">Logout</a>
-
 </div>
+
 
 {% endblock %}

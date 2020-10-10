@@ -1,0 +1,12 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:27] "[37mGET /student/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:28] "[37mGET /student/Dave/project/explore HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:29] "[35m[1mGET /student/Dave/project/select/2 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:29] "[37mGET /student/Dave/project/select/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:29] "[37mGET /student/Dave/project/select/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:29] "[37mGET /student/Dave/project/select/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:29] "[37mGET /student/Dave/project/select/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 09:49:29] "[37mGET /student/Dave/project/select/2?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\student.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\student.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\student.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\student.py', reloading

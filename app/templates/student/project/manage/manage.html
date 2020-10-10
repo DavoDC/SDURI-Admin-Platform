@@ -1,0 +1,101 @@
+
+{% extends "templ/proj-list.html" %}
+
+<!--Heading-->
+{% block heading %}
+Your Project Applications
+{% endblock %}
+
+<!--Table headings-->
+{% set table_headings = 
+[
+"Project Title", 
+"Preference",
+"Duration",
+"View",
+"Unapply"
+] 
+%}
+
+<!--Table rows-->
+{% block table_rows %}
+
+<!--Add projects as rows-->
+{% for project in projects %}
+<tr class="project-row">
+
+    <!--Title-->
+    <td class="project-td">
+        {{ project.title }}
+    </td>
+
+    <!--Project Slot 1-->
+    {% if not proj1 == None %}
+    {% if project.id == proj1[0] %}
+    <td class="project-td">
+        {{ proj1[1] }}
+    </td>
+
+    <td class="project-td">
+        {{ proj1[2] }}
+    </td>
+    {% endif %}
+    {% endif %}
+
+    <!--Project Slot 2-->
+    {% if not proj2 == None %}
+    {% if project.id == proj2[0] %}
+    <td class="project-td">
+        {{ proj2[1] }}
+    </td>
+
+    <td class="project-td">
+        {{ proj2[2] }}
+    </td>
+    {% endif %}
+    {% endif %}
+
+    <!--View button -->
+    {% include "templ/view-button.html" %}
+
+    <!--Unapply button-->
+    <td class="project-td" style="text-align: center;">
+        <a class="hover-button" 
+           href="{{ url_for('student_unapply', 
+           username = current_user.name,
+           pid=project.id
+           ) }}">
+            Unapply
+        </a>
+    </td>
+</tr>
+{% endfor %}
+
+{% endblock %}
+
+
+
+<!--Under table-->
+{% block under_table %}
+
+{% endblock %}
+
+
+<!--No projects message-->
+{% block no_projects %}
+<br>
+<p>
+    You have not applied for any projects yet
+    <br>
+    <br>
+    To apply for projects, go 
+    <a href={{ url_for('student_explore', 
+       username=current_user.name) }}>
+        here</a>.
+</p>
+<br>
+{% endblock %}
+
+
+<!--Set link for back button-->
+{% set backlink %}{{ url_for('index') }}{% endset %}

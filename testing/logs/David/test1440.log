@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:32] "[37mGET /supervisor/Dave/project/manage/edit/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:32] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -

@@ -1,0 +1,51 @@
+
+{% extends "student/project/templ/single.html" %}
+
+{% block custom %}
+
+<!--If cannot apply -->
+{% if not can_apply %}
+
+<!--Upon load, disable apply button by changing CSS class-->
+<script>
+    window.onload = function () {
+	button = document.getElementById('apply_button');
+	button.className = "hover-button-disabled";
+    };
+</script>
+
+<!--Give message-->
+<p>     
+    <!--If applied for this project-->
+    {% if applied_for_this %}
+    You have already applied for this project
+    {% else %}
+    <!--Else if not applied to this project, -->
+    <!--but cannot apply, they must have applied for others-->
+    You have already applied for two other projects,
+    which is the maximum number of applications per student.
+    {% endif %}
+</p>
+
+{% endif %}
+
+
+<!--Show apply button-->
+<h4>
+    <a class="hover-button" 
+       href="{{ url_for('student_apply', 
+       username = current_user.name,
+       pid=project.id
+       ) }}"
+       id="apply_button">
+        Apply        
+    </a>
+</h4>
+
+{% endblock %}
+
+
+<!--Set link for back button-->
+{% set backlink %}
+{{ url_for('student_explore', username=current_user.name)}}
+{% endset %}

@@ -64,16 +64,16 @@ class User(UserMixin, db.Model):
         return '<User {}>'.format(self.name)
     
     def __init__(self, 
-                name, email, password, confirmed,
-                registered_on, role="", 
-                confirmed_on=None,
-                password_reset_token=None):
+                 name, email, password, confirmed,
+                 registered_on, role="", 
+                 confirmed_on=None,
+                 password_reset_token=None):
 
         self.name = name
         self.email = email
         self.password = generate_password_hash(password)
 
-        self.registered_on=registered_on
+        self.registered_on = registered_on
         self.role = role
         self.confirmed = confirmed
         self.confirmed_on = confirmed_on
@@ -195,10 +195,10 @@ class Student(db.Model):
     
     ### Page 7
     ## Long Answer Questions
-    longQ1 = db.Column(db.String(1600))
-    longQ2 = db.Column(db.String(3100))
-    longQ3 = db.Column(db.String(3100))
-    longQ4 = db.Column(db.String(3100))
+    longQ1 = db.Column(db.String(5000))
+    longQ2 = db.Column(db.String(10000))
+    longQ3 = db.Column(db.String(10000))
+    longQ4 = db.Column(db.String(10000))
     
     ### Page 8
     ## File Uploads
@@ -211,6 +211,20 @@ class Student(db.Model):
     
     ## Tuition
     tuition_fee = db.Column(db.String(128))
+    
+    
+    ## Projects
+    # First slot
+    proj1_id = db.Column(db.Integer)
+    proj1_pref = db.Column(db.String(32))
+    proj1_dur = db.Column(db.String(32)) 
+    # proj1_accepted = db.Column(db.String(32))
+    
+    # Second slot
+    proj2_id = db.Column(db.Integer)
+    proj2_pref = db.Column(db.String(32))
+    proj2_dur = db.Column(db.String(32)) 
+    # proj2_accepted = db.Column(db.String(32))
     
     # Initialize student entry
     def __init__(self, user_id):
@@ -264,7 +278,7 @@ class Project(db.Model):
     
     keywords = db.Column(db.String(128)) 
     
-    contact_email = db.Column(db.String(128), index=True, unique=True)
+    contact_email = db.Column(db.String(128))
     
     location = db.Column(db.String(128)) 
     

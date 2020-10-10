@@ -1,36 +1,41 @@
-from app import db, admin, login
-from flask import redirect, render_template, url_for
+from app import admin
+from app import db
+from app import login
+from app.models import *
+import datetime
+from flask import redirect
+from flask import render_template
+from flask import url_for
 from flask_admin.contrib.sqla import ModelView
-from flask_login import UserMixin, current_user, login_required
+from flask_login import UserMixin
+from flask_login import current_user
+from flask_login import login_required
 from werkzeug.security import check_password_hash
 from werkzeug.security import generate_password_hash
-import datetime
-
-from app.models import *
 
 class AdminTask(db.Model):
-  __tablename__ = 'admin_task'
+    __tablename__ = 'admin_task'
 
-  id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-  description = db.Column(db.String)
-  action = db.Column(db.String)
-  # Email cannot be unique because same user may have one or more problems
-  relatedUserEmail = db.Column(db.String(120)) 
-  resolved = db.Column(db.Boolean, default=False, nullable=False)
-  resolved_on = db.Column(db.DateTime) # , nullable=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    description = db.Column(db.String)
+    action = db.Column(db.String)
+    # Email cannot be unique because same user may have one or more problems
+    relatedUserEmail = db.Column(db.String(120)) 
+    resolved = db.Column(db.Boolean, default=False, nullable=False)
+    resolved_on = db.Column(db.DateTime) # , nullable=False)
 
-  def set_task_as_resolved(self, task_status):
-    self.resolved = task_status
-  
-  def set_task_resolved_on(self, task_resolved_date):
-    self.resolved_on = task_resolved_date
+    def set_task_as_resolved(self, task_status):
+        self.resolved = task_status
 
-  def __init__(self, description, action, userEmail):
-    self.description = description
-    self.action = action
-    self.relatedUserEmail = userEmail
+    def set_task_resolved_on(self, task_resolved_date):
+        self.resolved_on = task_resolved_date
 
-  def __repr__(self):
+    def __init__(self, description, action, userEmail):
+        self.description = description
+        self.action = action
+        self.relatedUserEmail = userEmail
+
+    def __repr__(self):
         return '<AdminTasks {}>'.format(self.description)
 
 class MyAdminModelView(ModelView):

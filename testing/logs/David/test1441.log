@@ -1,0 +1,35 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:36] "[37mGET /supervisor/Dave/project/manage/edit/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:42] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:42] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:44] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:46] "[37mGET /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:29:52] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:30:04] "[32mPOST /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:30:04] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:30:06] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:30:07] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:30:09] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:05] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:05] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:06] "[37mGET /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:21] "[32mPOST /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:21] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:24] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:24] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:31:26] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:32:25] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:32:28] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:32:28] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:32:32] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:32:34] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:32:34] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:32:38] "[37mGET /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:33:49] "[37mGET /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:33:49] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:34:40] "[37mGET /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:34:55] "[32mPOST /supervisor/Dave/project/manage/edit/12 HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:34:55] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading

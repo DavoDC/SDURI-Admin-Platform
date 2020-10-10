@@ -4,6 +4,12 @@
 <!-- Heading -->
 {% block heading %}
 <h4>Please select your faculty, and then your specific school</h4>
+
+<!--Load details into fields for editing-->
+{% with dict=super_dict %}
+{% include "templ/load-fields.html" %}
+{% endwith %}
+
 {% endblock %}
 
 <!--Questions-->
@@ -56,23 +62,23 @@ schools=[
 <script type="text/javascript">
     function showSchools(fidS)
     {
-	// For all div elements (except 0th)
-	var divs = document.getElementsByTagName('div');
-	for (i = 1; i < divs.length; i++) {
-	    // Get div
-	    var curDiv = divs[i];
+        // For all div elements (except 0th)
+        var divs = document.getElementsByTagName('div');
+        for (i = 1; i < divs.length; i++) {
+            // Get div
+            var curDiv = divs[i];
 
-	    // If div id is ours
-	    if (curDiv.id === fidS + "_schools") {
+            // If div id is ours
+            if (curDiv.id === fidS + "_schools") {
 
-		// Show it
-		curDiv.style.display = "inline";
-	    } else {
+                // Show it
+                curDiv.style.display = "inline";
+            } else {
 
-		// Else if it is not ours, hide it
-		curDiv.style.display = "none";
-	    }
-	}
+                // Else if it is not ours, hide it
+                curDiv.style.display = "none";
+            }
+        }
     }
 </script>
 

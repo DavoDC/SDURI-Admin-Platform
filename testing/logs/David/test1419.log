@@ -1,0 +1,20 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:17:47] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:17:48] "[37mGET /supervisor/Dave/project/manage/edit/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:17:51] "[37mGET /supervisor/Dave/project/manage/edit/10 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:02] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:17] "[32mPOST /supervisor/Dave/project/add HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:17] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:17] "[37mGET /supervisor/Dave/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:19] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:33] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:33] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:38] "[32mPOST /admin/project/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:38] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:42] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:45] "[37mGET /supervisor/Dave/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:18:46] "[37mGET /supervisor/Dave/project/manage/edit/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 10:20:40] "[37mGET /supervisor/Dave/project/manage/edit/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
