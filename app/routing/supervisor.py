@@ -164,8 +164,18 @@ def supervisor_view_appl(username, pid):
         # For all project ids
         projects = utils.get_pids_applied_for(student)
         if pid in projects:
-            students.append(student)
+            # If this project is the student's 1st pref
+            if student.proj1_id == pid:
+                # If this project's accept status is pending, then show the application, else ignore the student
+                if student.proj1_accepted == "Pending":
+                    students.append(student)
             
+            # Do the same for the student's 2nd pref
+            if student.proj2_id == pid:
+                # If this project's accept status is pending, then show the application, else ignore the student
+                if student.proj2_accepted == "Pending":
+                    students.append(student)
+
     # Get columns
     col_names = Student.__table__.columns 
     colNames = [i.name.capitalize() for i in col_names]
@@ -215,10 +225,10 @@ def accept(sid, pid):
 
     # if current project is project 1
     if this_student.proj1_id == pid:
-        this_student.proj1_accepted = "accepted"
+        this_student.proj1_accepted = "Accepted"
         db.session.commit()
     else:
-        this_student.proj2_accepted = "accepted"
+        this_student.proj2_accepted = "Accepted"
         db.session.commit()
 
     return redirect(url_for('index'))
@@ -233,8 +243,10 @@ def deny(sid, pid):
 
     # if current project is project 1
     if this_student.proj1_id == pid:
-        this_student.proj1_accepted = "denied"
+        this_student.proj1_accepted = "Denied"
+        db.session.commit()
     else:
-        this_student.proj2_accepted = "denied"
+        this_student.proj2_accepted = "Denied"
+        db.session.commit()
 
     return redirect(url_for('index'))
