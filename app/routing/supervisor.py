@@ -204,3 +204,37 @@ def supervisor_examine(username, pid, student_id):
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
+
+# Accept
+@app.route('/accept/<sid>/<pid>')
+@login_required
+def accept(sid, pid):
+
+    # get the student object
+    this_student = Student.query.filter_by(id=sid).first()
+
+    # if current project is project 1
+    if this_student.proj1_id == pid:
+        this_student.proj1_accepted = "accepted"
+        db.session.commit()
+    else:
+        this_student.proj2_accepted = "accepted"
+        db.session.commit()
+
+    return redirect(url_for('index'))
+
+# Deny
+@app.route('/deny/<sid>/<pid>')
+@login_required
+def deny(sid, pid):
+
+    # get the student object
+    this_student = Student.query.filter_by(id=sid).first()
+
+    # if current project is project 1
+    if this_student.proj1_id == pid:
+        this_student.proj1_accepted = "denied"
+    else:
+        this_student.proj2_accepted = "denied"
+
+    return redirect(url_for('index'))

@@ -158,6 +158,30 @@
 
 <!--Accept or Deny drop down-->
 
+<h4>
+    <a class="hover-button" 
+       id="accept-button"
+       href="{{ url_for('accept', 
+            sid = this_student.id,
+            pid = pid
+           ) 
+           }}">
+        Accept
+    </a>
+</h4>
+
+<h4>
+    <a class="hover-button" 
+       id="deny-button"
+       href="{{ url_for('deny', 
+            sid = this_student.id,
+            pid = pid
+           ) 
+           }}">
+        Deny
+    </a>
+</h4>
+
 <!--name HTML attribute would be proj1_accepted or proj2_accepted-->
 
 <!--Submit button automatically at bottom-->
