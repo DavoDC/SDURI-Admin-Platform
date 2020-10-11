@@ -68,7 +68,16 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
             <tr>
 
                 <!--Add link to examine page-->
-                <td> Examine </td>
+                <td class="project-td" style="text-align: center;"> 
+                    <a class="hover-button" 
+                    href="{{ url_for('supervisor_examine', 
+                    username = current_user.name,
+                    sname=row.ppname,
+                    ) 
+                    }}">
+                     Examine
+                    </a> 
+                </td>
 
                 {% for a in attributes %}
 
@@ -158,5 +167,12 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
     });
 </script>
 
+<h4>
+    <a class="hover-button" 
+       id="back-button"
+       href={{ url_for('supervisor_manage', username=current_user.name)}}>
+        Back
+    </a>
+</h4>
 
 {% endblock javascripts %}

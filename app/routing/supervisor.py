@@ -180,20 +180,25 @@ def supervisor_view_appl(username, pid):
     colNames.remove('User_id')
     attributes.remove('user_id')
     
-
-    # for every student that has selected at least one project
-    for student in students:
-        projects = utils.get_projects_applied_for(student)
-        if pid in projects:
-            appl_students.append(student)
     # Render
     rend_temp = render_template("supervisor/project/manage/view-appl.html",
                                 title="View Applications",
                                 students=students,
                                 colNames=colNames,
-                                attributes=attributes)
+                                attributes=attributes,
+                                pid=pid)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
 
+# Supervisor examine student details
+@app.route('/supervisor/<username>/project/manage/view/appl/<sname>')
+@login_required
+def supervisor_examine(username, sname):
+
+    # Render
+    rend_temp = render_template("supervisor/project/manage/examine.html", title="Examine student details")
+
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
