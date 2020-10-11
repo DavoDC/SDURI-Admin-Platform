@@ -193,12 +193,14 @@ def supervisor_view_appl(username, pid):
 
 
 # Supervisor examine student details
-@app.route('/supervisor/<username>/project/manage/view/appl/<sname>')
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<student_id>')
 @login_required
-def supervisor_examine(username, sname):
+def supervisor_examine(username, pid, student_id):
+
+    this_student = Student.query.filter_by(id=student_id).first()
 
     # Render
-    rend_temp = render_template("supervisor/project/manage/examine.html", title="Examine student details")
+    rend_temp = render_template("supervisor/project/manage/examine.html", title="Examine student details", pid=pid, sid=student_id, this_student=this_student)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)

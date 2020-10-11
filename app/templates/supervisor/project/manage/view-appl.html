@@ -72,7 +72,8 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
                     <a class="hover-button" 
                     href="{{ url_for('supervisor_examine', 
                     username = current_user.name,
-                    sname=row.ppname,
+                    pid=pid,
+                    student_id=row.id
                     ) 
                     }}">
                      Examine
