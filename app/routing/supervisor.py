@@ -150,10 +150,13 @@ def supervisor_edit_project(username, pid):
 @login_required
 def supervisor_view_appl(username, pid):
 
+    # Get this project's name
+    project_name = Project.query.filter_by(id=pid).first().title
+
     # Get supervisors projects
     projects = utils.get_supervisors_projects(username)
     
-    # Studients applied
+    # Students applied
     students = []
     
     # Get students that have applied for at least one project
@@ -233,14 +236,15 @@ def supervisor_view_appl(username, pid):
                                 students=students,
                                 colNames=colNames,
                                 attributes=attributes,
-                                pid=pid)
+                                pid=pid,
+                                pname=project_name)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
 
 # Supervisor examine student details
-@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<student_id>')
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<student_id>/examine')
 @login_required
 def supervisor_examine(username, pid, student_id):
 
@@ -279,7 +283,7 @@ def deny(sid, pid):
     this_student = Student.query.filter_by(id=sid).first()
 
     # if current project is project 1
-    if this_student.proj1_id == pid:
+    if int(this_student.proj1_id) == int(pid):
         this_student.proj1_accepted = "Denied"
         db.session.commit()
     else:
