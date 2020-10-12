@@ -161,7 +161,8 @@
 <h4>
     <a class="hover-button" 
        id="accept-button"
-       href="{{ url_for('accept', 
+       href="{{ url_for('accept_confirm',
+            username = current_user.name, 
             sid = this_student.id,
             pid = pid
            ) 
@@ -173,7 +174,8 @@
 <h4>
     <a class="hover-button" 
        id="deny-button"
-       href="{{ url_for('deny', 
+       href="{{ url_for('deny_confirm', 
+            username = current_user.name,
             sid = this_student.id,
             pid = pid
            ) 

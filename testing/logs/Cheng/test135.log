@@ -1,0 +1,9 @@
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:00] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:01] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11/1/examine HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:02] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11/1/examine/accept_confirm HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:05] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11/1/examine HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:06] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11/1/examine/deny_confirm HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:07] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11/1/examine HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:09] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11/1/examine/deny_confirm HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 02:35:10] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11/1/examine HTTP/1.1[0m" 200 -

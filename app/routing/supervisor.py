@@ -190,6 +190,7 @@ def supervisor_view_appl(username, pid):
     # Remove columns
     irrelavent_cols = ['Id',
     'User_id',
+    'Ppname',
     'Birth_cntry',
     'Citizen_cntry',
     'Street_addr',
@@ -256,10 +257,39 @@ def supervisor_examine(username, pid, student_id):
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
-# Accept
-@app.route('/accept/<sid>/<pid>')
+# Accept confirm
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/accept_confirm')
 @login_required
-def accept(sid, pid):
+def accept_confirm(username, sid, pid):
+
+    this_student_name = Student.query.filter_by(id=sid).first().ppname
+    this_project_name = Project.query.filter_by(id=pid).first().title
+
+    # Render
+    rend_temp = render_template("supervisor/project/manage/accept_confirm.html", title="Confirm your choice", pname=this_project_name, sname=this_student_name, sid=sid, pid=pid)
+
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
+
+# Deny confirm
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/deny_confirm')
+@login_required
+def deny_confirm(username, sid, pid):
+
+    this_student_name = Student.query.filter_by(id=sid).first().ppname
+    this_project_name = Project.query.filter_by(id=pid).first().title
+
+    # Render
+    rend_temp = render_template("supervisor/project/manage/deny_confirm.html", title="Confirm your choice", pname=this_project_name, sname=this_student_name, sid=sid, pid=pid)
+
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
+
+
+# Accept
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/accept')
+@login_required
+def accept(username, sid, pid):
 
     # get the student object
     this_student = Student.query.filter_by(id=sid).first()
@@ -275,9 +305,9 @@ def accept(sid, pid):
     return redirect(url_for('index'))
 
 # Deny
-@app.route('/deny/<sid>/<pid>')
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/deny')
 @login_required
-def deny(sid, pid):
+def deny(username, sid, pid):
 
     # get the student object
     this_student = Student.query.filter_by(id=sid).first()
