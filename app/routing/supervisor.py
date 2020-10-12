@@ -167,13 +167,13 @@ def supervisor_view_appl(username, pid):
             # If this project is the student's 1st pref
             if student.proj1_id == pid:
                 # If this project's accept status is pending, then show the application, else ignore the student
-                if student.proj1_accepted == "Pending":
+                if student.proj1_accepted is "Pending":
                     students.append(student)
             
             # Do the same for the student's 2nd pref
             if student.proj2_id == pid:
                 # If this project's accept status is pending, then show the application, else ignore the student
-                if student.proj2_accepted == "Pending":
+                if student.proj2_accepted is "Pending":
                     students.append(student)
 
     # Get columns
