@@ -167,13 +167,13 @@ def supervisor_view_appl(username, pid):
             # If this project is the student's 1st pref
             if student.proj1_id == pid:
                 # If this project's accept status is pending, then show the application, else ignore the student
-                if student.proj1_accepted is "Pending":
+                if student.proj1_accepted == str('Pending'):
                     students.append(student)
             
             # Do the same for the student's 2nd pref
             if student.proj2_id == pid:
                 # If this project's accept status is pending, then show the application, else ignore the student
-                if student.proj2_accepted is "Pending":
+                if student.proj2_accepted == str('Pending'):
                     students.append(student)
 
     # Get columns
@@ -185,10 +185,47 @@ def supervisor_view_appl(username, pid):
     # Remove irrelevant project slot
     # Remove emergency details
     # Remove columns
-    colNames.remove('Id')
-    attributes.remove('id')
-    colNames.remove('User_id')
-    attributes.remove('user_id')
+    irrelavent_cols = ['Id',
+    'User_id',
+    'Birth_cntry',
+    'Citizen_cntry',
+    'Street_addr',
+    'City_addr',
+    'State_addr',
+    'Postcode_addr',
+    'Cntry_addr',
+    'Emg_name',
+    'Emg_rel',
+    'Emg_ph',
+    'Uni_years',
+    'Uni_awards',
+    'Eng_prog',
+    'Eng_prog_choice',
+    'Native_sp',
+    'Test_sc',
+    'Eng_file',
+    'Cv_file',
+    'Transcr_file',
+    'Tuition_fee',
+    'Proj1_id',
+    'Proj1_pref',
+    'Proj1_dur',
+    'Proj1_accepted',
+    'Proj2_id',
+    'Proj2_pref',
+    'Proj2_dur',
+    'Proj2_accepted']
+
+    for col in irrelavent_cols:
+        colNames.remove(col)
+        attributes.remove(col.lower())
+
+    # Naming convention for longQ1, Longq1 is different thus a new for loop
+    for num in [1,2,3,4]:
+        col = 'Longq' + str(num)
+        attr = 'longQ' + str(num)
+        colNames.remove(col)
+        attributes.remove(attr)
     
     # Render
     rend_temp = render_template("supervisor/project/manage/view-appl.html",
@@ -224,7 +261,7 @@ def accept(sid, pid):
     this_student = Student.query.filter_by(id=sid).first()
 
     # if current project is project 1
-    if this_student.proj1_id == pid:
+    if int(this_student.proj1_id) == int(pid):
         this_student.proj1_accepted = "Accepted"
         db.session.commit()
     else:
