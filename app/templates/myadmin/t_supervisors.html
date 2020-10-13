@@ -70,10 +70,7 @@ table.dataTable{border-collapse:collapse !important;}
           <tr>
             <th  class="no-sort" style="background-color: white"></th>
             <th  class="no-sort" style="background-color: white"></th>
-            
-            {% for col in fixedColNames %}
-            <th style="background-color: white">{{ col }} </th>
-            {% endfor %}
+            <th style="background-color: white"> Name</th>
             {% for col in colNames %}
             <th style="background-color: white">{{ col }} </th>
             {% endfor %}
@@ -94,11 +91,14 @@ table.dataTable{border-collapse:collapse !important;}
                 <a href="{{ url_for('myadmin.delete', id=row.id) }}  " class="btn-xs"
                   onclick="return confirm('Are You Sure To Delete ?')"><i class="fa fa-trash-alt"></i></a>
               </td>
-              {% for a in fixedColAttributes %}
-              <td style="background-color: white">{{ row|attr(a) }} </td>
-              {% endfor %}
+              
+              <td> {{ nameDic[row.user_id] }} </td>
+              
               {% for a in attributes %}
+              
               <td>{{ row|attr(a) }} </td>
+            
+
               {% endfor %}
             </tr>
 
@@ -119,9 +119,7 @@ table.dataTable{border-collapse:collapse !important;}
           <tr>
             <th style="background-color: white"></th>
             <th style="background-color: white"></th>
-            {% for col in fixedColNames %}
-            <th style="background-color: white">{{ col }} </th>
-            {% endfor %}
+            <th style="background-color: white">Name</th>
             {% for col in colNames %}
             <th style="background-color: white">{{ col }} </th>
             {% endfor %}
@@ -133,7 +131,7 @@ table.dataTable{border-collapse:collapse !important;}
     <div>
       <ul class="pagination">
       {% if persons.has_prev %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=persons.prev_num) }}">Previous</a>
+      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_supervisors', page_num=persons.prev_num) }}">Previous</a>
       </li>
       {% else %}
       <li class="page-item disabled"><span class="page-link">Previous</span>
@@ -142,14 +140,14 @@ table.dataTable{border-collapse:collapse !important;}
     
       {% for page in persons.iter_pages(left_edge=1, right_edge=1) %}
       {% if page %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=page) }}">{{ page }}</a></li>
+      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_supervisors', page_num=page) }}">{{ page }}</a></li>
       {% else %}
       <li class="page-item disabled" id="example_ellipsis"><a href="#" class="page-link">…</a></li>
       {% endif %}
       {% endfor %}
     
       {% if persons.has_next %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=persons.next_num) }}">Next</a>
+      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_supervisors', page_num=persons.next_num) }}">Next</a>
       </li>
       {% else %}
       <li class="page-item disabled"><span class="page-link">Next</span>
@@ -177,28 +175,26 @@ table.dataTable{border-collapse:collapse !important;}
       "scrollCollapse": true,
       "paging":   true,
       "lengthMenu": false,
+      "fixedColumns": {
+                        leftColumns: 3
+                    },
       "colReorder": {
                         realtime: true
-                    },
-      "fixedColumns": {
-                        leftColumns: 4
                     },
       "columnDefs": [
                       { targets: 'no-sort', orderable: false },
                       { targets: 'no-sort', orderable: false },
-                     
-                       {
+                      {
+                          targets: 1,
+                          className: 'noVis'
+                      },
+                      {
                          // can specify hiding a column by column index
-                          "targets": [],
+                          "targets" : [3,4], 
                           "visible": false,
                           "searchable": true
                       },
-                       {
-                          targets: 1,
-                          className: 'noVis'
-                      },  
                     ],
-                   
       "dom": '<"top"Bif>rt<"bottom"f>',
       
       "buttons": [
@@ -206,12 +202,11 @@ table.dataTable{border-collapse:collapse !important;}
                       extend: 'colvis',
                       columns: ':not(.noVis)',
                   }
-                ],
+                ]
       
     });
     table.columns.adjust().draw();
     table.columns([1, 2]).select();
-    
    
     
   });

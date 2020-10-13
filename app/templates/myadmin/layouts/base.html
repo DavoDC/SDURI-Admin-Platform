@@ -38,8 +38,8 @@
             <a class="navbar-brand" href="{{url_for('myadmin.admin_home')}}"><i class="fa fa-home fa-fw"></i> Admin</a>
             <a class="navbar-brand" href="{{url_for('myadmin.display_users', page_num=1)}}"><i class="fa fa-users fa-fw"></i> All Users</a>
             <a class="navbar-brand" href="{{url_for('myadmin.display_students', page_num=1)}}"><i class="fa fa-info-circle fa-fw"></i> Students</a>
-            <a class="navbar-brand" href=""><i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
-            <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Projects</a>
+            <a class="navbar-brand" href="{{url_for('myadmin.display_supervisors', page_num=1)}}"><i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
+            <a class="navbar-brand" href="{{url_for('myadmin.display_projects', page_num=1)}}"><i class="fa fa-table fa-fw"></i> Projects</a>
             <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Preferences</a>
             <!-- </div>end .navbar-header -->
 
@@ -116,6 +116,7 @@
     <!-- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> -->
     <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.datatables.net/colreorder/1.5.2/js/dataTables.colReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js"></script>
     <!-- Testing with the above -->
     
     <script>
