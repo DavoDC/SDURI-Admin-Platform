@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+      {% block head %}
+       <!--Logo-->
+        <img src="{{ url_for('static', filename='images/uwa_logo.png') }}" 
+         alt="UWA Logo" 
+         style="max-width:10%; position:fluid; padding-bottom: 1%" >
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -21,7 +27,7 @@
                        
     
     
-
+      {% endblock %}
     
   </head>
   <body style="margin: auto; padding: 50px;">
@@ -35,7 +41,7 @@
             <a class="navbar-brand" href="{{url_for('myadmin.display_students', page_num=1)}}"><i class="fa fa-info-circle fa-fw"></i> Students</a>
             <a class="navbar-brand" href="{{url_for('myadmin.display_supervisors', page_num=1)}}"><i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
             <a class="navbar-brand" href="{{url_for('myadmin.display_projects', page_num=1)}}"><i class="fa fa-table fa-fw"></i> Projects</a>
-            <a class="navbar-brand" href=""><i class="fa fa-table fa-fw"></i> Preferences</a>
+            
             <!-- </div>end .navbar-header -->
 
           
