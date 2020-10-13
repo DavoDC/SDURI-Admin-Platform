@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:43] "GET / HTTP/1.1" 302 -
 INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:44] "GET /supervisor/supervisor1/landing HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 20:58:46] "GET /logout HTTP/1.1" 302 -
@@ -19,3 +20,11 @@ INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:00:25] "GET /supervisor/supervisor1/
 INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:00:25] "GET /supervisor/supervisor1/project/manage/view/appl/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
 INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/routing/supervisor.py', reloading
 INFO:werkzeug: * Restarting with stat
+=======
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:10:18] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:10:19] "GET /supervisor/supervisor1/landing HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:10:20] "GET /myadmin/display/users/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:10:21] "GET /myadmin/display/users/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:10:22] "GET /myadmin/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 21:10:26] "GET /supervisor/supervisor1/project/manage HTTP/1.1" 200 -
+>>>>>>> testmang

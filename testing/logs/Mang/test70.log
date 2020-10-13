@@ -1,0 +1,35 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:13:28] "GET / HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:13:29] "GET /myadmin/?username=admin1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:13:32] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:14:01] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:14:29] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:14:50] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:14:53] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:15:33] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:15:43] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:16:49] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:16:59] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:17:22] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:17:24] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:17:46] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:17:48] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:18:12] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:18:19] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:18:55] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:18:58] "GET /myadmin/display/supervisors/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:19:09] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:19:19] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:19:47] "GET /admin/project/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/myadmin/myadmin_routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat

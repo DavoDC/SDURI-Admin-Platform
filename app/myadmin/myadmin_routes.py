@@ -60,19 +60,73 @@ def display_users(page_num):
     return render_template('users.html', title="Administrator", users=usersFromDB)
 
 
+@bp.route('/display/projects/all/<int:page_num>', methods=['GET', 'POST'])
+def display_projects(page_num):
+  col_names = Project.__table__.columns
+  colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
+  attributes = [i.name for i in col_names][:] # Columns' name
+
+  colNames = colNames[3:5] + colNames[:2] +colNames[5:]
+  attributes = attributes[3:5] + attributes[:2] +attributes[5:]
+  projectsFromDB = Project.query.paginate(per_page=2, page=page_num, error_out=True)
+  
+  # supersFromDB = user_serializer.dump(userFromDB.items)
+  return render_template('t_projects.html', 
+                          title="Administrator", 
+                          persons=projectsFromDB,
+                          colNames=colNames,
+                          attributes=attributes)
+                          
+
+@bp.route('/display/supervisors/all/<int:page_num>', methods=['GET', 'POST'])
+def display_supervisors(page_num):
+  col_names = Supervisor.__table__.columns
+  colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
+  attributes = [i.name for i in col_names][:] # Columns' name
+
+  # Name of all supervisors from user table using user_id
+  supervisors = Supervisor.query.all()
+  superNames = []
+  for supervisor in supervisors: 
+    superNames.append((User.query.filter_by(id=supervisor.user_id).first()).name)
+
+  supersFromDB = Supervisor.query.paginate(per_page=2, page=page_num, error_out=True)
+  nameDic = {}
+  for row in supersFromDB.items:
+    nameDic[row.user_id] = User.query.filter_by(id=row.user_id).first().name 
+    print(User.query.filter_by(id=row.user_id).first().name)
+  print(nameDic)
+  # supersFromDB = user_serializer.dump(userFromDB.items)
+  return render_template('t_supervisors.html', 
+                          title="Administrator", 
+                          persons=supersFromDB,
+                          colNames=colNames,
+                          attributes=attributes,
+                          superNames=superNames,
+                          nameDic=nameDic)
+
 @bp.route('/display/students/all/<int:page_num>', methods=['GET', 'POST'])
 def display_students(page_num):
   col_names = Student.__table__.columns
-  colNames = [i.name.capitalize() for i in col_names] # Capitalize columns' name
+  colNames = [i.name.upper() for i in col_names] # Capitalize columns' name
   attributes = [i.name for i in col_names] # Columns' name
+
+  # Rearrange colNames as desired, and attributes correspondingly
+  fixedCol = [7,6]
+  fixedColNames = [colNames[i] for i in fixedCol]
+  fixedColAttributes = [attributes[i] for i in fixedCol]
+  colNamesR = colNames[2:6] + colNames[8:]
+  attributesR = attributes[2:6] + attributes[8:]
   studentsFromDB = Student.query.paginate(per_page=2, page=page_num, error_out=True)
   
   # usersFromDB = user_serializer.dump(userFromDB.items)
   return render_template('t_students.html', 
                           title="Administrator", 
-                          students=studentsFromDB,
-                          colNames=colNames,
-                          attributes=attributes)
+                          persons=studentsFromDB,
+                          colNames=colNamesR,
+                          attributes=attributesR,
+                          fixedColNames=fixedColNames,
+                          fixedColAttributes=fixedColAttributes)
 
 @bp.route('/add/user', methods=['GET', 'POST'])
 def add_user():

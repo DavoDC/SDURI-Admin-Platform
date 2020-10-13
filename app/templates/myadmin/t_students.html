@@ -65,36 +65,40 @@ table.dataTable{border-collapse:collapse !important;}
       
       
     <div class="dataTables_wrapper container-fluid align-items-start">
-      <table id="students_table" style="width:100%;" class="cell-border table table-sm display table-bordered table-hover table-grey">
+      <table id="persons_table" style="width:100%;" class="cell-border table table-sm display table-bordered table-hover table-grey">
         <thead>
           <tr>
-            <th  class="no-sort"></th>
-            <th  class="no-sort"></th>
+            <th  class="no-sort" style="background-color: white"></th>
+            <th  class="no-sort" style="background-color: white"></th>
+            
+            {% for col in fixedColNames %}
+            <th style="background-color: white">{{ col }} </th>
+            {% endfor %}
             {% for col in colNames %}
-            <th>{{ col }} </th>
+            <th style="background-color: white">{{ col }} </th>
             {% endfor %}
           </tr>
         </thead>
         <tbody>
           
-          {% for row in students.items %}
+          {% for row in persons.items %}
             <tr>
               
              
-              <td>
+              <td style="background-color: white">
                 <!-- Buttons to trigger modals -->
                 <a href="/myadmin/update/{{ row.id }}" class="btn-xs" data-toggle="modal"
                   data-target="#modaledit{{row.id}}"><i class="fa fa-pencil-alt"></i></a>
               </td>
-              <td>
+              <td style="background-color: white">
                 <a href="{{ url_for('myadmin.delete', id=row.id) }}  " class="btn-xs"
                   onclick="return confirm('Are You Sure To Delete ?')"><i class="fa fa-trash-alt"></i></a>
               </td>
+              {% for a in fixedColAttributes %}
+              <td style="background-color: white">{{ row|attr(a) }} </td>
+              {% endfor %}
               {% for a in attributes %}
-              
               <td>{{ row|attr(a) }} </td>
-            
-
               {% endfor %}
             </tr>
 
@@ -113,10 +117,13 @@ table.dataTable{border-collapse:collapse !important;}
         </tbody>
         <tfoot>
           <tr>
-            <th></th>
-            <th></th>
+            <th style="background-color: white"></th>
+            <th style="background-color: white"></th>
+            {% for col in fixedColNames %}
+            <th style="background-color: white">{{ col }} </th>
+            {% endfor %}
             {% for col in colNames %}
-            <th>{{ col }} </th>
+            <th style="background-color: white">{{ col }} </th>
             {% endfor %}
             
           </tr>
@@ -125,15 +132,15 @@ table.dataTable{border-collapse:collapse !important;}
     </div>
     <div>
       <ul class="pagination">
-      {% if students.has_prev %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=students.prev_num) }}">Previous</a>
+      {% if persons.has_prev %}
+      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=persons.prev_num) }}">Previous</a>
       </li>
       {% else %}
       <li class="page-item disabled"><span class="page-link">Previous</span>
         {% endif %}
       </li>
     
-      {% for page in students.iter_pages(left_edge=1, right_edge=1) %}
+      {% for page in persons.iter_pages(left_edge=1, right_edge=1) %}
       {% if page %}
       <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=page) }}">{{ page }}</a></li>
       {% else %}
@@ -141,8 +148,8 @@ table.dataTable{border-collapse:collapse !important;}
       {% endif %}
       {% endfor %}
     
-      {% if students.has_next %}
-      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=students.next_num) }}">Next</a>
+      {% if persons.has_next %}
+      <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_students', page_num=persons.next_num) }}">Next</a>
       </li>
       {% else %}
       <li class="page-item disabled"><span class="page-link">Next</span>
@@ -163,7 +170,7 @@ table.dataTable{border-collapse:collapse !important;}
 {{super()}}
 <script>
   $(document).ready(function () {
-    var table = $('#students_table').DataTable({
+    var table = $('#persons_table').DataTable({
       "processing": true,
       "scrollX": true,
       "scrollY": 250,
@@ -173,14 +180,25 @@ table.dataTable{border-collapse:collapse !important;}
       "colReorder": {
                         realtime: true
                     },
+      "fixedColumns": {
+                        leftColumns: 4
+                    },
       "columnDefs": [
                       { targets: 'no-sort', orderable: false },
                       { targets: 'no-sort', orderable: false },
-                      {
+                     
+                       {
+                         // can specify hiding a column by column index
+                          "targets": [],
+                          "visible": false,
+                          "searchable": true
+                      },
+                       {
                           targets: 1,
                           className: 'noVis'
-                      },
+                      },  
                     ],
+                   
       "dom": '<"top"Bif>rt<"bottom"f>',
       
       "buttons": [
@@ -188,11 +206,12 @@ table.dataTable{border-collapse:collapse !important;}
                       extend: 'colvis',
                       columns: ':not(.noVis)',
                   }
-                ]
+                ],
       
     });
     table.columns.adjust().draw();
     table.columns([1, 2]).select();
+    
    
     
   });
