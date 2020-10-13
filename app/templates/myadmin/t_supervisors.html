@@ -188,6 +188,14 @@ table.dataTable{border-collapse:collapse !important;}
                           targets: 1,
                           className: 'noVis'
                       },
+                      {
+                         // can specify hiding a column by column index
+                          "targets": [4,5],
+                          "visible": false,
+                          "searchable": true
+                      }
+                    ],
+      "dom": '<"top"Bif>rt<"bottom"f>',
       "buttons": [
                   {
                       extend: 'colvis',
