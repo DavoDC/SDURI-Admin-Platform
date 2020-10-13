@@ -218,13 +218,13 @@ class Student(db.Model):
     proj1_id = db.Column(db.Integer)
     proj1_pref = db.Column(db.String(32))
     proj1_dur = db.Column(db.String(32)) 
-    # proj1_accepted = db.Column(db.String(32))
+    proj1_accepted = db.Column(db.String(64)) #Accepted, Denied, Pending
     
     # Second slot
     proj2_id = db.Column(db.Integer)
     proj2_pref = db.Column(db.String(32))
     proj2_dur = db.Column(db.String(32)) 
-    # proj2_accepted = db.Column(db.String(32))
+    proj2_accepted = db.Column(db.String(64)) #Accepted, Denied, Pending
     
     # Initialize student entry
     def __init__(self, user_id):

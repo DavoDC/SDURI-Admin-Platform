@@ -37,18 +37,7 @@ def admin(username):
     return render_template('auth/admin.html', user=user, title='Admin', users=users)
 
 
-@bp.route('/supervisor/<username>')
-@login_required
-def supervisors(username):
-    user = User.query.filter_by(name=username).first_or_404()
-    return render_template('supervisors.html', user=user, title='Supervisor')
 
-
-@bp.route('/student/<username>')
-@login_required
-def students(username):
-    user = User.query.filter_by(name=username).first_or_404()
-    return render_template('students.html', user=user, title='Student')
 
 
 @bp.route('/login', methods=['GET', 'POST'])
@@ -77,27 +66,9 @@ def login():
     return render_template('auth/login.html', title='Sign In', form=form)
 
 
-@bp.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
 
 
-@bp.route('/register', methods=['GET', 'POST'])
-def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(name=form.username.data,
-                    # user_fullname=form.user_fullname.data,
-                    email=form.email.data)
-        user.set_user_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Congratulations, you are now a registered user!')
-    return redirect(url_for('auth.login'))
-    return render_template('register.html', title='Register', form=form)
+
 
 @bp.route('/initial-registration', methods=['GET', 'POST'])
 def initial_registration():
@@ -149,6 +120,7 @@ def initial_registration():
         msg.html = html
         mail.send(msg)
         # email.send_email(newUser.email, subject, "hello")
+        
         flash("Please click the confirmation link sent to the email given below to continue registration processes.", "warning")
         # return redirect(url_for('auth.initial_registration', form=initialForm, roles=roles )) 
         # return redirect(url_for('auth.initial_registration')) 

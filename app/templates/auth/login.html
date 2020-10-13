@@ -36,10 +36,18 @@
         </p>
 
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <h5 class="signIn">
+        <p class="signIn">
             {{ form.submit() }}
-        </h5>
-
+        </p>
+        
+        <a href="{{ url_for('auth.forgot_password') }}">
+            I forgot my password
+        <a/>
+            
+        <br>
+        <br>
+        <br>
+        <br>
     </form>
 </div>
 

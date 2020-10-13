@@ -43,17 +43,13 @@ def supervisor_details(username):
     if request.method == "POST":
         return redirect(url_for('index'))
 
-    # Get supervisor as dictionary
-    supervisor = utils.get_user_from_username(username, Supervisor, True)
-    super_dict = utils.get_row_as_dict(supervisor)
-
     # Render as one and only page
     path = 'supervisor/details/faculty-sel.html'
     baseURL = url_for('supervisor_details', username=current_user.name)
     rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
-                                title="Supervisor Details",
-                                super_dict=super_dict)
+                                title="Supervisor Details"
+                                )
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
@@ -132,7 +128,7 @@ def supervisor_edit_project(username, pid):
     
     # Get project as dictionary
     project = utils.get_project_from_id(pid)
-    proj_dict = utils.get_row_as_dict(project)
+    proj_dict = utils.get_row_as_dict(project, True)
 
     # Render as one and only page
     path = "supervisor/project/manage/edit.html"
@@ -154,28 +150,174 @@ def supervisor_edit_project(username, pid):
 @login_required
 def supervisor_view_appl(username, pid):
 
+    # Get this project's name
+    project_name = Project.query.filter_by(id=pid).first().title
+
     # Get supervisors projects
     projects = utils.get_supervisors_projects(username)
     
-    # PSEUDOCODE
-    #    For every PID of the supervisors projects
-    #- For every student
-    #-- if PID is in get_pids_appliedfor(student) (a helper function of mine)
-    #---- Add to row
-    appl_students = []
+    # Students applied
+    students = []
+    
+    # Get students that have applied for at least one project
+    studentsTemp = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
 
-    students = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
-
-    # for every student that has selected at least one project
-    for student in students:
-        projects = utils.get_projects_applied_for(student)
+    # For every student that has selected at least one project
+    for student in studentsTemp:
+        # For all project ids
+        projects = utils.get_pids_applied_for(student)
         if pid in projects:
-            appl_students.append(student)
+            # If this project is the student's 1st pref
+            if student.proj1_id == pid:
+                # If this project's accept status is pending, then show the application, else ignore the student
+                if student.proj1_accepted == str('Pending'):
+                    students.append(student)
+            
+            # Do the same for the student's 2nd pref
+            if student.proj2_id == pid:
+                # If this project's accept status is pending, then show the application, else ignore the student
+                if student.proj2_accepted == str('Pending'):
+                    students.append(student)
+
+    # Get columns
+    col_names = Student.__table__.columns 
+    colNames = [i.name.capitalize() for i in col_names]
+    attributes = [i.name for i in col_names] 
+    
+    # make list of cols to remove, do forloop
+    # Remove irrelevant project slot
+    # Remove emergency details
+    # Remove columns
+    irrelavent_cols = ['Id',
+    'User_id',
+    'Ppname',
+    'Birth_cntry',
+    'Citizen_cntry',
+    'Street_addr',
+    'City_addr',
+    'State_addr',
+    'Postcode_addr',
+    'Cntry_addr',
+    'Emg_name',
+    'Emg_rel',
+    'Emg_ph',
+    'Uni_years',
+    'Uni_awards',
+    'Eng_prog',
+    'Eng_prog_choice',
+    'Native_sp',
+    'Test_sc',
+    'Eng_file',
+    'Cv_file',
+    'Transcr_file',
+    'Tuition_fee',
+    'Proj1_id',
+    'Proj1_pref',
+    'Proj1_dur',
+    'Proj1_accepted',
+    'Proj2_id',
+    'Proj2_pref',
+    'Proj2_dur',
+    'Proj2_accepted']
+
+    for col in irrelavent_cols:
+        colNames.remove(col)
+        attributes.remove(col.lower())
+
+    # Naming convention for longQ1, Longq1 is different thus a new for loop
+    for num in [1,2,3,4]:
+        col = 'Longq' + str(num)
+        attr = 'longQ' + str(num)
+        colNames.remove(col)
+        attributes.remove(attr)
+    
     # Render
     rend_temp = render_template("supervisor/project/manage/view-appl.html",
-                                title="View Applications", students=appl_students)
+                                title="View Applications",
+                                students=students,
+                                colNames=colNames,
+                                attributes=attributes,
+                                pid=pid,
+                                pname=project_name)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
 
+# Supervisor examine student details
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<student_id>/examine')
+@login_required
+def supervisor_examine(username, pid, student_id):
+
+    this_student = Student.query.filter_by(id=student_id).first()
+
+    # Render
+    rend_temp = render_template("supervisor/project/manage/examine.html", title="Examine student details", pid=pid, sid=student_id, this_student=this_student)
+
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
+
+# Accept confirm
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/accept_confirm')
+@login_required
+def accept_confirm(username, sid, pid):
+
+    this_student_name = Student.query.filter_by(id=sid).first().ppname
+    this_project_name = Project.query.filter_by(id=pid).first().title
+
+    # Render
+    rend_temp = render_template("supervisor/project/manage/accept_confirm.html", title="Confirm your choice", pname=this_project_name, sname=this_student_name, sid=sid, pid=pid)
+
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
+
+# Deny confirm
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/deny_confirm')
+@login_required
+def deny_confirm(username, sid, pid):
+
+    this_student_name = Student.query.filter_by(id=sid).first().ppname
+    this_project_name = Project.query.filter_by(id=pid).first().title
+
+    # Render
+    rend_temp = render_template("supervisor/project/manage/deny_confirm.html", title="Confirm your choice", pname=this_project_name, sname=this_student_name, sid=sid, pid=pid)
+
+    # Render as supervisor page
+    return utils.supervisor_page(rend_temp)
+
+
+# Accept
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/accept')
+@login_required
+def accept(username, sid, pid):
+
+    # get the student object
+    this_student = Student.query.filter_by(id=sid).first()
+
+    # if current project is project 1
+    if int(this_student.proj1_id) == int(pid):
+        this_student.proj1_accepted = "Accepted"
+        db.session.commit()
+    else:
+        this_student.proj2_accepted = "Accepted"
+        db.session.commit()
+
+    return redirect(url_for('index'))
+
+# Deny
+@app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/deny')
+@login_required
+def deny(username, sid, pid):
+
+    # get the student object
+    this_student = Student.query.filter_by(id=sid).first()
+
+    # if current project is project 1
+    if int(this_student.proj1_id) == int(pid):
+        this_student.proj1_accepted = "Denied"
+        db.session.commit()
+    else:
+        this_student.proj2_accepted = "Denied"
+        db.session.commit()
+
+    return redirect(url_for('index'))
