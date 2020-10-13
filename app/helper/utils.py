@@ -2,6 +2,9 @@
 # Import modules
 from app import db
 from app.models import *
+from app.models import User
+from collections import defaultdict
+from datetime import date
 from flask import redirect
 from flask import render_template
 from flask import request
@@ -10,7 +13,6 @@ from flask_login import current_user
 from json2html import *
 import os
 from werkzeug.utils import secure_filename
-
 
 # Redirect to user page based on role
 def send_to_user_page(role):
@@ -281,7 +283,7 @@ def get_user_from_username(username, userDB, do_init):
     return user
 
     
-# Get project 1 details triplet
+# Get project 1 details list
 def get_proj1_details(student):
 
     # Get id
@@ -297,11 +299,14 @@ def get_proj1_details(student):
     # Get duration
     dur = student.proj1_dur
     
-    # Return triplet
-    return [pid, pref, dur]
+    # Get status
+    status = student.proj1_accepted
+    
+    # Return as list
+    return [pid, pref, dur, status]
 
 
-# Get project 2 details triplet
+# Get project 2 details list
 def get_proj2_details(student):
 
     # Get id
@@ -317,8 +322,11 @@ def get_proj2_details(student):
     # Get duration
     dur = student.proj2_dur
     
-    # Return triplet
-    return [pid, pref, dur]
+    # Get status
+    status = student.proj2_accepted
+    
+    # Return as list
+    return [pid, pref, dur, status]
     
     
 # Convert row to dictionary
@@ -355,3 +363,37 @@ def get_supervisors_projects(username):
     
     # Return their projects that are initialized
     return Project.query.filter_by(user_id=sid).filter(Project.title != None).all()
+
+
+# Add testing data to databases
+def add_test_data():
+
+    # Format:
+    # "email":["name", "password", "confirmed", "registered_on", "role"
+    myusers = {
+    "student1@students.com":["Jim(St)", "1", True, date.today(), "Student"], 
+    "student2@students.com":["Bob(St)", "1", True, date.today(), "Student"], 
+    "student3@students.com":["Ann(St)", "1", True, date.today(), "Student"], 
+    "student4@students.com":["Ava(St)", "1", True, date.today(), "Student"], 
+    "student5@students.com":["Max(St)", "1", True, date.today(), "Student"], 
+    "super1@supers.com":["John(Sup)", "1", True, date.today(), "Supervisor"], 
+    "super2@supers.com":["Mary(Sup)", "1", True, date.today(), "Supervisor"], 
+    "super3@supers.com":["Mack(Sup)", "1", True, date.today(), "Supervisor"], 
+    "super4@supers.com":["Dana(Sup)", "1", True, date.today(), "Supervisor"], 
+    "super5@supers.com":["Noah(Sup)", "1", True, date.today(), "Supervisor"], 
+    "admin@admins.com":["admin", "1", True, date.today(), "Administrator"],
+    "assistant@admins.com":["assistant", "1", True, date.today(), "Administrator"]
+    }
+
+    # Inserting users in to database from myusers (above)
+    for email, details in myusers.items():
+        u = User(name=details[0],
+                 email=email,
+                 password=details[1],
+                 confirmed=details[2],
+                 registered_on=details[3],
+                 role=details[4])
+        db.session.add(u)
+    
+    # Commit changes
+    db.session.commit()

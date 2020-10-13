@@ -70,18 +70,34 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
             {% for row in students %}
             <tr>
 
-                <!--Add link to examine page-->
+
+                <!--Add project status-->
                 <td class="project-td" style="text-align: center;"> 
+
+                    {% if row.proj1_id == pid %}
+                    {% set status = row.proj1_accepted %}
+                    {% else %}
+                    {% set status = row.proj2_accepted %}
+                    {% endif %}
+
+                    {% if "Pend" in status %}
                     <a class="hover-button" 
-                    href="{{ url_for('supervisor_examine', 
-                    username = current_user.name,
-                    pid=pid,
-                    student_id=row.id
-                    ) 
-                    }}">
-                     Examine
+                       href="{{ url_for('supervisor_examine', 
+                       username = current_user.name,
+                       pid=pid,
+                       student_id=row.id
+                       ) 
+                       }}">
+                        Examine
                     </a> 
+                    {% else %}
+                    <p> {{ row.proj1_accepted }} </p>
+                    {% endif %}
+
+
                 </td>
+
+
 
                 {% for a in attributes %}
 
@@ -116,13 +132,16 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
         </tfoot>
     </table>
 </div>
-<div>
-
-</div>
 
 
 
-
+<h4>
+    <a class="hover-button" 
+       id="back-button"
+       href={{ url_for('supervisor_manage', username=current_user.name)}}>
+        Back
+    </a>
+</h4>
 
 
 
@@ -171,12 +190,6 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
     });
 </script>
 
-<h4>
-    <a class="hover-button" 
-       id="back-button"
-       href={{ url_for('supervisor_manage', username=current_user.name)}}>
-        Back
-    </a>
-</h4>
+
 
 {% endblock javascripts %}

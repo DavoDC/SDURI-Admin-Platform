@@ -1,0 +1,3 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:14:47] "[32mGET /myadmin/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:14:47] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:14:47] "[37mGET /supervisor/22477478%40student.uwa.edu.au/landing HTTP/1.1[0m" 200 -

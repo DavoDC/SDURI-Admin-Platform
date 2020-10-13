@@ -15,18 +15,18 @@ from json2html import *
 @app.route('/supervisor/<username>/landing')
 @login_required
 def supervisors(username):
-    
+
     # Get supervisor
     sv = utils.get_user_from_username(username, Supervisor, True)
-    
+
     # Check if details are good
     good_det = sv.faculty != None and sv.school != None
-    
+
     # Render template
-    rend_temp = render_template("supervisor/landing.html", 
+    rend_temp = render_template("supervisor/landing.html",
                                 title="Supervisor Landing",
                                 good_det=good_det)
- 
+
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
 
@@ -85,7 +85,7 @@ def supervisor_manage(username):
 
     # Get supervisors projects
     projects = utils.get_supervisors_projects(username)
-        
+
     # Render
     rend_temp = render_template("supervisor/project/manage/manage.html",
                                 title="Manage Your Projects",
@@ -106,10 +106,10 @@ def supervisor_edit_project(username, pid):
 
         # Get dictionary of data linked to 'name' attributes
         data = request.form
-        
+
         # Get user ID
         uid = utils.get_uid_from_name(username)
-        
+
         # Get existing row for supervisor's specific project!
         row = Project.query.filter_by(user_id=uid).filter(Project.id == pid).first()
 
@@ -122,17 +122,17 @@ def supervisor_edit_project(username, pid):
 
         # Commit to database
         db.session.commit()
-        
+
         # Return to manage projects
         return redirect(url_for('supervisor_manage', username=username))
-    
+
     # Get project as dictionary
     project = utils.get_project_from_id(pid)
     proj_dict = utils.get_row_as_dict(project, True)
 
     # Render as one and only page
     path = "supervisor/project/manage/edit.html"
-    baseURL = url_for('supervisor_edit_project', 
+    baseURL = url_for('supervisor_edit_project',
                       username=username, pid=pid)
     rend_temp = render_template(path, num=1, max=1,
                                 baseURL=baseURL,
@@ -155,37 +155,34 @@ def supervisor_view_appl(username, pid):
 
     # Get supervisors projects
     projects = utils.get_supervisors_projects(username)
-    
-    # PSEUDOCODE
-    #    For every PID of the supervisors projects
-    #- For every student
-    #-- if PID is in get_pids_appliedfor(student) (a helper function of mine)
-    #---- Add to row
+
+    # Applied students
     appl_students = []
 
     students = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
 
     # for every student that has selected at least one project
+    # only add students with project's accept status pending?
     for student in students:
         projects = utils.get_pids_applied_for(student)
         if pid in projects:
             # If this project is the student's 1st pref
             if student.proj1_id == pid:
-                # If this project's accept status is pending, then show the application, else ignore the student
-                if student.proj1_accepted == str('Pending'):
-                    students.append(student)
-            
+                # If this , then show the application, else ignore the student
+                #if str(student.proj1_accepted) == str('Pending'):
+                appl_students.append(student)
+
             # Do the same for the student's 2nd pref
             if student.proj2_id == pid:
                 # If this project's accept status is pending, then show the application, else ignore the student
-                if student.proj2_accepted == str('Pending'):
-                    students.append(student)
+                #if str(student.proj2_accepted) == str('Pending'):
+                appl_students.append(student)
 
     # Get columns
-    col_names = Student.__table__.columns 
+    col_names = Student.__table__.columns
     colNames = [i.name.capitalize() for i in col_names]
-    attributes = [i.name for i in col_names] 
-    
+    attributes = [i.name for i in col_names]
+
     # make list of cols to remove, do forloop
     # Remove irrelevant project slot
     # Remove emergency details
@@ -227,16 +224,16 @@ def supervisor_view_appl(username, pid):
         attributes.remove(col.lower())
 
     # Naming convention for longQ1, Longq1 is different thus a new for loop
-    for num in [1,2,3,4]:
+    for num in [1, 2, 3, 4]:
         col = 'Longq' + str(num)
         attr = 'longQ' + str(num)
         colNames.remove(col)
         attributes.remove(attr)
-    
+
     # Render
     rend_temp = render_template("supervisor/project/manage/view-appl.html",
                                 title="View Applications",
-                                students=students,
+                                students=appl_students,
                                 colNames=colNames,
                                 attributes=attributes,
                                 pid=pid,
@@ -268,7 +265,12 @@ def accept_confirm(username, sid, pid):
     this_project_name = Project.query.filter_by(id=pid).first().title
 
     # Render
-    rend_temp = render_template("supervisor/project/manage/accept_confirm.html", title="Confirm your choice", pname=this_project_name, sname=this_student_name, sid=sid, pid=pid)
+    rend_temp = render_template("supervisor/project/manage/accept_confirm.html",
+                                title="Confirm your choice",
+                                pname=this_project_name,
+                                sname=this_student_name,
+                                sid=sid,
+                                pid=pid)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
@@ -282,7 +284,12 @@ def deny_confirm(username, sid, pid):
     this_project_name = Project.query.filter_by(id=pid).first().title
 
     # Render
-    rend_temp = render_template("supervisor/project/manage/deny_confirm.html", title="Confirm your choice", pname=this_project_name, sname=this_student_name, sid=sid, pid=pid)
+    rend_temp = render_template("supervisor/project/manage/deny_confirm.html",
+                                title="Confirm your choice",
+                                pname=this_project_name,
+                                sname=this_student_name,
+                                sid=sid,
+                                pid=pid)
 
     # Render as supervisor page
     return utils.supervisor_page(rend_temp)
@@ -304,7 +311,8 @@ def accept(username, sid, pid):
         this_student.proj2_accepted = "Accepted"
         db.session.commit()
 
-    return redirect(url_for('index'))
+    return redirect(url_for('supervisor_view_appl',
+username=username, pid=pid))
 
 # Deny
 @app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/deny')
@@ -322,4 +330,5 @@ def deny(username, sid, pid):
         this_student.proj2_accepted = "Denied"
         db.session.commit()
 
-    return redirect(url_for('index'))
+    return redirect(url_for('supervisor_view_appl',
+username=username, pid=pid))

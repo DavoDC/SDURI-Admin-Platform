@@ -1,0 +1,44 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:37] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:41] "[37mGET /supervisor/John%28Sup%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:43] "[37mGET /supervisor/John%28Sup%29/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:44] "[37mGET /supervisor/John%28Sup%29/project/manage/view/appl/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:45] "[37mGET /supervisor/John%28Sup%29/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:46] "[37mGET /supervisor/John%28Sup%29/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:47] "[37mGET /supervisor/John%28Sup%29/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:50] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:50] "[37mGET /supervisor/John%28Sup%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:57] "[37mGET /supervisor/John%28Sup%29/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:58] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:52:58] "[37mGET /supervisor/John%28Sup%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:00] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:00] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:00] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:05] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:05] "[37mGET /supervisor/Mary%28Sup%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:06] "[37mGET /supervisor/Mary%28Sup%29/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:09] "[32mPOST /supervisor/Mary%28Sup%29/details HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:09] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:09] "[37mGET /supervisor/Mary%28Sup%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:10] "[37mGET /supervisor/Mary%28Sup%29/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:11] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:12] "[37mGET /supervisor/Mary%28Sup%29/project/manage HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:13] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:53:24] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:05] "[35m[1mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:05] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:05] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:05] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:05] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:05] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:05] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:20] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:48] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:56:57] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 17:57:30] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:01:12] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:01:15] "[37mGET /supervisor/Mary%28Sup%29/project/manage/view/appl/12/2/examine HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
