@@ -65,9 +65,10 @@ def display_projects(page_num):
   col_names = Project.__table__.columns
   colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
   attributes = [i.name for i in col_names][:] # Columns' name
-
-  colNames = colNames[3:5] + colNames[:2] +colNames[5:]
-  attributes = attributes[3:5] + attributes[:2] +attributes[5:]
+  print(attributes)
+  oriAttributes = attributes # For modaledit_project.html
+  colNames = colNames[2:5] + colNames[:2] +colNames[5:]
+  attributes = attributes[2:5] + attributes[:2] +attributes[5:]
   projectsFromDB = Project.query.paginate(per_page=2, page=page_num, error_out=True)
   
   # supersFromDB = user_serializer.dump(userFromDB.items)
@@ -75,8 +76,33 @@ def display_projects(page_num):
                           title="Administrator", 
                           persons=projectsFromDB,
                           colNames=colNames,
-                          attributes=attributes)
-                          
+                          attributes=attributes,
+                          oriAttributes=oriAttributes
+                          )
+
+@bp.route('/edit/project/', methods=['GET', 'POST'])
+def edit_project():
+  data = request.form
+  col_names = Project.__table__.columns
+  # From third column to last column, excluding id and user_id
+  colNames = [i.name for i in col_names][2:] # 
+  
+  flash_msg = ""
+  if request.method == 'POST':
+    new_data = Project.query.get(request.form['id'])
+    for column in colNames: # Type of column is string
+      if column is not "id" or column is not "user_id":
+        # Convert string to attribute
+        setattr(new_data, column, request.form[column])
+    db.session.commit()
+    # flash_msg = new_data.firstname + "'s information is updated successfully"
+    flash_msg = "Information updated successfully"
+  flash(flash_msg)
+  return redirect(url_for('myadmin.display_projects', page_num=1))
+
+@bp.route('/delete/project/<id>/', methods=['GET', 'POST'])
+def delete_project(id):
+  return "hello"
 
 @bp.route('/display/supervisors/all/<int:page_num>', methods=['GET', 'POST'])
 def display_supervisors(page_num):
@@ -95,7 +121,7 @@ def display_supervisors(page_num):
   for row in supersFromDB.items:
     nameDic[row.user_id] = User.query.filter_by(id=row.user_id).first().name 
     print(User.query.filter_by(id=row.user_id).first().name)
-  print(nameDic)
+
   # supersFromDB = user_serializer.dump(userFromDB.items)
   return render_template('t_supervisors.html', 
                           title="Administrator", 
@@ -104,6 +130,26 @@ def display_supervisors(page_num):
                           attributes=attributes,
                           superNames=superNames,
                           nameDic=nameDic)
+
+@bp.route('/edit/supervisor/', methods=['GET', 'POST'])
+def edit_supervisor():
+  data = request.form
+  col_names = Supervisor.__table__.columns
+  # From third column to last column, excluding id and user_id
+  colNames = [i.name for i in col_names][2:] #
+  
+  flash_msg = ""
+  if request.method == 'POST':
+    new_data = Supervisor.query.get(request.form['id'])
+    for column in colNames: # Type of column is string
+      if column is not "id" or column is not "user_id":
+        # Convert string to attribute
+        setattr(new_data, column, request.form[column])
+    db.session.commit()
+    # flash_msg = new_data.firstname + "'s information is updated successfully"
+    flash_msg = "Information updated successfully"
+  flash(flash_msg)
+  return redirect(url_for('myadmin.display_supervisors', page_num=1))
 
 @bp.route('/display/students/all/<int:page_num>', methods=['GET', 'POST'])
 def display_students(page_num):
@@ -127,6 +173,25 @@ def display_students(page_num):
                           attributes=attributesR,
                           fixedColNames=fixedColNames,
                           fixedColAttributes=fixedColAttributes)
+
+@bp.route('/edit/student/', methods=['GET', 'POST'])
+def edit_student():
+  data = request.form
+  col_names = Student.__table__.columns
+  # From third column to last column, excluding id and user_id
+  colNames = [i.name for i in col_names][2:] # 43 columns at the moment
+  
+  flash_msg = ""
+  if request.method == 'POST':
+    new_data = Student.query.get(request.form['id'])
+    for column in colNames: # Type of column is string
+      if column is not "id" or column is not "user_id":
+        # Convert string to attribute
+        setattr(new_data, column, request.form[column])
+    db.session.commit()
+    flash_msg = new_data.firstname + "'s information is updated successfully"
+  flash(flash_msg)
+  return redirect(url_for('myadmin.display_students', page_num=1))
 
 @bp.route('/add/user', methods=['GET', 'POST'])
 def add_user():
@@ -161,3 +226,33 @@ def mark_as_resolved(task_id):
     db.session.commit()
     flash("Resolving task successfully")
     return redirect(url_for('myadmin.admin_home'))
+
+@bp.route('/delete/<utype>/<id>/', methods=['GET', 'POST'])
+def deleting(utype, id):
+  del_user = ""
+  if utype == "Student":
+    student = Student.query.filter_by(id=id).first()
+    
+    del_student = Student.query.get(id)
+    del_user = User.query.get(student.user_id)
+
+    # Delete from Student table
+    db.session.delete(del_student)
+    # Delete from user table
+    db.session.delete(del_user)
+    db.session.commit()
+  
+  if utype == "Supervisor":
+    supervisor = Supervisor.query.filter_by(id=id).first()
+    
+    del_supervisor = Supervisor.query.get(id)
+    del_user = User.query.get(supervisor.user_id)
+
+    # Delete from Student table
+    db.session.delete(del_supervisor)
+    # Delete from user table
+    db.session.delete(del_user)
+    db.session.commit()
+  flash("Successfully deleted a user '" + del_user.email + "'")
+  return redirect(url_for('myadmin.display_users', page_num=1))
+

@@ -39,7 +39,7 @@ table.dataTable{border-collapse:collapse !important;}
 
 
   
-    <!-- <div>
+     <div>
       {% with messages = get_flashed_messages() %}
       {% if messages %}
       {% for message in messages %}
@@ -54,7 +54,9 @@ table.dataTable{border-collapse:collapse !important;}
       {% endif %}
       {% endwith %}
     </div>
+    <!--
     <div>
+
       <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
               data-target="#modalAddUser">Add new user</a></p>
     </div> -->
@@ -84,11 +86,11 @@ table.dataTable{border-collapse:collapse !important;}
              
               <td style="background-color: white">
                 <!-- Buttons to trigger modals -->
-                <a href="/myadmin/update/{{ row.id }}" class="btn-xs" data-toggle="modal"
+                <a href="/myadmin/edit/supervisor/{{ row.id }}" class="btn-xs" data-toggle="modal"
                   data-target="#modaledit{{row.id}}"><i class="fa fa-pencil-alt"></i></a>
               </td>
               <td style="background-color: white">
-                <a href="{{ url_for('myadmin.delete', id=row.id) }}  " class="btn-xs"
+                <a href="{{ url_for('myadmin.deleting', utype='Supervisor', id=row.id) }}  " class="btn-xs"
                   onclick="return confirm('Are You Sure To Delete ?')"><i class="fa fa-trash-alt"></i></a>
               </td>
               
@@ -105,7 +107,7 @@ table.dataTable{border-collapse:collapse !important;}
 
             <!-- Modal Edit User-->
             <div id="modaledit{{row.id}}" class="modal fade" role="dialog">
-              {% include './modaledit_user.html' %}
+              {% include './modaledit_supervisor.html' %}
             </div> <!-- end: modaledit user -->
 
             <!-- Modal Edit User-->

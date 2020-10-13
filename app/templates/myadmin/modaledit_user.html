@@ -1,16 +1,16 @@
 <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h4 class="modal-title">Update Information</h4>
-        </div>
-        <div class="modal-body">
-            <form action="{{url_for('myadmin.update')}}" method="POST">
+  <div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title">Update Information</h4>
+    </div>
+    <div class="modal-body">
+      <form action="{{url_for('myadmin.update')}}" method="POST">
 
-                <div class="form-group">
-                    <label>Name:</label>
-                    <input type="hidden" name="id" value="{{row.id}}">
-                    <input type="text" class="form-control" name="name" value="{{row.name}}">
-                </div>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="hidden" name="id" value="{{row.id}}">
+            <input type="text" class="form-control" name="name" value="{{row.name}}">
+        </div>
 
         <div class="form-group">
           <label for="role">Role:</label>
@@ -21,24 +21,13 @@
                 <option value="Administrator">Administrator</option>
               </select>
         </div>
-
-                <div class="form-group">
-                    <label for="role">Role:</label>
-                    <!-- <input type="text" class="form-control" name="role" value="{{row.role}}"> -->
-                    <select name="role" id="new_role">
-                        <option value="Student">Student</option>
-                        <option value="Supervisor">Supervisor</option>
-                        <option value="Administrator">Administrator</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Update</button>
-                </div>
-            </form>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Update</button>
         </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+      </form>
     </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
 </div>
