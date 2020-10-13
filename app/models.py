@@ -224,7 +224,7 @@ class Student(db.Model):
     proj2_id = db.Column(db.Integer)
     proj2_pref = db.Column(db.String(32))
     proj2_dur = db.Column(db.String(32)) 
-    proj2_accepted = db.Column(db.String(64)) #Accepted, Denie, Pending
+    proj2_accepted = db.Column(db.String(64)) #Accepted, Denied, Pending
     
     # Initialize student entry
     def __init__(self, user_id):
