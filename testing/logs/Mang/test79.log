@@ -1,0 +1,24 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:24:42] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:24:44] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:24:50] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:25:26] "GET /admin/supervisor/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:25:28] "GET /admin/supervisor/new/?url=%2Fadmin%2Fsupervisor%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:25:29] "GET /admin/static/vendor/select2/select2.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:25:34] "GET /admin/user/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:25:35] "GET /admin/user/new/?url=%2Fadmin%2Fuser%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:11] "POST /admin/user/new/?url=%2Fadmin%2Fuser%2F HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:11] "GET /admin/user/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:13] "GET /admin/project/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:15] "GET /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:16] "GET /admin/static/vendor/select2/select2-spinner.gif HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:33] "POST /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:34] "GET /admin/project/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:39] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:42] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:26:52] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:27:06] "GET /admin/supervisor/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:27:15] "GET /admin/supervisor/new/?url=%2Fadmin%2Fsupervisor%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:27:27] "POST /admin/supervisor/new/?url=%2Fadmin%2Fsupervisor%2F HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:27:27] "GET /admin/supervisor/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 13:27:30] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/myadmin/myadmin_routes.py', reloading

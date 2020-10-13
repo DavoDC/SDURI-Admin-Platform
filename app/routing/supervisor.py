@@ -156,15 +156,17 @@ def supervisor_view_appl(username, pid):
     # Get supervisors projects
     projects = utils.get_supervisors_projects(username)
     
-    # Students applied
-    students = []
-    
-    # Get students that have applied for at least one project
-    studentsTemp = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
+    # PSEUDOCODE
+    #    For every PID of the supervisors projects
+    #- For every student
+    #-- if PID is in get_pids_appliedfor(student) (a helper function of mine)
+    #---- Add to row
+    appl_students = []
 
-    # For every student that has selected at least one project
-    for student in studentsTemp:
-        # For all project ids
+    students = Student.query.filter((Student.proj1_id != None) | (Student.proj2_id != None)).all()
+
+    # for every student that has selected at least one project
+    for student in students:
         projects = utils.get_pids_applied_for(student)
         if pid in projects:
             # If this project is the student's 1st pref

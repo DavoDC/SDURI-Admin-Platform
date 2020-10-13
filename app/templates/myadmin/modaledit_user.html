@@ -12,10 +12,15 @@
                     <input type="text" class="form-control" name="name" value="{{row.name}}">
                 </div>
 
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="text" class="form-control" name="email" value="{{row.email}}">
-                </div>
+        <div class="form-group">
+          <label for="role">Role:</label>
+              <!-- <input type="text" class="form-control" name="role" value="{{row.role}}"> -->
+              <select name="role" id="new_role">
+                <option value="Student">Student</option>
+                <option value="Supervisor">Supervisor</option>
+                <option value="Administrator">Administrator</option>
+              </select>
+        </div>
 
                 <div class="form-group">
                     <label for="role">Role:</label>
