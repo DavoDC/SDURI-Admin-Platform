@@ -374,9 +374,15 @@ def add_test_data():
     "student1@students.com":["Jim(St)", "1", True, date.today(), "Student"], 
     "student2@students.com":["Bob(St)", "1", True, date.today(), "Student"], 
     "student3@students.com":["Ann(St)", "1", True, date.today(), "Student"], 
+    "student4@students.com":["Ava(St)", "1", True, date.today(), "Student"], 
+    "student5@students.com":["Max(St)", "1", True, date.today(), "Student"], 
     "super1@supers.com":["John(Sup)", "1", True, date.today(), "Supervisor"], 
     "super2@supers.com":["Mary(Sup)", "1", True, date.today(), "Supervisor"], 
-    "admin@admins.com":["admin", "1", True, date.today(), "Administrator"]
+    "super3@supers.com":["Mack(Sup)", "1", True, date.today(), "Supervisor"], 
+    "super4@supers.com":["Dana(Sup)", "1", True, date.today(), "Supervisor"], 
+    "super5@supers.com":["Noah(Sup)", "1", True, date.today(), "Supervisor"], 
+    "admin@admins.com":["admin", "1", True, date.today(), "Administrator"],
+    "assistant@admins.com":["assistant", "1", True, date.today(), "Administrator"]
     }
 
     # Inserting users in to database from myusers (above)

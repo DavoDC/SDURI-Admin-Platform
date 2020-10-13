@@ -231,7 +231,7 @@ class Student(db.Model):
     proj2_id = db.Column(db.Integer)
     proj2_pref = db.Column(db.String(32))
     proj2_dur = db.Column(db.String(32)) 
-    proj2_accepted = db.Column(db.String(64)) #Accepted, Denie, Pending
+    proj2_accepted = db.Column(db.String(64)) #Accepted, Denied, Pending
     
     # Initialize student entry
     def __init__(self, user_id):
@@ -372,9 +372,10 @@ class MyAdminModelView(ModelView):
 
 
 # Add views to admin
+admin.add_view(MyAdminModelView(AdminTask, db.session))
 admin.add_view(MyAdminModelView(User, db.session))
 admin.add_view(MyAdminModelView(Student, db.session))
 admin.add_view(MyAdminModelView(Supervisor, db.session))
 admin.add_view(MyAdminModelView(Project, db.session))
 admin.add_view(MyAdminModelView(Deadline, db.session))
-admin.add_view(MyAdminModelView(AdminTask, db.session))
+

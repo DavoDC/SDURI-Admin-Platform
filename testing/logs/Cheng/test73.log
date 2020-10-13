@@ -1,0 +1,99 @@
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR:app:Exception on /supervisor/22477478@student.uwa.edu.au/project/manage/view/appl/9 [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routing\supervisor.py", line 184, in supervisor_view_appl
+    rend_temp = render_template("supervisor/project/manage/view-appl.html",
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\templates\supervisor\project\manage\view-appl.html", line 2, in top-level template code
+    {% extends "supervisor/project/templ/myadmin-base.html" %}
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\templates\supervisor\project\templ\myadmin-base.html", line 30, in top-level template code
+    {% block content %}
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\templates\supervisor\project\manage\view-appl.html", line 73, in block "content"
+    href="{{ url_for('supervisor_examine',
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2177, in build
+    rv = self._partial_build(endpoint, values, method, append_unknown)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2054, in _partial_build
+    rv = self._partial_build(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2067, in _partial_build
+    rv = rule.build(values, append_unknown)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 1038, in build
+    return self._build_unknown(**values)
+  File "<werkzeug routing>", line 1, in <builder:'/supervisor/<username>/project/manage/view/appl/<int:pid>'>
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 1257, in to_url
+    value = self.num_convert(value)
+jinja2.exceptions.UndefinedError: 'pid' is undefined
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 12:02:07] "[35m[1mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/9 HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /supervisor/22477478@student.uwa.edu.au/project/manage/view/appl/11 [GET]
+Traceback (most recent call last):
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\routing\supervisor.py", line 184, in supervisor_view_appl
+    rend_temp = render_template("supervisor/project/manage/view-appl.html",
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 137, in render_template
+    return _render(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\templates\supervisor\project\manage\view-appl.html", line 2, in top-level template code
+    {% extends "supervisor/project/templ/myadmin-base.html" %}
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\templates\supervisor\project\templ\myadmin-base.html", line 30, in top-level template code
+    {% block content %}
+  File "E:\Study\UWA\Year3\S2\CITS3200\project\SDURI-Admin-Platform\app\templates\supervisor\project\manage\view-appl.html", line 73, in block "content"
+    href="{{ url_for('supervisor_examine',
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\flask\helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2177, in build
+    rv = self._partial_build(endpoint, values, method, append_unknown)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2054, in _partial_build
+    rv = self._partial_build(
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 2067, in _partial_build
+    rv = rule.build(values, append_unknown)
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 1038, in build
+    return self._build_unknown(**values)
+  File "<werkzeug routing>", line 1, in <builder:'/supervisor/<username>/project/manage/view/appl/<int:pid>'>
+  File "c:\users\xiaocheng wang\appdata\local\programs\python\python38-32\lib\site-packages\werkzeug\routing.py", line 1257, in to_url
+    value = self.num_convert(value)
+jinja2.exceptions.UndefinedError: 'pid' is undefined
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 12:02:10] "[35m[1mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11 HTTP/1.1[0m" 500 -
