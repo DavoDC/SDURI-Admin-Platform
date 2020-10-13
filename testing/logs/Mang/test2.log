@@ -1,0 +1,80 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:57:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:57:58] "GET /static/images/uwa_logo.png HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:57:58] "GET /static/css/style.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:04] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:10] "POST /login HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:11] "GET /myadmin/?username=admin1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:11] "GET /static/admin-assets/admin_css.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:12] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:15] "GET /myadmin/display/users/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:16] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:25] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 10:58:28] "GET /myadmin/display/students/all/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/myadmin/myadmin_routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
