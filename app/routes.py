@@ -1,10 +1,10 @@
 
 # Import modules
 from app import app
-from app import db
 from app.forms import LoginForm
 from app.helper import utils
 from app.models import *
+from app.models import User
 from app.routing import student
 from app.routing import supervisor
 from flask import flash
@@ -17,11 +17,14 @@ from flask_login import login_user
 from flask_login import logout_user
 from json2html import *
 
-
 # Main page
 @app.route('/')
 @app.route('/index')
 def index():
+    
+    # Add test
+    #utils.add_test_data()
+    
     # If user is logged in
     if current_user.is_authenticated:
         # Send to their user page

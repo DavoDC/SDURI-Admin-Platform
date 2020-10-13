@@ -1,0 +1,27 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:09:57] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:09:57] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:09:58] "[32mGET /admin/admintask/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:09:58] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:01] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:01] "[37mGET /myadmin/?username=22477478%40student.uwa.edu.au HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:11] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:11] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:14] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:15] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:36] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:36] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:39] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:48] "[32mPOST /myadmin/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:48] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:49] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:10:50] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:11:14] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:11:19] "[37mGET /myadmin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:11:43] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:11:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:11:43] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:11:43] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading

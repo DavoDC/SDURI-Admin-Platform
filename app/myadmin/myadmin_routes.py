@@ -13,6 +13,11 @@ from flask import request
 @bp.route('/home') #, methods=['GET', 'POST'])
 @bp.route('/')
 def admin_home():
+    
+    # If user cannot access, send back to index
+    if not MyAdminModelView.is_accessible(MyAdminModelView):
+        return redirect(url_for('index'))
+    
     # templates/myadmin/index.html
     usersFromDB = User.query.all()
     tasks_unresolved = AdminTask.query.filter_by(resolved=False)
@@ -23,6 +28,10 @@ def admin_home():
 
 @bp.route('/update', methods=['GET', 'POST'])
 def update():
+    # If user cannot access, send back to index
+    if not MyAdminModelView.is_accessible(MyAdminModelView):
+        return redirect(url_for('index'))
+    
     # request.form = ImmutableMultiDict([('id', '2'), ('name', 'supervisor111'), ('email', 'super1@supers.com')])
     # type(request.form) = <class 'werkzeug.datastructures.ImmutableMultiDict'>
     # The tuples' values can be accessed in this format: request.form['id']
@@ -46,6 +55,10 @@ def update():
 
 @bp.route('/delete/<id>/', methods=['GET', 'POST'])
 def delete(id):
+    # If user cannot access, send back to index
+    if not MyAdminModelView.is_accessible(MyAdminModelView):
+        return redirect(url_for('index'))
+    
     del_user = User.query.get(id)
     db.session.delete(del_user)
     db.session.commit()
@@ -55,6 +68,11 @@ def delete(id):
 
 @bp.route('/display/users/all/<int:page_num>', methods=['GET', 'POST'])
 def display_users(page_num):
+    
+    # If user cannot access, send back to index
+    if not MyAdminModelView.is_accessible(MyAdminModelView):
+        return redirect(url_for('index'))
+    
     usersFromDB = User.query.paginate(per_page=2, page=page_num, error_out=True)
     # usersFromDB = user_serializer.dump(userFromDB.items)
     return render_template('users.html', title="Administrator", users=usersFromDB)
@@ -62,6 +80,10 @@ def display_users(page_num):
 
 @bp.route('/add/user', methods=['GET', 'POST'])
 def add_user():
+    # If user cannot access, send back to index
+    if not MyAdminModelView.is_accessible(MyAdminModelView):
+        return redirect(url_for('index'))
+    
     data = request.form
     flash_msg = ""
     form = RegistrationForm()
@@ -86,6 +108,11 @@ def add_user():
 
 @bp.route('/resolving/task/<task_id>/', methods=['GET', 'POST'])
 def mark_as_resolved(task_id):
+    
+    # If user cannot access, send back to index
+    if not MyAdminModelView.is_accessible(MyAdminModelView):
+        return redirect(url_for('index'))
+    
     resolve_task = AdminTask.query.get(task_id)
     resolve_task.set_task_as_resolved(True)
     resolve_task.set_task_resolved_on(datetime.datetime.now())

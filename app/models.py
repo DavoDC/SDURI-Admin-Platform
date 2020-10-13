@@ -3,7 +3,10 @@
 from app import admin
 from app import db
 from app import login
+from app.models import *
+import datetime
 from flask import redirect
+from flask import render_template
 from flask import url_for
 from flask_admin.contrib.sqla import ModelView
 from flask_login import UserMixin
@@ -12,7 +15,7 @@ from flask_login import login_required
 from werkzeug.security import check_password_hash
 from werkzeug.security import generate_password_hash
 
-# User account class
+# User Account Database Schema
 class User(UserMixin, db.Model):
     
     # ID
@@ -31,11 +34,15 @@ class User(UserMixin, db.Model):
     password = db.Column(db.String(128))
     
     # Role (account type)
-    role = db.Column(db.String(32))
+    role = db.Column(db.String(32)) # Student, Supervisor, Administrator
     
+    # Registration date
     registered_on = db.Column(db.DateTime, nullable=False)
     
+    # Confirmation date
     confirmed_on = db.Column(db.DateTime, nullable=True)
+    
+    # Password reset token
     password_reset_token = db.Column(db.String, nullable=True)
 
     # Methods
@@ -86,7 +93,7 @@ def load_user(id):
     return User.query.get(int(id))
   
 
-# Student information class
+# Student Database Schema
 class Student(db.Model):
     
     # ID
@@ -213,14 +220,14 @@ class Student(db.Model):
     tuition_fee = db.Column(db.String(128))
     
     
-    ## Projects
-    # First slot
+    ## Project Slots
+    # First Slot
     proj1_id = db.Column(db.Integer)
     proj1_pref = db.Column(db.String(32))
     proj1_dur = db.Column(db.String(32)) 
     proj1_accepted = db.Column(db.String(64)) #Accepted, Denied, Pending
     
-    # Second slot
+    # Second Slot
     proj2_id = db.Column(db.Integer)
     proj2_pref = db.Column(db.String(32))
     proj2_dur = db.Column(db.String(32)) 
@@ -232,7 +239,7 @@ class Student(db.Model):
 
 
 
-# Supervisor information class
+# Supervisor User Database Schema
 class Supervisor(db.Model):
    
     # ID
@@ -253,7 +260,7 @@ class Supervisor(db.Model):
         self.user_id = user_id
         
         
-# Project class
+# Project Database Schema
 class Project(db.Model):
     
     # ID
@@ -293,37 +300,72 @@ class Project(db.Model):
         self.user_id = user_id
 
    
-# Preference class
-class Preference(db.Model):
+# Deadline Database Schema
+class Deadline(db.Model):
     
     # ID
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     
-    # Project ID
-    project_id = db.Column(db.Integer, db.ForeignKey('project.id'), nullable=False)
-    
-    # Student ID
-    student_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)
-
-
-# Modifying admin model view
-class MyAdminModelView(ModelView):
-    # edit_template = 'edit.html'
-#   pass
-    @login_required
-    def is_accessible(self):
-        # if return is False only the Home tab is visible
-        # return False
-        # This is also same with return False
-        if current_user.role == 'Administrator':
-            return current_user.is_authenticated
-        else:  
-            return redirect(url_for('index'))
+    # Deadline for supervisors to add projects
+    supervisor_project_dl = db.Column(db.DateTime)
         
-        # user + admin cannot see but others can if link is known
-        # (127.0.0.1:5000/admin/user)
-        return not current_user.is_authenticated
+    # Deadline for students to apply to projects
+    student_application_dl = db.Column(db.DateTime)
     
+    # Deadline for supervisors to examine student applications
+    supervisor_examine_dl = db.Column(db.DateTime)
+    
+    # Round deadlines
+    round1 = db.Column(db.DateTime)
+    round2 = db.Column(db.DateTime)
+    round3 = db.Column(db.DateTime) 
+
+
+# Admin Task Database Schema
+class AdminTask(db.Model):
+    __tablename__ = 'admin_task'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    description = db.Column(db.String)
+    action = db.Column(db.String)
+    # Email cannot be unique because same user may have one or more problems
+    relatedUserEmail = db.Column(db.String(120)) 
+    resolved = db.Column(db.Boolean, default=False, nullable=False)
+    resolved_on = db.Column(db.DateTime) # , nullable=False)
+
+    def set_task_as_resolved(self, task_status):
+        self.resolved = task_status
+
+    def set_task_resolved_on(self, task_resolved_date):
+        self.resolved_on = task_resolved_date
+
+    def __init__(self, description, action, userEmail):
+        self.description = description
+        self.action = action
+        self.relatedUserEmail = userEmail
+
+    def __repr__(self):
+        return '<AdminTasks {}>'.format(self.description)
+
+
+# Administrator View
+class MyAdminModelView(ModelView):
+
+    # Return true if page can be accessed
+    def is_accessible(self):
+        
+        # If anonymous, deny
+        if(current_user.is_anonymous):
+            return False
+        
+        # Allow access if signed in admin
+        signedIn = current_user.is_authenticated
+        isAdmin = current_user.role == 'Administrator'
+        if signedIn and isAdmin:
+            return True
+        else:  
+            return False
+        
     # Overwriting the pre-defined function
     def inaccessible_callback(self, name, ** kwargs):
         return redirect(url_for('login'))
@@ -334,4 +376,5 @@ admin.add_view(MyAdminModelView(User, db.session))
 admin.add_view(MyAdminModelView(Student, db.session))
 admin.add_view(MyAdminModelView(Supervisor, db.session))
 admin.add_view(MyAdminModelView(Project, db.session))
-admin.add_view(MyAdminModelView(Preference, db.session))
+admin.add_view(MyAdminModelView(Deadline, db.session))
+admin.add_view(MyAdminModelView(AdminTask, db.session))
