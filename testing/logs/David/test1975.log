@@ -1,0 +1,16 @@
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:02] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:04] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:04] "[37mGET /myadmin/home?username=Assistant HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:07] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:07] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:08] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:14] "[37mGET /myadmin/home?username=Jerline HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:18] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:19] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:20:21] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

@@ -247,7 +247,7 @@ def edit_student():
     if request.method == 'POST':
         new_data = Student.query.get(request.form['id'])
         for column in colNames: # Type of column is string
-            if column is not "id" or column is not "user_id":
+            if column != "id" or column != "user_id":
                 # Convert string to attribute
                 setattr(new_data, column, request.form[column])
         db.session.commit()
@@ -313,7 +313,7 @@ def edit_supervisor():
     if request.method == 'POST':
         new_data = Supervisor.query.get(request.form['id'])
         for column in colNames: # Type of column is string
-            if column is not "id" or column is not "user_id":
+            if column != "id" or column != "user_id":
                 # Convert string to attribute
                 setattr(new_data, column, request.form[column])
         db.session.commit()
@@ -414,7 +414,7 @@ def edit_project():
     if request.method == 'POST':
         new_data = Project.query.get(request.form['id'])
         for column in colNames: # Type of column is string
-            if column is not "id" or column is not "user_id":
+            if column != "id" or column != "user_id":
                 # Convert string to attribute
                 setattr(new_data, column, request.form[column])
         db.session.commit()
