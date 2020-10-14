@@ -1,0 +1,39 @@
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:12] "[37mGET /myadmin/display/users/all/6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:26] "[32mPOST /myadmin/add/user/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:26] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:29] "[37mGET /myadmin/display/users/all/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:31] "[37mGET /myadmin/display/users/all/7 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:38] "[32mGET /myadmin/delete/17/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:38] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:40] "[37mGET /myadmin/display/users/all/6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:44] "[32mGET /myadmin/delete/16/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:44] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:45] "[37mGET /myadmin/display/users/all/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:47] "[37mGET /myadmin/display/users/all/6 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:49] "[32mGET /myadmin/delete/15/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:49] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:51] "[37mGET /myadmin/display/users/all/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:55] "[32mPOST /myadmin/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:55] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:57] "[37mGET /myadmin/display/users/all/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:02] "[32mGET /myadmin/delete/14/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:02] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:04] "[37mGET /myadmin/display/users/all/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:29] "[32mPOST /myadmin/add/user/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:29] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:31] "[37mGET /myadmin/display/users/all/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:35] "[32mPOST /myadmin/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:35] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:36] "[37mGET /myadmin/display/users/all/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:39] "[32mPOST /myadmin/update HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:39] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:40] "[37mGET /myadmin/display/users/all/5 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:56] "[32mGET /myadmin/delete/13/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:01:56] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:04:11] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:04:22] "[32mPOST /myadmin/edit/student/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:04:22] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading

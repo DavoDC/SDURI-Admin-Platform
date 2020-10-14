@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:46:44] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/myadmin/myadmin_routes.py', reloading

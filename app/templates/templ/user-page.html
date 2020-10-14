@@ -6,11 +6,11 @@
 
     <!--Welcome user-->
     <h2>Welcome {{ current_user.name }}</h2>
-   
+
     <!--If details not good-->
     {% if not good_det or "details" in desc %}
-        <p>Please enter your details first. </p>
-        <!--<br>-->
+    <p>Please enter your details first. </p>
+    <!--<br>-->
     {% endif %}
 
     <!--Add action buttons-->
@@ -18,42 +18,42 @@
 
         {% for button in buttons %}
 
-            <!--Button label-->
-            {% set label = button[0] %}
-            
-            <!--Default: Disabled and No Link-->
-            {% set class = "hover-button-disabled" %}
-            
-            <!--Get button description-->
-            {% set desc = button[0].replace(" ", "_").lower() %}
-            
-            <!--If details are good or we are on details button-->
-            {% if good_det or "details" in desc %}
-            
-                <!--Always make normal-->
-                {% set class = "hover-button" %}
-                {% set link = "href=" + button[1] %}
-                
-                <!--If details not entered but on details-->
-                {% if not good_det %}
-                
-                    <!--Change label to Enter Details-->
-                    {% set label = label.replace("Update", "Enter") %}
-                {% endif %}
-            {% endif %}
-            
-            <!--Button-->
-            <tr>
+        <!--Button label-->
+        {% set label = button[0] %}
+
+        <!--Default: Disabled and No Link-->
+        {% set class = "hover-button-disabled" %}
+
+        <!--Get button description-->
+        {% set desc = button[0].replace(" ", "_").lower() %}
+
+        <!--If details are good or we are on details button-->
+        {% if good_det or "details" in desc %}
+
+        <!--Always make normal-->
+        {% set class = "hover-button" %}
+        {% set link = "href=" + button[1] %}
+
+        <!--If details not entered but on details-->
+        {% if not good_det %}
+
+        <!--Change label to Enter Details-->
+        {% set label = label.replace("Update", "Enter") %}
+        {% endif %}
+        {% endif %}
+
+        <!--Button-->
+        <tr>
             <td>
-            <a {{ link }} >
-               <button class={{ class }} type="action">
-                {{ label }}
-               </button>
-            </a>
-        {% endfor %}
-        
+                <a {{ link }} >
+                    <button class={{ class }} type="action">
+                        {{ label }}
+                    </button>
+                </a>
+                {% endfor %}
+
     </table>
-    
+
     <!--Logout link -->
     <a href="{{ url_for('logout') }}">Logout</a>
 </div>

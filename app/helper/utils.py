@@ -5,6 +5,7 @@ from app.models import *
 from app.models import User
 from collections import defaultdict
 from datetime import date
+from flask import flash
 from flask import redirect
 from flask import render_template
 from flask import request
@@ -13,6 +14,121 @@ from flask_login import current_user
 from json2html import *
 import os
 from werkzeug.utils import secure_filename
+
+# Global variable = Has admin ran this session
+add_admin_ran = False
+
+
+# Add initial admin accounts
+def add_admin_accounts():
+
+    # Get global variable
+    global add_admin_ran
+
+    # If add admin has already ran this session
+    if add_admin_ran:
+
+        # Stop
+        return
+
+    # Make admin account list
+    pw = "dmc102037!"
+    new_acc_list = [
+    ["jerline@admins.com", "Jerline", pw, "Admin"],
+    ["admin@admins.com", "Admin", pw, "Admin"],
+    ["assistant@admins.com", "Assistant", pw, "Admin"]
+    ]
+    
+    # Add all admin accounts in list (not testing)
+    for new_acc in new_acc_list:
+        add_acc_dir(new_acc, False)
+        
+
+    # Set admin ran to true
+    add_admin_ran = True
+
+
+# Add testing accounts
+def add_testing_accounts():
+
+    # List of new accounts
+    new_acc_list = [
+    ["student1@students.com", "Jim(St)", "1", "Student"],
+    ["student2@students.com", "Bob(St)", "1", "Student"],
+    ["student3@students.com", "Ann(St)", "1", "Student"],
+    ["student4@students.com", "Ava(St)", "1", "Student"],
+    ["student5@students.com", "Max(St)", "1", "Student"],
+    ["super1@supers.com", "John(Sup)", "1", "Supervisor"],
+    ["super2@supers.com", "Mary(Sup)", "1", "Supervisor"],
+    ["super3@supers.com", "Mack(Sup)", "1", "Supervisor"],
+    ["super4@supers.com", "Dana(Sup)", "1", "Supervisor"],
+    ["super5@supers.com", "Noah(Sup)", "1", "Supervisor"]
+    ]
+    
+    # For each new acc in new acc list
+    for new_acc in new_acc_list:
+        
+        # Add account (testing on)
+        add_acc_dir(new_acc, True)
+        
+        
+# Add account directly
+# - acc list in format: email, name, pw, role
+# - testing mode
+def add_acc_dir(acc_list, testing):
+
+    # Get string rep
+    acc_str = ",".join(acc_list)
+    
+    # Extract info
+    email = acc_list[0]
+    name = acc_list[1]
+    password = acc_list[2]
+    role = acc_list[3]
+
+    # Look for similar account
+    usim = User.query.filter(User.name == name, User.email == email).first()
+
+    # If similar account exists
+    if usim:
+
+        # Notify if testing
+        if testing:
+            flash("Rejected test account due to similarity: " + acc_str)
+        
+        # Stop
+        return
+
+    # Get role as lower case
+    role = role.lower()
+
+    # Correct role
+    if "a" in role:
+        role = "Administrator"
+    elif "sup" in role:
+        role = "Supervisor"
+    else:
+        role = "Student"
+
+    # Create user
+    new_user = User(name=name, email=email, password=password,
+                    confirmed=True,
+                    registered_on=date.today(),
+                    role=role)
+
+    # Add to database
+    db.session.add(new_user)
+
+    # Commit changes
+    db.session.commit()
+    
+    # Notify if testing
+    if testing:
+        flash("Added test account: " + acc_str)
+
+
+
+
 
 # Redirect to user page based on role
 def send_to_user_page(role):
@@ -55,35 +171,35 @@ def user_page(role, rend_temp):
 
 # Return true if student details are good
 def are_stud_det_good(username):
-        
+
     # Get student row and make new row if needed
     student = get_user_from_username(username, Student, True)
-    
+
     # If first is null
     if student.title == None:
-        
+
         # Return false quickly
         return False
-    
+
     # List of columns that can be empty
-    empty_allowed = ['eng_prog_choice', 'test_sc', 
+    empty_allowed = ['eng_prog_choice', 'test_sc',
     'eng_file', 'charname']
-    
+
     # Get student row as dictionary, keep Nones
     studict = get_row_as_dict(student, False)
 
-    
+
     # For each column name in row
     for name in studict:
-        
+
         # If a project column
         if 'proj' in name:
             # Skip
             continue
-        
+
         # Get value
         value = studict[name]
-                
+
         # If empty but empty is not allowed
         if value == None and not name in empty_allowed:
             return False
@@ -95,41 +211,41 @@ def are_stud_det_good(username):
 
 # Get user ID from username
 def get_uid_from_name(username):
-    
+
     # Get user id
     uid = User.query.filter_by(name=username).first().id or 404
-    
+
     # If user id was not found
     if uid == 404:
         # Notify
         raise ValueError('User ID not found (utils.py)')
-    
+
     # Otherwise return
     return uid
 
 
 # Get project from id
 def get_project_from_id(pid):
-    
+
     # Get project
     project = Project.query.filter_by(id=pid).first() or 404
-    
+
     # If project was not found
     if project == 404:
         # Notify
         raise ValueError('Project not found (utils.py)')
-    
+
     # Otherwise return
     return project
-    
+
 
 
 # Add empty row to database
 def add_empty_row(username, custDB):
-    
+
     # Get UID
     uid = get_uid_from_name(username)
-    
+
     # If there is no database row
     if not custDB.query.filter_by(user_id=uid).first():
 
@@ -155,10 +271,10 @@ def save_form(username, custDB, overwrite):
 
         # Get row
         row = None
-        
+
         # Get user ID
         uid = get_uid_from_name(username)
-        
+
         # If overwrite is on
         if overwrite:
             # Get existing row
@@ -174,7 +290,7 @@ def save_form(username, custDB, overwrite):
             # Update database row,
             # matching name attribute to the column name
             setattr(row, name_attr, input_data)
-            
+
         # If overwrite off
         if not overwrite:
             # Add new row
@@ -228,48 +344,48 @@ def save_file(file_field_name, student):
 
 # Get list of projects applied for (as PIDs)
 def get_pids_applied_for(student):
-    
+
     # Define empty list
     pids = []
-    
+
     # Get first pid
     first = student.proj1_id
-    
+
     # If first pid is valid
     if first != None:
-        
+
         # Add to list
         pids.append(first)
-    
+
     # Get second pid
     second = student.proj2_id
-    
+
     # If second pid is valid
     if second != None:
-        
+
         # Add to list
         pids.append(second)
-        
+
     # Return list
     return pids
 
-        
+
 # Get user row with given username from given user database
 # - do_init: If true, create row if not found
 def get_user_from_username(username, userDB, do_init):
-    
+
     # Get UID
     uid = get_uid_from_name(username)
-    
+
     # Get user from username
     user = userDB.query.filter_by(user_id=uid).first() or 404
-    
+
     # If student doesn't exist
     if user == 404:
-        
+
         # If init is on
         if do_init:
-        
+
             # Add empty row
             add_empty_row(username, userDB)
 
@@ -278,30 +394,30 @@ def get_user_from_username(username, userDB, do_init):
         else:
             # Else notify
             raise ValueError('User not found (utils.py)')
-    
+
     # Return user
     return user
 
-    
+
 # Get project 1 details list
 def get_proj1_details(student):
 
     # Get id
     pid = student.proj1_id
-    
+
     # Check if valid
     if(pid == None):
         return None
 
     # Get preference
     pref = student.proj1_pref
-        
+
     # Get duration
     dur = student.proj1_dur
-    
+
     # Get status
     status = student.proj1_accepted
-    
+
     # Return as list
     return [pid, pref, dur, status]
 
@@ -311,89 +427,56 @@ def get_proj2_details(student):
 
     # Get id
     pid = student.proj2_id
-    
+
     # Check if valid
     if(pid == None):
         return None
 
     # Get preference
     pref = student.proj2_pref
-        
+
     # Get duration
     dur = student.proj2_dur
-    
+
     # Get status
     status = student.proj2_accepted
-    
+
     # Return as list
     return [pid, pref, dur, status]
-    
-    
+
+
 # Convert row to dictionary
-# - Set replace nones 
+# - Set replace nones
 # -- to True if using in HTMl/JS!!
 # -- to False if using within Python
 def get_row_as_dict(row, replace_nones):
-    
+
     # Get project values dictionary
     row_dict = row.__dict__
-    
+
     # Remove unneeded pair
     row_dict.pop('_sa_instance_state')
-    
+
     # If replace nones wanted
     if replace_nones:
-        
+
         # For each key in row
         for key in row_dict:
 
             # If None, make empty string
             if row_dict[key] is None:
                 row_dict[key] = ""
-          
+
     # Return
     return row_dict
 
 
 # Get supervisor's projects from username
 def get_supervisors_projects(username):
-    
+
     # Get ID
     sid = get_uid_from_name(username)
-    
+
     # Return their projects that are initialized
     return Project.query.filter_by(user_id=sid).filter(Project.title != None).all()
 
-
-# Add testing data to databases
-def add_test_data():
-
-    # Format:
-    # "email":["name", "password", "confirmed", "registered_on", "role"
-    myusers = {
-    "student1@students.com":["Jim(St)", "1", True, date.today(), "Student"], 
-    "student2@students.com":["Bob(St)", "1", True, date.today(), "Student"], 
-    "student3@students.com":["Ann(St)", "1", True, date.today(), "Student"], 
-    "student4@students.com":["Ava(St)", "1", True, date.today(), "Student"], 
-    "student5@students.com":["Max(St)", "1", True, date.today(), "Student"], 
-    "super1@supers.com":["John(Sup)", "1", True, date.today(), "Supervisor"], 
-    "super2@supers.com":["Mary(Sup)", "1", True, date.today(), "Supervisor"], 
-    "super3@supers.com":["Mack(Sup)", "1", True, date.today(), "Supervisor"], 
-    "super4@supers.com":["Dana(Sup)", "1", True, date.today(), "Supervisor"], 
-    "super5@supers.com":["Noah(Sup)", "1", True, date.today(), "Supervisor"], 
-    "admin@admins.com":["admin", "1", True, date.today(), "Administrator"],
-    "assistant@admins.com":["assistant", "1", True, date.today(), "Administrator"]
-    }
-
-    # Inserting users in to database from myusers (above)
-    for email, details in myusers.items():
-        u = User(name=details[0],
-                 email=email,
-                 password=details[1],
-                 confirmed=details[2],
-                 registered_on=details[3],
-                 role=details[4])
-        db.session.add(u)
-    
-    # Commit changes
-    db.session.commit()

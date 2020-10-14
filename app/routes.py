@@ -22,8 +22,12 @@ from json2html import *
 @app.route('/index')
 def index():
     
-    # Add test
-    #utils.add_test_data()
+    # Add admin accounts (once)
+    utils.add_admin_accounts()
+    
+    # Add testing accounts
+    # DISABLE when not testing!!!
+    #utils.add_testing_accounts()
     
     # If user is logged in
     if current_user.is_authenticated:
