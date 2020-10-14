@@ -312,7 +312,7 @@ def accept(username, sid, pid):
         db.session.commit()
 
     return redirect(url_for('supervisor_view_appl',
-username=username, pid=pid))
+                    username=username, pid=pid))
 
 # Deny
 @app.route('/supervisor/<username>/project/manage/view/appl/<pid>/<sid>/examine/deny')
@@ -331,4 +331,4 @@ def deny(username, sid, pid):
         db.session.commit()
 
     return redirect(url_for('supervisor_view_appl',
-username=username, pid=pid))
+                    username=username, pid=pid))

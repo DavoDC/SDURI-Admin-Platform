@@ -1,0 +1,10 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:54:08] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:54:11] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:54:25] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:54:27] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:55:09] "POST /myadmin/edit/project/ HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:55:09] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:55:54] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:55:56] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:56:06] "POST /myadmin/edit/project/ HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:56:06] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -

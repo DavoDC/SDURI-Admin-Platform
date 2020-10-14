@@ -10,12 +10,20 @@ import datetime
 from flask import flash
 from flask import request
 
-@bp.route('/home') #, methods=['GET', 'POST'])
+
+# Returns true if user cannot access admin
+def cannot_access_admin():
+    return not MyAdminModelView.is_accessible(MyAdminModelView)
+
+
+# Admin Home
 @bp.route('/')
+@bp.route('/home')
 def admin_home():
     
-    # If user cannot access, send back to index
-    if not MyAdminModelView.is_accessible(MyAdminModelView):
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
         return redirect(url_for('index'))
     
     # templates/myadmin/index.html
@@ -26,51 +34,32 @@ def admin_home():
                            users=usersFromDB, unresolved_tasks=tasks_unresolved,
                            resolved_tasks=tasks_resolved)
 
-@bp.route('/update', methods=['GET', 'POST'])
-def update():
-    # If user cannot access, send back to index
-    if not MyAdminModelView.is_accessible(MyAdminModelView):
+
+# Admin Home: Resolve admin task
+@bp.route('/resolving/task/<task_id>/', methods=['GET', 'POST'])
+def mark_as_resolved(task_id):
+    
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
         return redirect(url_for('index'))
     
-    # request.form = ImmutableMultiDict([('id', '2'), ('name', 'supervisor111'), ('email', 'super1@supers.com')])
-    # type(request.form) = <class 'werkzeug.datastructures.ImmutableMultiDict'>
-    # The tuples' values can be accessed in this format: request.form['id']
-    data = request.form
-    flash_msg = ""
-    if request.method == 'POST':
-
-        # new_data = User.query.filter_by(id=update_id)
-        new_data = User.query.get(request.form['id'])
-
-        new_data.name = request.form['name']
-        new_data.email = request.form['email']
-        new_data.role = request.form['role']
-
-        db.session.commit()
-        flash_msg = new_data.email + "'s information is updated successfully"
-    flash(flash_msg)
-    # return render_template('home.html', user)
-    return redirect(url_for('myadmin.display_users', page_num=1))
-
-
-@bp.route('/delete/<id>/', methods=['GET', 'POST'])
-def delete(id):
-    # If user cannot access, send back to index
-    if not MyAdminModelView.is_accessible(MyAdminModelView):
-        return redirect(url_for('index'))
-    
-    del_user = User.query.get(id)
-    db.session.delete(del_user)
+    resolve_task = AdminTask.query.get(task_id)
+    resolve_task.set_task_as_resolved(True)
+    resolve_task.set_task_resolved_on(datetime.datetime.now())
+    db.session.add(resolve_task)
     db.session.commit()
-    flash("Successfully deleted a user '" + del_user.email + "'")
-    return redirect(url_for('myadmin.display_users', page_num=1))
+    flash("Resolving task successfully")
+    return redirect(url_for('myadmin.admin_home'))
 
 
+# Users: Display
 @bp.route('/display/users/all/<int:page_num>', methods=['GET', 'POST'])
 def display_users(page_num):
     
-    # If user cannot access, send back to index
-    if not MyAdminModelView.is_accessible(MyAdminModelView):
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
         return redirect(url_for('index'))
     
     usersFromDB = User.query.paginate(per_page=2, page=page_num, error_out=True)
@@ -78,83 +67,13 @@ def display_users(page_num):
     return render_template('users.html', title="Administrator", users=usersFromDB)
 
 
-@bp.route('/display/projects/all/<int:page_num>', methods=['GET', 'POST'])
-def display_projects(page_num):
-    col_names = Project.__table__.columns
-    colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
-    attributes = [i.name for i in col_names][:] # Columns' name
-
-    colNames = colNames[3:5] + colNames[:2] + colNames[5:]
-    attributes = attributes[3:5] + attributes[:2] + attributes[5:]
-    projectsFromDB = Project.query.paginate(per_page=2, page=page_num, error_out=True)
-  
-    # supersFromDB = user_serializer.dump(userFromDB.items)
-    return render_template('t_projects.html', 
-                           title="Administrator", 
-                           persons=projectsFromDB,
-                           colNames=colNames,
-                           attributes=attributes)
-                          
-
-@bp.route('/display/supervisors/all/<int:page_num>', methods=['GET', 'POST'])
-def display_supervisors(page_num):
-    col_names = Supervisor.__table__.columns
-    colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
-    attributes = [i.name for i in col_names][:] # Columns' name
-
-    # Name of all supervisors from user table using user_id
-    supervisors = Supervisor.query.all()
-    superNames = []
-    for supervisor in supervisors: 
-        superUser = User.query.filter_by(id=supervisor.user_id).first()
-        if superUser != None:
-            superNames.append(superUser.name)
-    
-
-    supersFromDB = Supervisor.query.paginate(per_page=2, page=page_num, error_out=True)
-    nameDic = {}
-    for row in supersFromDB.items:
-        superUser = User.query.filter_by(id=row.user_id).first()
-        if superUser != None:
-            nameDic[row.user_id] = superUser.name 
-    
-    
-    # supersFromDB = user_serializer.dump(userFromDB.items)
-    return render_template('t_supervisors.html', 
-                           title="Administrator", 
-                           persons=supersFromDB,
-                           colNames=colNames,
-                           attributes=attributes,
-                           superNames=superNames,
-                           nameDic=nameDic)
-
-@bp.route('/display/students/all/<int:page_num>', methods=['GET', 'POST'])
-def display_students(page_num):
-    col_names = Student.__table__.columns
-    colNames = [i.name.upper() for i in col_names] # Capitalize columns' name
-    attributes = [i.name for i in col_names] # Columns' name
-
-    # Rearrange colNames as desired, and attributes correspondingly
-    fixedCol = [7, 6]
-    fixedColNames = [colNames[i] for i in fixedCol]
-    fixedColAttributes = [attributes[i] for i in fixedCol]
-    colNamesR = colNames[2:6] + colNames[8:]
-    attributesR = attributes[2:6] + attributes[8:]
-    studentsFromDB = Student.query.paginate(per_page=2, page=page_num, error_out=True)
-  
-    # usersFromDB = user_serializer.dump(userFromDB.items)
-    return render_template('t_students.html', 
-                           title="Administrator", 
-                           persons=studentsFromDB,
-                           colNames=colNamesR,
-                           attributes=attributesR,
-                           fixedColNames=fixedColNames,
-                           fixedColAttributes=fixedColAttributes)
-
+# Users: Add
 @bp.route('/add/user', methods=['GET', 'POST'])
 def add_user():
-    # If user cannot access, send back to index
-    if not MyAdminModelView.is_accessible(MyAdminModelView):
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
         return redirect(url_for('index'))
     
     data = request.form
@@ -179,17 +98,301 @@ def add_user():
     flash(flash_msg)
     return redirect(url_for('myadmin.display_users', page_num=1))
 
-@bp.route('/resolving/task/<task_id>/', methods=['GET', 'POST'])
-def mark_as_resolved(task_id):
-    
-    # If user cannot access, send back to index
-    if not MyAdminModelView.is_accessible(MyAdminModelView):
+
+# Users: Update user
+@bp.route('/update', methods=['GET', 'POST'])
+def update():
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
         return redirect(url_for('index'))
     
-    resolve_task = AdminTask.query.get(task_id)
-    resolve_task.set_task_as_resolved(True)
-    resolve_task.set_task_resolved_on(datetime.datetime.now())
-    db.session.add(resolve_task)
+    # request.form = ImmutableMultiDict([('id', '2'), ('name', 'supervisor111'), ('email', 'super1@supers.com')])
+    # type(request.form) = <class 'werkzeug.datastructures.ImmutableMultiDict'>
+    # The tuples' values can be accessed in this format: request.form['id']
+    data = request.form
+    flash_msg = ""
+    if request.method == 'POST':
+
+        # new_data = User.query.filter_by(id=update_id)
+        new_data = User.query.get(request.form['id'])
+
+        new_data.name = request.form['name']
+        new_data.email = request.form['email']
+        new_data.role = request.form['role']
+
+        db.session.commit()
+        flash_msg = new_data.email + "'s information is updated successfully"
+    flash(flash_msg)
+    # return render_template('home.html', user)
+    return redirect(url_for('myadmin.display_users', page_num=1))
+
+
+# Users: Delete user
+@bp.route('/delete/<id>/', methods=['GET', 'POST'])
+def delete(id):
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+    
+    del_user = User.query.get(id)
+    db.session.delete(del_user)
     db.session.commit()
-    flash("Resolving task successfully")
-    return redirect(url_for('myadmin.admin_home'))
+    flash("Successfully deleted a user '" + del_user.email + "'")
+    return redirect(url_for('myadmin.display_users', page_num=1))
+
+
+
+# Students: Display
+@bp.route('/display/students/all/<int:page_num>', methods=['GET', 'POST'])
+def display_students(page_num):
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+    
+    col_names = Student.__table__.columns
+    colNames = [i.name.upper() for i in col_names] # Capitalize columns' name
+    attributes = [i.name for i in col_names] # Columns' name
+
+    # Rearrange colNames as desired, and attributes correspondingly
+    fixedCol = [7, 6]
+    fixedColNames = [colNames[i] for i in fixedCol]
+    fixedColAttributes = [attributes[i] for i in fixedCol]
+    colNamesR = colNames[2:6] + colNames[8:]
+    attributesR = attributes[2:6] + attributes[8:]
+    studentsFromDB = Student.query.paginate(per_page=2, page=page_num, error_out=True)
+  
+    # usersFromDB = user_serializer.dump(userFromDB.items)
+    return render_template('t_students.html', 
+                           title="Administrator", 
+                           persons=studentsFromDB,
+                           colNames=colNamesR,
+                           attributes=attributesR,
+                           fixedColNames=fixedColNames,
+                           fixedColAttributes=fixedColAttributes)
+
+# Students: Edit
+@bp.route('/edit/student/', methods=['GET', 'POST'])
+def edit_student():
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+    
+
+    data = request.form
+    col_names = Student.__table__.columns
+    # From third column to last column, excluding id and user_id
+    colNames = [i.name for i in col_names][2:] # 43 columns at the moment
+  
+    flash_msg = ""
+    if request.method == 'POST':
+        new_data = Student.query.get(request.form['id'])
+        for column in colNames: # Type of column is string
+            if column is not "id" or column is not "user_id":
+                # Convert string to attribute
+                setattr(new_data, column, request.form[column])
+        db.session.commit()
+        flash_msg = new_data.firstname + "'s information is updated successfully"
+    flash(flash_msg)
+    return redirect(url_for('myadmin.display_students', page_num=1))
+
+
+
+
+
+
+# Supervisors: Display
+@bp.route('/display/supervisors/all/<int:page_num>', methods=['GET', 'POST'])
+def display_supervisors(page_num):
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+  
+    # Get column names
+    col_names = Supervisor.__table__.columns
+    colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
+    attributes = [i.name for i in col_names][:] # Columns' name
+
+    # Name of all supervisors from user table using user_id
+    supervisors = Supervisor.query.all()
+    superNames = []
+    for supervisor in supervisors: 
+        superNames.append((User.query.filter_by(id=supervisor.user_id).first()).name)
+
+    supersFromDB = Supervisor.query.paginate(per_page=2, page=page_num, error_out=True)
+    nameDic = {}
+    for row in supersFromDB.items:
+        nameDic[row.user_id] = User.query.filter_by(id=row.user_id).first().name 
+        print(User.query.filter_by(id=row.user_id).first().name)
+
+    return render_template('t_supervisors.html', 
+                           title="Administrator", 
+                           persons=supersFromDB,
+                           colNames=colNames,
+                           attributes=attributes,
+                           superNames=superNames,
+                           nameDic=nameDic)
+
+
+# Supervisors: Edit supervisor
+@bp.route('/edit/supervisor/', methods=['GET', 'POST'])
+def edit_supervisor():
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+
+    data = request.form
+    col_names = Supervisor.__table__.columns
+    # From third column to last column, excluding id and user_id
+    colNames = [i.name for i in col_names][2:] #
+  
+    flash_msg = ""
+    if request.method == 'POST':
+        new_data = Supervisor.query.get(request.form['id'])
+        for column in colNames: # Type of column is string
+            if column is not "id" or column is not "user_id":
+                # Convert string to attribute
+                setattr(new_data, column, request.form[column])
+        db.session.commit()
+        # flash_msg = new_data.firstname + "'s information is updated successfully"
+        flash_msg = "Information updated successfully"
+    flash(flash_msg)
+    return redirect(url_for('myadmin.display_supervisors', page_num=1))
+
+
+
+
+# Students, Supervisors: Delete user
+@bp.route('/delete/<utype>/<id>/', methods=['GET', 'POST'])
+def deleting(utype, id):
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+    
+    del_user = ""
+    if utype == "Student":
+        student = Student.query.filter_by(id=id).first()
+    
+        del_student = Student.query.get(id)
+        del_user = User.query.get(student.user_id)
+
+        # Delete from Student table
+        db.session.delete(del_student)
+        # Delete from user table
+        db.session.delete(del_user)
+        db.session.commit()
+  
+    if utype == "Supervisor":
+        supervisor = Supervisor.query.filter_by(id=id).first()
+    
+        del_supervisor = Supervisor.query.get(id)
+        del_user = User.query.get(supervisor.user_id)
+
+        # Delete from Student table
+        db.session.delete(del_supervisor)
+        # Delete from user table
+        db.session.delete(del_user)
+        db.session.commit()
+    flash("Successfully deleted a user '" + del_user.email + "'")
+    return redirect(url_for('myadmin.display_users', page_num=1))
+
+
+
+# Projects: Display
+@bp.route('/display/projects/all/<int:page_num>', methods=['GET', 'POST'])
+def display_projects(page_num):
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+
+    col_names = Project.__table__.columns
+    colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
+    attributes = [i.name for i in col_names][:] # Columns' name
+    print(attributes)
+    oriAttributes = attributes # For modaledit_project.html
+    colNames = colNames[2:5] + colNames[:2] + colNames[5:]
+    attributes = attributes[2:5] + attributes[:2] + attributes[5:]
+    projectsFromDB = Project.query.paginate(per_page=2, page=page_num, error_out=True)
+  
+    # supersFromDB = user_serializer.dump(userFromDB.items)
+    return render_template('t_projects.html', 
+                           title="Administrator", 
+                           persons=projectsFromDB,
+                           colNames=colNames,
+                           attributes=attributes,
+                           oriAttributes=oriAttributes
+                           )
+
+
+# Projects: Edit project
+@bp.route('/edit/project/', methods=['GET', 'POST'])
+def edit_project():
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+
+    data = request.form
+    col_names = Project.__table__.columns
+    # From third column to last column, excluding id and user_id
+    colNames = [i.name for i in col_names][2:] # 
+  
+    flash_msg = ""
+    if request.method == 'POST':
+        new_data = Project.query.get(request.form['id'])
+        for column in colNames: # Type of column is string
+            if column is not "id" or column is not "user_id":
+                # Convert string to attribute
+                setattr(new_data, column, request.form[column])
+        db.session.commit()
+        # flash_msg = new_data.firstname + "'s information is updated successfully"
+        flash_msg = "Information updated successfully"
+    flash(flash_msg)
+    return redirect(url_for('myadmin.display_projects', page_num=1))
+
+
+# Projects: Delete project
+@bp.route('/delete/project/<id>/', methods=['GET', 'POST'])
+def delete_project(id):
+
+    # If user cannot access admin
+    if cannot_access_admin():
+        # Send back to index
+        return redirect(url_for('index'))
+
+    # Get project to delete
+    del_proj = Project.query.get(pid)
+
+    # Delete and save
+    db.session.delete(del_proj) 
+    db.session.commit()
+  
+    # Notify
+    flash("Successfully deleted a project '" + del_proj.title + "'")
+
+    # Redirect to projects page
+    return redirect(url_for('myadmin.display_projects', page_num=1))
+
+
+
+
+
+
+
+

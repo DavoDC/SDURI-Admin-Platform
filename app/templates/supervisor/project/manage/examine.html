@@ -50,7 +50,7 @@
             {{ this_student.dob }}
         </td>
     </tr>
-    
+
     <tr class="project-row">
         <td class="project-td">
             <b> Country of Birth: </b>
@@ -162,11 +162,11 @@
     <a class="hover-button" 
        id="accept-button"
        href="{{ url_for('accept_confirm',
-            username = current_user.name, 
-            sid = this_student.id,
-            pid = pid
-           ) 
-           }}">
+       username = current_user.name, 
+       sid = this_student.id,
+       pid = pid
+       ) 
+       }}">
         Accept
     </a>
 </h4>
@@ -175,11 +175,11 @@
     <a class="hover-button" 
        id="deny-button"
        href="{{ url_for('deny_confirm', 
-            username = current_user.name,
-            sid = this_student.id,
-            pid = pid
-           ) 
-           }}">
+       username = current_user.name,
+       sid = this_student.id,
+       pid = pid
+       ) 
+       }}">
         Deny
     </a>
 </h4>
@@ -191,10 +191,10 @@
     <a class="hover-button" 
        id="back-button"
        href="{{ url_for('supervisor_view_appl', 
-           username = current_user.name,
-           pid=pid
-           ) 
-           }}">
+       username = current_user.name,
+       pid=pid
+       ) 
+       }}">
         Back
     </a>
 </h4>

@@ -1,0 +1,56 @@
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:11:32] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:11:34] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:11:35] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:11:46] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:11:48] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:11:50] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:11:51] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:12:22] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:12:25] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:12:29] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:12:30] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:14:30] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:14:30] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:14:31] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:14:31] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:14:33] "[37mGET /myadmin/display/projects/all/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:14:47] "[37mGET /myadmin/display/projects/all/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:14:47] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:08] "[37mGET /myadmin/display/projects/all/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:08] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:33] "[37mGET /myadmin/display/projects/all/2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:33] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:36] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:38] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:39] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:44] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:44] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:45] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:46] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:56] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:56] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:15:57] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:00] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:24] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:26] "[37mGET /admin/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:27] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:35] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:36] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:44] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:44] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:58] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:16:59] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:19:15] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 13:19:15] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\__init__.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\forms.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\models.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\routes.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\__init__.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\__init__.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\forms.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\forms.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\models.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\models.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\routes.cpython-38.pyc', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\routes.cpython-38.pyc', reloading

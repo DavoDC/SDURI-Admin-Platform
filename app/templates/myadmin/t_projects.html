@@ -39,21 +39,22 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
 
 
 
-<!-- <div>
-  {% with messages = get_flashed_messages() %}
-  {% if messages %}
-  {% for message in messages %}
+<div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
 
-  <div class="alert alert-success alert-dismissable" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="close">
-      <span aria-hidden="true">x</span>
-    </button>
-    {{message}}
-  </div>
-  {% endfor %}
-  {% endif %}
-  {% endwith %}
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">x</span>
+        </button>
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
 </div>
+<!--
 <div>
   <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
           data-target="#modalAddUser">Add new user</a></p>
@@ -68,8 +69,8 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
     <table id="persons_table" style="width:100%;" class="cell-border table table-sm display table-bordered table-hover table-grey">
         <thead>
             <tr>
-                <!--            <th  class="no-sort" style="background-color: white"></th>
-                            <th  class="no-sort" style="background-color: white"></th>-->
+                <th  class="no-sort" style="background-color: white"></th>
+                <th  class="no-sort" style="background-color: white"></th>
 
                 {% for col in colNames %}
                 <th style="background-color: white">{{ col }} </th>
@@ -82,21 +83,15 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
             <tr>
 
 
-<!--                <td style="background-color: white">
-
-                    Buttons to trigger modals 
-                    <a href="/myadmin/update/{{ row.id }}" 
-                       class="btn-xs" data-toggle="modal"
-                       data-target="#modaledit{{row.id}}">
-                        <i class="fa fa-pencil-alt"></i></a>
-                </td>
-
                 <td style="background-color: white">
-                    <a href="{{ url_for('myadmin.delete', id=row.id) }}" 
-                       class="btn-xs"
-                       onclick="return confirm('Are You Sure To Delete ?')">
-                        <i class="fa fa-trash-alt"></i></a>
-                </td>-->
+                    <!-- Buttons to trigger modals -->
+                    <a href="/myadmin/edit/project/{{ row.id }}" class="btn-xs" data-toggle="modal"
+                       data-target="#modaledit{{row.id}}"><i class="fa fa-pencil-alt"></i></a>
+                </td>
+                <td style="background-color: white">
+                    <a href="{{ url_for('myadmin.delete_project', id=row.id) }}  " class="btn-xs"
+                       onclick="return confirm('Are You Sure To Delete ?')"><i class="fa fa-trash-alt"></i></a>
+                </td>
 
                 {% for a in attributes %}
                 <td>{{ row|attr(a) }} </td>
@@ -106,21 +101,21 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
 
 
             <!-- Modal Edit User-->
-        <!--<div id="modaledit{{row.id}}" class="modal fade" role="dialog">-->
-            <!--include './modaledit_user.html' -->
-        <!--</div>  end: modaledit user--> 
+        <div id="modaledit{{row.id}}" class="modal fade" role="dialog">
+            {% include './modaledit_project.html' %}
+        </div> <!-- end: modaledit user -->
 
-         <!--Modal Edit User-->
-        <!--<div id="modalAddUser" class="modal fade" role="dialog">-->
-            <!--include './modalAddUser.html'-->
-        <!--</div>  end: modaledit user--> 
+        <!-- Modal Edit User-->
+        <div id="modalAddUser" class="modal fade" role="dialog">
+            {% include './modalAddUser.html' %}
+        </div> <!-- end: modaledit user -->
 
         {% endfor %}
         </tbody>
         <tfoot>
             <tr>
-                <!--                <th style="background-color: white"></th>
-                                <th style="background-color: white"></th>-->
+                <th style="background-color: white"></th>
+                <th style="background-color: white"></th>
                 {% for col in colNames %}
                 <th style="background-color: white">{{ col }} </th>
                 {% endfor %}
@@ -145,7 +140,7 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
         {% if page %}
         <li class="page-item"><a class="page-link" href="{{ url_for('myadmin.display_projects', page_num=page) }}">{{ page }}</a></li>
         {% else %}
-        <li class="page-item disabled" id="example_ellipsis"><a href="#" class="page-link">…</a></li>
+        <li class="page-item disabled" id="example_ellipsis"><a href="#" class="page-link">...</a></li>
         {% endif %}
         {% endfor %}
 
@@ -194,7 +189,7 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
                 {
                     // can specify hiding a column by column index
                     //"targets" : [3,4],
-                    "targets": [4, 5],
+                    "targets": [5, 6],
                     "visible": false,
                     "searchable": true
                 },

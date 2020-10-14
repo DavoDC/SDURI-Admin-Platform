@@ -1,0 +1,24 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:29:47] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:29:50] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:29:57] "GET /admin/student/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:29:59] "GET /admin/user/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:01] "GET /admin/student/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:02] "GET /admin/student/new/?url=%2Fadmin%2Fstudent%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:11] "POST /admin/student/new/?url=%2Fadmin%2Fstudent%2F HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:12] "GET /admin/student/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:14] "GET /admin/supervisor/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:15] "GET /admin/supervisor/new/?url=%2Fadmin%2Fsupervisor%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:23] "POST /admin/supervisor/new/?url=%2Fadmin%2Fsupervisor%2F HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:23] "GET /admin/supervisor/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:25] "GET /admin/project/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:26] "GET /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:37] "POST /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:55] "POST /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:30:55] "GET /admin/project/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:31:01] "GET /admin/admintask/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:31:03] "GET /admin/preference/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:31:04] "GET /admin/project/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:31:33] "GET /admin/preference/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:31:40] "GET /admin/preference/new/?url=%2Fadmin%2Fpreference%2F HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:31:43] "GET /admin/preference/ HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/models.py', reloading

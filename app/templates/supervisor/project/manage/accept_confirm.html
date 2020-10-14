@@ -13,11 +13,11 @@
     <a class="hover-button" 
        id="accept-button"
        href="{{ url_for('accept',
-            username = current_user.name, 
-            sid = sid,
-            pid = pid
-           ) 
-           }}">
+       username = current_user.name, 
+       sid = sid,
+       pid = pid
+       ) 
+       }}">
         Confirm
     </a>
 </h4>
@@ -26,11 +26,11 @@
     <a class="hover-button" 
        id="cancel-button"
        href="{{ url_for('supervisor_examine',
-            username = current_user.name, 
-            pid=pid,
-            student_id=sid
-           ) 
-           }}">
+       username = current_user.name, 
+       pid=pid,
+       student_id=sid
+       ) 
+       }}">
         Cancel
     </a>
 </h4>
