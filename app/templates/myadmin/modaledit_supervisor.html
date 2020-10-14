@@ -6,13 +6,18 @@
         </div>
         <div class="modal-body">
             <div>
-                <p> <span style="font-weight: bold;">Name </span>: <span style="font-style: italic;">{{ nameDic[row.id]}} </span> </p>
+                <p> <span style="font-weight: bold;">Name:</span> 
+                        {{ nameDic[row.user_id] }} 
+                </p>
+                
             </div>
             <form action="{{url_for('myadmin.edit_supervisor')}}" method="POST">
                 <div class="form-group">
                     {% for a in attributes[2:] %}
-                    <label class="small font-weight-bolder" > {{ a.upper() }}</label>
-                    <input type="text" class="form-control" name="{{ a }}" value="{{row | attr(a) }}">
+                    <label class="large font-weight-bolder" > {{ a.upper() }}</label>
+                    <input type="text" class="form-control" 
+                           style="width: 444px;"
+                           name="{{ a }}" value="{{row | attr(a) }}">
                     {% endfor %}
                 </div>
                 <!-- id will be used to check consistency -->

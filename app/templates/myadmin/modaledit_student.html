@@ -2,14 +2,16 @@
     <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title">Update Student Information</h4>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" 
+                    data-dismiss="modal">Close</button>
         </div>
         <div class="modal-body">
             <form action="{{url_for('myadmin.edit_student')}}" method="POST">
                 <div class="form-group">
                     {% for a in fixedColAttributes + attributes %}
                     <label class="small font-weight-bolder" > {{ a.upper() }}</label>
-                    <input type="text" class="form-control" name="{{ a }}" value="{{row | attr(a) }}">
+                    <input type="text" class="form-control" name="{{ a }}" 
+                           value="{{row | attr(a) }}">
                     {% endfor %}
                 </div>
                 <!-- id will be used to check consistency -->

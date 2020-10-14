@@ -7,6 +7,7 @@ from app.models import *
 from app.myadmin import bp
 from app.myadmin.myadmin_models import *
 import datetime
+from datetime import date
 from flask import flash
 from flask import request
 
@@ -68,7 +69,7 @@ def display_users(page_num):
 
 
 # Users: Add
-@bp.route('/add/user', methods=['GET', 'POST'])
+@bp.route('/add/user/', methods=['GET', 'POST'])
 def add_user():
 
     # If user cannot access admin
@@ -76,26 +77,48 @@ def add_user():
         # Send back to index
         return redirect(url_for('index'))
     
+    
+    # Get forms
     data = request.form
-    flash_msg = ""
     form = RegistrationForm()
+    
+    # If form submitted
     if request.method == 'POST':
    
+        # Create account
         user = User(name=data['name'],
                     email=data['email'],
                     confirmed=False,
                     password='password', # Must send password reset email
                     registered_on=date.today(),
                     role=data['role'])
-        db.session.add(user)
-        db.session.commit()
+        
+        # Add to database
+        try:
+            db.session.add(user)
+            db.session.commit()
+        except Exception as e:
+            acc_msg = "There was an error adding the account to the database"
+            acc_msg += ". Email may not be unique"
+            flash(acc_msg)
+            return redirect(url_for('myadmin.display_users', page_num=1))
+        
+        # Get token and confirm
         token = generate_confirmation_token(user.email)
         confirm_url = url_for('auth.confirm_email', token=token, _external=True)
-        html = render_template('/auth/activate.html', confirm_url=confirm_url)
-        subject = "Please confirm your email and reset your password"
-        email.send_email(user.email, subject, html)
-        flash_msg = "Email has been sent to the new user"
-    flash(flash_msg)
+        
+        # Notify
+        flash("Successfully created user '" + user.name + "'")
+        
+        # Send password reset email and notify
+        try:
+            html = render_template('/auth/activate.html', confirm_url=confirm_url)
+            subject = ""
+            email.send_email(user.email, subject, html)
+            flash("Password reset email has been sent to the new user")
+        except Exception as e:
+            flash("There was an error sending password reset email to user")
+        
     return redirect(url_for('myadmin.display_users', page_num=1))
 
 
@@ -108,24 +131,24 @@ def update():
         # Send back to index
         return redirect(url_for('index'))
     
-    # request.form = ImmutableMultiDict([('id', '2'), ('name', 'supervisor111'), ('email', 'super1@supers.com')])
-    # type(request.form) = <class 'werkzeug.datastructures.ImmutableMultiDict'>
-    # The tuples' values can be accessed in this format: request.form['id']
+    # Get form
     data = request.form
-    flash_msg = ""
+
+    # If form submitted
     if request.method == 'POST':
 
-        # new_data = User.query.filter_by(id=update_id)
+        # Get user and update
         new_data = User.query.get(request.form['id'])
-
         new_data.name = request.form['name']
         new_data.email = request.form['email']
         new_data.role = request.form['role']
 
+        # Save
         db.session.commit()
-        flash_msg = new_data.email + "'s information is updated successfully"
-    flash(flash_msg)
-    # return render_template('home.html', user)
+        
+        # Notify
+        flash(new_data.email + "'s information was updated successfully")
+
     return redirect(url_for('myadmin.display_users', page_num=1))
 
 
@@ -138,10 +161,39 @@ def delete(id):
         # Send back to index
         return redirect(url_for('index'))
     
+    # Get user and delete
     del_user = User.query.get(id)
     db.session.delete(del_user)
+    
+    ### Delete details as well if needed
+    # Details row holder
+    details_row = None
+    # Get user role
+    del_role = del_user.role
+    # If was student
+    if del_role == "Student":
+        # Get student details and delete
+        details_row  = Student.query.filter_by(user_id=id).first()
+
+    # If was supervisor
+    if del_role == "Supervisor":
+        # Get supervisor details and delete
+        details_row  = Supervisor.query.filter_by(user_id=id).first()
+
+    # If found
+    if not details_row is None:
+        db.session.delete(details_row)
+    
+    # Save
     db.session.commit()
-    flash("Successfully deleted a user '" + del_user.email + "'")
+    
+    # Notify
+    msg = "Successfully deleted a user: "
+    msg += "'" + del_user.name + ", " + del_user.email + "'"
+    msg += " and their details, if any"
+    flash(msg)
+    
+    # Back to users
     return redirect(url_for('myadmin.display_users', page_num=1))
 
 
@@ -199,7 +251,7 @@ def edit_student():
                 # Convert string to attribute
                 setattr(new_data, column, request.form[column])
         db.session.commit()
-        flash_msg = new_data.firstname + "'s information is updated successfully"
+        flash_msg = new_data.firstname + "'s information was updated successfully"
     flash(flash_msg)
     return redirect(url_for('myadmin.display_students', page_num=1))
 
@@ -266,14 +318,14 @@ def edit_supervisor():
                 setattr(new_data, column, request.form[column])
         db.session.commit()
         # flash_msg = new_data.firstname + "'s information is updated successfully"
-        flash_msg = "Information updated successfully"
+        flash_msg = "Supervisor information updated successfully"
     flash(flash_msg)
     return redirect(url_for('myadmin.display_supervisors', page_num=1))
 
 
 
 
-# Students, Supervisors: Delete user
+# Students and Supervisors: Delete details
 @bp.route('/delete/<utype>/<id>/', methods=['GET', 'POST'])
 def deleting(utype, id):
 
@@ -282,32 +334,37 @@ def deleting(utype, id):
         # Send back to index
         return redirect(url_for('index'))
     
-    del_user = ""
+    # Return URL
+    retURL = "myadmin.display_"
+    
+    # If student
     if utype == "Student":
-        student = Student.query.filter_by(id=id).first()
-    
+        
+        # Get student details and delete
         del_student = Student.query.get(id)
-        del_user = User.query.get(student.user_id)
-
-        # Delete from Student table
         db.session.delete(del_student)
-        # Delete from user table
-        db.session.delete(del_user)
-        db.session.commit()
-  
-    if utype == "Supervisor":
-        supervisor = Supervisor.query.filter_by(id=id).first()
-    
+        
+        # Go back to students
+        retURL += "students"
+    elif utype == "Supervisor":
+        
+        # Else if supervisor:
+        # Get supervisor details and delete
         del_supervisor = Supervisor.query.get(id)
-        del_user = User.query.get(supervisor.user_id)
-
-        # Delete from Student table
         db.session.delete(del_supervisor)
-        # Delete from user table
-        db.session.delete(del_user)
-        db.session.commit()
-    flash("Successfully deleted a user '" + del_user.email + "'")
-    return redirect(url_for('myadmin.display_users', page_num=1))
+        
+        # Go back to supervisors
+        retURL += "supervisors"
+
+    # Save
+    db.session.commit()
+    
+    # Notify
+    flash("Successfully deleted a user's details row")
+    
+    # Back to users ??
+    return redirect(url_for(retURL, page_num=1))
+
 
 
 
@@ -362,14 +419,14 @@ def edit_project():
                 setattr(new_data, column, request.form[column])
         db.session.commit()
         # flash_msg = new_data.firstname + "'s information is updated successfully"
-        flash_msg = "Information updated successfully"
+        flash_msg = "Project information updated successfully"
     flash(flash_msg)
     return redirect(url_for('myadmin.display_projects', page_num=1))
 
 
 # Projects: Delete project
-@bp.route('/delete/project/<id>/', methods=['GET', 'POST'])
-def delete_project(id):
+@bp.route('/delete/project/<int:pid>/', methods=['GET', 'POST'])
+def delete_project(pid):
 
     # If user cannot access admin
     if cannot_access_admin():

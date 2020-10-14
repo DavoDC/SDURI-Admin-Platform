@@ -40,7 +40,8 @@ crossorigin="anonymous"></script>
 
 
 
-            <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
+            <p><a href="{{url_for('myadmin.add_user')}}" 
+                  data-toggle="modal"
                   data-target="#modalAddUser">Add new user</a></p>
             <table id="user_table" 
                    class="table display table-bordered table-hover table-grey">
@@ -118,7 +119,9 @@ crossorigin="anonymous"></script>
             <li class="page-item">
                 <a class="page-link" 
                    href="{{ url_for('myadmin.display_users', page_num=page) }}">
-                    {{ page }}</a></li>
+                    {{ page }}
+                </a>
+            </li>
             {% else %}
             <li class="page-item disabled" id="example_ellipsis">
                 <a href="#" class="page-link">…</a></li>
@@ -137,7 +140,7 @@ crossorigin="anonymous"></script>
         </ul>
     </div>
 </div>
-<!-- </div> -->
+
 
 
 
@@ -157,6 +160,7 @@ crossorigin="anonymous"></script>
 
 
     });
+
 </script>
 
 

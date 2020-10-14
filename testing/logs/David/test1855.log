@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 18:50:03] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 18:50:04] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -

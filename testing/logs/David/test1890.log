@@ -1,0 +1,42 @@
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:28:38] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:28:43] "[32mPOST /myadmin/edit/project/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:28:43] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:28:46] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:28:59] "[32mPOST /myadmin/edit/supervisor/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:28:59] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:08] "[32mPOST /myadmin/edit/supervisor/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:08] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:12] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:13] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:14] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:17] "[37mGET /myadmin/display/supervisors/all/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:18] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:23] "[37mGET /myadmin/display/projects/all/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:26] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:27] "[37mGET /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:33] "[32mPOST /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:33] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:36] "[37mGET /myadmin/display/projects/all/3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:38] "[37mGET /myadmin/display/projects/all/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:41] "[35m[1mGET /myadmin/delete/project/13/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:41] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:41] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:41] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:41] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:41] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:41] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:49] "[32mPOST /myadmin/edit/project/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:49] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:29:51] "[37mGET /myadmin/display/projects/all/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:07] "[37mGET /myadmin/display/projects/all/4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:07] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:10] "[35m[1mGET /myadmin/delete/project/13/ HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:10] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:10] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:10] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:10] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:31:10] "[37mGET /myadmin/delete/project/13/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading

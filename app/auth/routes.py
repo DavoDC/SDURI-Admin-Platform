@@ -1,14 +1,12 @@
 
 #from flask import request
 from app import db
-from app import email
 from app import mail
 from app.auth import bp
 from app.auth.auth_forms import *
 from app.auth.auth_forms import InitialRegistrationForm
 from app.auth.token import *
 from app.forms import LoginForm
-from app.forms import RegistrationForm
 from app.models import *
 from app.models import User
 from datetime import date
@@ -19,7 +17,6 @@ from flask import url_for
 from flask_login import current_user
 from flask_login import login_required
 from flask_login import login_user
-from flask_login import logout_user
 from flask_mail import Message
 
 # @bp.route('/')  # methods=['GET', 'POST'])
@@ -119,11 +116,10 @@ def initial_registration():
                       sender="no-reply@gmail.com")
         msg.html = html
         mail.send(msg)
-        # email.send_email(newUser.email, subject, "hello")
+
         
         flash("Please click the confirmation link sent to the email given below to continue registration processes.", "warning")
-        # return redirect(url_for('auth.initial_registration', form=initialForm, roles=roles )) 
-        # return redirect(url_for('auth.initial_registration')) 
+  
         # url_for in above cases do not show back the provided email so render_template is used as below
         render_template('/auth/initial_registration.html', form=initialForm, roles=roles)
   

@@ -54,11 +54,7 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
     {% endif %}
     {% endwith %}
 </div>
-<!--
-<div>
-  <p><a href="{{url_for('myadmin.add_user')}}" data-toggle="modal"
-          data-target="#modalAddUser">Add new user</a></p>
-</div> -->
+
 
 
 
@@ -83,14 +79,20 @@ integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VT
             <tr>
 
 
+                <!-- Buttons to trigger modals -->
                 <td style="background-color: white">
-                    <!-- Buttons to trigger modals -->
-                    <a href="/myadmin/edit/project/{{ row.id }}" class="btn-xs" data-toggle="modal"
-                       data-target="#modaledit{{row.id}}"><i class="fa fa-pencil-alt"></i></a>
+                    <a href="/myadmin/edit/project/{{ row.id }}" class="btn-xs" 
+                       data-toggle="modal"
+                       data-target="#modaledit{{row.id}}">
+                        <i class="fa fa-pencil-alt"></i>
+                    </a>
                 </td>
+                
                 <td style="background-color: white">
-                    <a href="{{ url_for('myadmin.delete_project', id=row.id) }}  " class="btn-xs"
-                       onclick="return confirm('Are You Sure To Delete ?')"><i class="fa fa-trash-alt"></i></a>
+                    <a href="{{ url_for('myadmin.delete_project', pid=row.id) }}" 
+                       class="btn-xs"
+                       onclick="return confirm('Are You Sure You Want To Delete?')">
+                        <i class="fa fa-trash-alt"></i></a>
                 </td>
 
                 {% for a in attributes %}
