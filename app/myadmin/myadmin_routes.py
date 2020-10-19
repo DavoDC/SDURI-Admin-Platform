@@ -63,7 +63,7 @@ def display_users(page_num):
         # Send back to index
         return redirect(url_for('index'))
     
-    usersFromDB = User.query.paginate(per_page=2, page=page_num, error_out=True)
+    usersFromDB = User.query.paginate(per_page=10, page=page_num, error_out=True)
     # usersFromDB = user_serializer.dump(userFromDB.items)
     return render_template('users.html', title="Administrator", users=usersFromDB)
 
@@ -217,7 +217,7 @@ def display_students(page_num):
     fixedColAttributes = [attributes[i] for i in fixedCol]
     colNamesR = colNames[2:6] + colNames[8:]
     attributesR = attributes[2:6] + attributes[8:]
-    studentsFromDB = Student.query.paginate(per_page=2, page=page_num, error_out=True)
+    studentsFromDB = Student.query.paginate(per_page=10, page=page_num, error_out=True)
   
     # usersFromDB = user_serializer.dump(userFromDB.items)
     return render_template('t_students.html', 
@@ -280,7 +280,7 @@ def display_supervisors(page_num):
     for supervisor in supervisors: 
         superNames.append((User.query.filter_by(id=supervisor.user_id).first()).name)
 
-    supersFromDB = Supervisor.query.paginate(per_page=2, page=page_num, error_out=True)
+    supersFromDB = Supervisor.query.paginate(per_page=10, page=page_num, error_out=True)
     nameDic = {}
     for row in supersFromDB.items:
         nameDic[row.user_id] = User.query.filter_by(id=row.user_id).first().name 
@@ -384,7 +384,7 @@ def display_projects(page_num):
     oriAttributes = attributes # For modaledit_project.html
     colNames = colNames[2:5] + colNames[:2] + colNames[5:]
     attributes = attributes[2:5] + attributes[:2] + attributes[5:]
-    projectsFromDB = Project.query.paginate(per_page=2, page=page_num, error_out=True)
+    projectsFromDB = Project.query.paginate(per_page=10, page=page_num, error_out=True)
   
     # supersFromDB = user_serializer.dump(userFromDB.items)
     return render_template('t_projects.html', 
