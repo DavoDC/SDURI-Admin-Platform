@@ -123,7 +123,6 @@ def resend_confirmation():
 
     # token = generate_confirmation_token(use.email)
     token = generate_confirmation_token(current_user.email)
-    print("...user.email ", current_user.email)
     confirm_url = url_for('auth.confirm_email', token=token, _external=True)
     html = render_template('/auth/activate.html', confirm_url=confirm_url)
     subject = "Please confirm your email"
@@ -142,7 +141,6 @@ def initial_pwd_setting(token):
     form = InitialPasswordNameForm()
     # Get email from the token
     email_fr_token = confirm_token(token)
-    print("email_fr_token: ", email_fr_token)
     # user = User.query.filter_by(email=current_user.email).first_or_404()
     user = User.query.filter_by(email=email_fr_token).first_or_404()
     # if user.email == email_fr_token:
@@ -192,7 +190,6 @@ def initial_pwd_setting(token):
 
 
         flash(flash_msg, flash_msg_cat)
-        print(flash_msg)
         return render_template('index.html')
 
     # Need to get password and name, otherwise cannot go to user home page

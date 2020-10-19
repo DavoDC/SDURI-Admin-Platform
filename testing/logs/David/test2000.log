@@ -1,0 +1,13 @@
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:45] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:45] "[37mGET /student/Bob%28St%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:47] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:47] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:48] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:51] "[37mGET /student/Jim%28St%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:53] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:53] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:54] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:42:02] "[37mPOST /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:42:27] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:42:29] "[37mGET /index HTTP/1.1[0m" 200 -

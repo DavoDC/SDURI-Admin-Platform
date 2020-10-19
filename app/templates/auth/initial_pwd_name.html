@@ -2,28 +2,39 @@
 {% block content %}
 <div class="container">
     <div class="row">
+	
         <div class="col-md-5">
-            <br>
+      
         </div>
-        <div class="col-md-5">
-            <p class="text-info">It is highly recommended to use a strong password!!!</p>
+		
+        <div class="col-md-5
+		
+            
             <form class="form-signin" role="form" method="post" action="">
 
                 {{ form.csrf_token }}
+				
+				<h2> Registration: </h2>
+			
 
                 <p>
                     <!-- {{ form.role.label }}<br> -->
 
+					<b> Account Type: </b>
                     <select name="role" id="user-role">
                         <option value="" selected data-default>Select Account Type</option>
                         {% for role in roles %}
                         <option value="{{ role }}">{{ role }}</option>
                         {% endfor %}
                         <select>
+						
+							
                             {% for error in form.role.errors %}
                             <span style="color: red;">[{{ error }}]</span>
                             {% endfor %}
                             </p>
+							
+							<b> Username: </b>
                             <p>
                                 {{ form.name(placeholder="Name") }}
                                 <span class="error">
@@ -34,6 +45,10 @@
                                     {% endif %}
                                 </span>
                             </p>
+							
+							<b> Password: </b>
+							<p class="text-info">Please use a strong password with at least 6 characters.
+							</p>
                             <p>
                                 {{ form.password(placeholder="Password") }}
                                 <span class="error">
@@ -55,8 +70,10 @@
                                     {% endif %}
                                 </span>
                             </p>
-                            <button class="btn btn-success" type="submit">Submit Password!</button>
-                            <br /><br />
+                            <button class="btn btn-success" type="submit">Submit</button>
+                            <br><br>
+							<br><br>
+							<br><br>
                             </form>
                             </div>
                             </div>

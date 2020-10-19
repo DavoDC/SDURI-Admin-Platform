@@ -284,7 +284,6 @@ def display_supervisors(page_num):
     nameDic = {}
     for row in supersFromDB.items:
         nameDic[row.user_id] = User.query.filter_by(id=row.user_id).first().name 
-        print(User.query.filter_by(id=row.user_id).first().name)
 
     return render_template('t_supervisors.html', 
                            title="Administrator", 
@@ -380,7 +379,7 @@ def display_projects(page_num):
     col_names = Project.__table__.columns
     colNames = [i.name.upper() for i in col_names] [:] # Uppercase columns' name
     attributes = [i.name for i in col_names][:] # Columns' name
-    print(attributes)
+    
     oriAttributes = attributes # For modaledit_project.html
     colNames = colNames[2:5] + colNames[:2] + colNames[5:]
     attributes = attributes[2:5] + attributes[:2] + attributes[5:]

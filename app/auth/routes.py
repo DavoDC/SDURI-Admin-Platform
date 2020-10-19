@@ -118,7 +118,7 @@ def initial_registration():
         mail.send(msg)
 
         
-        flash("Please click the confirmation link sent to the email given below to continue registration processes.", "warning")
+        flash("Please click the confirmation link sent to your email to continue the registration process.", "warning")
   
         # url_for in above cases do not show back the provided email so render_template is used as below
         render_template('/auth/initial_registration.html', form=initialForm, roles=roles)
