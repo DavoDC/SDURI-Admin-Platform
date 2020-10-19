@@ -3,11 +3,9 @@
 from app import db
 from app.models import *
 from app.models import User
-from collections import defaultdict
 from datetime import date
 from flask import flash
 from flask import redirect
-from flask import render_template
 from flask import request
 from flask import url_for
 from flask_login import current_user
@@ -331,8 +329,16 @@ def save_file(file_field_name, student):
         # If filename is not empty
         if filename != '':
 
-            # Save file to path
+            # Path to folder for saving files
             path = "app/static/user-files"
+            
+            # If user file folder does not exist
+            if not (os.path.isdir(path)):
+                
+                # Create it
+                os.makedirs(path)
+            
+            # Save file to folder
             uploaded_file.save(os.path.join(path, filename))
 
             # Save file name in database

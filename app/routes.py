@@ -10,6 +10,7 @@ from app.routing import supervisor
 from flask import flash
 from flask import redirect
 from flask import render_template
+from flask import render_template_string
 from flask import url_for
 from flask_login import current_user
 from flask_login import login_required
@@ -22,6 +23,25 @@ from json2html import *
 @app.route('/index')
 def index():
     
+    # Check for database file
+    dbfile = None
+    try:
+        # Try to open and close
+        dbfile = open("sduri.db", "r")
+        dbfile.close()
+    except IOError:
+        # If database file does not exist
+        # Notify
+        message = "\nPlease initialize the database first! "
+        message += "\n<br>Please use the commands:"
+        message += "\n<br>1. 'flask db init'"
+        message += "\n<br>2. 'flask db migrate -m \"Creating tables\"'"
+        message += "\n<br>3. 'flask db upgrade'"
+        message += "\n<br>Ensure that the SDURI.db file is created"
+        print(message)
+        return render_template_string(message)
+       
+       
     # Add admin accounts (once)
     utils.add_admin_accounts()
     
