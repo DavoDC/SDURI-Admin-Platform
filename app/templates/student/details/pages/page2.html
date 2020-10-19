@@ -1,0 +1,40 @@
+
+<!-- Extend page template -->
+{% extends "student/details/templ/page.html" %}
+
+{% block questions %}
+
+<!-- Sub heading -->
+<label class="personal-details">Personal Details</label>
+
+<h4> Name: </h4>
+<label for="ppname">a. Full Name (as it appears in your passport):</label>
+<br>
+<input type="text" id="ppname" name="ppname" value="" required>
+<br>
+
+<label for="surname">b. Surname (in English):</label>
+<br>
+<input type="text" id="surname" name="surname" value="" required>
+<br>
+
+<label for="firstname">c. First name (in English):</label>
+<br>
+<input type="text" id="firstname" name="firstname" value="" required>
+<br>
+
+<label for="prefname">d. Preferred name:</label>
+<br>
+<input type="text" id="prefname" name="prefname" value="" required>
+<br>
+
+<!--Note: No 'required' because this is optional!-->
+<label for="charname">
+    e. Name in Chinese/Japanese/Korean/etc characters (optional):
+</label>
+<br>
+<input type="text" id="charname" name="charname" value="">
+<br>
+
+
+{% endblock %}

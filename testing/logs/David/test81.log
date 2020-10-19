@@ -1,0 +1,15 @@
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:52:12] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:52:32] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:52:36] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:52:36] "[37mGET /student/John HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:52:42] "[37mGET /student-application HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:52:44] "[37mGET /student-application/pg1outof9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:58:26] "[37mGET /student-application/pg1outof9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Sep/2020 09:58:26] "[37mGET /static/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader

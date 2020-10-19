@@ -1,0 +1,90 @@
+
+{% extends "templ/proj-list.html" %}
+
+<!--Heading-->
+{% block heading %}
+Manage Your Projects
+{% endblock %}
+
+<!--Table headings-->
+{% set table_headings = 
+[
+"Title", 
+"Keywords",
+"View",
+"Edit",
+"View Applications"
+] 
+%}
+
+<!--Table rows-->
+{% block table_rows %}
+
+<!--Add projects as rows-->
+{% for project in projects %}
+<tr class="project-row">
+
+    <!--Title-->
+    <td class="project-td">
+        {{ project.title }}
+    </td>
+
+    <!--Keywords-->
+    <td class="project-td">
+        {{ project.keywords }}
+    </td>
+
+    <!--View button -->
+    {% include "templ/view-button.html" %}
+
+    <!--Edit button-->
+    <td class="project-td" style="text-align: center;">
+        <a class="hover-button" 
+           href="{{ url_for('supervisor_edit_project', 
+           username = current_user.name,
+           pid=project.id
+           ) }}">
+            Edit
+        </a>
+    </td>
+
+    <!--Applications button-->
+    <td class="project-td" style="text-align: center;">
+        <a class="hover-button" 
+           href="{{ url_for('supervisor_view_appl', 
+           username = current_user.name,
+           pid=project.id
+           ) 
+           }}">
+            View Applications
+        </a>
+    </td>
+</tr>
+{% endfor %}
+
+{% endblock %}
+
+
+
+<!--Under table-->
+{% block under_table %}
+
+
+
+{% endblock %}
+
+
+<!--No projects message-->
+{% block no_projects %}
+<br>
+<p>
+    You have not added/created any projects yet.
+    <br>
+    <br>
+</p>
+<br>
+{% endblock %}
+
+
+<!--Set link for back button-->
+{% set backlink %}{{ url_for('index') }}{% endset %}

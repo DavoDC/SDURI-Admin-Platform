@@ -1,0 +1,85 @@
+
+{% extends "templ/form-page.html" %}
+
+<!-- Heading -->
+{% block heading %}
+<h4>Please select your faculty, and then your specific school</h4>
+
+<!--Load details into fields for editing-->
+{% with dict=super_dict %}
+{% include "templ/load-fields.html" %}
+{% endwith %}
+
+{% endblock %}
+
+<!--Questions-->
+{% block questions %}
+
+{% with faculty="Faculty of Science",
+schools=[
+"School of Earth Sciences",
+"School of Human Sciences",
+"School of Molecular Sciences",
+"School of Biological Sciences",
+"School of Psychological Science",
+"School of Agriculture and Environment" ] %}
+{% include "supervisor/details/fac-sel-templ.html" %}
+{% endwith %}
+
+
+{% with faculty="Faculty of Engineering and Mathematical Sciences",
+schools=[
+"Engineering",
+"Oceans Graduate School",
+"Physics, Mathematics and Computing" ] %}
+{% include "supervisor/details/fac-sel-templ.html" %}
+{% endwith %}
+
+
+{% with faculty="Faculty of Arts, Business, Law and Education",
+schools=[
+"Law School",
+"Business School",
+"School of Design",
+"Conservatorium of Music",
+"School of Social Sciences",
+"Graduate School of Education" ] %}
+{% include "supervisor/details/fac-sel-templ.html" %}
+{% endwith %}
+
+
+{% with faculty="Faculty of Health and Medical Sciences ",
+schools=[
+"Dental School",
+"Medical School",
+"School of Allied Health",
+"School of Biomedical Science",
+"School of Population and Global Health" ] %}
+{% include "supervisor/details/fac-sel-templ.html" %}
+{% endwith %}
+
+<!--Show schools of faculty-->
+<script type="text/javascript">
+    function showSchools(fidS)
+    {
+        // For all div elements (except 0th)
+        var divs = document.getElementsByTagName('div');
+        for (i = 1; i < divs.length; i++) {
+            // Get div
+            var curDiv = divs[i];
+
+            // If div id is ours
+            if (curDiv.id === fidS + "_schools") {
+
+                // Show it
+                curDiv.style.display = "inline";
+            } else {
+
+                // Else if it is not ours, hide it
+                curDiv.style.display = "none";
+            }
+        }
+    }
+</script>
+
+{% endblock %}

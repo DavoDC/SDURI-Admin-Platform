@@ -1,0 +1,205 @@
+/* style.css */
+
+/*Headings*/
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 48px;
+    color: black;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 42px;
+    color: black;
+}
+
+h3 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 36px;
+    color: black;
+}
+
+h4 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 24px;
+    color: black;
+}
+
+h5 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 18px;
+    color: black;
+}
+
+button {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: large;
+    color: black;
+}
+
+/*Drop down menus*/
+select {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    padding: 8px 8px;
+    font-size: 18px;
+}
+
+/*Text area*/
+textarea {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    width: 50%;
+    padding: 8px 8px;
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+/*Text and password fields*/
+input[type=text], input[type=password] {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    width: 35%;
+    padding: 8px 8px;
+    margin: 8px 0;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+/*Various input types*/
+input[type="date"], input[type="file"], input[type="number"] {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+/*Action button table*/
+.action-button-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+/*Action buttons*/
+button[type="action"] {
+    width: 40%;
+}
+
+/*Title button*/
+.title-button {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #2A4199 !important;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    transition: all 0.8s ease 0s;
+}
+
+/*Change title button on hover*/
+.title-button:hover{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 21px;
+    color: #2A4199 !important;
+    border-radius: 12px;
+    transition: all 0.4s ease 0s;
+}
+
+/*Yellow hover buttons*/
+.hover-button, input[type="submit"] {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    border-radius: 4px;
+    background: #D9AC28 !important;
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/*Grey disabled hover button*/
+.hover-button-disabled {
+
+    /*Different*/
+    pointer-events: none;
+    cursor: default;
+    background: #908c82 !important;
+
+    /*Same*/
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    border-radius: 4px;
+
+    text-decoration: none;
+    padding: 10px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/*Make hover buttons darker on hover*/
+.hover-button:hover{
+    background: #b18d20 !important;
+}
+
+/*Personal details subheading for student details*/
+.personal-details {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: black;
+}
+
+/*Details label cell (td) adjustment*/
+.detLabel {
+    width:48%;
+}
+
+/*Details field cell (td) adjustment*/
+.detField {
+    width:55%;
+    padding: 4px;
+}
+
+/*Details input (within td) adjustment*/
+.detInput {
+    width:200%;
+    font-size: 18px;
+    padding: 4px;
+}
+
+/*Project table styling*/
+.project-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/*Highlight row on hover*/
+.project-table .project-row:hover{
+    background-color: rgba(173, 216, 230, 0.637);
+}
+
+/*Shade even rows*/
+.project-row:nth-child(even) {background-color: #f2f2f2;}
+
+/*Project table heading*/
+.project-th {
+    text-align: center;
+    padding: 8px;
+}
+
+/*Project row*/
+.project-td {
+    text-align: left;
+    padding: 12px;
+}
+

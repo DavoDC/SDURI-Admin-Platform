@@ -1,0 +1,33 @@
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:01:28] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:01:31] "[32mPOST /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:01:31] "[37mGET /supervisor/SupervisorTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:01:32] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:01:45] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:01:47] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:01:48] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:18] "[32mPOST /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:18] "[37mGET /supervisor/SupervisorTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:19] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:31] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:31] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:31] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:32] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:54] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:02:54] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:14] "[32mPOST /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:14] "[37mGET /supervisor/SupervisorTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:18] "[32mPOST /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:18] "[37mGET /supervisor/SupervisorTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:21] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:24] "[32mPOST /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:24] "[37mGET /supervisor/SupervisorTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:26] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:26] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:28] "[37mGET /supervisor/SupervisorTest/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:30] "[32mPOST /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:30] "[37mGET /supervisor/SupervisorTest HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 17:03:32] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

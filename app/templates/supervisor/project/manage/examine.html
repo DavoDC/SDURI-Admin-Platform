@@ -1,0 +1,202 @@
+
+{% extends "base.html" %}
+
+<!-- Heading -->
+{% block content %}
+<br>
+
+<h4>
+    Basic Student information of {{ this_student.ppname }}
+</h4>
+
+
+
+<!--Student information-->
+
+<table>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Title: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.title }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Preferred name: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.prefname }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Gender: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.gender }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Date of Birth: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.dob }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Country of Birth: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.birth_cntry }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Country of Citizenship: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.citizen_cntry }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> University Name: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.uni_name }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> University Major(s): </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.uni_majors }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> GPA: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.uni_gpa }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> Years of University study completed: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.uni_years }}
+        </td>
+    </tr>
+
+    <tr class="project-row">
+        <td class="project-td">
+            <b> University Awards: </b>
+        </td>
+        <td class="project-td">
+            {{ this_student.uni_awards }}
+        </td>
+    </tr>
+
+</table>
+
+<h4>
+    Long Answer Responses
+</h4>
+
+<b>
+    Outline any previous research or laboratory experience that you have.
+    <br>
+    Please name that research group and the leader of that research group at your home university.
+</b>
+
+<p>
+    {{this_student.longQ1}}
+</p>
+
+<b>
+    Explain why your previous experience makes you suited to this project?
+    <br>
+    In particular, address any prerequisites that have been outlined by the supervisor.
+</b>
+
+<p>
+    {{this_student.longQ2}}
+</p>
+
+<b>
+    Why are you interested in this program?
+</b>
+
+<p>
+    {{this_student.longQ3}}
+</p>
+
+<b>
+    What are your future career plans?
+</b>
+
+<p>
+    {{this_student.longQ4}}
+</p>
+
+<!--Accept or Deny drop down-->
+
+<h4>
+    <a class="hover-button" 
+       id="accept-button"
+       href="{{ url_for('accept_confirm',
+       username = current_user.name, 
+       sid = this_student.id,
+       pid = pid
+       ) 
+       }}">
+        Accept
+    </a>
+</h4>
+
+<h4>
+    <a class="hover-button" 
+       id="deny-button"
+       href="{{ url_for('deny_confirm', 
+       username = current_user.name,
+       sid = this_student.id,
+       pid = pid
+       ) 
+       }}">
+        Deny
+    </a>
+</h4>
+
+<!--name HTML attribute would be proj1_accepted or proj2_accepted-->
+
+<!--Submit button automatically at bottom-->
+<h4>
+    <a class="hover-button" 
+       id="back-button"
+       href="{{ url_for('supervisor_view_appl', 
+       username = current_user.name,
+       pid=pid
+       ) 
+       }}">
+        Back
+    </a>
+</h4>
+
+{% endblock %}

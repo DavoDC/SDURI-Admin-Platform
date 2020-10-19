@@ -1,0 +1,7 @@
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 15:08:00] "[37mGET /supervisor-application HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 15:08:04] "[37mGET /supervisor-application/question1outof3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 15:08:09] "[37mGET /supervisor-application/question1outof3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 15:08:10] "[37mGET /supervisor-application/question2outof3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 15:08:11] "[37mGET /supervisor-application/question3outof3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 15:08:11] "[37mGET /supervisor-application/question2outof3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 15:08:12] "[37mGET /supervisor-application HTTP/1.1[0m" 200 -

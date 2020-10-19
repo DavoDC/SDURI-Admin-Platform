@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<b>
+    Are you sure you want to <b style="color: red;">DENY</b> the application from {{ sname }} for the project {{ pname }} ?
+    <br>
+    This decision will be final.
+</b>
+
+<h4>
+    <a class="hover-button" 
+       id="deny-button"
+       href="{{ url_for('deny',
+       username = current_user.name, 
+       sid = sid,
+       pid = pid
+       ) 
+       }}">
+        Confirm
+    </a>
+</h4>
+
+<h4>
+    <a class="hover-button" 
+       id="cancel-button"
+       href="{{ url_for('supervisor_examine',
+       username = current_user.name, 
+       pid=pid,
+       student_id=sid
+       ) 
+       }}">
+        Cancel
+    </a>
+</h4>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:31:23] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:31:33] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:31:53] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:33:39] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:33:45] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:33:51] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:33:55] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:34:55] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 22:35:06] "[37mGET /supervisor/Dave/project/manage/view/appl/9 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading

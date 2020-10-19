@@ -1,0 +1,9 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:47:08] "GET /myadmin/ HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:47:12] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:47:54] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:48:57] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:48:59] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:49:25] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:50:11] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 20:50:14] "GET /myadmin/display/projects/all/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/mnt/c/Program Files (x86)/Download/20190823 Move pak/2020 Sem 2/cits3200/project/SDURI-Admin-Platform-zatmasakpen/app/myadmin/myadmin_routes.py', reloading

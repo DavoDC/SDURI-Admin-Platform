@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 21:57:45] "[37mGET /student-application HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2020 21:57:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

@@ -1,0 +1,42 @@
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 23:59:41] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 23:59:44] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 23:59:46] "[32mGET /myadmin/delete/1/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 23:59:46] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 23:59:48] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 23:59:59] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:00] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:01] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:02] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:08] "[37mPOST /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:29] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:35] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:51] "[32mPOST /admin/user/delete/ HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:51] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:53] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:00:54] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:01:04] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:01:07] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:01:08] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:01:10] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:01:11] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:01:18] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:01:33] "[37mPOST /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:04] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:05] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:07] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:08] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:08] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:08] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:09] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:14] "[37mGET /auth/initial-pwd-setting/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HazQ.lc1OYPqCNoXLTcVA-CY0WRh9zxo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:19] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:27] "[37mPOST /auth/initial-pwd-setting/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4HazQ.lc1OYPqCNoXLTcVA-CY0WRh9zxo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:36] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:42] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:02:55] "[37mGET /auth/password/forgot HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:03:02] "[32mPOST /auth/password/forgot HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:03:02] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:03:48] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading

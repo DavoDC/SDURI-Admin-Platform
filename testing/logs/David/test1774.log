@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:47:46] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 11:47:46] "[37mGET /supervisor/John%28Sup%29/landing HTTP/1.1[0m" 200 -

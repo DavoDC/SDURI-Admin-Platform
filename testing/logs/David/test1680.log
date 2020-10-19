@@ -1,0 +1,11 @@
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:19:00] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:19:19] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:19:19] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:19:40] "[37mGET /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:19:40] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:20:00] "[37mPOST /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:20:10] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading

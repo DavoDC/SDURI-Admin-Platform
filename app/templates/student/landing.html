@@ -1,0 +1,15 @@
+
+
+<!--Add user page with buttons-->
+{% with good_det=good_det,
+buttons=
+[ 
+("Update Details", "details"), 
+("Explore Projects", "project/explore"),
+("Manage Project Applications", "project/manage"),
+]
+%}
+{% include "templ/user-page.html" %}
+{% endwith %}
+
+

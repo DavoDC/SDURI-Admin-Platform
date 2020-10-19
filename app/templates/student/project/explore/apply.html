@@ -1,0 +1,120 @@
+
+{% extends "templ/form-page.html" %}
+
+<!-- Heading -->
+{% block heading %}
+<h3> Apply for '{{ project.title }}' </h3>
+{% endblock %}
+
+<!--Questions-->
+{% block questions %}
+
+<!--Get HTML name prefix-->
+{% set namep %}proj{{ proj_slot }}_{% endset %}
+
+
+<!--Set invisibly and automatically-->
+<!--Project ID-->
+<input
+    name="{{ namep }}id"
+    value="{{ project.id }}"
+    type="hidden">
+
+<!--Acceptance-->
+<input
+    name="{{ namep }}accepted"
+    value="Pending"
+    type="hidden">
+
+
+
+<!--Preference-->
+<h4> Is this project your first or second preference? </h4>
+<p>
+    You can select up to 2 different projects
+    from the same or different supervisor(s).
+    <br>
+    You are more likely to get your first preference,
+    but getting your preferences is not guaranteed.
+</p>
+<select name="{{ namep }}pref" id="prefsel" required>
+    <option value="">
+        None
+    </option>
+    <option value="First" id="First">
+        First Preference
+    </option>
+    <option value="Second" id="Second">
+        Second Preference
+    </option>
+</select>
+
+
+<!--Adjust preference availability-->
+<script>
+
+    // Get prefstr
+    var prefstr = "{{ prefstr }}";
+
+    // When page loads
+    window.onload = function () {
+
+        // Disable prefs if needed
+        disablePrefSelIfNeeded("First");
+        disablePrefSelIfNeeded("Second");
+    };
+
+    /**
+     * If prefence has been selected, disable in preference selector
+     * @param {type} pref
+     * @return {undefined}
+     */
+    function disablePrefSelIfNeeded(pref) {
+
+        // If we have preference
+        if (prefstr.includes(pref))
+        {
+            // Get option
+            var opt = document.getElementById(pref);
+
+            // Disable option
+            opt.disabled = true;
+
+            // Change text
+            opt.innerHTML = opt.innerHTML + " (Already Selected)";
+
+            // Remove None option
+            var prefsel = document.getElementById("prefsel");
+            prefsel.remove(0);
+        }
+    }
+
+</script>
+
+
+
+
+
+
+<!--Duration-->
+<h4> How long you are planning to do the project for? </h4>
+<p>
+    If you wish to do beyond the standard 8 weeks,
+    please ensure that you have contacted the supervisor beforehand.
+</p>
+<select name="{{ namep }}dur" id="dur" required>
+    <option value="">
+        None
+    </option>
+    <option value="8 Weeks">
+        8 Weeks (Standard)
+    </option>
+    <option value="8 to 12 Weeks">
+        8 - 12 Weeks
+    </option>
+</select>
+
+<br>
+<br>
+
+{% endblock %}

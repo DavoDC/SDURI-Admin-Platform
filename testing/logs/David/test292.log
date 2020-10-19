@@ -1,0 +1,2 @@
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:11:28] "[32mGET / HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 14:11:28] "[37mGET /students/StudentTest HTTP/1.1[0m" 200 -

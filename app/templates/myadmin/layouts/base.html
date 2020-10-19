@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        {% block head %}
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+
+
+        <!-- Specific Page CSS goes HERE -->
+        {% block stylesheets %}
+
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/static/admin-assets/admin_css.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+        <!--Adds favicon to every page-->
+        <link rel="shortcut icon" 
+              href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+        <!--Applies style.css to every page-->
+        <link rel="stylesheet" 
+              href="{{ url_for('static', filename='css/style.css') }}">
+
+        <!--Logo-->
+        <img src="{{ url_for('static', filename='images/uwa_logo.png') }}" 
+             alt="UWA Logo" 
+             style="max-width:15%; position:absolute;" >
+
+        <!--Global header-->
+        <div style="text-align: center;">
+            <h1>
+                <a class="title-button" href="{{ url_for('index') }}">
+                    Summer Down Under : Research Internship</a>
+            </h1>
+        </div>
+
+    {% endblock stylesheets %}
+
+
+
+
+    <!--Title block-->
+    <title>{% block title %}{% endblock %} </title>
+
+
+    {% endblock head %}
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+<body style="margin: auto; padding: 50px;">
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" 
+                       href="{{url_for('myadmin.admin_home')}}">
+                        <i class="fa fa-home fa-fw"></i> Home</a>
+
+                    <a class="navbar-brand"
+                       href="{{url_for('myadmin.display_users', page_num=1)}}">
+                        <i class="fa fa-users fa-fw"></i> Users</a>
+
+                    <a class="navbar-brand"
+                       href="{{url_for('myadmin.display_students', page_num=1)}}">
+                        <i class="fa fa-info-circle fa-fw"></i> Students</a>
+
+                    <a class="navbar-brand"
+                       href="{{url_for('myadmin.display_supervisors', page_num=1)}}">
+                        <i class="fa fa-info-circle fa-fw"></i> Supervisors</a>
+
+                    <a class="navbar-brand"
+                       href="{{url_for('myadmin.display_projects', page_num=1)}}">
+                        <i class="fa fa-info-circle fa-fw"></i> Projects</a>
+
+                    <a class=""
+                       href="{{url_for('index').replace("index", "admin")}}"
+                       target="_blank">
+                        <i class="fa fa-table fa-fw"> </i> Databases</a>
+
+
+                    <!--User profile drop down-->
+                    <div class="pull-right" style="float: right;">
+
+                        <ul class="dropdown btn">
+
+                            <a class="dropdown-toggle" data-toggle="dropdown" 
+                               href="#">
+                                <i class="fa fa-user fa-fw" style='color:green'></i>
+                                {{ current_user.name }}
+                                <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a class="btn btn-default btn-sm" 
+                                       href="{{url_for('logout')}}">
+                                        <i class="fa fa-sign-out fa-fw"></i>
+                                        Sign Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Page Content -->
+    <div class="content" > 
+        {% block content %}
+        <h3> Hi, {{current_user.name}}</h3>
+        {% endblock content %}  
+        <footer>
+            {% include 'includes/footer.html' %}
+        </footer>
+    </div>
+
+
+
+
+
+
+    <!-- Specific Page JS goes HERE -->
+    {% block javascripts %}
+
+    <!-- The following six will be ok -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" ></script>
+    <!-- The above six will be ok -->
+
+
+
+
+    <!-- Testing with the following -->
+    <!--     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script> 
+         <script src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script> 
+         <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> 
+         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap4.min.js"></script> 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script> 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script> 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script> 
+         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script> 
+         <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>   -->
+
+
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+
+    <script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.5.2/js/dataTables.colReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js"></script>
+    <!-- Testing with the above -->
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <script>
+        if ($('.group_call_to_action_aside').is(':empty')) {
+            $('.group_call_to_action_aside').remove();
+        }
+    </script>
+
+    {% endblock javascripts %}
+
+</body>
+
+</html>

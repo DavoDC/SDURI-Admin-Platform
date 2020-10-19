@@ -4,13 +4,19 @@
 .vscode
 .idea
 
+# Logging
+testing/config_name.txt
+
+# User files
+app/static/user-files
+
 # Virtual environment
 venv
-
 # Packages
 __pycache__
 app/__pycache__
 app/*pycache*
+*.pyc
 flask 
 
 # Databae
@@ -24,4 +30,3 @@ app/__init__.pyc
 app.db-journal
 test.html
 dataLoad.py
-

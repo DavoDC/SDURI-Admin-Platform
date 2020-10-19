@@ -1,0 +1,11 @@
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 10:45:04] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 10:45:07] "[37mGET /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 10:45:07] "[36mGET /admin/static/vendor/select2/select2x2.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 10:45:09] "[32mPOST /admin/project/new/?url=%2Fadmin%2Fproject%2F HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 10:45:09] "[37mGET /admin/project/ HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 10:45:11] "[37mGET /student/Dave/project/list HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Oct/2020 10:45:11] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

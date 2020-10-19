@@ -1,0 +1,9 @@
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:40] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:40] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:43] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:43] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:44] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:46] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:46] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:52:49] "[37mGET /index HTTP/1.1[0m" 200 -

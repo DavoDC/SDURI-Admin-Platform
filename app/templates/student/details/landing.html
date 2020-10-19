@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+
+    <!-- Title -->
+    <h1>Student Application Page</h1>
+
+    <!-- Body -->
+    <h4>Welcome the application page for students.</h4>
+    <h4>Please press "Start" and answer the questions that follow.</h4>
+
+    <!-- Extra Info for Students -->
+    <p>
+        <b> Note: </b> Make sure you have your transcript
+        and CV ready for submission.
+        You will not be able to complete this application without uploading
+        them near the end of this application.
+        Details can be found
+        <a target="_blank" href=
+           "https://www.web.uwa.edu.au/global-engagement/international-networks/"> 
+            here</a>.
+    </p>
+
+    <!--Rule-->
+    <hr>
+
+    <!-- Start button -->
+    <form action="{{ url_for('student_page', 
+          username = current_user.name, 
+          page_no = 1) }}">
+        <button type="submit" class="hover-button">Start</button>
+    </form>
+
+    <!--Back button-->
+    <form action="{{ url_for('index') }}">
+        <button class="hover-button">Back</button>
+    </form>
+
+</body>
+
+<br>
+<br>
+<br>
+{% endblock %}
+
