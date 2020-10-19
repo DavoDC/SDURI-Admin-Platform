@@ -1,0 +1,79 @@
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:39:32] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:39:32] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:39:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:39:33] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:39:35] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:39:38] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:42:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:42:26] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:15] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:15] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:16] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:18] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:18] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:20] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:20] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:22] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:23] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:26] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:30] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:35] "[37mGET /student/Jim%28St%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:36] "[37mGET /student/Jim%28St%29/details HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:37] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:37] "[37mGET /student/Jim%28St%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:38] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:38] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:42] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:45] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:46] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:43:46] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:10] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:10] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:15] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:15] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:17] "[37mGET /myadmin/home HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:18] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:24] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:25] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:25] "[37mGET /myadmin/display/projects/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:28] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:28] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:29] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:33] "[37mGET /supervisor/John%28Sup%29/landing HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:34] "[32mGET /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:34] "[32mGET /index HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:35] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:35] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:36] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:38] "[32mPOST /login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:38] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:44] "[37mGET /myadmin/home?username=Admin HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:44] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:45] "[37mGET /myadmin/home HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:46] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:47] "[37mGET /myadmin/display/students/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:44:48] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:45:13] "[37mGET /myadmin/display/supervisors/all/1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:45:13] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:46:01] "[32mGET /logout HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 12:46:01] "[37mGET /index HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
+INFO:werkzeug: * Restarting with windowsapi reloader
