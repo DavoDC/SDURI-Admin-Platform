@@ -1,3 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 19:06:44] "[37mGET /student-application HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 19:06:44] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 19:06:44] "[37mGET /static/favicon.ico HTTP/1.1[0m" 200 -

@@ -1,5 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:49:48] "[37mGET /login HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:49:50] "[32mPOST /login HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:49:50] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:49:57] "[37mGET /supervisor/StudentTest HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:50:01] "[37mGET /supervisor-faculty HTTP/1.1[0m" 200 -

@@ -1,9 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:17:28] "[37mGET /login HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:17:30] "[37mGET /auth/password/forgot HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:17:36] "[32mPOST /auth/password/forgot HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:17:36] "[37mGET /index HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:18:17] "[37mGET /admin/user/ HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\auth_routes.py', reloading

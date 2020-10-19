@@ -1,7 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:52:12] "[32mPOST /index HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:52:12] "[37mGET /supervisor/SupervisorTest HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 16:52:15] "[37mGET /admin/supervisor/?sort=1 HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading

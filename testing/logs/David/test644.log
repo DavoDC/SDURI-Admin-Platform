@@ -1,4 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:25] "[32mPOST /supervisor/SupervisorTest/project/add HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:25] "[32mGET /index HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:25] "[37mGET /supervisor/SupervisorTest/landing HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [30/Sep/2020 19:57:27] "[37mGET /supervisor/SupervisorTest/project/add HTTP/1.1[0m" 200 -

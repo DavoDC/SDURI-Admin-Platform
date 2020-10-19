@@ -50,5 +50,6 @@ from app.auth import auth_models
 from app.myadmin import myadmin_models
 
 # Start logging
-logging.start_logging()
+# DISABLED: Only for testing/development!
+#logging.start_logging()
 

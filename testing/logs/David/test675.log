@@ -1,3 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 21:18:51] "[37mGET /supervisor/SupervisorTest/landing HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 21:18:51] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [05/Oct/2020 21:18:52] "[37mGET /supervisor/SupervisorTest/project/manage HTTP/1.1[0m" 200 -

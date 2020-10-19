@@ -1,8 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:35:19] "[32mPOST /register HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:35:19] "[37mGET /login HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:35:26] "[32mPOST /login HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 09:35:26] "[37mGET /student/StudentTest HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\forms.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\forms.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\forms.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\forms.py', reloading

@@ -1,3 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:29:59] "[37mPOST /auth/initial-registration HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\auth\\routes.py', reloading

@@ -1,2 +1,0 @@
-INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-INFO:werkzeug:127.0.0.1 - - [12/Oct/2020 21:06:42] "[37mGET /supervisor/22477478%40student.uwa.edu.au/project/manage/view/appl/11 HTTP/1.1[0m" 200 -

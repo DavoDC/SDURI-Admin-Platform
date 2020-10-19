@@ -1,8 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 09:12:56] "[37mPOST /students/StudentTest/details/page2 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 09:12:58] "[37mGET /students/StudentTest/details/page1 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 09:13:01] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Sep/2020 09:13:01] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\models.py', reloading

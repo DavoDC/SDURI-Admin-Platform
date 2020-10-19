@@ -1,9 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:27:35] "[37mGET /login HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:27:36] "[32mPOST /login HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:27:36] "[37mGET /student/Bob%28St%29/landing HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:27:37] "[37mGET /student/Bob%28St%29/details HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 21:27:38] "[37mGET /student/Bob%28St%29/details/page1 HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\__init__.cpython-38.pyc', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\forms.cpython-38.pyc', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\models.cpython-38.pyc', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\__pycache__\\routes.cpython-38.pyc', reloading

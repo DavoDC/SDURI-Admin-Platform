@@ -1,9 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:11:58] "[37mGET /auth/initial-registration HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:12:05] "[37mPOST /auth/initial-registration HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:12:17] "[37mGET /auth/initial-pwd-setting/InNreXdhbGtlcl9kY0BsaXZlLmNvbS5hdSI.X40gIQ.5mIqEm625J3vqggc2F00Afc6Pvk HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:12:19] "[37mGET /auth/initial-pwd-setting/InNreXdhbGtlcl9kY0BsaXZlLmNvbS5hdSI.X40gIQ.5mIqEm625J3vqggc2F00Afc6Pvk HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:12:19] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:15:35] "[37mGET /auth/initial-pwd-setting/InNreXdhbGtlcl9kY0BsaXZlLmNvbS5hdSI.X40gIQ.5mIqEm625J3vqggc2F00Afc6Pvk HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:15:35] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:16:26] "[37mGET /auth/initial-pwd-setting/InNreXdhbGtlcl9kY0BsaXZlLmNvbS5hdSI.X40gIQ.5mIqEm625J3vqggc2F00Afc6Pvk HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [19/Oct/2020 13:16:26] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -

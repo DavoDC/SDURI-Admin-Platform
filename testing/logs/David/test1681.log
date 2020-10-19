@@ -1,2 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:21:30] "[32mPOST /auth/password/forgot/new/IjIyNDc3NDc4QHN0dWRlbnQudXdhLmVkdS5hdSI.X4Hemw.48VAygMm5dTyttmKO-nxPJevxWo HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [11/Oct/2020 00:21:30] "[37mGET /student/22477478%40student.uwa.edu.au/landing HTTP/1.1[0m" 200 -

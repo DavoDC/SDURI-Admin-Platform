@@ -1,7 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:45:21] "[37mGET / HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:45:25] "[37mGET /admin/ HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [09/Oct/2020 22:45:26] "[37mGET /admin/ HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

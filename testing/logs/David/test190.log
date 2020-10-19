@@ -1,2 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 12:40:48] "[32mGET /logout HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 12:40:48] "[37mGET /index HTTP/1.1[0m" 200 -

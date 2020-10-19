@@ -1,4 +1,0 @@
-ERROR:root:Error: Directory migrations already exists and is not empty
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\migrations\\versions\\90c58434eadb_creating_tables.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\migrations\\versions\\90c58434eadb_creating_tables.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\migrations\\versions\\__pycache__\\90c58434eadb_creating_tables.cpython-38.pyc', reloading

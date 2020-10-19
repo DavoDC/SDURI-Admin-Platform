@@ -1,9 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 08:36:01] "[37mPOST /register HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 08:36:02] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 08:36:05] "[37mPOST /register HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 08:36:24] "[32mPOST /register HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 08:36:24] "[37mGET /login HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

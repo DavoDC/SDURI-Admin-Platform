@@ -1,6 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:40:50] "[37mGET / HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:40:51] "[37mGET /login HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:40:53] "[32mPOST /login HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:40:53] "[37mGET /student/Bob%28St%29/landing HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:03] "[37mGET /student/Bob%28St%29/landing HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [17/Oct/2020 19:41:03] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -

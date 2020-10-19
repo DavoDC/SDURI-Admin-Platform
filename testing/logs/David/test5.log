@@ -1,8 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:25] "[37mGET /supervisor-application HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:35] "[37mGET /supervisor-application HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:35] "[37mGET /supervisor-application HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:36] "[37mGET /supervisor-application HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:39] "[37mGET /supervisor-application/question1outof3 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:39] "[37mGET /supervisor-application/question2outof3 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [29/Aug/2020 11:12:40] "[37mGET /supervisor-application/question3outof3 HTTP/1.1[0m" 200 -

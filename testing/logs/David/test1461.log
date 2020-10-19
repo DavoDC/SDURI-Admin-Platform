@@ -1,8 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:24:40] "[37mGET /admin/ HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:24:42] "[37mGET /admin/student/ HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:24:44] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 13:24:47] "[37mGET /admin/supervisor/ HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routing\\supervisor.py', reloading

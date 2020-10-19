@@ -1,2 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:09] "[32mPOST /myadmin/add/user/ HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 19:00:09] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -

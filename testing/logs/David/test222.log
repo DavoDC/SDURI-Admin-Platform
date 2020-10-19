@@ -1,6 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 20:46:25] "[37mPOST /students/StudentTest/details/page7 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Sep/2020 20:46:33] "[37mPOST /students/StudentTest/details/page7 HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\routes.py', reloading

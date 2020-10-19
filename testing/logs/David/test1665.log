@@ -1,1 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [10/Oct/2020 23:59:33] "[37mGET /auth/password/forgot HTTP/1.1[0m" 200 -

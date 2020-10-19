@@ -1,7 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 17:18:06] "[37mGET /login HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 17:18:08] "[37mGET /student-application/question1outof4 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 17:18:09] "[37mGET /student-application/question2outof4 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 17:18:10] "[37mGET /student-application/question3outof4 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 17:18:11] "[37mGET /student-application/question4outof4 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 17:18:11] "[37mGET /student-application HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [31/Aug/2020 17:18:12] "[37mGET /student-application/question1outof4 HTTP/1.1[0m" 200 -

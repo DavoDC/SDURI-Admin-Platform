@@ -1,8 +1,0 @@
-INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-INFO:werkzeug:127.0.0.1 - - [23/Sep/2020 05:49:05] "[32mGET /index HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [23/Sep/2020 05:49:05] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [23/Sep/2020 05:49:06] "[37mGET /add-project/Cheng2 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [23/Sep/2020 05:49:20] "[37mPOST /add-project/Cheng2 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [23/Sep/2020 05:49:58] "[32mGET /index HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [23/Sep/2020 05:49:58] "[37mGET /supervisor/Cheng2 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [23/Sep/2020 05:49:59] "[37mGET /add-project/Cheng2 HTTP/1.1[0m" 200 -

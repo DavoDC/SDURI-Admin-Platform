@@ -1,8 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:39] "GET /myadmin/display/students/all/2 HTTP/1.1" 500 -
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:39] "GET /myadmin/display/students/all/2?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:39] "GET /myadmin/display/students/all/2?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:39] "GET /myadmin/display/students/all/2?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:40] "GET /myadmin/display/students/all/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:40] "GET /myadmin/display/students/all/2?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:40] "GET /myadmin/display/students/all/2?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
-INFO:werkzeug:127.0.0.1 - - [13/Oct/2020 18:15:43] "GET / HTTP/1.1" 404 -

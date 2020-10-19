@@ -1,7 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 18:43:59] "[37mGET /myadmin/display/users/all/5 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 18:44:16] "[32mPOST /myadmin/add/user HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [14/Oct/2020 18:44:16] "[37mGET /myadmin/display/users/all/1 HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading
-INFO:werkzeug: * Detected change in 'C:\\Users\\David\\GitHub Repos\\CITS3200 Code\\SDURI-Admin-Platform\\app\\myadmin\\myadmin_routes.py', reloading

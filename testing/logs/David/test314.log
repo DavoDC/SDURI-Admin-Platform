@@ -1,2 +1,0 @@
-INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:52:52] "[37mGET /students/StudentTest/details/page6 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [15/Sep/2020 15:52:53] "[37mGET /static/images/favicon.ico HTTP/1.1[0m" 200 -
