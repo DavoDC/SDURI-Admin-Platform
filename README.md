@@ -130,7 +130,7 @@ SDURI-Admin-Platform/
 ## Installation
 
 ### Prerequisites
-- Python 3.x — download from https://www.python.org/downloads/
+- Python 3.x - download from https://www.python.org/downloads/
 
 ### Steps
 
