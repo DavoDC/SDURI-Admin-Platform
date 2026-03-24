@@ -1,5 +1,9 @@
 # SDURI Admin Platform
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G31WKOCN)
+
+
+
 A web application built to administer the **Summer Down Under Research Internship (SDURI)** program at the University of Western Australia (UWA). It replaces manual Qualtrics-based workflows with a unified platform where students can apply for research internships and supervisors can manage and fill their projects.
 
 ---
